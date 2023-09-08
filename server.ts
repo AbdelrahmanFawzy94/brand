@@ -35,14 +35,15 @@ export function app(): express.Express {
   );
 
   // this array for the server side rendering ( any other page will be clint side rendering )
-  const ssrPages = ['/home'];
+  // remove //// to render the pages from ssrPages array
+  ////const ssrPages = ['/home'];
 
   server.get('*', (req, res) => {
-    if (ssrPages.some((route) => req.url.startsWith(route))) {
-      res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
-    } else {
-      res.sendFile(join(distFolder, 'index.html'));
-    }
+    ////if (ssrPages.some((route) => req.url.startsWith(route))) {
+    res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
+    ////} else {
+    ////res.sendFile(join(distFolder, 'index.html'));
+    ////}
   });
 
   return server;
