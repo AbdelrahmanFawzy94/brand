@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+@import "src/assets/scss/variables";
+@import "src/assets/scss/colors";
+@import "src/assets/scss/utils";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  // font-family: $font;
+  // background-color: $body-bg;
+  font-weight: unset;
+
+  &.rtl {
+    direction: rtl;
+    text-align: right;
+  }
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  // background-color: $white-darker-20;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  // background-color: $white-darker-20;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  // background-color: $info-darker-5;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  // background-color: $info;
+}

@@ -1,5 +1,6 @@
 import { environment } from './../environments/environment';
 import { Component } from '@angular/core';
+// import {  } from 'ssr';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   env = environment.production;
+  constructor() {
+    // window.localStorage.setItem('a', 'aa');
+  }
 }
