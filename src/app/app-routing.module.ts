@@ -7,7 +7,7 @@ const routes: Routes = [
     data: {
       preload: false,
     },
-    loadChildren: () => import('./modules/samples/samples.module').then((m) => m.SamplesModule),
+    loadChildren: () => import('./modules/landing/landing.module').then((m) => m.LandingModule),
   },
   {
     path: 'samples',

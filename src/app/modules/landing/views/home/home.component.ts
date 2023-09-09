@@ -2,12 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-colors',
+  selector: 'app-home',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './colors.component.html',
-  styleUrls: ['./colors.component.scss'],
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
 })
-export default class ColorsComponent {
+export default class HomeComponent {
   constructor() {}
 }

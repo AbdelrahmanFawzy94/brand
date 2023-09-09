@@ -1,3 +1,3 @@
-export class SamplesApiUrls {
+export class LandingApiUrls {
   readonly login: string = '/samples';
 }

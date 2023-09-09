@@ -1,19 +1,19 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
-import { SamplesComponent } from './samples.component';
+import { LandingComponent } from './landing.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: SamplesComponent,
+    component: LandingComponent,
     children: [
       {
         path: '',
         data: {
           preload: true,
         },
-        loadComponent: () => import('./views/colors/colors.component'),
+        loadComponent: () => import('./views/home/home.component'),
       },
       // {
       //   path: 'signup',
@@ -40,4 +40,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class SamplesRoutingModule {}
+export class LandingRoutingModule {}
