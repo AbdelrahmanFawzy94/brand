@@ -1,5 +1,9 @@
 // text align
 
+.text-inherit {
+  text-align: inherit;
+}
+
 .text-start {
   text-align: start;
 }
@@ -22,16 +26,24 @@
 
 // text transform
 
+.text-transform-inherit {
+  text-transform: inherit;
+}
+
+.text-transform-none {
+  text-transform: none;
+}
+
 .text-capitalize {
-  text-transform: capitalize !important;
+  text-transform: capitalize;
 }
 
 .text-uppercase {
-  text-transform: uppercase !important;
+  text-transform: uppercase;
 }
 
 .text-lowercase {
-  text-transform: lowercase !important;
+  text-transform: lowercase;
 }
 
 // outline
@@ -46,7 +58,7 @@
   background-color: transparent;
 }
 
-// cursor pointer
+// pointer
 
 .pointer-cursor {
   cursor: pointer;
