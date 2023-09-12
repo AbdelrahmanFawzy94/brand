@@ -24,10 +24,19 @@
       "dom"
     ],
     "paths": {
+      "@app/": ["app/"],
+      "@app/*": ["app/*"],
+      "@core": ["app/@core"],
       "@core/*": [ "app/@core/*" ],
+      "@shared": ["app/@shared"],
       "@shared/*": [ "app/modules/@shared/*" ],
+      "@assets": ["app/@assets"],
+      "@assets/*": ["app/@assets/*"],
       "@modules/*": [ "app/modules/*" ],
-      "@environments/*": [ "environments/*" ]
+      "@env/*": [ "environments/*" ]
+      // "exceljs": [
+      //   "node_modules/exceljs/dist/exceljs.min"
+      // ]
     }
   },
   "angularCompilerOptions": {
