@@ -91,4 +91,37 @@
   //==========================================> system spaces  <=============================================//
 }
 
+// fonts
 $fonts-paths: "/assets/fonts";
+// end fonts
+
+// colors
+
+// $colors: (
+//   primary: var(--primary-color),
+//   rotated-primary: var(--rotated-primary-color),
+//   secondry: #000,
+//   rotated-secondry: #000,
+//   third: #000,
+//   rotated-third: #000,
+//   info: #000,
+//   warning: #000,
+//   success: #000,
+//   danger: #000,
+//   rose: #000,
+//   purple: #000,
+// );
+
+$colors: primary var(--primary-hue) var(--primary-saturation) var(--primary-light) rotated-primary var(--rotated-primary-color),
+  secondry var(--secondry-hue) var(--secondry-saturation) var(--secondry-light) rotated-secondry var(--rotated-secondry-color),
+  third var(--third-hue) var(--third-saturation) var(--third-light) rotated-third var(--rotated-third-color),
+  info var(--info-hue) var(--info-saturation) var(--info-light) rotated-info var(--rotated-info-color),
+  warning var(--warning-hue) var(--warning-saturation) var(--warning-light) rotated-warning var(--rotated-warning-color),
+  success var(--success-hue) var(--success-saturation) var(--success-light) rotated-success var(--rotated-success-color),
+  danger var(--danger-hue) var(--danger-saturation) var(--danger-light) rotated-danger var(--rotated-danger-color),
+  rose var(--rose-hue) var(--rose-saturation) var(--rose-light) rotated-rose var(--rotated-rose-color),
+  purple var(--purple-hue) var(--purple-saturation) var(--purple-light) rotated-purple var(--rotated-purple-color),
+  white var(--white-hue) var(--white-saturation) var(--white-light) rotated-white var(--rotated-white-color),
+  black var(--black-hue) var(--black-saturation) var(--black-light) rotated-black var(--rotated-black-color);
+
+// end colors
