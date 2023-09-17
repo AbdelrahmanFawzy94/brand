@@ -1,0 +1,32 @@
+{
+  "shared": {
+    "imageModal": {
+      "previewImage": "preview image",
+      "openInNewTab": "open in new tab",
+      "close": "close"
+    },
+    "confirm": {
+      "yes": "yes",
+      "no": "no"
+    },
+    "validation": {
+      "requiredField": "required field",
+      "invalidPassword": "invalid password",
+      "invalidEmail": "invalid email",
+      "invalidPhoneNumber": "invalid phone number",
+      "minLength": "min length",
+      "startWithSpace": "start With Space"
+    },
+    "language": {
+      "english": "english",
+      "arabic": "العربية"
+    },
+    "buttons": {
+      "confirm": "confirm",
+      "save": "save",
+      "selectAll": "select all",
+      "cancel": "cancel",
+      "reset": "reset"
+    }
+  }
+}
