@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CustomPreloadingService } from './@core/services/custom-preloading.service';
 
 const routes: Routes = [
   {
     path: '',
     data: {
-      preload: false,
+      preload: true,
     },
     loadChildren: () => import('./modules/landing/landing.module').then((m) => m.LandingModule),
   },
@@ -19,7 +20,7 @@ const routes: Routes = [
   {
     path: '**',
     data: {
-      preload: true,
+      preload: false,
     },
     loadComponent: () => import('./pages/not-found/not-found.component'),
   },
@@ -29,6 +30,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, {
       initialNavigation: 'enabledBlocking',
+      preloadingStrategy: CustomPreloadingService,
     }),
   ],
   exports: [RouterModule],
