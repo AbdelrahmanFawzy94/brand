@@ -1,0 +1,103 @@
+.component {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .container {
+    zoom: unset;
+
+    .logo-container {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        height: 100px;
+        position: absolute;
+        z-index: 1;
+
+        .st0 {
+          fill-rule: evenodd;
+          clip-rule: evenodd;
+          fill: #3464a4;
+          stroke: #fff;
+          stroke-width: 2px;
+        }
+        .st1 {
+          fill-rule: evenodd;
+          clip-rule: evenodd;
+          fill: #db242c;
+          stroke: #fff;
+          stroke-width: 2px;
+        }
+      }
+
+      .logo {
+        position: relative;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background-image: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: rotating 1.5s linear infinite;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 6px;
+          left: 6px;
+          bottom: 6px;
+          right: 6px;
+          background-color: rgba(0, 0, 0, 0.6);
+          border-radius: 50%;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          bottom: 0px;
+          right: 0px;
+          background-color: linear-gradient(45deg, transparent, transparent 40%, #e5f403);
+          border-radius: 50%;
+          z-index: 1;
+          filter: blur(30px);
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes svg {
+  from {
+    transform: rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
