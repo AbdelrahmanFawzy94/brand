@@ -1,4 +1,3 @@
-- adding validations file helper
 - adding general loader
 - adding screens mixins
 - adding typography
