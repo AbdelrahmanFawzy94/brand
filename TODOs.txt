@@ -1,4 +1,4 @@
-- adding general loader
+- adding constants file
 - adding screens mixins
 - adding typography
 - adding sweet alert
