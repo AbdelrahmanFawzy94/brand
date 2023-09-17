@@ -32,6 +32,7 @@
       "@shared/*": [ "app/modules/@shared/*" ],
       "@assets": ["app/@assets"],
       "@assets/*": ["app/@assets/*"],
+      "@modules/": [ "app/modules/" ],
       "@modules/*": [ "app/modules/*" ],
       "@env/*": [ "environments/*" ]
       // "exceljs": [
