@@ -1,0 +1,13 @@
+- adding get device Type util
+- adding directives
+- adding validations file helper
+- adding general loader
+- adding screens mixins
+- adding typography
+- adding sweet alert
+- adding shared components
+- creating landing page
+- adding dashboard module
+- adding opacity bg loop
+- adding bootstrap grid sass file
+- dont forgat guards for every page
