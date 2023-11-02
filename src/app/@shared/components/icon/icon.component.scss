@@ -1,10 +1,12 @@
+@import "src/assets/scss/variables";
+
 :host {
   display: inline-flex;
 }
 
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 200, "opsz" 48;
-  font-size: 1.5rem;
+  font-size: $icon-font-size;
 }
 
 .fill {

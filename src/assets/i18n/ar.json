@@ -23,10 +23,15 @@
     },
     "buttons": {
       "confirm": "confirm",
+      "close": "اغلاق",
       "save": "save",
+      "copy": "نسح",
       "selectAll": "select all",
       "cancel": "cancel",
       "reset": "reset"
+    },
+    "toaster": {
+      "copped": "تم النسخ"
     }
   }
 }

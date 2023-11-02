@@ -1,9 +1,12 @@
-// @import "src/assets/scss/colors";
 .wrapper {
+  display: flex;
+  text-align: center;
+
   > div {
     padding: 0;
     margin: 0;
-    font-size: 2vw;
+    width: 9.090909090909091%;
+    font-size: 14px;
 
     > div {
       // display: flex;
@@ -19,11 +22,19 @@
       }
 
       .variant-color {
-        padding: 20px;
+        height: 150px;
         width: 100%;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 10px;
+
+        button {
+          app-icon {
+            --icon-size: 14px;
+          }
+        }
       }
     }
   }

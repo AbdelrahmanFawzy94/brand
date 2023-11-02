@@ -23,10 +23,15 @@
     },
     "buttons": {
       "confirm": "confirm",
+      "close": "close",
       "save": "save",
+      "copy": "copy",
       "selectAll": "select all",
       "cancel": "cancel",
       "reset": "reset"
+    },
+    "toaster": {
+      "copped": "copped"
     }
   }
 }

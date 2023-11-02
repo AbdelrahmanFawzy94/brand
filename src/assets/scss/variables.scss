@@ -88,14 +88,41 @@
   --black-color: hsl(var(--black-hue), var(--black-saturation), var(--black-light));
   --rotated-black-color: hsl(calc(var(--black-hue) + 30), var(--black-saturation), var(--black-light));
 
-  //==========================================> system spaces  <=============================================//
+  //==========================================> system spaces  <======================================================//
+
+  //==========================================> system font icons size  <=============================================//
+  --icon-size: 1.5rem;
 }
 
 // fonts
 $fonts-paths: "/assets/fonts";
+$icon-font-size: var(--icon-size);
 // end fonts
 
 // colors
+
+$primary: hsl(var(--primary-hue) var(--primary-saturation) var(--primary-light));
+$rotated-primary: var(--rotated-primary-color);
+$secondry: hsl(var(--secondry-hue) var(--secondry-saturation) var(--secondry-light));
+$rotated-secondry: var(--rotated-secondry-color);
+$third: hsl(var(--third-hue) var(--third-saturation) var(--third-light));
+$rotated-third: var(--rotated-third-color);
+$info: hsl(var(--info-hue) var(--info-saturation) var(--info-light));
+$rotated-info: var(--rotated-info-color);
+$warning: hsl(var(--warning-hue) var(--warning-saturation) var(--warning-light));
+$rotated-warning: var(--rotated-warning-color);
+$success: hsl(var(--success-hue) var(--success-saturation) var(--success-light));
+$rotated-success: var(--rotated-success-color);
+$danger: hsl(var(--danger-hue) var(--danger-saturation) var(--danger-light));
+$rotated-danger: var(--rotated-danger-color);
+$rose: hsl(var(--rose-hue) var(--rose-saturation) var(--rose-light));
+$rotated-rose: var(--rotated-rose-color);
+$purple: hsl(var(--purple-hue) var(--purple-saturation) var(--purple-light));
+$rotated-purple: var(--rotated-purple-color);
+$white: hsl(var(--white-hue) var(--white-saturation) var(--white-light));
+$rotated-white: var(--rotated-white-color);
+$black: hsl(var(--black-hue) var(--black-saturation) var(--black-light));
+$rotated-black: var(--rotated-black-color);
 
 // $colors: (
 //   primary: var(--primary-color),
