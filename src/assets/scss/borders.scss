@@ -1,0 +1,26 @@
+$border-radius: (
+  "none": 0,
+  "tiny": 4px,
+  "soft": 8px,
+  "medium": 12px,
+  "large": 16px,
+  "rounded": 28px,
+  "circle": 50%,
+);
+
+$border-sizes: (
+  "none": 0,
+  "base": 1px,
+  "medium": 2px,
+  "large": 3px,
+  "extra": 6px,
+);
+
+:root {
+    @each $border, $value in $border-sizes {
+      --border-size-#{$border}: #{$value};
+    }
+    @each $border, $value in $border-radius {
+      --border-radius-#{$border}: #{$value};
+    }
+  }

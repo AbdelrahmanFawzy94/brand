@@ -1,0 +1,123 @@
+$sizes: (
+  "auto": auto,
+  "none": 0,
+  // 0
+  "xs": 0.5rem,
+  // 4px
+  "sm": 0.75rem,
+  // 8px
+  "base": 1rem,
+  // 16px
+  "md": 1.5rem,
+  // 24px
+  "lg": 2rem,
+  // 32px
+  "xl": 2.5rem,
+  // 40px
+  "xxl": 3rem,
+  // 48px
+  "xxxl": 5rem,
+  // 80px
+);
+
+// $directions: (
+//   "top": top,
+//   "bottom": bottom,
+//   "start": inline-start,
+//   "end": inline-end,
+//   "right": right,
+//   "left": left,
+//   "y": "",
+//   "x": "",
+// );
+
+:root {
+    @each $size, $value in $sizes {
+      --space-#{$size}: #{$value};
+    }
+  }
+  
+//   @each $size, $value in $sizes {
+//     .margin-#{$size} {
+//       margin: var(--space-#{$size}) !important;
+//     }
+  
+//     .padding-#{$size} {
+//       padding: var(--space-#{$size}) !important;
+//     }
+  
+//     @each $direction, $value in $directions {
+//       .margin-#{$direction}-#{$size} {
+//         @if $direction == "x" {
+//           margin-left: var(--space-#{$size}) !important;
+//           margin-right: var(--space-#{$size}) !important;
+//         } @else if $direction == "y" {
+//           margin-top: var(--space-#{$size}) !important;
+//           margin-bottom: var(--space-#{$size}) !important;
+//         } @else {
+//           margin-#{$value}: var(--space-#{$size}) !important;
+//         }
+//       }
+  
+//       .padding-#{$direction}-#{$size} {
+//         @if $direction == "x" {
+//           padding-left: var(--space-#{$size}) !important;
+//           padding-right: var(--space-#{$size}) !important;
+//         } @else if $direction == "y" {
+//           padding-top: var(--space-#{$size}) !important;
+//           padding-bottom: var(--space-#{$size}) !important;
+//         } @else {
+//           padding-#{$value}: var(--space-#{$size}) !important;
+//         }
+//       }
+//     }
+//   }
+
+//   .margin-inline-start-m {
+//     margin-inline-start: var(--space-md) !important;
+//   }
+  
+//   .margin-inline-end-m {
+//     margin-inline-end: var(--space-md) !important;
+//   }
+  
+//   .margin-inline-start-base {
+//     margin-inline-start: var(--space-base) !important;
+//   }
+  
+//   .margin-inline-end-base {
+//     margin-inline-end: var(--space-base) !important;
+//   }
+  
+//   .margin-inline-start-s {
+//     margin-inline-start: var(--space-sm) !important;
+//   }
+  
+//   .margin-inline-end-s {
+//     margin-inline-end: var(--space-sm) !important;
+//   }
+  
+//   .padding-inline-start-m {
+//     padding-inline-start: var(--space-md) !important;
+//   }
+  
+//   .padding-inline-end-m {
+//     padding-inline-end: var(--space-md) !important;
+//   }
+  
+//   .padding-inline-start-base {
+//     padding-inline-start: var(--space-base) !important;
+//   }
+  
+//   .padding-inline-end-base {
+//     padding-inline-end: var(--space-base) !important;
+//   }
+  
+//   .padding-inline-start-s {
+//     padding-inline-start: var(--space-sm) !important;
+//   }
+  
+//   .padding-inline-end-s {
+//     padding-inline-end: var(--space-sm) !important;
+//   }
+  
