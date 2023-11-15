@@ -1,5 +1,4 @@
-- adding screens mixins
-- adding typography
+- adding dashboard component
 - adding sweet alert
 - adding shared components
 - adding get device Type
