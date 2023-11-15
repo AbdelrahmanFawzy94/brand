@@ -4,7 +4,45 @@ $fonts-paths: "/assets/fonts";
   --font-material: "Material Symbols Outlined";
   --icon-size:1.5rem
 }
+$font-family: var(--font-family);
 $icon-font-size: var(--icon-size);
+
+// cairo
+
+@font-face {
+  font-family: "cairo-extra-light";
+  font-style: normal;
+  font-weight: 400;
+  src: url("#{$fonts-paths}/cairo/Cairo-ExtraLight.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "cairo-light";
+  font-style: normal;
+  font-weight: 400;
+  src: url("#{$fonts-paths}/cairo/Cairo-Light.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "cairo";
+  font-style: normal;
+  font-weight: 400;
+  src: url("#{$fonts-paths}/cairo/Cairo-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "cairo-bold";
+  font-style: normal;
+  font-weight: 400;
+  src: url("#{$fonts-paths}/cairo/Cairo-Bold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "cairo-extra-bold";
+  font-style: normal;
+  font-weight: 400;
+  src: url("#{$fonts-paths}/cairo/Cairo-ExtraBold.ttf") format("ttf");
+}
 
 // material
 
