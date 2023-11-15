@@ -1,0 +1,77 @@
+:root {
+  --typo-display-large: 3.56rem;
+  --typo-display-medium: 3.25rem;
+  --typo-display-small: 2.25rem;
+  --typo-headline-large: 2rem;
+  --typo-headline-medium: 1.75rem;
+  --typo-headline-small: 1.5rem;
+  --typo-title-large: 1.375rem;
+  --typo-title-medium: 1rem;
+  --typo-title-small: 0.875rem;
+  --typo-label-large: 0.875rem;
+  --typo-label-medium: 0.75rem;
+  --typo-label-small: 0.68rem;
+  --typo-body-large: 1rem;
+  --typo-body-medium: 0.875rem;
+  --typo-body-small: 0.75rem;
+}
+
+@mixin typo(
+  $name,
+  $font-family: var(--font-family),
+  $line-height: normal,
+  $size,
+  $tracking: "normal",
+  $weight: var(--font-regular),
+  $transform: capitalize
+) {
+  #{$name} {
+    font-family: #{$font-family} !important;
+    line-height: #{$line-height} !important;
+    font-size: #{$size} !important;
+    font-weight: #{$weight} !important;
+    text-transform: #{$transform} !important;
+    letter-spacing: #{$tracking} !important;
+    margin: 0;
+  }
+}
+
+// **************************************** font weights
+// font weights
+
+$font-weights: (
+  "light": 300,
+  "regular": 400,
+  "bold": 700,
+  "extra-bold": 800,
+  );
+
+  // end font weights
+@each $weight, $value in $font-weights {
+    .font-#{$weight} {
+      font-weight: var(--font-#{$weight}) !important;
+    }
+  }
+
+@include typo(".typo-display-large", var(--font-family), 64px, var(--typo-display-large), -0.25px, var(--font-bold));
+@include typo(".typo-display-medium", var(--font-family), 52px, var(--typo-display-medium), 0, var(--font-bold));
+@include typo(".typo-display-small", var(--font-family), 44px, var(--typo-display-small), 0, var(--font-bold));
+@include typo(".typo-headline-large", var(--font-family), 40px, var(--typo-headline-large), 0, var(--font-bold));
+@include typo(".typo-headline-medium", var(--font-family), 36px, var(--typo-headline-medium), 0, var(--font-bold));
+@include typo(".typo-headline-small", var(--font-family), 32px, var(--typo-headline-small), 0, var(--font-bold));
+@include typo(".typo-title-large", var(--font-family), 28px, var(--typo-title-large), 0, var(--font-bold));
+@include typo(".typo-title-medium", var(--font-family), 24px, var(--typo-title-medium), 0.1px, var(--font-bold));
+@include typo(".typo-title-small", var(--font-family), 20px, var(--typo-title-small), 0.1px, var(--font-bold));
+@include typo(".typo-label-large", var(--font-family), 20px, var(--typo-label-large), 0.1px, var(--font-bold));
+@include typo(".typo-label-medium", var(--font-family), 16px, var(--typo-label-medium), 0.5px, var(--font-bold));
+@include typo(".typo-label-small", var(--font-family), 16px, var(--typo-label-small), 0.5px, var(--font-bold));
+@include typo(".typo-body-large", var(--font-family), 24px, var(--typo-body-large), 0.5px, var(--font-bold));
+@include typo(".typo-body-medium", var(--font-family), 20px, var(--typo-body-medium), 0.25px, var(--font-bold));
+@include typo(".typo-body-small", var(--font-family), 16px, var(--typo-body-small), 0.4px, var(--font-bold));
+
+:root{
+    @each $weight, $value in $font-weights {
+        --font-#{$weight}: #{$value};
+      }
+}
+// **************************************** end font weights
