@@ -1,9 +1,9 @@
 - adding dashboard component
+- adding typography samples component
 - adding sweet alert
 - adding shared components
 - adding get device Type
 - creating landing page
 - adding dashboard module
 - adding opacity bg loop
-- adding bootstrap grid sass file
 - dont forgat guards for every page

@@ -1,3 +1,7 @@
-// @import "src/assets/scss/colors";
+@import "src/assets/scss/screens";
+
 .home-page {
+  @include sm {
+    background-color: black;
+  }
 }
