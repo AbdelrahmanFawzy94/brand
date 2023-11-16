@@ -1,4 +1,4 @@
-- adding dashboard component
+- adding dashboard component => in progress
 - adding typography samples component
 - adding sweet alert
 - adding shared components
