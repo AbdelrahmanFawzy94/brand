@@ -1,12 +1,11 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'shared-icon',
+  selector: 'shared-dashboard',
   standalone: true,
-  templateUrl: './icon.component.html',
-  styleUrls: ['./icon.component.scss'],
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss'],
 })
-export class IconComponent {
-  @Input({ required: true }) name!: string;
-  @Input() isFilled: boolean = false;
+export class DashboardComponent {
+  // @Input({ required: true }) name!: string;
 }
