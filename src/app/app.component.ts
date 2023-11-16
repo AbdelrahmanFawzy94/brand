@@ -1,6 +1,6 @@
 // import { environment } from './../environments/environment';
 import { Component, OnInit } from '@angular/core';
-import { LoaderService } from '@shared/services/loader.service';
+import { LoaderService } from '@shared';
 // import {  } from 'ssr';
 
 @Component({
