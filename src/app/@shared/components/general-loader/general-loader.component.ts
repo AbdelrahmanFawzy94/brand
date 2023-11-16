@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-general-loader',
+  selector: 'shared-general-loader',
   standalone: true,
   templateUrl: './general-loader.component.html',
   styleUrls: ['./general-loader.component.scss'],
