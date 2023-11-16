@@ -1,6 +1,6 @@
 // **************************************** colors
-:root{
-   //==========================================> system color  <=============================================//
+:root {
+  //==========================================> system color  <=============================================//
   // primary
   --primary-hue: 265;
   --primary-saturation: 100%;
@@ -118,14 +118,14 @@ $colors: primary var(--primary-hue) var(--primary-saturation) var(--primary-ligh
   // lighter
   @for $i from 1 through 10 {
     .text-#{$colorName}-light-#{$i * 5} {
-      color: hsl($colorHue, $colorSaturation, calc(#{$colorLight} + #{$i * 5}%)) !important;
+      color: hsl($colorHue, $colorSaturation, calc(#{$colorLight} + #{$i * 5%})) !important;
     }
   }
 
   // darker
   @for $i from 1 through 10 {
     .text-#{$colorName}-dark-#{$i * 5} {
-      color: hsl($colorHue, $colorSaturation, calc(#{$colorLight} - #{$i * 5}%)) !important;
+      color: hsl($colorHue, $colorSaturation, calc(#{$colorLight} - #{$i * 5%})) !important;
     }
   }
   //**************************************** end of text
@@ -145,14 +145,14 @@ $colors: primary var(--primary-hue) var(--primary-saturation) var(--primary-ligh
   // lighter
   @for $i from 1 through 10 {
     .bg-#{$colorName}-light-#{$i * 5} {
-      background-color: hsl($colorHue, $colorSaturation, calc(#{$colorLight} + #{$i * 5}%)) !important;
+      background-color: hsl($colorHue, $colorSaturation, calc(#{$colorLight} + #{$i * 5%})) !important;
     }
   }
 
   // darker
   @for $i from 1 through 10 {
     .bg-#{$colorName}-dark-#{$i * 5} {
-      background-color: hsl($colorHue, $colorSaturation, calc(#{$colorLight} - #{$i * 5}%)) !important;
+      background-color: hsl($colorHue, $colorSaturation, calc(#{$colorLight} - #{$i * 5%})) !important;
     }
   }
   //**************************************** end of background
@@ -215,6 +215,5 @@ $rotated-black: var(--rotated-black-color);
 //   rose: #000,
 //   purple: #000,
 // );
-
 
 // end colors
