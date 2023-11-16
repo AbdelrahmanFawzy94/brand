@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-icon',
+  selector: 'shared-icon',
   standalone: true,
   templateUrl: './icon.component.html',
   styleUrls: ['./icon.component.scss'],
