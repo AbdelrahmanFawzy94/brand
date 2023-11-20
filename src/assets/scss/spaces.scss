@@ -21,12 +21,12 @@ $sizes: (
 );
 
 $directions: (
-  "top": top,
-  "bottom": bottom,
+  "t": top,
+  "b": bottom,
   "start": inline-start,
   "end": inline-end,
-  "right": right,
-  "left": left,
+  "r": right,
+  "l": left,
   "y": "",
   "x": "",
 );
@@ -38,16 +38,16 @@ $directions: (
 }
 
 @each $size, $value in $sizes {
-  .margin-#{$size} {
+  .m-#{$size} {
     margin: var(--space-#{$size}) !important;
   }
 
-  .padding-#{$size} {
+  .p-#{$size} {
     padding: var(--space-#{$size}) !important;
   }
 
   @each $direction, $value in $directions {
-    .margin-#{$direction}-#{$size} {
+    .m#{$direction}-#{$size} {
       @if $direction == "x" {
         margin-left: var(--space-#{$size}) !important;
         margin-right: var(--space-#{$size}) !important;
@@ -59,7 +59,7 @@ $directions: (
       }
     }
 
-    .padding-#{$direction}-#{$size} {
+    .p#{$direction}-#{$size} {
       @if $direction == "x" {
         padding-left: var(--space-#{$size}) !important;
         padding-right: var(--space-#{$size}) !important;
