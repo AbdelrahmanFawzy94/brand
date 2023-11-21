@@ -141,11 +141,21 @@ $colors: primary var(--primary-hue) var(--primary-saturation) var(--primary-ligh
       background-color: hsl($colorHue, $colorSaturation, $colorLight, #{$i/10}) !important;
     }
   }
+  :root {
+    @for $i from 0 through 9 {
+      --bg-opacity-#{$colorName}-#{$i}: hsl(#{$colorHue}, #{$colorSaturation}, #{$colorLight}, #{$i/10});
+    }
+  }
 
   // lighter
   @for $i from 1 through 10 {
     .bg-#{$colorName}-light-#{$i * 5} {
       background-color: hsl($colorHue, $colorSaturation, calc(#{$colorLight} + #{$i * 5%})) !important;
+    }
+  }
+  :root {
+    @for $i from 1 through 10 {
+      --bg-light-#{$colorName}-#{$i}: hsl(#{$colorHue}, #{$colorSaturation}, calc(#{$colorLight} + #{$i * 5%}), #{$i/10});
     }
   }
 
@@ -155,6 +165,12 @@ $colors: primary var(--primary-hue) var(--primary-saturation) var(--primary-ligh
       background-color: hsl($colorHue, $colorSaturation, calc(#{$colorLight} - #{$i * 5%})) !important;
     }
   }
+  :root {
+    @for $i from 1 through 10 {
+      --bg-dark-#{$colorName}-#{$i}: hsl(#{$colorHue}, #{$colorSaturation}, calc(#{$colorLight} - #{$i * 5%}), #{$i/10});
+    }
+  }
+
   //**************************************** end of background
 
   //**************************************** gradient background
