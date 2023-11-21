@@ -17,10 +17,24 @@ $border-sizes: (
 );
 
 :root {
-    @each $border, $value in $border-sizes {
-      --border-size-#{$border}: #{$value};
-    }
-    @each $border, $value in $border-radius {
-      --border-radius-#{$border}: #{$value};
-    }
+  @each $border, $value in $border-sizes {
+    --border-size-#{$border}: #{$value};
   }
+  @each $border, $value in $border-radius {
+    --border-radius-#{$border}: #{$value};
+  }
+}
+
+@each $border, $value in $border-sizes {
+  // --border-size-#{$border}: #{$value};
+  .border-#{$border} {
+    border-width: #{$value};
+  }
+}
+
+@each $border, $value in $border-radius {
+  // --border-size-#{$border}: #{$value};
+  .border-radius-#{$border} {
+    border-radius: #{$value};
+  }
+}
