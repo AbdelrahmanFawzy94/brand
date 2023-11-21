@@ -155,7 +155,7 @@ $colors: primary var(--primary-hue) var(--primary-saturation) var(--primary-ligh
   }
   :root {
     @for $i from 1 through 10 {
-      --bg-light-#{$colorName}-#{$i}: hsl(#{$colorHue}, #{$colorSaturation}, calc(#{$colorLight} + #{$i * 5%}), #{$i/10});
+      --bg-light-#{$colorName}-#{$i}: hsl(#{$colorHue}, #{$colorSaturation}, calc(#{$colorLight} + #{$i * 5%}));
     }
   }
 
@@ -167,7 +167,7 @@ $colors: primary var(--primary-hue) var(--primary-saturation) var(--primary-ligh
   }
   :root {
     @for $i from 1 through 10 {
-      --bg-dark-#{$colorName}-#{$i}: hsl(#{$colorHue}, #{$colorSaturation}, calc(#{$colorLight} - #{$i * 5%}), #{$i/10});
+      --bg-dark-#{$colorName}-#{$i}: hsl(#{$colorHue}, #{$colorSaturation}, calc(#{$colorLight} - #{$i * 5%}));
     }
   }
 
