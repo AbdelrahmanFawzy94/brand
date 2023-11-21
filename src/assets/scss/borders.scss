@@ -17,11 +17,14 @@ $border-sizes: (
 );
 
 :root {
-  @each $border, $value in $border-sizes {
-    --border-size-#{$border}: #{$value};
-  }
   @each $border, $value in $border-radius {
     --border-radius-#{$border}: #{$value};
+  }
+}
+
+:root {
+  @each $border, $value in $border-sizes {
+    --border-size-#{$border}: #{$value};
   }
 }
 
