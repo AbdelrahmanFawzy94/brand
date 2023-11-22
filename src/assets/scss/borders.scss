@@ -31,13 +31,13 @@ $border-sizes: (
 @each $border, $value in $border-sizes {
   // --border-size-#{$border}: #{$value};
   .border-#{$border} {
-    border-width: #{$value};
+    border-width: #{$value} !important;
   }
 }
 
 @each $border, $value in $border-radius {
   // --border-size-#{$border}: #{$value};
   .border-radius-#{$border} {
-    border-radius: #{$value};
+    border-radius: #{$value} !important;
   }
 }
