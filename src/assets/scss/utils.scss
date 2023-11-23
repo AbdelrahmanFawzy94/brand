@@ -1,7 +1,7 @@
 // text
 
 .text-align-inherit {
-  text-align: inherit;
+  text-align: inherit !important;
 }
 
 .text-underline {
@@ -17,9 +17,9 @@
 }
 
 .text-ellipsis {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
 }
 
 .text-center {
@@ -47,41 +47,41 @@
 }
 
 .text-transform-inherit {
-  text-transform: inherit;
+  text-transform: inherit !important;
 }
 
 .text-transform-none {
-  text-transform: none;
+  text-transform: none !important;
 }
 
 .text-capitalize {
-  text-transform: capitalize;
+  text-transform: capitalize !important;
 }
 
 .text-uppercase {
-  text-transform: uppercase;
+  text-transform: uppercase !important;
 }
 
 .text-lowercase {
-  text-transform: lowercase;
+  text-transform: lowercase !important;
 }
 
 // outline
 
 .outline-none {
-  outline: none;
+  outline: none !important;
 }
 
 // bg
 
 .bg-transparent {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 
 // pointer
 
 .pointer-cursor {
-  cursor: pointer;
+  cursor: pointer !important;
 }
 
 // display
@@ -107,57 +107,61 @@
 }
 
 .justify-content-start {
-  justify-content: flex-start;
+  justify-content: flex-start !important;
 }
 
 .justify-content-end {
-  justify-content: flex-end;
+  justify-content: flex-end !important;
 }
 
 .justify-content-center {
-  justify-content: center;
+  justify-content: center !important;
 }
 
 .justify-content-around {
-  justify-content: space-around;
+  justify-content: space-around !important;
 }
 
 .justify-content-between {
-  justify-content: space-between;
+  justify-content: space-between !important;
 }
 
 .justify-content-evenly {
-  justify-content: space-evenly;
+  justify-content: space-evenly !important;
 }
 
 .justify-content-stretch {
-  justify-content: stretch;
+  justify-content: stretch !important;
 }
 
 .align-item-start {
-  align-items: flex-start;
+  align-items: flex-start !important;
 }
 
 .align-item-end {
-  align-items: flex-end;
+  align-items: flex-end !important;
 }
 
 .align-item-center {
-  align-items: center;
+  align-items: center !important;
 }
 
 .align-item-around {
-  align-items: space-around;
+  align-items: space-around !important;
 }
 
 .align-item-between {
-  align-items: space-between;
+  align-items: space-between !important;
 }
 
 .align-item-evenly {
-  align-items: space-evenly;
+  align-items: space-evenly !important;
 }
 
 .align-item-stretch {
-  align-items: stretch;
+  align-items: stretch !important;
+}
+
+.flex-wrap {
+  flex-wrap: wrap !important;
 }

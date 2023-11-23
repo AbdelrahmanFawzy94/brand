@@ -1,0 +1,19 @@
+.border-sizing-element {
+  border: 1px solid var(--bg-dark-success-1);
+  background-color: var(--white-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.border-radius-element {
+  border: 1px solid var(--bg-dark-success-1);
+  width: 400px;
+  height: 400px;
+  background-color: var(--white-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}

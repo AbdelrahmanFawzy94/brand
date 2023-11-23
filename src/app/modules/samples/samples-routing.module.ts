@@ -28,6 +28,13 @@ const routes: Routes = [
           preload: true,
         },
         loadComponent: () => import('./views/screens/screens.component'),
+      }
+{
+        path: 'borders',
+        data: {
+          preload: true,
+        },
+        loadComponent: () => import('./views/borders/borders.component'),
       },
       // {
       //   path: 'signup',
