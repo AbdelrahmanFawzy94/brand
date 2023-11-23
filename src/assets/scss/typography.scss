@@ -16,21 +16,12 @@
   --typo-body-small: 0.75rem;
 }
 
-@mixin typo(
-  $name,
-  $font-family: var(--font-family),
-  $line-height: normal,
-  $size,
-  $tracking: "normal",
-  $weight: var(--font-regular),
-  $transform: capitalize
-) {
+@mixin typo($name, $font-family: var(--font-family), $line-height: normal, $size, $tracking: "normal", $weight: var(--font-regular)) {
   #{$name} {
     font-family: #{$font-family} !important;
     line-height: #{$line-height} !important;
     font-size: #{$size} !important;
     font-weight: #{$weight} !important;
-    text-transform: #{$transform} !important;
     letter-spacing: #{$tracking} !important;
     margin: 0;
   }
@@ -44,14 +35,14 @@ $font-weights: (
   "regular": 400,
   "bold": 700,
   "extra-bold": 800,
-  );
+);
 
-  // end font weights
+// end font weights
 @each $weight, $value in $font-weights {
-    .font-#{$weight} {
-      font-weight: var(--font-#{$weight}) !important;
-    }
+  .font-#{$weight} {
+    font-weight: var(--font-#{$weight}) !important;
   }
+}
 
 @include typo(".typo-display-large", var(--font-family), 64px, var(--typo-display-large), -0.25px, var(--font-bold));
 @include typo(".typo-display-medium", var(--font-family), 52px, var(--typo-display-medium), 0, var(--font-bold));
@@ -69,9 +60,9 @@ $font-weights: (
 @include typo(".typo-body-medium", var(--font-family), 20px, var(--typo-body-medium), 0.25px, var(--font-bold));
 @include typo(".typo-body-small", var(--font-family), 16px, var(--typo-body-small), 0.4px, var(--font-bold));
 
-:root{
-    @each $weight, $value in $font-weights {
-        --font-#{$weight}: #{$value};
-      }
+:root {
+  @each $weight, $value in $font-weights {
+    --font-#{$weight}: #{$value};
+  }
 }
 // **************************************** end font weights
