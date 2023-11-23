@@ -22,6 +22,13 @@ const routes: Routes = [
         },
         loadComponent: () => import('./views/typo/typo.component'),
       },
+      {
+        path: 'borders',
+        data: {
+          preload: true,
+        },
+        loadComponent: () => import('./views/borders/borders.component'),
+      },
       // {
       //   path: 'signup',
       //   data: {
