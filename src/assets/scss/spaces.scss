@@ -71,6 +71,10 @@ $directions: (
       }
     }
   }
+
+  .gap-#{$size} {
+    gap: #{$value};
+  }
 }
 
 //   .margin-inline-start-m {
