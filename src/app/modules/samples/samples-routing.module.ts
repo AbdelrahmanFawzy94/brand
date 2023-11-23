@@ -22,6 +22,13 @@ const routes: Routes = [
         },
         loadComponent: () => import('./views/typo/typo.component'),
       },
+      {
+        path: 'screens',
+        data: {
+          preload: true,
+        },
+        loadComponent: () => import('./views/screens/screens.component'),
+      },
       // {
       //   path: 'signup',
       //   data: {
