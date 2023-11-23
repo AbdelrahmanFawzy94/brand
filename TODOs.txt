@@ -1,5 +1,7 @@
 - adding dashboard component => in progress
-- adding typography samples component
+- adding displays samples component
+- adding padding margin samples component
+- adding font wiegth and font family samples component
 - adding sweet alert
 - adding shared components
 - adding get device Type
