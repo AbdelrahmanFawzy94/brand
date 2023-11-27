@@ -2,6 +2,7 @@
 - adding displays samples component
 - adding shared components
 - adding buttons components
+- adding icons components
 - adding padding margin samples component
 - adding font wiegth and font family samples component
 - adding sweet alert
