@@ -169,3 +169,17 @@
 .flex-wrap {
   flex-wrap: wrap !important;
 }
+
+// width
+@for $i from 0 through 100 {
+  .w-#{$i} {
+    width: #{$i * 1%} !important;
+  }
+}
+
+// height
+@for $i from 0 through 100 {
+  .h-#{$i} {
+    height: #{$i * 1%} !important;
+  }
+}
