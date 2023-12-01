@@ -1,4 +1,5 @@
 - adding dashboard component => in progress
+- - user in side nave visability base on input
 - adding displays samples component
 - adding shared components
 - adding buttons components
