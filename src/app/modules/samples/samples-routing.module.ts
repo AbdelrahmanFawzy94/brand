@@ -9,8 +9,9 @@ const routes: Routes = [
     component: SamplesComponent,
     children: [
       {
-        path: '',
+        path: 'colors',
         data: {
+          title: 'colors',
           preload: true,
         },
         loadComponent: () => import('./views/colors/colors.component'),
@@ -18,6 +19,7 @@ const routes: Routes = [
       {
         path: 'typo',
         data: {
+          title: 'typography',
           preload: true,
         },
         loadComponent: () => import('./views/typo/typo.component'),
@@ -25,6 +27,7 @@ const routes: Routes = [
       {
         path: 'screens',
         data: {
+          title: 'screens',
           preload: true,
         },
         loadComponent: () => import('./views/screens/screens.component'),
@@ -32,6 +35,7 @@ const routes: Routes = [
       {
         path: 'borders',
         data: {
+          title: 'borders',
           preload: true,
         },
         loadComponent: () => import('./views/borders/borders.component'),
