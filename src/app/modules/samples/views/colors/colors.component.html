@@ -1,575 +1,592 @@
-<h2 class="text-center">colors pallate</h2>
-<section class="wrapper">
-  <div class="bg-primary">
-    <div class="">
-      <div class="variant-color text-white gradient-primary">
-        .gradient-primary
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('gradient-primary')"
-          [cdkCopyToClipboard]="'gradient-primary'"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
+<section class="colors samples">
+  <header class="samples__header">
+    <h2 class="typo-display-large mb-xl margin-top-none">colors pallate</h2>
+    <p class="typo-body-medium mb-xl">Use colors to present your design and content as clearly and efficiently as possible.</p>
+  </header>
+  <section class="samples__body">
+    <div class="samples-panel">
+      <section class="wrapper">
+        <div class="bg-primary">
+          <div class="">
+            <div class="variant-color text-white gradient-primary">
+              .gradient-primary
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('gradient-primary')"
+                [cdkCopyToClipboard]="'gradient-primary'"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span>primary</span>
+            <div class="variant-color" *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]" [class]="'bg-primary-light-' + color">
+              .bg-primary-light-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-primary-light-' + color)"
+                [cdkCopyToClipboard]="'bg-primary-light-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span class="text-white">primary</span>
+            <div
+              class="variant-color text-white"
+              *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
+              [class]="'bg-primary-dark-' + color"
+            >
+              .bg-primary-dark-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-primary-dark-' + color)"
+                [cdkCopyToClipboard]="'bg-primary-dark-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
+        <div class="bg-secondry">
+          <div class="">
+            <div class="variant-color text-white gradient-secondry">
+              .gradient-secondry
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('gradient-secondry')"
+                [cdkCopyToClipboard]="'gradient-secondry'"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span>secondry</span>
+            <div class="variant-color" *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]" [class]="'bg-secondry-light-' + color">
+              .bg-secondry-light-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-secondry-light-' + color)"
+                [cdkCopyToClipboard]="'bg-secondry-light-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span class="text-white">secondry</span>
+            <div
+              class="variant-color text-white"
+              *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
+              [class]="'bg-secondry-dark-' + color"
+            >
+              .bg-secondry-dark-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-secondry-dark-' + color)"
+                [cdkCopyToClipboard]="'bg-secondry-dark-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
+        <div class="bg-third">
+          <div class="">
+            <div class="variant-color text-white gradient-third">
+              .gradient-third
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('gradient-third')"
+                [cdkCopyToClipboard]="'gradient-third'"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span>third</span>
+            <div class="variant-color" *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]" [class]="'bg-third-light-' + color">
+              .bg-third-light-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-third-light-' + color)"
+                [cdkCopyToClipboard]="'bg-third-light-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span class="text-white">third</span>
+            <div
+              class="variant-color text-white"
+              *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
+              [class]="'bg-third-dark-' + color"
+            >
+              .bg-third-dark-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-third-dark-' + color)"
+                [cdkCopyToClipboard]="'bg-third-dark-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
+        <div class="bg-info">
+          <div class="">
+            <div class="variant-color text-white gradient-info">
+              .gradient-info
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('gradient-info')"
+                [cdkCopyToClipboard]="'gradient-info'"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span>info</span>
+            <div class="variant-color" *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]" [class]="'bg-info-light-' + color">
+              .bg-info-light-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-info-light-' + color)"
+                [cdkCopyToClipboard]="'bg-info-light-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span class="text-white">info</span>
+            <div
+              class="variant-color text-white"
+              *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
+              [class]="'bg-info-dark-' + color"
+            >
+              .bg-info-dark-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-info-dark-' + color)"
+                [cdkCopyToClipboard]="'bg-info-dark-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
+        <div class="bg-warning">
+          <div class="">
+            <div class="variant-color text-white gradient-warning">
+              .gradient-warning
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('gradient-warning')"
+                [cdkCopyToClipboard]="'gradient-warning'"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span>warning</span>
+            <div class="variant-color" *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]" [class]="'bg-warning-light-' + color">
+              .bg-warning-light-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-warning-light-' + color)"
+                [cdkCopyToClipboard]="'bg-warning-light-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span class="text-white">warning</span>
+            <div
+              class="variant-color text-white"
+              *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
+              [class]="'bg-warning-dark-' + color"
+            >
+              .bg-warning-dark-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-warning-dark-' + color)"
+                [cdkCopyToClipboard]="'bg-warning-dark-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
+        <div class="bg-success">
+          <div class="">
+            <div class="variant-color text-white gradient-success">
+              .gradient-success
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('gradient-success')"
+                [cdkCopyToClipboard]="'gradient-success'"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span>success</span>
+            <div class="variant-color" *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]" [class]="'bg-success-light-' + color">
+              .bg-success-light-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-success-light-' + color)"
+                [cdkCopyToClipboard]="'bg-success-light-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span class="text-white">success</span>
+            <div
+              class="variant-color text-white"
+              *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
+              [class]="'bg-success-dark-' + color"
+            >
+              .bg-success-dark-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-success-dark-' + color)"
+                [cdkCopyToClipboard]="'bg-success-dark-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
+        <div class="bg-danger">
+          <div class="">
+            <div class="variant-color text-white gradient-danger">
+              .gradient-danger
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('gradient-danger')"
+                [cdkCopyToClipboard]="'gradient-danger'"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span>danger</span>
+            <div class="variant-color" *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]" [class]="'bg-danger-light-' + color">
+              .bg-danger-light-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-danger-light-' + color)"
+                [cdkCopyToClipboard]="'bg-danger-light-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span class="text-white">danger</span>
+            <div
+              class="variant-color text-white"
+              *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
+              [class]="'bg-danger-dark-' + color"
+            >
+              .bg-danger-dark-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-danger-dark-' + color)"
+                [cdkCopyToClipboard]="'bg-danger-dark-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
+        <div class="bg-rose">
+          <div class="">
+            <div class="variant-color text-white gradient-rose">
+              .gradient-rose
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('gradient-rose')"
+                [cdkCopyToClipboard]="'gradient-rose'"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span>rose</span>
+            <div class="variant-color" *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]" [class]="'bg-rose-light-' + color">
+              .bg-rose-light-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-rose-light-' + color)"
+                [cdkCopyToClipboard]="'bg-rose-light-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span class="text-white">rose</span>
+            <div
+              class="variant-color text-white"
+              *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
+              [class]="'bg-rose-dark-' + color"
+            >
+              .bg-rose-dark-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-rose-dark-' + color)"
+                [cdkCopyToClipboard]="'bg-rose-dark-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
+        <div class="bg-purple">
+          <div class="">
+            <div class="variant-color text-white gradient-purple">
+              .gradient-purple
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('gradient-purple')"
+                [cdkCopyToClipboard]="'gradient-purple'"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span>purple</span>
+            <div class="variant-color" *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]" [class]="'bg-purple-light-' + color">
+              .bg-purple-light-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-purple-light-' + color)"
+                [cdkCopyToClipboard]="'bg-purple-light-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span class="text-white">purple</span>
+            <div
+              class="variant-color text-white"
+              *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
+              [class]="'bg-purple-dark-' + color"
+            >
+              .bg-purple-dark-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-purple-dark-' + color)"
+                [cdkCopyToClipboard]="'bg-purple-dark-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
+        <div class="bg-white">
+          <div class="">
+            <div class="variant-color text-black gradient-white">
+              .gradient-white
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('gradient-white')"
+                [cdkCopyToClipboard]="'gradient-white'"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span>white</span>
+            <div
+              class="variant-color text-black"
+              *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
+              [class]="'bg-white-light-' + color"
+            >
+              .bg-white-light-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-white-light-' + color)"
+                [cdkCopyToClipboard]="'bg-white-light-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span class="">white</span>
+            <div
+              class="variant-color text-black"
+              *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
+              [class]="'bg-white-dark-' + color"
+            >
+              .bg-white-dark-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-white-dark-' + color)"
+                [cdkCopyToClipboard]="'bg-white-dark-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
+        <div class="bg-black">
+          <div class="">
+            <div class="variant-color text-white gradient-black">
+              .gradient-black
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('gradient-black')"
+                [cdkCopyToClipboard]="'gradient-black'"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span class="text-white">black</span>
+            <div
+              class="variant-color text-white"
+              *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
+              [class]="'bg-black-light-' + color"
+            >
+              .bg-black-light-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-black-light-' + color)"
+                [cdkCopyToClipboard]="'bg-black-light-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span class="text-white">black</span>
+            <div
+              class="variant-color text-white"
+              *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
+              [class]="'bg-black-dark-' + color"
+            >
+              .bg-black-dark-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-black-dark-' + color)"
+                [cdkCopyToClipboard]="'bg-black-dark-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
+      </section>
     </div>
-    <div class="">
-      <span>primary</span>
-      <div class="variant-color" *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]" [class]="'bg-primary-light-' + color">
-        .bg-primary-light-{{ color }}
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('bg-primary-light-' + color)"
-          [cdkCopyToClipboard]="'bg-primary-light-' + color"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-    <div class="">
-      <span class="text-white">primary</span>
-      <div
-        class="variant-color text-white"
-        *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
-        [class]="'bg-primary-dark-' + color"
-      >
-        .bg-primary-dark-{{ color }}
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('bg-primary-dark-' + color)"
-          [cdkCopyToClipboard]="'bg-primary-dark-' + color"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-  </div>
-  <br />
-  <br />
-  <div class="bg-secondry">
-    <div class="">
-      <div class="variant-color text-white gradient-secondry">
-        .gradient-secondry
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('gradient-secondry')"
-          [cdkCopyToClipboard]="'gradient-secondry'"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-    <div class="">
-      <span>secondry</span>
-      <div class="variant-color" *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]" [class]="'bg-secondry-light-' + color">
-        .bg-secondry-light-{{ color }}
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('bg-secondry-light-' + color)"
-          [cdkCopyToClipboard]="'bg-secondry-light-' + color"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-    <div class="">
-      <span class="text-white">secondry</span>
-      <div
-        class="variant-color text-white"
-        *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
-        [class]="'bg-secondry-dark-' + color"
-      >
-        .bg-secondry-dark-{{ color }}
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('bg-secondry-dark-' + color)"
-          [cdkCopyToClipboard]="'bg-secondry-dark-' + color"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-  </div>
-  <br />
-  <br />
-  <div class="bg-third">
-    <div class="">
-      <div class="variant-color text-white gradient-third">
-        .gradient-third
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('gradient-third')"
-          [cdkCopyToClipboard]="'gradient-third'"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-    <div class="">
-      <span>third</span>
-      <div class="variant-color" *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]" [class]="'bg-third-light-' + color">
-        .bg-third-light-{{ color }}
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('bg-third-light-' + color)"
-          [cdkCopyToClipboard]="'bg-third-light-' + color"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-    <div class="">
-      <span class="text-white">third</span>
-      <div
-        class="variant-color text-white"
-        *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
-        [class]="'bg-third-dark-' + color"
-      >
-        .bg-third-dark-{{ color }}
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('bg-third-dark-' + color)"
-          [cdkCopyToClipboard]="'bg-third-dark-' + color"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-  </div>
-  <br />
-  <br />
-  <div class="bg-info">
-    <div class="">
-      <div class="variant-color text-white gradient-info">
-        .gradient-info
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('gradient-info')"
-          [cdkCopyToClipboard]="'gradient-info'"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-    <div class="">
-      <span>info</span>
-      <div class="variant-color" *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]" [class]="'bg-info-light-' + color">
-        .bg-info-light-{{ color }}
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('bg-info-light-' + color)"
-          [cdkCopyToClipboard]="'bg-info-light-' + color"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-    <div class="">
-      <span class="text-white">info</span>
-      <div class="variant-color text-white" *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]" [class]="'bg-info-dark-' + color">
-        .bg-info-dark-{{ color }}
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('bg-info-dark-' + color)"
-          [cdkCopyToClipboard]="'bg-info-dark-' + color"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-  </div>
-  <br />
-  <br />
-  <div class="bg-warning">
-    <div class="">
-      <div class="variant-color text-white gradient-warning">
-        .gradient-warning
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('gradient-warning')"
-          [cdkCopyToClipboard]="'gradient-warning'"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-    <div class="">
-      <span>warning</span>
-      <div class="variant-color" *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]" [class]="'bg-warning-light-' + color">
-        .bg-warning-light-{{ color }}
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('bg-warning-light-' + color)"
-          [cdkCopyToClipboard]="'bg-warning-light-' + color"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-    <div class="">
-      <span class="text-white">warning</span>
-      <div
-        class="variant-color text-white"
-        *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
-        [class]="'bg-warning-dark-' + color"
-      >
-        .bg-warning-dark-{{ color }}
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('bg-warning-dark-' + color)"
-          [cdkCopyToClipboard]="'bg-warning-dark-' + color"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-  </div>
-  <br />
-  <br />
-  <div class="bg-success">
-    <div class="">
-      <div class="variant-color text-white gradient-success">
-        .gradient-success
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('gradient-success')"
-          [cdkCopyToClipboard]="'gradient-success'"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-    <div class="">
-      <span>success</span>
-      <div class="variant-color" *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]" [class]="'bg-success-light-' + color">
-        .bg-success-light-{{ color }}
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('bg-success-light-' + color)"
-          [cdkCopyToClipboard]="'bg-success-light-' + color"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-    <div class="">
-      <span class="text-white">success</span>
-      <div
-        class="variant-color text-white"
-        *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
-        [class]="'bg-success-dark-' + color"
-      >
-        .bg-success-dark-{{ color }}
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('bg-success-dark-' + color)"
-          [cdkCopyToClipboard]="'bg-success-dark-' + color"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-  </div>
-  <br />
-  <br />
-  <div class="bg-danger">
-    <div class="">
-      <div class="variant-color text-white gradient-danger">
-        .gradient-danger
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('gradient-danger')"
-          [cdkCopyToClipboard]="'gradient-danger'"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-    <div class="">
-      <span>danger</span>
-      <div class="variant-color" *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]" [class]="'bg-danger-light-' + color">
-        .bg-danger-light-{{ color }}
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('bg-danger-light-' + color)"
-          [cdkCopyToClipboard]="'bg-danger-light-' + color"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-    <div class="">
-      <span class="text-white">danger</span>
-      <div
-        class="variant-color text-white"
-        *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
-        [class]="'bg-danger-dark-' + color"
-      >
-        .bg-danger-dark-{{ color }}
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('bg-danger-dark-' + color)"
-          [cdkCopyToClipboard]="'bg-danger-dark-' + color"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-  </div>
-  <br />
-  <br />
-  <div class="bg-rose">
-    <div class="">
-      <div class="variant-color text-white gradient-rose">
-        .gradient-rose
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('gradient-rose')"
-          [cdkCopyToClipboard]="'gradient-rose'"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-    <div class="">
-      <span>rose</span>
-      <div class="variant-color" *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]" [class]="'bg-rose-light-' + color">
-        .bg-rose-light-{{ color }}
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('bg-rose-light-' + color)"
-          [cdkCopyToClipboard]="'bg-rose-light-' + color"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-    <div class="">
-      <span class="text-white">rose</span>
-      <div class="variant-color text-white" *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]" [class]="'bg-rose-dark-' + color">
-        .bg-rose-dark-{{ color }}
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('bg-rose-dark-' + color)"
-          [cdkCopyToClipboard]="'bg-rose-dark-' + color"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-  </div>
-  <br />
-  <br />
-  <div class="bg-purple">
-    <div class="">
-      <div class="variant-color text-white gradient-purple">
-        .gradient-purple
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('gradient-purple')"
-          [cdkCopyToClipboard]="'gradient-purple'"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-    <div class="">
-      <span>purple</span>
-      <div class="variant-color" *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]" [class]="'bg-purple-light-' + color">
-        .bg-purple-light-{{ color }}
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('bg-purple-light-' + color)"
-          [cdkCopyToClipboard]="'bg-purple-light-' + color"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-    <div class="">
-      <span class="text-white">purple</span>
-      <div
-        class="variant-color text-white"
-        *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
-        [class]="'bg-purple-dark-' + color"
-      >
-        .bg-purple-dark-{{ color }}
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('bg-purple-dark-' + color)"
-          [cdkCopyToClipboard]="'bg-purple-dark-' + color"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-  </div>
-  <br />
-  <br />
-  <div class="bg-white">
-    <div class="">
-      <div class="variant-color text-black gradient-white">
-        .gradient-white
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('gradient-white')"
-          [cdkCopyToClipboard]="'gradient-white'"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-    <div class="">
-      <span>white</span>
-      <div
-        class="variant-color text-black"
-        *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
-        [class]="'bg-white-light-' + color"
-      >
-        .bg-white-light-{{ color }}
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('bg-white-light-' + color)"
-          [cdkCopyToClipboard]="'bg-white-light-' + color"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-    <div class="">
-      <span class="">white</span>
-      <div
-        class="variant-color text-black"
-        *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
-        [class]="'bg-white-dark-' + color"
-      >
-        .bg-white-dark-{{ color }}
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('bg-white-dark-' + color)"
-          [cdkCopyToClipboard]="'bg-white-dark-' + color"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-  </div>
-  <br />
-  <br />
-  <div class="bg-black">
-    <div class="">
-      <div class="variant-color text-white gradient-black">
-        .gradient-black
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('gradient-black')"
-          [cdkCopyToClipboard]="'gradient-black'"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-    <div class="">
-      <span class="text-white">black</span>
-      <div
-        class="variant-color text-white"
-        *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
-        [class]="'bg-black-light-' + color"
-      >
-        .bg-black-light-{{ color }}
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('bg-black-light-' + color)"
-          [cdkCopyToClipboard]="'bg-black-light-' + color"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-    <div class="">
-      <span class="text-white">black</span>
-      <div
-        class="variant-color text-white"
-        *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
-        [class]="'bg-black-dark-' + color"
-      >
-        .bg-black-dark-{{ color }}
-        <button
-          mat-mini-fab
-          (click)="showCopyToaster('bg-black-dark-' + color)"
-          [cdkCopyToClipboard]="'bg-black-dark-' + color"
-          [matTooltip]="'shared.buttons.copy' | translate"
-          class="bg-black-light-25 text-success-light-20"
-        >
-          <shared-icon name="content_copy" />
-        </button>
-      </div>
-    </div>
-  </div>
-  <br />
-  <br />
+  </section>
 </section>
