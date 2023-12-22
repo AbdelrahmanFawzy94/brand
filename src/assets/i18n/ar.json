@@ -1,14 +1,5 @@
 {
   "shared": {
-    "imageModal": {
-      "previewImage": "عرض الصورة",
-      "openInNewTab": "open in new tab",
-      "close": "close"
-    },
-    "confirm": {
-      "yes": "yes",
-      "no": "no"
-    },
     "validation": {
       "requiredField": "required field",
       "invalidPassword": "invalid password",
@@ -28,10 +19,28 @@
       "copy": "نسح",
       "selectAll": "select all",
       "cancel": "cancel",
-      "reset": "reset"
+      "reset": "reset",
+      "yes": "yes",
+      "no": "no"
     },
     "toaster": {
-      "copped": "تم النسخ"
+      "copyed": "تم النسخ"
+    },
+    "dashboard": {
+      "sideNav": "القائمة الجانبية",
+      "fullscreen": "ملء الشاشة",
+      "settings": "الإعدادات",
+      "actions": "اظهار الاجراءات",
+      "search": "بحث",
+      "language": "اللغة",
+      "notifications": "الإشعارات",
+      "apperance": "المظهر"
     }
+  },
+  "browser_tap_name": {
+    "samples_colors": "samples colors",
+    "samples_typography": "samples typography",
+    "samples_screens": "samples screens",
+    "samples_borders": "samples borders"
   }
 }

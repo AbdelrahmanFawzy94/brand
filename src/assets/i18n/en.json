@@ -1,14 +1,5 @@
 {
   "shared": {
-    "imageModal": {
-      "previewImage": "preview image",
-      "openInNewTab": "open in new tab",
-      "close": "close"
-    },
-    "confirm": {
-      "yes": "yes",
-      "no": "no"
-    },
     "validation": {
       "requiredField": "required field",
       "invalidPassword": "invalid password",
@@ -28,10 +19,28 @@
       "copy": "copy",
       "selectAll": "select all",
       "cancel": "cancel",
-      "reset": "reset"
+      "reset": "reset",
+      "yes": "yes",
+      "no": "no"
     },
     "toaster": {
-      "copped": "copped"
+      "copyed": "copyed"
+    },
+    "dashboard": {
+      "sideNav": "side nav",
+      "fullscreen": "fullscreen",
+      "settings": "settings",
+      "action": "action",
+      "search": "search",
+      "language": "language",
+      "notifications": "notifications",
+      "apperance": "apperance"
     }
+  },
+  "browser_tap_name": {
+    "samples_colors": "samples colors",
+    "samples_typography": "samples typography",
+    "samples_screens": "samples screens",
+    "samples_borders": "samples borders"
   }
 }

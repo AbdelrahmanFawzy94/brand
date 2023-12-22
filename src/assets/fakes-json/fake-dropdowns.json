@@ -1,0 +1,149 @@
+[
+  {
+    "id": "1",
+    "nameEn": "samples",
+    "nameAr": "امثلة",
+    "icon": "app_registration",
+    "routing": "samples",
+    "badgeData": "new",
+    "subDropdowns": [
+      {
+        "id": "2",
+        "nameEn": "colors",
+        "nameAr": "colors",
+        "icon": "colors",
+        "routing": "/samples/colors",
+        "badgeData": "4",
+        "subDropdowns": []
+      },
+      {
+        "id": "3",
+        "nameEn": "borders",
+        "nameAr": "borders",
+        "icon": "border_style",
+        "routing": "/samples/borders",
+        "badgeData": "4",
+        "subDropdowns": []
+      },
+      {
+        "id": "4",
+        "nameEn": "typography",
+        "nameAr": "typography",
+        "icon": "abc",
+        "routing": "/samples/typo",
+        "badgeData": "4",
+        "subDropdowns": []
+      },
+      {
+        "id": "5",
+        "nameEn": "screens",
+        "nameAr": "screens",
+        "icon": "desktop_windows",
+        "routing": "/samples/screens",
+        "badgeData": "4",
+        "subDropdowns": []
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "nameEn": "settings",
+    "nameAr": "settings",
+    "icon": "settings",
+    "routing": "abc",
+    "badgeData": "new",
+    "subDropdowns": [
+      {
+        "id": "7",
+        "nameEn": "colors",
+        "nameAr": "colors",
+        "icon": "",
+        "routing": "/abc/colors",
+        "badgeData": "4",
+        "subDropdowns": []
+      },
+      {
+        "id": "8",
+        "nameEn": "borders",
+        "nameAr": "borders",
+        "icon": "",
+        "routing": "/abc/borders",
+        "badgeData": "4",
+        "subDropdowns": []
+      },
+      {
+        "id": "9",
+        "nameEn": "typography",
+        "nameAr": "typography",
+        "icon": "",
+        "routing": "/abc/typo",
+        "badgeData": "4",
+        "subDropdowns": []
+      },
+      {
+        "id": "10",
+        "nameEn": "screens",
+        "nameAr": "screens",
+        "icon": "",
+        "routing": "/abc/screens",
+        "badgeData": "4",
+        "subDropdowns": []
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "nameEn": "dashboard",
+    "nameAr": "dashboard",
+    "icon": "dashboard",
+    "routing": "/abc/typo",
+    "badgeData": "4",
+    "subDropdowns": []
+  },
+  {
+    "id": "12",
+    "nameEn": "public",
+    "nameAr": "public",
+    "icon": "public",
+    "routing": "abc",
+    "badgeData": "new",
+    "subDropdowns": [
+      {
+        "id": "13",
+        "nameEn": "colors",
+        "nameAr": "colors",
+        "icon": "",
+        "routing": "/abc/colors",
+        "badgeData": "4",
+        "subDropdowns": []
+      },
+      {
+        "id": "14",
+        "nameEn": "borders",
+        "nameAr": "borders",
+        "icon": "",
+        "routing": "/abc/borders",
+        "badgeData": "4",
+        "subDropdowns": []
+      },
+      {
+        "id": "15",
+        "nameEn": "typography",
+        "nameAr": "typography",
+        "icon": "",
+        "routing": "/abc/typo",
+        "badgeData": "4",
+        "subDropdowns": []
+      },
+      {
+        "id": "16",
+        "nameEn": "screens",
+        "nameAr": "screens",
+        "icon": "",
+        "routing": "/abc/screens",
+        "badgeData": "4",
+        "subDropdowns": []
+      }
+    ]
+  }
+]

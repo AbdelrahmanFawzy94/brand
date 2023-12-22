@@ -6,6 +6,8 @@
 @import "assets/scss/grid";
 @import "assets/scss/utils";
 @import "assets/scss/screens";
+@import "assets/scss/animations.scss";
+@import "assets/scss/material-theming.scss";
 
 * {
   box-sizing: border-box;
@@ -51,13 +53,24 @@ body {
   background-color: var(--purple-color);
 }
 
+// reset h1,h2,h3,h4,h5,h6,p
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
 // samples
 .samples {
-  width: 80vw;
+  width: 80%;
   margin: 0 auto;
 
   @include xxl {
-    width: 95vw;
+    width: 95%;
   }
 }
 
@@ -80,6 +93,7 @@ body {
     z-index: -1;
   }
 }
+
 .samples__body {
   background-color: var(--bg-dark-white-1);
   padding: var(--space-xl);

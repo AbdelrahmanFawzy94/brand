@@ -1,0 +1,236 @@
+[
+  {
+    "id": "1",
+    "nameEn": "dashboard",
+    "nameAr": "الرئيسية",
+    "icon": "dashboard",
+    "routing": "samples",
+    "badgeData": "new",
+    "subDropdowns": [
+      {
+        "id": "3",
+        "nameEn": "primary",
+        "nameAr": "الرئيسية1",
+        "icon": "",
+        "routing": "samples/borders",
+        "badgeData": "",
+        "subDropdowns": [
+          {
+            "id": "5",
+            "nameEn": "tune5",
+            "nameAr": "tune5",
+            "icon": "",
+            "routing": "samples/typo",
+            "badgeData": "4",
+            "subDropdowns": []
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "nameEn": "secondry",
+        "nameAr": "الرئيسية2",
+        "icon": "",
+        "routing": "",
+        "badgeData": "4",
+        "subDropdowns": []
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "nameEn": "home2",
+    "nameAr": "الرئيسية2",
+    "icon": "home",
+    "routing": "samples/typo",
+    "badgeData": "8",
+    "subDropdowns": []
+  },
+  {
+    "id": "1",
+    "nameEn": "samples",
+    "nameAr": "امثلة",
+    "icon": "app_registration",
+    "routing": "samples",
+    "badgeData": "new",
+    "subDropdowns": [
+      {
+        "id": "5",
+        "nameEn": "colors",
+        "nameAr": "colors",
+        "icon": "border_style",
+        "routing": "/samples/colors",
+        "badgeData": "4",
+        "subDropdowns": []
+      },
+      {
+        "id": "5",
+        "nameEn": "borders",
+        "nameAr": "borders",
+        "icon": "border_style",
+        "routing": "/samples/borders",
+        "badgeData": "4",
+        "subDropdowns": []
+      },
+      {
+        "id": "5",
+        "nameEn": "typography",
+        "nameAr": "typography",
+        "icon": "abc",
+        "routing": "/samples/typo",
+        "badgeData": "4",
+        "subDropdowns": []
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "nameEn": "home2",
+    "nameAr": "الرئيسية2",
+    "icon": "home",
+    "routing": "samples/typo",
+    "badgeData": "8",
+    "subDropdowns": []
+  },
+  {
+    "id": "1",
+    "nameEn": "home1",
+    "nameAr": "الرئيسية",
+    "icon": "home",
+    "routing": "samples",
+    "badgeData": "new",
+    "subDropdowns": [
+      {
+        "id": "3",
+        "nameEn": "tune3",
+        "nameAr": "tune3",
+        "icon": "",
+        "routing": "samples/borders",
+        "badgeData": "",
+        "subDropdowns": [
+          {
+            "id": "5",
+            "nameEn": "tune5",
+            "nameAr": "tune5",
+            "icon": "",
+            "routing": "samples/typo",
+            "badgeData": "4",
+            "subDropdowns": []
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "nameEn": "tune4",
+        "nameAr": "tune5",
+        "icon": "",
+        "routing": "samples/typo",
+        "badgeData": "",
+        "subDropdowns": []
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "nameEn": "home2",
+    "nameAr": "الرئيسية2",
+    "icon": "home",
+    "routing": "samples/typo",
+    "badgeData": "8",
+    "subDropdowns": []
+  },
+  {
+    "id": "1",
+    "nameEn": "home1",
+    "nameAr": "الرئيسية",
+    "icon": "home",
+    "routing": "samples",
+    "badgeData": "new",
+    "subDropdowns": [
+      {
+        "id": "3",
+        "nameEn": "tune3",
+        "nameAr": "tune3",
+        "icon": "",
+        "routing": "samples/borders",
+        "badgeData": "",
+        "subDropdowns": [
+          {
+            "id": "5",
+            "nameEn": "tune5",
+            "nameAr": "tune5",
+            "icon": "",
+            "routing": "samples/typo",
+            "badgeData": "4",
+            "subDropdowns": []
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "nameEn": "tune4",
+        "nameAr": "tune5",
+        "icon": "",
+        "routing": "samples/typo",
+        "badgeData": "",
+        "subDropdowns": []
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "nameEn": "home2",
+    "nameAr": "الرئيسية2",
+    "icon": "home",
+    "routing": "samples/typo",
+    "badgeData": "8",
+    "subDropdowns": []
+  },
+  {
+    "id": "1",
+    "nameEn": "home1",
+    "nameAr": "الرئيسية",
+    "icon": "home",
+    "routing": "samples",
+    "badgeData": "new",
+    "subDropdowns": [
+      {
+        "id": "3",
+        "nameEn": "tune3",
+        "nameAr": "tune3",
+        "icon": "",
+        "routing": "samples/borders",
+        "badgeData": "",
+        "subDropdowns": [
+          {
+            "id": "5",
+            "nameEn": "tune5",
+            "nameAr": "tune5",
+            "icon": "",
+            "routing": "samples/typo",
+            "badgeData": "4",
+            "subDropdowns": []
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "nameEn": "tune4",
+        "nameAr": "tune5",
+        "icon": "",
+        "routing": "samples/typo",
+        "badgeData": "",
+        "subDropdowns": []
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "nameEn": "home2",
+    "nameAr": "الرئيسية2",
+    "icon": "home",
+    "routing": "samples/typo",
+    "badgeData": "8",
+    "subDropdowns": []
+  }
+]
