@@ -1,5 +1,16 @@
 - adding dashboard component => in progress
-- - user in side nave visability base on input
+- - user menu and translation
+- - notification projection
+- - badge data
+- - animations
+- - theme settings button
+- code component
+- local storage service
+- get language from local storage
+- cdk overlay component
+- charts js
+- badge page
+- prepare SharedTooltip for cdk overlay component
 - adding displays samples component
 - adding shared components
 - adding buttons components
