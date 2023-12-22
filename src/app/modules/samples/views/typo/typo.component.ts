@@ -19,7 +19,7 @@ import { IconComponent } from '@shared';
 export default class TypoComponent {
   showCopyToaster(className: string) {
     this._MatSnackBar.open(
-      `${className} ${this._TranslateService.instant('shared.toaster.copped')}`,
+      `${className} ${this._TranslateService.instant('shared.toaster.copyed')}`,
       this._TranslateService.instant('shared.buttons.close')
     );
   }
