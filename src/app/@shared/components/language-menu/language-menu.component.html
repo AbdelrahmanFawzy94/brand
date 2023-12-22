@@ -1,0 +1,19 @@
+<div class="shared-language-menu">
+  <button class="full-button" mat-button [matMenuTriggerFor]="languageMenu" [class]="buttonClasses">
+    <img [src]="selectedLanguage.img" [alt]="selectedLanguage.language" />
+  </button>
+  <!-- TODO [xPosition]="'after'" is not after bug -->
+  <mat-menu #languageMenu="matMenu" [xPosition]="'after'">
+    <div class="dashboard-laguages-dropdown" [class]="menuClasses">
+      <button mat-menu-item *ngFor="let language of languages" (click)="selectLanguage(language)">
+        <div class="laguage"><img [src]="language.img" [alt]="language.language" /> {{ language.language }}</div>
+      </button>
+      <!-- <button mat-menu-item>
+        <div class="laguage"><img src="https://coderthemes.com/ubold/layouts/default/assets/images/flags/us.jpg" alt="en" /> en</div>
+      </button>
+      <button mat-menu-item>
+        <div class="laguage"><img src="https://coderthemes.com/ubold/layouts/default/assets/images/flags/us.jpg" alt="ar" /> ar</div>
+      </button> -->
+    </div>
+  </mat-menu>
+</div>
