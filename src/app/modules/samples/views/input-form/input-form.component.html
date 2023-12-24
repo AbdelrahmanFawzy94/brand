@@ -24,13 +24,13 @@
 
       <h3 class="typo-headline-medium">2- import GetControlPipe in ts file</h3>
       <div class="align-item-center d-flex gap-sm my-base">
-        <code #importInputComponent class="typo-body-medium text-success my-base d-block">
+        <code #importGetControlPipe class="typo-body-medium text-success my-base d-block">
           import &lcub; SharedInputComponent, GetControlPipe &rcub; from '&commat;shared';
         </code>
         <button
           mat-mini-fab
-          (click)="showCopyToaster(importInputComponent.textContent!)"
-          [cdkCopyToClipboard]="importInputComponent.textContent!"
+          (click)="showCopyToaster(importGetControlPipe.textContent!)"
+          [cdkCopyToClipboard]="importGetControlPipe.textContent!"
           [matTooltip]="'shared.buttons.copy' | translate"
           class="bg-black-light-25 text-success-light-20"
         >
@@ -54,13 +54,13 @@
 
       <h3 class="typo-headline-medium">4- add to imports modules in module or stand alone component pipe (extra step)</h3>
       <div class="align-item-center d-flex gap-sm my-base">
-        <code #addImportInputComponent class="typo-body-medium text-success my-base d-block">
+        <code #addImportInputComponent2 class="typo-body-medium text-success my-base d-block">
           imports: [ SharedInputComponent, GetControlPipe ];
         </code>
         <button
           mat-mini-fab
-          (click)="showCopyToaster(addImportInputComponent.textContent!)"
-          [cdkCopyToClipboard]="addImportInputComponent.textContent!"
+          (click)="showCopyToaster(addImportInputComponent2.textContent!)"
+          [cdkCopyToClipboard]="addImportInputComponent2.textContent!"
           [matTooltip]="'shared.buttons.copy' | translate"
           class="bg-black-light-25 text-success-light-20"
         >
