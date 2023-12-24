@@ -42,6 +42,25 @@
         "routing": "/samples/screens",
         "badgeData": "4",
         "subDropdowns": []
+      },
+      {
+        "id": "6",
+        "nameEn": "form",
+        "nameAr": "form",
+        "icon": "edit_note",
+        "routing": "/samples/form",
+        "badgeData": "4",
+        "subDropdowns": [
+          {
+            "id": "786",
+            "nameEn": "text-input",
+            "nameAr": "text-input",
+            "icon": "",
+            "routing": "/samples/input-form",
+            "badgeData": "4",
+            "subDropdowns": []
+          }
+        ]
       }
     ]
   },
@@ -96,7 +115,7 @@
     "nameEn": "dashboard",
     "nameAr": "dashboard",
     "icon": "dashboard",
-    "routing": "/abc/typo",
+    "routing": "/samples/input-form",
     "badgeData": "4",
     "subDropdowns": []
   },
