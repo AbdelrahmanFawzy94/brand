@@ -1,9 +1,14 @@
-- adding dashboard component => in progress
+- adding dashboard component => complete later
+- - active sub sub menu
+- - enhance ui
 - - user menu and translation
 - - notification projection
 - - badge data
 - - animations
 - - theme settings button
+
+- form
+
 - code component
 - local storage service
 - get language from local storage
