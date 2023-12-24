@@ -29,7 +29,6 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrls: ['./input-form.component.scss'],
 })
 export default class FormComponent implements OnInit {
-  model: string = '';
   form!: FormGroup;
 
   showCopyToaster(className: string) {
