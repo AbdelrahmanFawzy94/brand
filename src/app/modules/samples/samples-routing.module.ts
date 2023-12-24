@@ -43,10 +43,18 @@ const routes: Routes = [
       {
         path: 'input-form',
         data: {
-          title: 'samples_form',
+          title: 'samples_input',
           preload: true,
         },
         loadComponent: () => import('./views/input-form/input-form.component'),
+      },
+      {
+        path: 'textarea-form',
+        data: {
+          title: 'samples_textarea',
+          preload: true,
+        },
+        loadComponent: () => import('./views/textarea-form/textarea-form.component'),
       },
       // {
       //   path: 'signup',

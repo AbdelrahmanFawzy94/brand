@@ -10,6 +10,7 @@ export * from './pipes/get-control.pipe';
 export * from './components/icon/icon.component';
 export * from './components/validations-messages/validations-messages.component';
 export * from './components/input/input.component';
+export * from './components/textarea/textarea.component';
 export * from './components/language-menu/language-menu.component';
 export * from './components/tooltip/tooltip.component';
 export * from './components/general-loader/general-loader.component';

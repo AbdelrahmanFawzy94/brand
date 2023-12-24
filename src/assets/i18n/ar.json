@@ -46,6 +46,7 @@
     "samples_typography": "samples typography",
     "samples_screens": "samples screens",
     "samples_borders": "samples borders",
-    "samples_form": "samples form"
+    "samples_input": "samples input",
+    "samples_textarea": "samples textarea"
   }
 }

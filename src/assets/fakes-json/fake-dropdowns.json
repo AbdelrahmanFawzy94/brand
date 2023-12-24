@@ -59,6 +59,15 @@
             "routing": "/samples/input-form",
             "badgeData": "4",
             "subDropdowns": []
+          },
+          {
+            "id": "7876t6",
+            "nameEn": "textarea-input",
+            "nameAr": "textarea-input",
+            "icon": "",
+            "routing": "/samples/textarea-form",
+            "badgeData": "4",
+            "subDropdowns": []
           }
         ]
       }
