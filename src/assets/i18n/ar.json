@@ -1,11 +1,15 @@
 {
   "shared": {
-    "validation": {
-      "requiredField": "required field",
+    "validations": {
+      "requiredField": "حقل مطلوب",
+      "minLength": "أقل عدد من الحروف",
+      "maxLength": "أكثر عدد من الحروف",
+      "minimum": "أقل رقم",
+      "maximum": "أكثر رقم",
+      "theCurrent": "و الحالي",
+      "invalidEmail": "بريد إلكتروني غير صحيح",
       "invalidPassword": "invalid password",
-      "invalidEmail": "invalid email",
       "invalidPhoneNumber": "invalid phone number",
-      "minLength": "min length",
       "startWithSpace": "start With Space"
     },
     "language": {
@@ -41,6 +45,7 @@
     "samples_colors": "samples colors",
     "samples_typography": "samples typography",
     "samples_screens": "samples screens",
-    "samples_borders": "samples borders"
+    "samples_borders": "samples borders",
+    "samples_form": "samples form"
   }
 }

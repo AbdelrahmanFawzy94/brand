@@ -28,3 +28,33 @@ body[dir="rtl"] mat-form-field {
 .mdc-text-field--outlined .mdc-floating-label {
   font-family: var(--font-family) !important;
 }
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled),
+.mdc-text-field--outlined .mdc-notched-outline {
+  background-color: var(--white-color) !important;
+}
+
+.mat-mdc-text-field-wrapper:hover .mat-mdc-form-field-focus-overlay,
+.mat-mdc-text-field-wrapper:focus .mat-mdc-form-field-focus-overlay {
+  background-color: var(--white-color) !important;
+}
+
+.mat-mdc-form-field-infix {
+  z-index: 1;
+}
+
+.mat-mdc-form-field-icon-prefix > shared-icon,
+.mat-mdc-form-field-icon-suffix > shared-icon {
+  padding: 12px;
+}
+
+.mat-mdc-form-field-subscript-wrapper,
+.mat-mdc-form-field-hint-wrapper {
+  display: flex !important;
+  width: 100% !important;
+}
+
+.mat-mdc-form-field-hint-wrapper,
+.mat-mdc-form-field-error-wrapper {
+  position: static !important;
+}

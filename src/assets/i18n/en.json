@@ -1,11 +1,15 @@
 {
   "shared": {
-    "validation": {
+    "validations": {
       "requiredField": "required field",
-      "invalidPassword": "invalid password",
-      "invalidEmail": "invalid email",
-      "invalidPhoneNumber": "invalid phone number",
       "minLength": "min length",
+      "maxLength": "max length",
+      "minimum": "the minimum",
+      "maximum": "the maximum",
+      "theCurrent": "and the current is",
+      "invalidEmail": "invalid email",
+      "invalidPassword": "invalid password",
+      "invalidPhoneNumber": "invalid phone number",
       "startWithSpace": "start With Space"
     },
     "language": {
@@ -41,6 +45,7 @@
     "samples_colors": "samples colors",
     "samples_typography": "samples typography",
     "samples_screens": "samples screens",
-    "samples_borders": "samples borders"
+    "samples_borders": "samples borders",
+    "samples_form": "samples form"
   }
 }

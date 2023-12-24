@@ -1,0 +1,35 @@
+<div class="shared-validations-messages" *ngIf="errors">
+  <div *ngIf="errors['required']" class="error">{{ "shared.validations.requiredField" | translate }}</div>
+
+  <div *ngIf="errors['minlength']" class="error">
+    {{ "shared.validations.minLength" | translate }}<span>{{ errors["minlength"].requiredLength }}</span
+    >{{ "shared.validations.theCurrent" | translate }}<span>{{ errors["minlength"].actualLength }}</span>
+  </div>
+
+  <div *ngIf="errors['maxlength']" class="error">
+    {{ "shared.validations.maxLength" | translate }}<span>{{ errors["maxlength"].requiredLength }}</span
+    >{{ "shared.validations.theCurrent" | translate }}<span>{{ errors["maxlength"].actualLength }}</span>
+  </div>
+
+  <div *ngIf="errors['min']" class="error">
+    {{ "shared.validations.minimum" | translate }}<span>{{ errors["min"].min }}</span
+    >{{ "shared.validations.theCurrent" | translate }}<span>{{ errors["min"].actual }}</span>
+  </div>
+
+  <div *ngIf="errors['max']" class="error">
+    {{ "shared.validations.maximum" | translate }}<span>{{ errors["max"].max }}</span
+    >{{ "shared.validations.theCurrent" | translate }}<span>{{ errors["max"].actual }}</span>
+  </div>
+
+  <div *ngIf="errors['email']" class="error">
+    {{ "shared.validations.invalidEmail" | translate }}
+  </div>
+
+  <!-- TODO add another custom validators errors here -->
+
+  <!-- <ng-container
+    ><span style="color: blue">
+      {{ errors | json }}
+    </span>
+  </ng-container> -->
+</div>

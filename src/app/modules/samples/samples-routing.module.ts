@@ -40,6 +40,14 @@ const routes: Routes = [
         },
         loadComponent: () => import('./views/borders/borders.component'),
       },
+      {
+        path: 'input-form',
+        data: {
+          title: 'samples_form',
+          preload: true,
+        },
+        loadComponent: () => import('./views/input-form/input-form.component'),
+      },
       // {
       //   path: 'signup',
       //   data: {
