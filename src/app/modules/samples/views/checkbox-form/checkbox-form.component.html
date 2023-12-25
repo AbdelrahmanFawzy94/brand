@@ -143,12 +143,17 @@
           (onToggle)="onToggle($event)"
         ></shared-checkbox>
 
-        <shared-checkbox label="second checkbox" [passedFormControl]="form | getControl : 'secondControl'"></shared-checkbox>
+        <shared-checkbox
+          label="second checkbox"
+          [showValidation]="false"
+          [passedFormControl]="form | getControl : 'secondControl'"
+        ></shared-checkbox>
 
         <shared-checkbox
           label="indeterminate is true"
+          [showValidation]="false"
           [passedFormControl]="form | getControl : 'thirdControl'"
-          [indeterminate]="form.controls['firstControl'].valid || form.controls['secondControl'].valid"
+          [indeterminate]="form.controls['firstControl'].valid && !form.controls['secondControl'].valid"
         ></shared-checkbox>
       </fieldset>
 

@@ -9,5 +9,10 @@
 
   .validations {
     padding-inline-start: var(--space-sm);
+    height: 24px;
+
+    &.no-validations {
+      display: none;
+    }
   }
 }

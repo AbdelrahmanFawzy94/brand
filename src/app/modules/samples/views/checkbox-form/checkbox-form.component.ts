@@ -47,8 +47,8 @@ export default class CheckboxFormComponent implements OnInit {
   createForm() {
     this.form = this._FormBuilder.group({
       firstControl: [true, [Validators.requiredTrue]],
-      secondControl: [false, [Validators.requiredTrue]],
-      thirdControl: [false, [Validators.requiredTrue]],
+      secondControl: [false],
+      thirdControl: [false],
     });
   }
 

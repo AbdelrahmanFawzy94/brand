@@ -10,8 +10,8 @@
     >
       {{ label }}
     </mat-checkbox>
-    <div class="validations" *ngIf="passedFormControl.touched">
-      <shared-validations-messages [errors]="passedFormControl.errors"></shared-validations-messages>
+    <div class="validations" [class.no-validations]="showValidation">
+      <shared-validations-messages *ngIf="passedFormControl.touched" [errors]="passedFormControl.errors"></shared-validations-messages>
     </div>
   </ng-container>
 
