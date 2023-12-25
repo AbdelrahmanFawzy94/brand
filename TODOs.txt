@@ -8,8 +8,6 @@
 - - theme settings button
 
 - form
-- - adding checkbox
-- - adding checkbox indeterminate
 - - adding radio button
 - - adding single select with autocomplete
 - - adding multi select with select all autocomplete
