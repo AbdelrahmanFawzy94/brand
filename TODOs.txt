@@ -8,10 +8,11 @@
 - - theme settings button
 
 - form
-- - adding radio button
+- - adding date picker
 - - adding single select with autocomplete
 - - adding multi select with select all autocomplete
 - - adding disabled for all forms components
+- - adding required for all non reactive form forms components
 
 - code component
 - local storage service
