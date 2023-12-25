@@ -77,6 +77,15 @@
             "routing": "/samples/checkbox-form",
             "badgeData": "4",
             "subDropdowns": []
+          },
+          {
+            "id": "fda3",
+            "nameEn": "radio-buttons-input",
+            "nameAr": "radio-buttons-input",
+            "icon": "",
+            "routing": "/samples/radio-buttons-form",
+            "badgeData": "4",
+            "subDropdowns": []
           }
         ]
       }

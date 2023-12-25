@@ -64,6 +64,14 @@ const routes: Routes = [
         },
         loadComponent: () => import('./views/checkbox-form/checkbox-form.component'),
       },
+      {
+        path: 'radio-buttons-form',
+        data: {
+          title: 'samples_radio-buttons',
+          preload: true,
+        },
+        loadComponent: () => import('./views/radio-buttons-form/radio-buttons-form.component'),
+      },
       // {
       //   path: 'signup',
       //   data: {
