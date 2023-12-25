@@ -145,13 +145,13 @@
 
         <shared-checkbox
           label="second checkbox"
-          [showValidation]="false"
+          [hideValidation]="true"
           [passedFormControl]="form | getControl : 'secondControl'"
         ></shared-checkbox>
 
         <shared-checkbox
           label="indeterminate is true"
-          [showValidation]="false"
+          [hideValidation]="true"
           [passedFormControl]="form | getControl : 'thirdControl'"
           [indeterminate]="form.controls['firstControl'].valid && !form.controls['secondControl'].valid"
         ></shared-checkbox>

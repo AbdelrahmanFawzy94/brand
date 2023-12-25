@@ -17,7 +17,7 @@ export class SharedTextareaComponent {
   @Input() placeholder: string = '';
   @Input() passedFormControl!: FormControl;
   @Input() appearance: 'fill' | 'outline' = 'outline';
-  @Input() showValidation: boolean = false;
+  @Input() hideValidation: boolean = false;
   @Input() hint: string = '';
   @Input() matPrefixIconName!: string;
   @Input() matSuffixIconName!: string;

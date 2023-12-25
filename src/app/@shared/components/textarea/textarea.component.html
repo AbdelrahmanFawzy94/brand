@@ -1,7 +1,7 @@
 <div class="shared-input">
   <ng-container *ngIf="passedFormControl">
     <!-- floatLabel="always" always | auto -->
-    <mat-form-field [appearance]="appearance" [class.no-validations]="showValidation">
+    <mat-form-field [appearance]="appearance" [class.no-validations]="hideValidation">
       <mat-label class="text-capitalize">{{ label }}</mat-label>
       <textarea matInput [formControl]="passedFormControl" [value]="passedFormControl.value" [placeholder]="placeholder"></textarea>
       <!-- TODO matPrefix not working with [appearance]="outline" -->
@@ -19,7 +19,7 @@
   </ng-container>
 
   <ng-container *ngIf="!passedFormControl">
-    <mat-form-field [appearance]="appearance" [class.no-validations]="showValidation">
+    <mat-form-field [appearance]="appearance" [class.no-validations]="hideValidation">
       <mat-label class="text-capitalize">{{ label }}</mat-label>
       <textarea #textarea matInput (input)="onInput.emit(textarea.value)" [placeholder]="placeholder"></textarea>
       <shared-icon *ngIf="matPrefixIconName" matPrefix [name]="matPrefixIconName"></shared-icon>

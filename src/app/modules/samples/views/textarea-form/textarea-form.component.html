@@ -115,7 +115,7 @@
         </h3>
         <shared-textarea [passedFormControl]="form | getControl : 'firstControl'" appearance="outline" label="test label"></shared-textarea>
         <h3 class="d-flex align-item-center justify-content-between mb-xs typo-display-small">
-          <span> filled appearance</span>
+          <span> filled appearance with hidden validation</span>
           <!-- <button
             mat-mini-fab
             (click)="showCopyToaster('typo-display-small')"
@@ -127,7 +127,12 @@
           </button> -->
         </h3>
 
-        <shared-textarea [passedFormControl]="form | getControl : 'firstControl'" appearance="fill" label="test label"></shared-textarea>
+        <shared-textarea
+          [passedFormControl]="form | getControl : 'firstControl'"
+          [hideValidation]="true"
+          appearance="fill"
+          label="test label"
+        ></shared-textarea>
       </fieldset>
 
       <fieldset class="mb-xl border-radius-medium p-xl">

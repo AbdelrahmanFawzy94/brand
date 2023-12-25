@@ -6,7 +6,7 @@ button > [class*="label"] {
 }
 
 mat-form-field.no-validations > [class*="subscript"] {
-  display: none;
+  display: none !important;
 }
 
 mat-list-item [class*="content"] {

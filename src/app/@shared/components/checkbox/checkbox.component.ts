@@ -14,7 +14,7 @@ import { MatCheckboxChange, MatCheckboxModule } from '@angular/material/checkbox
 export class SharedCheckboxComponent {
   @Input({ required: true }) label: string = '';
   @Input() passedFormControl!: FormControl;
-  @Input() showValidation: boolean = false;
+  @Input() hideValidation: boolean = false;
   @Input() indeterminate: boolean = false;
   @Input() labelPosition: 'before' | 'after' = 'after';
   @Output() onToggle = new EventEmitter<boolean>();
