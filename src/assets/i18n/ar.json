@@ -47,6 +47,7 @@
     "samples_screens": "samples screens",
     "samples_borders": "samples borders",
     "samples_input": "samples input",
-    "samples_textarea": "samples textarea"
+    "samples_textarea": "samples textarea",
+    "samples_checkbox": "samples checkbox"
   }
 }

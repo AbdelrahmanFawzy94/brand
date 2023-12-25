@@ -8,6 +8,8 @@
   display: inline-block;
   .error {
     font-family: var(--font-family);
+    color: var(--danger-color);
+    font-size: var(--space-sm);
 
     span {
       margin: 0 var(--space-xs);

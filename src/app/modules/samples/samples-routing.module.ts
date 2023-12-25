@@ -56,6 +56,14 @@ const routes: Routes = [
         },
         loadComponent: () => import('./views/textarea-form/textarea-form.component'),
       },
+      {
+        path: 'checkbox-form',
+        data: {
+          title: 'samples_checkbox',
+          preload: true,
+        },
+        loadComponent: () => import('./views/checkbox-form/checkbox-form.component'),
+      },
       // {
       //   path: 'signup',
       //   data: {

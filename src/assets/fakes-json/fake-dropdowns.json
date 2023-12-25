@@ -68,6 +68,15 @@
             "routing": "/samples/textarea-form",
             "badgeData": "4",
             "subDropdowns": []
+          },
+          {
+            "id": "fda3",
+            "nameEn": "checkbox-input",
+            "nameAr": "checkbox-input",
+            "icon": "",
+            "routing": "/samples/checkbox-form",
+            "badgeData": "4",
+            "subDropdowns": []
           }
         ]
       }

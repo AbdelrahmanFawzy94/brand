@@ -1,0 +1,190 @@
+<!-- TODO container-->
+<section class="typo samples">
+  <header class="samples__header">
+    <h2 class="typo-display-large mb-xl margin-top-none">Forms</h2>
+    <p class="typo-body-medium mb-xl">Use form to present your design and content as clearly and efficiently as possible.</p>
+  </header>
+  <section class="samples__body">
+    <div class="samples-panel">
+      <h3 class="typo-headline-medium">1- import SharedCheckboxComponent in ts file</h3>
+      <div class="align-item-center d-flex gap-sm my-base">
+        <code #sharedCheckboxComponent class="typo-body-medium text-success my-base d-block">
+          import &lcub; SharedCheckboxComponent &rcub; from '&commat;shared';
+        </code>
+        <button
+          mat-mini-fab
+          (click)="showCopyToaster(sharedCheckboxComponent.textContent!)"
+          [cdkCopyToClipboard]="sharedCheckboxComponent.textContent!"
+          [matTooltip]="'shared.buttons.copy' | translate"
+          class="bg-black-light-25 text-success-light-20"
+        >
+          <shared-icon name="content_copy" />
+        </button>
+      </div>
+
+      <h3 class="typo-headline-medium">2- import GetControlPipe in ts file</h3>
+      <div class="align-item-center d-flex gap-sm my-base">
+        <code #importGetControlPipe class="typo-body-medium text-success my-base d-block">
+          import &lcub; SharedCheckboxComponent, GetControlPipe &rcub; from '&commat;shared';
+        </code>
+        <button
+          mat-mini-fab
+          (click)="showCopyToaster(importGetControlPipe.textContent!)"
+          [cdkCopyToClipboard]="importGetControlPipe.textContent!"
+          [matTooltip]="'shared.buttons.copy' | translate"
+          class="bg-black-light-25 text-success-light-20"
+        >
+          <shared-icon name="content_copy" />
+        </button>
+      </div>
+
+      <h3 class="typo-headline-medium">3- add to imports modules in module or stand alone component</h3>
+      <div class="align-item-center d-flex gap-sm my-base">
+        <code #addImportInputComponent class="typo-body-medium text-success my-base d-block"> imports: [ SharedCheckboxComponent ]; </code>
+        <button
+          mat-mini-fab
+          (click)="showCopyToaster(addImportInputComponent.textContent!)"
+          [cdkCopyToClipboard]="addImportInputComponent.textContent!"
+          [matTooltip]="'shared.buttons.copy' | translate"
+          class="bg-black-light-25 text-success-light-20"
+        >
+          <shared-icon name="content_copy" />
+        </button>
+      </div>
+
+      <h3 class="typo-headline-medium">4- add to imports modules in module or stand alone component pipe (extra step)</h3>
+      <div class="align-item-center d-flex gap-sm my-base">
+        <code #addImportInputComponent2 class="typo-body-medium text-success my-base d-block">
+          imports: [ SharedCheckboxComponent, GetControlPipe ];
+        </code>
+        <button
+          mat-mini-fab
+          (click)="showCopyToaster(addImportInputComponent2.textContent!)"
+          [cdkCopyToClipboard]="addImportInputComponent2.textContent!"
+          [matTooltip]="'shared.buttons.copy' | translate"
+          class="bg-black-light-25 text-success-light-20"
+        >
+          <shared-icon name="content_copy" />
+        </button>
+      </div>
+
+      <h3 class="typo-headline-medium">5- in html file declare input element with pipe</h3>
+      <div class="align-item-center d-flex gap-sm my-base">
+        <code #addHtmlInputComponent class="typo-body-medium text-success my-base d-block">
+          &lt;shared-checkbox label="first checkbox" [passedFormControl]="form | getControl : 'firstControl'"
+          (onToggle)="onToggle($event)"&gt;&lt;/shared-checkbox&gt;
+        </code>
+        <button
+          mat-mini-fab
+          (click)="showCopyToaster(addHtmlInputComponent.textContent!)"
+          [cdkCopyToClipboard]="addHtmlInputComponent.textContent!"
+          [matTooltip]="'shared.buttons.copy' | translate"
+          class="bg-black-light-25 text-success-light-20"
+        >
+          <shared-icon name="content_copy" />
+        </button>
+      </div>
+
+      <h3 class="typo-headline-medium">or without pipe and normal control (not inside any form group)</h3>
+      <div class="align-item-center d-flex gap-sm my-base">
+        <code #addHtmlInputComponent2 class="typo-body-medium text-success my-base d-block">
+          &lt;shared-checkbox label="first checkbox" [passedFormControl]="formControl"
+          (onToggle)="onToggle($event)"&gt;&lt;/shared-input&gt;
+        </code>
+        <button
+          mat-mini-fab
+          (click)="showCopyToaster(addHtmlInputComponent2.textContent!)"
+          [cdkCopyToClipboard]="addHtmlInputComponent2.textContent!"
+          [matTooltip]="'shared.buttons.copy' | translate"
+          class="bg-black-light-25 text-success-light-20"
+        >
+          <shared-icon name="content_copy" />
+        </button>
+      </div>
+
+      <fieldset class="mb-xl border-radius-medium p-xl">
+        <h3 class="d-flex align-item-center justify-content-between mb-xs typo-display-small">
+          <span> reactive form with errors</span>
+          <!-- <button
+            mat-mini-fab
+            (click)="showCopyToaster('typo-display-small')"
+            [cdkCopyToClipboard]="'typo-display-small'"
+            [matTooltip]="'shared.buttons.copy' | translate"
+            class="bg-black-light-25 text-success-light-20"
+          >
+            <shared-icon name="content_copy" />
+          </button> -->
+        </h3>
+        <shared-checkbox
+          label="test label"
+          [passedFormControl]="form | getControl : 'firstControl'"
+          (onToggle)="onToggle($event)"
+        ></shared-checkbox>
+        <!-- {{ form.value | json }} -->
+      </fieldset>
+
+      <fieldset class="mb-xl border-radius-medium p-xl">
+        <h3 class="d-flex align-item-center justify-content-between mb-xs typo-display-small">
+          <span> reactive form with indeterminate</span>
+          <!-- <button
+            mat-mini-fab
+            (click)="showCopyToaster('typo-display-small')"
+            [cdkCopyToClipboard]="'typo-display-small'"
+            [matTooltip]="'shared.buttons.copy' | translate"
+            class="bg-black-light-25 text-success-light-20"
+          >
+            <shared-icon name="content_copy" />
+          </button> -->
+        </h3>
+
+        <shared-checkbox
+          label="first checkbox"
+          [passedFormControl]="form | getControl : 'firstControl'"
+          (onToggle)="onToggle($event)"
+        ></shared-checkbox>
+
+        <shared-checkbox label="second checkbox" [passedFormControl]="form | getControl : 'secondControl'"></shared-checkbox>
+
+        <shared-checkbox
+          label="indeterminate is true"
+          [passedFormControl]="form | getControl : 'thirdControl'"
+          [indeterminate]="form.controls['firstControl'].valid || form.controls['secondControl'].valid"
+        ></shared-checkbox>
+      </fieldset>
+
+      <fieldset class="mb-xl border-radius-medium p-xl">
+        <h3 class="d-flex align-item-center justify-content-between mb-xs typo-display-small">
+          <span>normal output (event emitter)</span>
+          <!-- <button
+            mat-mini-fab
+            (click)="showCopyToaster('typo-display-small')"
+            [cdkCopyToClipboard]="'typo-display-small'"
+            [matTooltip]="'shared.buttons.copy' | translate"
+            class="bg-black-light-25 text-success-light-20"
+          >
+            <shared-icon name="content_copy" />
+          </button> -->
+        </h3>
+
+        <shared-checkbox label="test label" (onToggle)="onToggle($event)"></shared-checkbox>
+      </fieldset>
+
+      <fieldset class="mb-xl border-radius-medium p-xl">
+        <h3 class="d-flex align-item-center justify-content-between mb-xs typo-display-small">
+          <span>normal output (event emitter) with indeterminate</span>
+          <!-- <button
+            mat-mini-fab
+            (click)="showCopyToaster('typo-display-small')"
+            [cdkCopyToClipboard]="'typo-display-small'"
+            [matTooltip]="'shared.buttons.copy' | translate"
+            class="bg-black-light-25 text-success-light-20"
+          >
+            <shared-icon name="content_copy" />
+          </button> -->
+        </h3>
+
+        <shared-checkbox label="indeterminate is true" [indeterminate]="true" (onToggle)="onToggle($event)"></shared-checkbox>
+      </fieldset>
+    </div>
+  </section>
+</section>
