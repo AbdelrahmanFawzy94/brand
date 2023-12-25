@@ -16,8 +16,9 @@ mat-list-item [class*="content"] {
   height: 100%;
 }
 
-.mat-badge-content {
-  font-family: var(--font-family);
+.mat-badge-content,
+.mat-mdc-radio-button .mdc-form-field {
+  font-family: var(--font-family) !important;
 }
 
 body[dir="rtl"] mat-form-field {
@@ -57,4 +58,8 @@ body[dir="rtl"] mat-form-field {
 .mat-mdc-form-field-hint-wrapper,
 .mat-mdc-form-field-error-wrapper {
   position: static !important;
+}
+
+.mdc-form-field > label {
+  cursor: pointer !important;
 }

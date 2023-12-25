@@ -6,15 +6,15 @@
   </header>
   <section class="samples__body">
     <div class="samples-panel">
-      <h3 class="typo-headline-medium">1- import SharedCheckboxComponent in ts file</h3>
+      <h3 class="typo-headline-medium">1- import SharedRadioButtonsComponent in ts file</h3>
       <div class="align-item-center d-flex gap-sm my-base">
-        <code #sharedCheckboxComponent class="typo-body-medium text-success my-base d-block">
-          import &lcub; SharedCheckboxComponent &rcub; from '&commat;shared';
+        <code #sharedRadioButtonsComponent class="typo-body-medium text-success my-base d-block">
+          import &lcub; SharedRadioButtonsComponent &rcub; from '&commat;shared';
         </code>
         <button
           mat-mini-fab
-          (click)="showCopyToaster(sharedCheckboxComponent.textContent!)"
-          [cdkCopyToClipboard]="sharedCheckboxComponent.textContent!"
+          (click)="showCopyToaster(sharedRadioButtonsComponent.textContent!)"
+          [cdkCopyToClipboard]="sharedRadioButtonsComponent.textContent!"
           [matTooltip]="'shared.buttons.copy' | translate"
           class="bg-black-light-25 text-success-light-20"
         >
@@ -25,7 +25,7 @@
       <h3 class="typo-headline-medium">2- import GetControlPipe in ts file</h3>
       <div class="align-item-center d-flex gap-sm my-base">
         <code #importGetControlPipe class="typo-body-medium text-success my-base d-block">
-          import &lcub; SharedCheckboxComponent, GetControlPipe &rcub; from '&commat;shared';
+          import &lcub; SharedRadioButtonsComponent, GetControlPipe &rcub; from '&commat;shared';
         </code>
         <button
           mat-mini-fab
@@ -40,7 +40,9 @@
 
       <h3 class="typo-headline-medium">3- add to imports modules in module or stand alone component</h3>
       <div class="align-item-center d-flex gap-sm my-base">
-        <code #addImportInputComponent class="typo-body-medium text-success my-base d-block"> imports: [ SharedCheckboxComponent ]; </code>
+        <code #addImportInputComponent class="typo-body-medium text-success my-base d-block">
+          imports: [ SharedRadioButtonsComponent ];
+        </code>
         <button
           mat-mini-fab
           (click)="showCopyToaster(addImportInputComponent.textContent!)"
@@ -55,7 +57,7 @@
       <h3 class="typo-headline-medium">4- add to imports modules in module or stand alone component pipe (extra step)</h3>
       <div class="align-item-center d-flex gap-sm my-base">
         <code #addImportInputComponent2 class="typo-body-medium text-success my-base d-block">
-          imports: [ SharedCheckboxComponent, GetControlPipe ];
+          imports: [ SharedRadioButtonsComponent, GetControlPipe ];
         </code>
         <button
           mat-mini-fab
@@ -71,8 +73,8 @@
       <h3 class="typo-headline-medium">5- in html file declare input element with pipe</h3>
       <div class="align-item-center d-flex gap-sm my-base">
         <code #addHtmlInputComponent class="typo-body-medium text-success my-base d-block">
-          &lt;shared-checkbox label="first checkbox" [passedFormControl]="form | getControl : 'firstControl'"
-          (onToggle)="onToggle($event)"&gt;&lt;/shared-checkbox&gt;
+          &lt;shared-radio-buttons labelkey="nameEn" name="name" labelPosition="before" [passedFormControl]="form | getControl :
+          'firstControl'" [radioButtonsList]="radioButtonsList" (onSelection)="onSelection($event)"&gt;&lt;/shared-radio-buttons&gt;
         </code>
         <button
           mat-mini-fab
@@ -88,8 +90,8 @@
       <h3 class="typo-headline-medium">or without pipe and normal control (not inside any form group)</h3>
       <div class="align-item-center d-flex gap-sm my-base">
         <code #addHtmlInputComponent2 class="typo-body-medium text-success my-base d-block">
-          &lt;shared-checkbox label="first checkbox" [passedFormControl]="formControl"
-          (onToggle)="onToggle($event)"&gt;&lt;/shared-input&gt;
+          &lt;shared-radio-buttons labelkey="nameEn" name="name" labelPosition="before" [passedFormControl]="formControl"
+          [radioButtonsList]="radioButtonsList" (onSelection)="onSelection($event)"&gt;&lt;/shared-radio-buttons&gt;
         </code>
         <button
           mat-mini-fab
@@ -115,17 +117,19 @@
             <shared-icon name="content_copy" />
           </button> -->
         </h3>
-        <!-- <shared-checkbox
-          label="test label"
+        <shared-radio-buttons
+          labelkey="nameEn"
+          name="name"
           [passedFormControl]="form | getControl : 'firstControl'"
-          (onToggle)="onToggle($event)"
-        ></shared-checkbox> -->
+          [radioButtonsList]="radioButtonsList"
+          (onSelection)="onSelection($event)"
+        ></shared-radio-buttons>
         <!-- {{ form.value | json }} -->
       </fieldset>
 
       <fieldset class="mb-xl border-radius-medium p-xl">
         <h3 class="d-flex align-item-center justify-content-between mb-xs typo-display-small">
-          <span> reactive form with indeterminate</span>
+          <span> reactive form with errors and labelPosition before</span>
           <!-- <button
             mat-mini-fab
             (click)="showCopyToaster('typo-display-small')"
@@ -137,24 +141,14 @@
           </button> -->
         </h3>
 
-        <!-- <shared-checkbox
-          label="first checkbox"
+        <shared-radio-buttons
+          labelkey="nameAr"
+          name="name2"
           [passedFormControl]="form | getControl : 'firstControl'"
-          (onToggle)="onToggle($event)"
-        ></shared-checkbox>
-
-        <shared-checkbox
-          label="second checkbox"
-          [hideValidation]="true"
-          [passedFormControl]="form | getControl : 'secondControl'"
-        ></shared-checkbox>
-
-        <shared-checkbox
-          label="indeterminate is true"
-          [hideValidation]="true"
-          [passedFormControl]="form | getControl : 'thirdControl'"
-          [indeterminate]="form.controls['firstControl'].valid && !form.controls['secondControl'].valid"
-        ></shared-checkbox> -->
+          [radioButtonsList]="radioButtonsList"
+          labelPosition="before"
+          (onSelection)="onSelection($event)"
+        ></shared-radio-buttons>
       </fieldset>
 
       <fieldset class="mb-xl border-radius-medium p-xl">
@@ -171,12 +165,17 @@
           </button> -->
         </h3>
 
-        <!-- <shared-checkbox label="test label" (onToggle)="onToggle($event)"></shared-checkbox> -->
+        <shared-radio-buttons
+          labelkey="nameEn"
+          name="name3"
+          [radioButtonsList]="radioButtonsList"
+          (onSelection)="onSelection($event)"
+        ></shared-radio-buttons>
       </fieldset>
 
       <fieldset class="mb-xl border-radius-medium p-xl">
         <h3 class="d-flex align-item-center justify-content-between mb-xs typo-display-small">
-          <span>normal output (event emitter) with indeterminate</span>
+          <span>normal output (event emitter) and labelPosition before</span>
           <!-- <button
             mat-mini-fab
             (click)="showCopyToaster('typo-display-small')"
@@ -188,7 +187,13 @@
           </button> -->
         </h3>
 
-        <!-- <shared-checkbox label="indeterminate is true" [indeterminate]="true" (onToggle)="onToggle($event)"></shared-checkbox> -->
+        <shared-radio-buttons
+          labelkey="nameAr"
+          name="name4"
+          [radioButtonsList]="radioButtonsList"
+          labelPosition="before"
+          (onSelection)="onSelection($event)"
+        ></shared-radio-buttons>
       </fieldset>
     </div>
   </section>

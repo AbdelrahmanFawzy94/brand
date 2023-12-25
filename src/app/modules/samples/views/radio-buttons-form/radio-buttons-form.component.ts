@@ -7,8 +7,9 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TranslateService } from '@ngx-translate/core';
-import { GetControlPipe, IconComponent, SharedCheckboxComponent } from '@shared';
+import { GetControlPipe, IconComponent, SharedCheckboxComponent, SharedRadioButtonsComponent } from '@shared';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatRadioChange } from '@angular/material/radio';
 
 @Component({
   selector: 'app-radio-buttons-form',
@@ -22,13 +23,19 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
     MatSnackBarModule,
     TranslateModule,
     IconComponent,
-    SharedCheckboxComponent,
+    SharedRadioButtonsComponent,
     GetControlPipe,
   ],
   templateUrl: './radio-buttons-form.component.html',
   styleUrls: ['./radio-buttons-form.component.scss'],
 })
 export default class RadioButtonsFormComponent implements OnInit {
+  // must have id and disabled
+  radioButtonsList: any[] = [
+    { id: 1, nameEn: 'name En 1', nameAr: 'اسم 1' },
+    { id: 2, nameEn: 'name En 2', nameAr: 'اسم 2' },
+    { id: 3, nameEn: 'name En 3', nameAr: 'اسم 3' },
+  ];
   form!: FormGroup;
 
   showCopyToaster(className: string) {
@@ -46,13 +53,13 @@ export default class RadioButtonsFormComponent implements OnInit {
 
   createForm() {
     this.form = this._FormBuilder.group({
-      firstControl: [true, [Validators.requiredTrue]],
+      firstControl: [true, [Validators.required, Validators.min(2)]],
       secondControl: [false],
       thirdControl: [false],
     });
   }
 
-  onToggle(value: boolean) {
+  onSelection(value: string | number) {
     console.warn(value);
   }
 }
