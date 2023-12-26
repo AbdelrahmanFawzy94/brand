@@ -72,6 +72,14 @@ const routes: Routes = [
         },
         loadComponent: () => import('./views/radio-buttons-form/radio-buttons-form.component'),
       },
+      {
+        path: 'datepicker-form',
+        data: {
+          title: 'samples_datepicker-form',
+          preload: true,
+        },
+        loadComponent: () => import('./views/datepicker-form/datepicker-form.component'),
+      },
       // {
       //   path: 'signup',
       //   data: {

@@ -79,11 +79,20 @@
             "subDropdowns": []
           },
           {
-            "id": "fda3",
+            "id": "kjf9",
             "nameEn": "radio-buttons-input",
             "nameAr": "radio-buttons-input",
             "icon": "",
             "routing": "/samples/radio-buttons-form",
+            "badgeData": "4",
+            "subDropdowns": []
+          },
+          {
+            "id": "sd87",
+            "nameEn": "datepicker-input",
+            "nameAr": "datepicker-input",
+            "icon": "",
+            "routing": "/samples/datepicker-form",
             "badgeData": "4",
             "subDropdowns": []
           }
