@@ -8,12 +8,16 @@
 - - theme settings button
 
 - form
-- - adding date picker
+- - adding date picker and date range picker (dont forget the hijri)
 - - adding single select with autocomplete
 - - adding multi select with select all autocomplete
+- - adding range
+- - adding stars
+
 - - adding disabled for all forms components
 - - adding required for all non reactive form forms components
 
+- customize snakbar
 - code component
 - local storage service
 - get language from local storage
