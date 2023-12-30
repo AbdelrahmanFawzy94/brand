@@ -1,7 +1,7 @@
 import { Directive, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[appStopProbagation]',
+  selector: '[sharedStopProbagation]',
   standalone: true,
 })
 export class StopProbagationDirective {
