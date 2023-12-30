@@ -24,9 +24,7 @@ export class SharedInputComponent {
   @Output() onInput = new EventEmitter<string>();
   @ViewChild('input') input!: ElementRef<HTMLInputElement>;
 
-  constructor() {
-    // this.passedFormControl.valueChanges.subscribe((data) => console.warn(this.passedFormControl.errors));
-  }
+  constructor() {}
 
   // reactive form input
   clearControl() {

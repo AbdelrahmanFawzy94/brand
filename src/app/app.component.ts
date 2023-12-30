@@ -8,7 +8,6 @@ import { LoaderService, LocalStorageService } from '@shared';
 import { Title } from '@angular/platform-browser';
 import { DOCUMENT } from '@angular/common';
 
-@UntilDestroy()
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -74,8 +73,7 @@ export class AppComponent implements OnInit {
           return route;
         }),
         filter((route) => route.outlet === 'primary'),
-        switchMap((route) => route.data),
-        untilDestroyed(this)
+        switchMap((route) => route.data)
       )
       .subscribe((routeData) => {
         const title = routeData['title'];
