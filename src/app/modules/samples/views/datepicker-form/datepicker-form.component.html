@@ -1,15 +1,15 @@
 <!-- TODO container-->
 <section class="typo samples">
   <header class="samples__header">
-    <h2 class="typo-display-large mb-xl margin-top-none">Forms</h2>
+    <h2 class="typo-display-large mb-xl margin-top-none">datepicker Forms</h2>
     <p class="typo-body-medium mb-xl">Use form to present your design and content as clearly and efficiently as possible.</p>
   </header>
   <section class="samples__body">
     <div class="samples-panel">
-      <h3 class="typo-headline-medium">1- import SharedInputComponent in ts file</h3>
+      <h3 class="typo-headline-medium">1- import SharedDatepickerComponent in ts file</h3>
       <div class="align-item-center d-flex gap-sm my-base">
         <code #importInputComponent class="typo-body-medium text-success my-base d-block">
-          import &lcub; SharedInputComponent &rcub; from '&commat;shared';
+          import &lcub; SharedDatepickerComponent &rcub; from '&commat;shared';
         </code>
         <button
           mat-mini-fab
@@ -25,7 +25,7 @@
       <h3 class="typo-headline-medium">2- import GetControlPipe in ts file</h3>
       <div class="align-item-center d-flex gap-sm my-base">
         <code #importGetControlPipe class="typo-body-medium text-success my-base d-block">
-          import &lcub; SharedInputComponent, GetControlPipe &rcub; from '&commat;shared';
+          import &lcub; SharedDatepickerComponent, GetControlPipe &rcub; from '&commat;shared';
         </code>
         <button
           mat-mini-fab
@@ -40,7 +40,9 @@
 
       <h3 class="typo-headline-medium">3- add to imports modules in module or stand alone component</h3>
       <div class="align-item-center d-flex gap-sm my-base">
-        <code #addImportInputComponent class="typo-body-medium text-success my-base d-block"> imports: [ SharedInputComponent ]; </code>
+        <code #addImportInputComponent class="typo-body-medium text-success my-base d-block">
+          imports: [ SharedDatepickerComponent ];
+        </code>
         <button
           mat-mini-fab
           (click)="showCopyToaster(addImportInputComponent.textContent!)"
@@ -55,7 +57,7 @@
       <h3 class="typo-headline-medium">4- add to imports modules in module or stand alone component pipe (extra step)</h3>
       <div class="align-item-center d-flex gap-sm my-base">
         <code #addImportInputComponent2 class="typo-body-medium text-success my-base d-block">
-          imports: [ SharedInputComponent, GetControlPipe ];
+          imports: [ SharedDatepickerComponent, GetControlPipe ];
         </code>
         <button
           mat-mini-fab
@@ -71,7 +73,7 @@
       <h3 class="typo-headline-medium">5- in html file declare input element with pipe</h3>
       <div class="align-item-center d-flex gap-sm my-base">
         <code #addHtmlInputComponent class="typo-body-medium text-success my-base d-block">
-          &lt;shared-input [passedFormControl]="form | getControl : 'controlName'" label="test label"&gt;&lt;/shared-input&gt;
+          &lt;shared-datepicker [passedFormControl]="form | getControl : 'controlName'" label="test label"&gt;&lt;/shared-datepicker&gt;
         </code>
         <button
           mat-mini-fab
@@ -87,7 +89,7 @@
       <h3 class="typo-headline-medium">or without pipe and normal control (not inside any form group)</h3>
       <div class="align-item-center d-flex gap-sm my-base">
         <code #addHtmlInputComponent2 class="typo-body-medium text-success my-base d-block">
-          &lt;shared-input [passedFormControl]="formControl" label="test label"&gt;&lt;/shared-input&gt;
+          &lt;shared-datepicker [passedFormControl]="formControl" label="test label"&gt;&lt;/shared-datepicker&gt;
         </code>
         <button
           mat-mini-fab
@@ -113,51 +115,30 @@
             <shared-icon name="content_copy" />
           </button> -->
         </h3>
-        <shared-input [passedFormControl]="form | getControl : 'firstControl'" appearance="outline" label="test label"></shared-input>
-        <h3 class="d-flex align-item-center justify-content-between mb-xs typo-display-small">
-          <span> filled appearance with hide validation</span>
-          <!-- <button
-            mat-mini-fab
-            (click)="showCopyToaster('typo-display-small')"
-            [cdkCopyToClipboard]="'typo-display-small'"
-            [matTooltip]="'shared.buttons.copy' | translate"
-            class="bg-black-light-25 text-success-light-20"
-          >
-            <shared-icon name="content_copy" />
-          </button> -->
-        </h3>
 
-        <shared-input
+        <shared-datepicker
+          label="test label"
           [passedFormControl]="form | getControl : 'firstControl'"
-          [hideValidation]="true"
-          appearance="fill"
-          label="test label"
-        ></shared-input>
-      </fieldset>
-
-      <fieldset class="mb-xl border-radius-medium p-xl">
-        <h3 class="d-flex align-item-center justify-content-between mb-xs typo-display-small">
-          <span> reactive form with errors and hints</span>
-          <!-- <button
-            mat-mini-fab
-            (click)="showCopyToaster('typo-display-small')"
-            [cdkCopyToClipboard]="'typo-display-small'"
-            [matTooltip]="'shared.buttons.copy' | translate"
-            class="bg-black-light-25 text-success-light-20"
-          >
-            <shared-icon name="content_copy" />
-          </button> -->
-        </h3>
-
-        <shared-input
-          [passedFormControl]="form | getControl : 'secondControl'"
           appearance="outline"
-          label="test label"
           hint="test hint"
-        ></shared-input>
+          matSuffixIconName="event_note"
+          [hideValidation]="false"
+          [isFullscreen]="true"
+          [hasHijri]="true"
+          startView="month"
+          [startAt]="form.value"
+          [minDate]="form.value"
+          [maxDate]="form.value"
+          [disabledDates]="{
+            years: [2023, 2022, 2021, 2020],
+            yearMonths: [months.May, months.July],
+            weekDay: [days.Tuesday],
+            days: ['5/4/2024', '6/4/2024', '11/4/2024']
+          }"
+        ></shared-datepicker>
 
         <h3 class="d-flex align-item-center justify-content-between mb-xs typo-display-small">
-          <span> filled appearance</span>
+          <span> without reactive form with errors</span>
           <!-- <button
             mat-mini-fab
             (click)="showCopyToaster('typo-display-small')"
@@ -169,18 +150,14 @@
           </button> -->
         </h3>
 
-        <shared-input
-          [passedFormControl]="form | getControl : 'secondControl'"
-          appearance="fill"
-          label="test label"
-          hint="test hint"
-        ></shared-input>
+        <shared-datepicker label="test label" appearance="outline"></shared-datepicker>
       </fieldset>
 
-      <fieldset class="mb-xl border-radius-medium p-xl">
+      <!-- TODO later adding date range -->
+      <!-- <fieldset class="mb-xl border-radius-medium p-xl">
         <h3 class="d-flex align-item-center justify-content-between mb-xs typo-display-small">
-          <span>normal output (event emitter)</span>
-          <!-- <button
+          <span> reactive form with errors and hints (date ragne)</span> -->
+      <!-- <button
             mat-mini-fab
             (click)="showCopyToaster('typo-display-small')"
             [cdkCopyToClipboard]="'typo-display-small'"
@@ -189,12 +166,11 @@
           >
             <shared-icon name="content_copy" />
           </button> -->
-        </h3>
+      <!-- </h3> -->
 
-        <shared-input appearance="outline" label="test label" (onInput)="onInput($event)"></shared-input>
-        <h3 class="d-flex align-item-center justify-content-between mb-xs typo-display-small">
-          <span>filled appearance</span>
-          <!-- <button
+      <!-- <h3 class="d-flex align-item-center justify-content-between mb-xs typo-display-small">
+          <span>without reactive form with errors and hints (date ragne)</span> -->
+      <!-- <button
             mat-mini-fab
             (click)="showCopyToaster('typo-display-small')"
             [cdkCopyToClipboard]="'typo-display-small'"
@@ -203,41 +179,8 @@
           >
             <shared-icon name="content_copy" />
           </button> -->
-        </h3>
-
-        <shared-input appearance="fill" label="test label" (onInput)="onInput($event)"></shared-input>
-      </fieldset>
-
-      <fieldset class="mb-xl border-radius-medium p-xl">
-        <h3 class="d-flex align-item-center justify-content-between mb-xs typo-display-small">
-          <span>normal output (event emitter) with hint</span>
-          <!-- <button
-            mat-mini-fab
-            (click)="showCopyToaster('typo-display-small')"
-            [cdkCopyToClipboard]="'typo-display-small'"
-            [matTooltip]="'shared.buttons.copy' | translate"
-            class="bg-black-light-25 text-success-light-20"
-          >
-            <shared-icon name="content_copy" />
-          </button> -->
-        </h3>
-
-        <shared-input appearance="outline" label="test label" hint="test hint" (onInput)="onInput($event)"></shared-input>
-        <h3 class="d-flex align-item-center justify-content-between mb-xs typo-display-small">
-          <span>filled appearance</span>
-          <!-- <button
-            mat-mini-fab
-            (click)="showCopyToaster('typo-display-small')"
-            [cdkCopyToClipboard]="'typo-display-small'"
-            [matTooltip]="'shared.buttons.copy' | translate"
-            class="bg-black-light-25 text-success-light-20"
-          >
-            <shared-icon name="content_copy" />
-          </button> -->
-        </h3>
-
-        <shared-input appearance="fill" label="test label" hint="test hint" (onInput)="onInput($event)"></shared-input>
-      </fieldset>
+      <!-- </h3>
+      </fieldset> -->
     </div>
   </section>
 </section>

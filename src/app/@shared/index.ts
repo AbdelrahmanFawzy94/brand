@@ -13,6 +13,7 @@ export * from './components/input/input.component';
 export * from './components/textarea/textarea.component';
 export * from './components/checkbox/checkbox.component';
 export * from './components/radio-buttons/radio-buttons.component';
+export * from './components/datepicker/datepicker.component';
 export * from './components/language-menu/language-menu.component';
 export * from './components/tooltip/tooltip.component';
 export * from './components/general-loader/general-loader.component';
@@ -29,3 +30,6 @@ export * from './helpers/constants';
 
 // model
 export * from './models';
+
+// enums
+export * from './enums';

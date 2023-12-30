@@ -23,6 +23,7 @@
       "copy": "copy",
       "selectAll": "select all",
       "cancel": "cancel",
+      "apply": "apply",
       "reset": "reset",
       "yes": "yes",
       "no": "no"
@@ -39,6 +40,10 @@
       "language": "language",
       "notifications": "notifications",
       "apperance": "apperance"
+    },
+    "datepicker": {
+      "hijri": "hijri",
+      "gregorian": "gregorian"
     }
   },
   "browser_tap_name": {

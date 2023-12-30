@@ -22,7 +22,8 @@
       "save": "save",
       "copy": "نسح",
       "selectAll": "select all",
-      "cancel": "cancel",
+      "cancel": "إلغاء",
+      "apply": "تطبيق",
       "reset": "reset",
       "yes": "yes",
       "no": "no"
@@ -39,6 +40,10 @@
       "language": "اللغة",
       "notifications": "الإشعارات",
       "apperance": "المظهر"
+    },
+    "datepicker": {
+      "hijri": "هجري",
+      "gregorian": "ميلادي"
     }
   },
   "browser_tap_name": {

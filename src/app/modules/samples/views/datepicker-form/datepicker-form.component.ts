@@ -7,7 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TranslateService } from '@ngx-translate/core';
-import { GetControlPipe, IconComponent, SharedInputComponent } from '@shared';
+import { Day_Enum, GetControlPipe, IconComponent, Month_Enum, SharedDatepickerComponent, SharedInputComponent } from '@shared';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
@@ -22,7 +22,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
     MatSnackBarModule,
     TranslateModule,
     IconComponent,
-    SharedInputComponent,
+    SharedDatepickerComponent,
     GetControlPipe,
   ],
   templateUrl: './datepicker-form.component.html',
@@ -30,6 +30,8 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export default class FormComponent implements OnInit {
   form!: FormGroup;
+  months = Month_Enum;
+  days = Day_Enum;
 
   showCopyToaster(className: string) {
     this._MatSnackBar.open(

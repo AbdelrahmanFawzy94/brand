@@ -17,11 +17,15 @@ mat-list-item [class*="content"] {
 }
 
 .mat-badge-content,
-.mat-mdc-radio-button .mdc-form-field {
+.mat-mdc-radio-button .mdc-form-field,
+.mat-calendar,
+.mat-datepicker-content-container button,
+input {
   font-family: var(--font-family) !important;
 }
 
-body[dir="rtl"] mat-form-field {
+body[dir="rtl"] mat-form-field,
+body[dir="rtl"] mat-datepicker-content {
   direction: rtl;
 }
 
@@ -63,3 +67,15 @@ body[dir="rtl"] mat-form-field {
 .mdc-form-field > label {
   cursor: pointer !important;
 }
+
+// date picker
+
+// .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover
+//   > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+//   background-color: var(--bg-light-purple-9) !important;
+// }
+
+// .mat-calendar-body-selected {
+//   background-color: var(--purple-color) !important;
+//   color: var(--white-color) !important;
+// }

@@ -1,0 +1,102 @@
+<div class="shared-input">
+  <ng-container *ngIf="passedFormControl">
+    <mat-form-field [appearance]="appearance" [class.no-validations]="hideValidation">
+      <mat-label>{{ label }}</mat-label>
+      <input
+        #reactiveFormInput="matInput"
+        matInput
+        [matDatepicker]="formControlDatepicker"
+        [formControl]="passedFormControl"
+        [value]="passedFormControl.value"
+        [min]="minDate"
+        [max]="maxDate"
+        [matDatepickerFilter]="datesFilter"
+        (dateInput)="onSelectionEmit($event)"
+        (focus)="formControlDatepicker.open()"
+      />
+      <mat-hint *ngIf="hint">{{ hint }}</mat-hint>
+      <mat-error>
+        <shared-validations-messages [errors]="passedFormControl.errors"></shared-validations-messages>
+      </mat-error>
+      <button *ngIf="passedFormControl.value" mat-icon-button matSuffix sharedStopProbagation (click)="clearControl()">
+        <shared-icon name="close"></shared-icon>
+      </button>
+      <mat-datepicker-toggle matIconSuffix [for]="formControlDatepicker">
+        <shared-icon [name]="matSuffixIconName" matDatepickerToggleIcon></shared-icon>
+      </mat-datepicker-toggle>
+      <!-- TODO add classes -->
+      <!-- [dateClass]="dateClass" -->
+      <mat-datepicker
+        #formControlDatepicker
+        [touchUi]="isFullscreen"
+        [startView]="startView"
+        [startAt]="startAt"
+        (closed)="focusOutInput(reactiveFormInput)"
+      >
+        <mat-datepicker-actions *ngIf="hasHijri">
+          <!-- TODO button component -->
+          <div class="datepicker-actions">
+            <div class="start">
+              <button mat-button (click)="toggleDatepickerHijri(formControlDatepicker)">
+                {{
+                  datepickerLocalization === "ar-sa" ? ("shared.datepicker.gregorian" | translate) : ("shared.datepicker.hijri" | translate)
+                }}
+              </button>
+            </div>
+            <div class="end">
+              <button mat-button matDatepickerCancel>{{ "shared.buttons.cancel" | translate }}</button>
+              <button mat-raised-button color="primary" matDatepickerApply>{{ "shared.buttons.apply" | translate }}</button>
+            </div>
+          </div>
+        </mat-datepicker-actions>
+      </mat-datepicker>
+    </mat-form-field>
+  </ng-container>
+
+  <ng-container *ngIf="!passedFormControl">
+    <mat-form-field [appearance]="appearance">
+      <mat-label>{{ label }}</mat-label>
+      <input
+        #normalInput="matInput"
+        matInput
+        [matDatepicker]="normalInputDatepicker"
+        [min]="minDate"
+        [max]="maxDate"
+        [matDatepickerFilter]="datesFilter"
+        (dateInput)="onSelectionEmit($event)"
+        (focus)="normalInputDatepicker.open()"
+      />
+      <mat-hint *ngIf="hint">{{ hint }}</mat-hint>
+      <button *ngIf="normalInput.value" mat-icon-button matSuffix sharedStopProbagation (click)="clearInput(normalInput)">
+        <shared-icon name="close"></shared-icon>
+      </button>
+      <mat-datepicker-toggle matIconSuffix [for]="normalInputDatepicker">
+        <shared-icon [name]="matSuffixIconName" matDatepickerToggleIcon></shared-icon>
+      </mat-datepicker-toggle>
+      <mat-datepicker
+        #normalInputDatepicker
+        [touchUi]="isFullscreen"
+        [startView]="startView"
+        [startAt]="startAt"
+        (closed)="focusOutInput(normalInput)"
+      >
+        <mat-datepicker-actions *ngIf="hasHijri">
+          <!-- TODO button component -->
+          <div class="datepicker-actions">
+            <div class="start">
+              <button mat-button (click)="toggleDatepickerHijri(normalInputDatepicker)">
+                {{
+                  datepickerLocalization === "ar-sa" ? ("shared.datepicker.gregorian" | translate) : ("shared.datepicker.hijri" | translate)
+                }}
+              </button>
+            </div>
+            <div class="end">
+              <button mat-button matDatepickerCancel>{{ "shared.buttons.cancel" | translate }}</button>
+              <button mat-raised-button color="primary" matDatepickerApply>{{ "shared.buttons.apply" | translate }}</button>
+            </div>
+          </div>
+        </mat-datepicker-actions></mat-datepicker
+      >
+    </mat-form-field>
+  </ng-container>
+</div>
