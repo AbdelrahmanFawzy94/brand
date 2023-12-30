@@ -8,12 +8,26 @@
 - - theme settings button
 
 - form
-- - adding date picker and date range picker (dont forget the hijri)
+- - adding date picker
+- - - date picker with reactive form ============================> DONE
+- - - date picker without reactive form (output) ================> DONE
+- - - the hijri with actions buttons ============================> DONE
+- - - overlay datepicker ========================================> DONE
+- - - start view (show year first or month) =====================> DONE
+- - - min max validation ========================================> DONE
+- - - disable specefic dates ====================================> DONE
+- - - highlight some days in calendar
+- - - date range picker with reactive form
+- - - date range picker without reactive form (output)
+- - - date custom format (optional)
+- - - inline datepicker (optional)
+- -
 - - adding single select with autocomplete
 - - adding multi select with select all autocomplete
 - - adding range
 - - adding stars
 
+- - close tooltip
 - - adding disabled for all forms components
 - - adding required for all non reactive form forms components
 
