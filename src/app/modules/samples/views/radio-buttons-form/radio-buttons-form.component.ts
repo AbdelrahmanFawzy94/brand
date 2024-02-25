@@ -7,7 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TranslateService } from '@ngx-translate/core';
-import { GetControlPipe, IconComponent, SharedCheckboxComponent, SharedRadioButtonsComponent } from '@shared';
+import { GetControlPipe, SharedIconComponent, SharedCheckboxComponent, SharedRadioButtonsComponent } from '@shared';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatRadioChange } from '@angular/material/radio';
 
@@ -22,7 +22,7 @@ import { MatRadioChange } from '@angular/material/radio';
     MatTooltipModule,
     MatSnackBarModule,
     TranslateModule,
-    IconComponent,
+    SharedIconComponent,
     SharedRadioButtonsComponent,
     GetControlPipe,
   ],

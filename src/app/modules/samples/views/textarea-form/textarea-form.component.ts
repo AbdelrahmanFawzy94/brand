@@ -7,7 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TranslateService } from '@ngx-translate/core';
-import { GetControlPipe, IconComponent, SharedTextareaComponent } from '@shared';
+import { GetControlPipe, SharedIconComponent, SharedTextareaComponent } from '@shared';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -20,7 +20,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
     MatTooltipModule,
     MatSnackBarModule,
     TranslateModule,
-    IconComponent,
+    SharedIconComponent,
     SharedTextareaComponent,
     GetControlPipe,
   ],

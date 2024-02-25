@@ -7,12 +7,12 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TranslateService } from '@ngx-translate/core';
-import { IconComponent } from '@shared';
+import { SharedIconComponent } from '@shared';
 
 @Component({
   selector: 'app-screens',
   standalone: true,
-  imports: [CommonModule, ClipboardModule, MatButtonModule, MatTooltipModule, MatSnackBarModule, TranslateModule, IconComponent],
+  imports: [CommonModule, ClipboardModule, MatButtonModule, MatTooltipModule, MatSnackBarModule, TranslateModule, SharedIconComponent],
   templateUrl: './screens.component.html',
   styleUrls: ['./screens.component.scss'],
 })

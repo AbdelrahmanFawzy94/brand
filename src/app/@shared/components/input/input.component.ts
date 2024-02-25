@@ -3,12 +3,12 @@ import { Component, ElementRef, EventEmitter, Input, OnChanges, Output, ViewChil
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { IconComponent, SharedValidationsMessagesComponent } from '@shared';
+import { SharedIconComponent, SharedValidationsMessagesComponent } from '@shared';
 
 @Component({
   selector: 'shared-input',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatInputModule, MatButtonModule, IconComponent, SharedValidationsMessagesComponent],
+  imports: [CommonModule, ReactiveFormsModule, MatInputModule, MatButtonModule, SharedIconComponent, SharedValidationsMessagesComponent],
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
 })

@@ -6,4 +6,4 @@ import { Component } from '@angular/core';
   templateUrl: './general-loader.component.html',
   styleUrls: ['./general-loader.component.scss'],
 })
-export class GeneralLoaderComponent {}
+export class SharedGeneralLoaderComponent {}

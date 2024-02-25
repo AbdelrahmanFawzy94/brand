@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 // import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { IconComponent } from '@shared';
+import { SharedIconComponent } from '@shared';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,7 @@ import { IconComponent } from '@shared';
   imports: [
     CommonModule,
     //  TranslateModule,
-    IconComponent,
+    SharedIconComponent,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],

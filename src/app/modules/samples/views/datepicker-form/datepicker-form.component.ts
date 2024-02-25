@@ -7,7 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TranslateService } from '@ngx-translate/core';
-import { Day_Enum, GetControlPipe, IconComponent, Month_Enum, SharedDatepickerComponent, SharedInputComponent } from '@shared';
+import { Day_Enum, GetControlPipe, SharedIconComponent, Month_Enum, SharedDatepickerComponent, SharedInputComponent } from '@shared';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
@@ -21,14 +21,14 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
     MatTooltipModule,
     MatSnackBarModule,
     TranslateModule,
-    IconComponent,
+    SharedIconComponent,
     SharedDatepickerComponent,
     GetControlPipe,
   ],
   templateUrl: './datepicker-form.component.html',
   styleUrls: ['./datepicker-form.component.scss'],
 })
-export default class FormComponent implements OnInit {
+export default class DatePickerFormComponent implements OnInit {
   form!: FormGroup;
   months = Month_Enum;
   days = Day_Enum;

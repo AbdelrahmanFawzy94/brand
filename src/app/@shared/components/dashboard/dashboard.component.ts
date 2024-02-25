@@ -11,7 +11,7 @@ import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatBadgeModule } from '@angular/material/badge';
 import { OverlayModule } from '@angular/cdk/overlay';
-import { DashboardDropDowns, DashboardUser, IconComponent, SharedLanguageMenuComponent, StopProbagationDirective } from '@shared';
+import { DashboardDropDowns, DashboardUser, SharedIconComponent, SharedLanguageMenuComponent, StopProbagationDirective } from '@shared';
 import { TranslateModule } from '@ngx-translate/core';
 // import { A11yModule } from '@angular/cdk/a11y';
 
@@ -33,7 +33,7 @@ import { TranslateModule } from '@ngx-translate/core';
     OverlayModule,
     TranslateModule,
     // A11yModule, // for search focus
-    IconComponent,
+    SharedIconComponent,
     SharedLanguageMenuComponent,
     StopProbagationDirective,
   ],
@@ -41,7 +41,7 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrls: ['./dashboard.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class DashboardComponent implements OnInit {
+export class SharedDashboardComponent implements OnInit {
   @Input({ required: true }) menu: DashboardDropDowns[] = [];
   @Input() user!: DashboardUser;
   @Output() onSearch = new EventEmitter<string>();

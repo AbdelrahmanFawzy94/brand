@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { IconComponent, SharedValidationsMessagesComponent } from '@shared';
+import { SharedIconComponent, SharedValidationsMessagesComponent } from '@shared';
 import { MatCheckboxChange, MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
   selector: 'shared-checkbox',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatCheckboxModule, IconComponent, SharedValidationsMessagesComponent],
+  imports: [CommonModule, ReactiveFormsModule, MatCheckboxModule, SharedIconComponent, SharedValidationsMessagesComponent],
   templateUrl: './checkbox.component.html',
   styleUrls: ['./checkbox.component.scss'],
 })

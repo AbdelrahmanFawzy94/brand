@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './icon.component.html',
   styleUrls: ['./icon.component.scss'],
 })
-export class IconComponent {
+export class SharedIconComponent {
   @Input({ required: true }) name!: string;
   @Input() isFilled: boolean = false;
 }

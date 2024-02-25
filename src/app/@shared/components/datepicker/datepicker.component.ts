@@ -5,7 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCalendarCellClassFunction, MatDatepicker, MatDatepickerInputEvent, MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInput, MatInputModule } from '@angular/material/input';
 import { DateAdapter, MatNativeDateModule, NativeDateAdapter } from '@angular/material/core';
-import { DisabledDates, IconComponent, SharedValidationsMessagesComponent, StopProbagationDirective } from '@shared';
+import { DisabledDates, SharedIconComponent, SharedValidationsMessagesComponent, StopProbagationDirective } from '@shared';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
@@ -22,7 +22,7 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
     MatNativeDateModule,
     TranslateModule,
     StopProbagationDirective,
-    IconComponent,
+    SharedIconComponent,
     SharedValidationsMessagesComponent,
   ],
   templateUrl: './datepicker.component.html',

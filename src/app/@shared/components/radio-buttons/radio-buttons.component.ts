@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { IconComponent, SharedValidationsMessagesComponent } from '@shared';
+import { SharedIconComponent, SharedValidationsMessagesComponent } from '@shared';
 import { MatRadioChange, MatRadioModule } from '@angular/material/radio';
 
 @Component({
   selector: 'shared-radio-buttons',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatRadioModule, IconComponent, SharedValidationsMessagesComponent],
+  imports: [CommonModule, ReactiveFormsModule, MatRadioModule, SharedIconComponent, SharedValidationsMessagesComponent],
   templateUrl: './radio-buttons.component.html',
   styleUrls: ['./radio-buttons.component.scss'],
 })

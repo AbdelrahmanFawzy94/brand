@@ -4,12 +4,12 @@ import { SamplesRoutingModule } from './samples-routing.module';
 
 import { CommonModule } from '@angular/common';
 import { SamplesComponent } from './samples.component';
-import { DashboardComponent } from '@shared';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedDashboardComponent } from '@shared';
 
 @NgModule({
   declarations: [SamplesComponent],
-  imports: [CommonModule, SamplesRoutingModule, DashboardComponent, HttpClientModule],
+  imports: [CommonModule, SamplesRoutingModule, SharedDashboardComponent, HttpClientModule],
   providers: [],
 })
 export class SamplesModule {}
