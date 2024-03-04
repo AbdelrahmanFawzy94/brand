@@ -38,7 +38,8 @@
       // "exceljs": [
       //   "node_modules/exceljs/dist/exceljs.min"
       // ]
-    }
+    },
+    "noImplicitAny": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

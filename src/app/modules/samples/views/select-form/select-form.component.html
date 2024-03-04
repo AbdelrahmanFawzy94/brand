@@ -1,0 +1,252 @@
+<!-- TODO container-->
+<section class="typo samples">
+  <header class="samples__header">
+    <h2 class="typo-display-large mb-xl margin-top-none">Forms</h2>
+    <p class="typo-body-medium mb-xl">Use form to present your design and content as clearly and efficiently as possible.</p>
+  </header>
+  <section class="samples__body">
+    <div class="samples-panel">
+      <h3 class="typo-headline-medium">1- import SharedInputComponent in ts file</h3>
+      <div class="align-item-center d-flex gap-sm my-base">
+        <code #importInputComponent class="typo-body-medium text-success my-base d-block">
+          import &lcub; SharedInputComponent &rcub; from '&commat;shared';
+        </code>
+        <button
+          mat-mini-fab
+          (click)="showCopyToaster(importInputComponent.textContent!)"
+          [cdkCopyToClipboard]="importInputComponent.textContent!"
+          [matTooltip]="'shared.buttons.copy' | translate"
+          class="bg-black-light-25 text-success-light-20"
+        >
+          <shared-icon name="content_copy" />
+        </button>
+      </div>
+
+      <h3 class="typo-headline-medium">2- import GetControlPipe in ts file</h3>
+      <div class="align-item-center d-flex gap-sm my-base">
+        <code #importGetControlPipe class="typo-body-medium text-success my-base d-block">
+          import &lcub; SharedInputComponent, GetControlPipe &rcub; from '&commat;shared';
+        </code>
+        <button
+          mat-mini-fab
+          (click)="showCopyToaster(importGetControlPipe.textContent!)"
+          [cdkCopyToClipboard]="importGetControlPipe.textContent!"
+          [matTooltip]="'shared.buttons.copy' | translate"
+          class="bg-black-light-25 text-success-light-20"
+        >
+          <shared-icon name="content_copy" />
+        </button>
+      </div>
+
+      <h3 class="typo-headline-medium">3- add to imports modules in module or stand alone component</h3>
+      <div class="align-item-center d-flex gap-sm my-base">
+        <code #addImportInputComponent class="typo-body-medium text-success my-base d-block"> imports: [ SharedInputComponent ]; </code>
+        <button
+          mat-mini-fab
+          (click)="showCopyToaster(addImportInputComponent.textContent!)"
+          [cdkCopyToClipboard]="addImportInputComponent.textContent!"
+          [matTooltip]="'shared.buttons.copy' | translate"
+          class="bg-black-light-25 text-success-light-20"
+        >
+          <shared-icon name="content_copy" />
+        </button>
+      </div>
+
+      <h3 class="typo-headline-medium">4- add to imports modules in module or stand alone component pipe (extra step)</h3>
+      <div class="align-item-center d-flex gap-sm my-base">
+        <code #addImportInputComponent2 class="typo-body-medium text-success my-base d-block">
+          imports: [ SharedInputComponent, GetControlPipe ];
+        </code>
+        <button
+          mat-mini-fab
+          (click)="showCopyToaster(addImportInputComponent2.textContent!)"
+          [cdkCopyToClipboard]="addImportInputComponent2.textContent!"
+          [matTooltip]="'shared.buttons.copy' | translate"
+          class="bg-black-light-25 text-success-light-20"
+        >
+          <shared-icon name="content_copy" />
+        </button>
+      </div>
+
+      <h3 class="typo-headline-medium">5- in html file declare input element with pipe</h3>
+      <div class="align-item-center d-flex gap-sm my-base">
+        <code #addHtmlInputComponent class="typo-body-medium text-success my-base d-block">
+          &lt;shared-select [passedFormControl]="form | getControl : 'controlName'" label="test label"&gt;&lt;/shared-select&gt;
+        </code>
+        <button
+          mat-mini-fab
+          (click)="showCopyToaster(addHtmlInputComponent.textContent!)"
+          [cdkCopyToClipboard]="addHtmlInputComponent.textContent!"
+          [matTooltip]="'shared.buttons.copy' | translate"
+          class="bg-black-light-25 text-success-light-20"
+        >
+          <shared-icon name="content_copy" />
+        </button>
+      </div>
+
+      <h3 class="typo-headline-medium">or without pipe and normal control (not inside any form group)</h3>
+      <div class="align-item-center d-flex gap-sm my-base">
+        <code #addHtmlInputComponent2 class="typo-body-medium text-success my-base d-block">
+          &lt;shared-select [passedFormControl]="formControl" label="test label"&gt;&lt;/shared-select&gt;
+        </code>
+        <button
+          mat-mini-fab
+          (click)="showCopyToaster(addHtmlInputComponent2.textContent!)"
+          [cdkCopyToClipboard]="addHtmlInputComponent2.textContent!"
+          [matTooltip]="'shared.buttons.copy' | translate"
+          class="bg-black-light-25 text-success-light-20"
+        >
+          <shared-icon name="content_copy" />
+        </button>
+      </div>
+
+      <fieldset class="mb-xl border-radius-medium p-xl">
+        <h3 class="d-flex align-item-center justify-content-between mb-xs typo-display-small">
+          <span> reactive form with errors</span>
+          <!-- <button
+            mat-mini-fab
+            (click)="showCopyToaster('typo-display-small')"
+            [cdkCopyToClipboard]="'typo-display-small'"
+            [matTooltip]="'shared.buttons.copy' | translate"
+            class="bg-black-light-25 text-success-light-20"
+          >
+            <shared-icon name="content_copy" />
+          </button> -->
+        </h3>
+        <shared-select
+          [passedFormControl]="form | getControl : 'firstControl'"
+          [dropdownList]="aaa"
+          [multiple]="true"
+          [labelName]="'nameEn'"
+          [bindNames]="['nameEn', 'nameAr']"
+          label="test label"
+          (onSelection)="onSelection($event)"
+        ></shared-select>
+        <h3 class="d-flex align-item-center justify-content-between mb-xs typo-display-small">
+          <span> filled appearance with hide validation</span>
+          <!-- <button
+            mat-mini-fab
+            (click)="showCopyToaster('typo-display-small')"
+            [cdkCopyToClipboard]="'typo-display-small'"
+            [matTooltip]="'shared.buttons.copy' | translate"
+            class="bg-black-light-25 text-success-light-20"
+            >
+            <shared-icon name="content_copy" />
+          </button> -->
+        </h3>
+
+        <shared-select
+          [dropdownList]="aaa"
+          [labelName]="'nameEn'"
+          [multiple]="false"
+          label="test label"
+          (onSelection)="onSelection($event)"
+        ></shared-select>
+      </fieldset>
+
+      <fieldset class="mb-xl border-radius-medium p-xl">
+        <h3 class="d-flex align-item-center justify-content-between mb-xs typo-display-small">
+          <span> reactive form with errors and hints</span>
+          <!-- <button
+            mat-mini-fab
+            (click)="showCopyToaster('typo-display-small')"
+            [cdkCopyToClipboard]="'typo-display-small'"
+            [matTooltip]="'shared.buttons.copy' | translate"
+            class="bg-black-light-25 text-success-light-20"
+          >
+            <shared-icon name="content_copy" />
+          </button> -->
+        </h3>
+
+        <shared-select
+          [passedFormControl]="form | getControl : 'secondControl'"
+          appearance="outline"
+          label="test label"
+          hint="test hint"
+        ></shared-select>
+
+        <h3 class="d-flex align-item-center justify-content-between mb-xs typo-display-small">
+          <span> filled appearance</span>
+          <!-- <button
+            mat-mini-fab
+            (click)="showCopyToaster('typo-display-small')"
+            [cdkCopyToClipboard]="'typo-display-small'"
+            [matTooltip]="'shared.buttons.copy' | translate"
+            class="bg-black-light-25 text-success-light-20"
+          >
+            <shared-icon name="content_copy" />
+          </button> -->
+        </h3>
+
+        <shared-select
+          [passedFormControl]="form | getControl : 'secondControl'"
+          appearance="fill"
+          label="test label"
+          hint="test hint"
+        ></shared-select>
+      </fieldset>
+
+      <fieldset class="mb-xl border-radius-medium p-xl">
+        <h3 class="d-flex align-item-center justify-content-between mb-xs typo-display-small">
+          <span>normal output (event emitter)</span>
+          <!-- <button
+            mat-mini-fab
+            (click)="showCopyToaster('typo-display-small')"
+            [cdkCopyToClipboard]="'typo-display-small'"
+            [matTooltip]="'shared.buttons.copy' | translate"
+            class="bg-black-light-25 text-success-light-20"
+          >
+            <shared-icon name="content_copy" />
+          </button> -->
+        </h3>
+
+        <shared-select appearance="outline" label="test label" (onSelection)="onSelection($event)"></shared-select>
+        <h3 class="d-flex align-item-center justify-content-between mb-xs typo-display-small">
+          <span>filled appearance</span>
+          <!-- <button
+            mat-mini-fab
+            (click)="showCopyToaster('typo-display-small')"
+            [cdkCopyToClipboard]="'typo-display-small'"
+            [matTooltip]="'shared.buttons.copy' | translate"
+            class="bg-black-light-25 text-success-light-20"
+          >
+            <shared-icon name="content_copy" />
+          </button> -->
+        </h3>
+
+        <shared-select appearance="fill" label="test label" (onSelection)="onSelection($event)"></shared-select>
+      </fieldset>
+
+      <fieldset class="mb-xl border-radius-medium p-xl">
+        <h3 class="d-flex align-item-center justify-content-between mb-xs typo-display-small">
+          <span>normal output (event emitter) with hint</span>
+          <!-- <button
+            mat-mini-fab
+            (click)="showCopyToaster('typo-display-small')"
+            [cdkCopyToClipboard]="'typo-display-small'"
+            [matTooltip]="'shared.buttons.copy' | translate"
+            class="bg-black-light-25 text-success-light-20"
+          >
+            <shared-icon name="content_copy" />
+          </button> -->
+        </h3>
+
+        <shared-select appearance="outline" label="test label" hint="test hint" (onSelection)="onSelection($event)"></shared-select>
+        <h3 class="d-flex align-item-center justify-content-between mb-xs typo-display-small">
+          <span>filled appearance</span>
+          <!-- <button
+            mat-mini-fab
+            (click)="showCopyToaster('typo-display-small')"
+            [cdkCopyToClipboard]="'typo-display-small'"
+            [matTooltip]="'shared.buttons.copy' | translate"
+            class="bg-black-light-25 text-success-light-20"
+          >
+            <shared-icon name="content_copy" />
+          </button> -->
+        </h3>
+
+        <shared-select appearance="fill" label="test label" hint="test hint" (onSelection)="onSelection($event)"></shared-select>
+      </fieldset>
+    </div>
+  </section>
+</section>

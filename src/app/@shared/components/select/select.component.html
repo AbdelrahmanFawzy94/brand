@@ -1,0 +1,173 @@
+<div class="shared-select">
+  <ng-container *ngIf="passedFormControl">
+    <ng-select
+      class="mat-form-field-appearance-outline pb-0"
+      [items]="dropdownList"
+      [multiple]="multiple"
+      [bindLabel]="labelName"
+      clearAllText="clear alllllll"
+      groupBy="selectedAllKey"
+      [selectableGroup]="true"
+      [selectableGroupAsModel]="false"
+      [closeOnSelect]="closeOnSelect"
+      [searchFn]="searchFn"
+      [clearSearchOnAdd]="true"
+      [bindValue]="bindKey"
+      [placeholder]="placeholder"
+      [loading]="loading"
+      [formControl]="passedFormControl"
+      [notFoundText]="'no_resultssssssss'"
+      (change)="emitControlChange()"
+      (clear)="emitControlChange()"
+    >
+      <ng-template *ngIf="multiple" #option ng-optgroup-tmp let-item="item" let-item$="item$" let-index="index">
+        <div class="ng-select__all">
+          <mat-checkbox [indeterminate]="isControlIndeterminate()" [checked]="item$.selected">
+            {{ "select_allllll" }}
+          </mat-checkbox>
+        </div>
+      </ng-template>
+
+      <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+        <div class="ng-select__option text-wrap d-flex align-items-center">
+          <mat-checkbox *ngIf="!bindNames.length; else bindOptionNamesRrf" [checked]="item$.selected">
+            {{ item[labelName] }}
+          </mat-checkbox>
+
+          <!-- In case you want to display more than key separated by - symbol -->
+          <ng-template #bindOptionNamesRrf>
+            <mat-checkbox [checked]="item$.selected">
+              <ng-container *ngFor="let bindName of bindNames; let last = last">
+                {{ item[bindName] }} <span *ngIf="!last">-</span>
+              </ng-container>
+            </mat-checkbox>
+          </ng-template>
+        </div>
+      </ng-template>
+
+      <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+        <div class="ng-value" *ngFor="let item of items | slice : 0 : 1">
+          <span *ngIf="!bindNames.length" [title]="item![labelName]">
+            {{ item![labelName] }}
+          </span>
+
+          <!-- In case you want to display more than key separated by - symbol -->
+          <span *ngIf="bindNames.length" [title]="item![labelName]">
+            <ng-container *ngFor="let bindName of bindNames; let last = last">
+              {{ item![bindName] }} <span *ngIf="!last">-</span>
+            </ng-container>
+          </span>
+
+          <!-- <shared-icon name="close" size="18px" class="ng-value-icon right" aria-hidden="true"></shared-icon> -->
+          <shared-icon [name]="'close'" (click)="clear(item)"></shared-icon>
+        </div>
+        <div class="ng-value" *ngIf="items.length > 1">
+          <span class="ng-value-label"> +{{ items.length - 1 }} </span>
+        </div>
+      </ng-template>
+    </ng-select>
+    <shared-validations-messages *ngIf="passedFormControl.touched" [errors]="passedFormControl.errors"></shared-validations-messages>
+  </ng-container>
+
+  <ng-container *ngIf="!passedFormControl">
+    <ng-select
+      class="mat-form-field-appearance-outline pb-0"
+      [(ngModel)]="model"
+      [items]="dropdownList"
+      [multiple]="multiple"
+      [bindLabel]="labelName"
+      clearAllText="clear alllllll"
+      groupBy="selectedAllKey"
+      [selectableGroup]="true"
+      [selectableGroupAsModel]="false"
+      [closeOnSelect]="closeOnSelect"
+      [searchFn]="searchFn"
+      [clearSearchOnAdd]="true"
+      [bindValue]="bindKey"
+      [placeholder]="placeholder"
+      [loading]="loading"
+      [notFoundText]="'no_resultssssssss'"
+      (change)="emitModelChange()"
+      (clear)="emitModelChange()"
+    >
+      <ng-template *ngIf="multiple" #option ng-optgroup-tmp let-item="item" let-item$="item$" let-index="index">
+        <div class="ng-select__all">
+          <mat-checkbox [indeterminate]="isModelIndeterminate()" [checked]="item$.selected">
+            {{ "select_allllll" }}
+          </mat-checkbox>
+        </div>
+      </ng-template>
+
+      <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+        <div class="ng-select__option text-wrap d-flex align-items-center">
+          <mat-checkbox *ngIf="!bindNames.length; else bindOptionNamesRrf" [checked]="item$.selected">
+            {{ item[labelName] }}
+          </mat-checkbox>
+
+          <!-- In case you want to display more than key separated by - symbol -->
+          <ng-template #bindOptionNamesRrf>
+            <mat-checkbox [checked]="item$.selected">
+              <ng-container *ngFor="let bindName of bindNames; let last = last">
+                {{ item[bindName] }} <span *ngIf="!last">-</span>
+              </ng-container>
+            </mat-checkbox>
+          </ng-template>
+        </div>
+      </ng-template>
+
+      <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+        <div class="ng-value" *ngFor="let item of items | slice : 0 : 1">
+          <span *ngIf="!bindNames.length" [title]="item![labelName]">
+            {{ item![labelName] }}
+          </span>
+
+          <!-- In case you want to display more than key separated by - symbol -->
+          <span *ngIf="bindNames.length" [title]="item![labelName]">
+            <ng-container *ngFor="let bindName of bindNames; let last = last">
+              {{ item![bindName] }} <span *ngIf="!last">-</span>
+            </ng-container>
+          </span>
+
+          <!-- <shared-icon name="close" size="18px" class="ng-value-icon right" aria-hidden="true"></shared-icon> -->
+          <shared-icon [name]="'close'" (click)="clear(item)"></shared-icon>
+        </div>
+        <div class="ng-value" *ngIf="items.length > 1">
+          <span class="ng-value-label"> +{{ items.length - 1 }} </span>
+        </div>
+      </ng-template>
+    </ng-select>
+  </ng-container>
+
+  <!-- <ng-container *ngIf="passedFormControl"> -->
+  <!-- floatLabel="always" always | auto -->
+
+  <!-- <mat-form-field [appearance]="appearance" [class.no-validations]="hideValidation">
+      <mat-label class="text-capitalize">{{ label }}</mat-label>
+      <input matInput [formControl]="passedFormControl" [value]="passedFormControl.value" [placeholder]="placeholder" /> -->
+  <!-- TODO matPrefix not working with [appearance]="outline" -->
+  <!-- <shared-icon *ngIf="matPrefixIconName" matPrefix [name]="matPrefixIconName"></shared-icon>
+      <shared-icon *ngIf="matSuffixIconName" matSuffix [name]="matSuffixIconName"></shared-icon>
+      <button *ngIf="passedFormControl.value" mat-icon-button matSuffix (click)="clearControl()">
+        <shared-icon name="close"></shared-icon>
+      </button>
+      <mat-error>
+        <shared-validations-messages [errors]="passedFormControl.errors"></shared-validations-messages>
+      </mat-error>
+
+      <mat-hint *ngIf="hint">{{ hint }}</mat-hint>
+    </mat-form-field>
+  </ng-container>
+
+  <ng-container *ngIf="!passedFormControl">
+    <mat-form-field [appearance]="appearance" [class.no-validations]="hideValidation">
+      <mat-label class="text-capitalize">{{ label }}</mat-label>
+      <input #input matInput (input)="onInput.emit(input.value)" [placeholder]="placeholder" />
+      <shared-icon *ngIf="matPrefixIconName" matPrefix [name]="matPrefixIconName"></shared-icon>
+      <shared-icon *ngIf="matSuffixIconName" matSuffix [name]="matSuffixIconName"></shared-icon>
+      <button *ngIf="input.value" mat-icon-button matSuffix (click)="clearInput(); onInputEmit()">
+        <shared-icon name="close"></shared-icon>
+      </button>
+      <mat-hint *ngIf="hint">{{ hint }}</mat-hint>
+    </mat-form-field>
+  </ng-container> -->
+</div>

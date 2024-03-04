@@ -5,6 +5,7 @@
 - - notification projection
 - - badge data
 - - animations
+- - close dashboard nav not working in small screens
 - - theme settings button
 
 - form
@@ -23,7 +24,13 @@
 - - - inline datepicker (optional)
 - -
 - - adding single select with autocomplete
-- - adding multi select with select all autocomplete
+
+- - adding multi select with select all autocomplete ============> DONE
+- - - localization
+- - - loading color
+- - - chips
+- - - html remove unneeded classes like (d-flex)
+
 - - adding range
 - - adding stars
 

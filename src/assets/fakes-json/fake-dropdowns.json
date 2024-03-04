@@ -61,6 +61,15 @@
             "subDropdowns": []
           },
           {
+            "id": "7386",
+            "nameEn": "select-input",
+            "nameAr": "select-input",
+            "icon": "",
+            "routing": "/samples/select-form",
+            "badgeData": "6",
+            "subDropdowns": []
+          },
+          {
             "id": "7876t6",
             "nameEn": "textarea-input",
             "nameAr": "textarea-input",

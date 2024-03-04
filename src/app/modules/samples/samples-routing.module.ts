@@ -49,6 +49,14 @@ const routes: Routes = [
         loadComponent: () => import('./views/input-form/input-form.component'),
       },
       {
+        path: 'select-form',
+        data: {
+          title: 'samples_input',
+          preload: true,
+        },
+        loadComponent: () => import('./views/select-form/select-form.component'),
+      },
+      {
         path: 'textarea-form',
         data: {
           title: 'samples_textarea',
