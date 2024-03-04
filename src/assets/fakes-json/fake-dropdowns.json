@@ -104,6 +104,15 @@
             "routing": "/samples/datepicker-form",
             "badgeData": "4",
             "subDropdowns": []
+          },
+          {
+            "id": "sd87",
+            "nameEn": "range-input",
+            "nameAr": "range-input",
+            "icon": "",
+            "routing": "/samples/range-form",
+            "badgeData": "4",
+            "subDropdowns": []
           }
         ]
       }

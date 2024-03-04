@@ -83,19 +83,19 @@ const routes: Routes = [
       {
         path: 'datepicker-form',
         data: {
-          title: 'samples_datepicker-form',
+          title: 'samples-datepicker-form',
           preload: true,
         },
         loadComponent: () => import('./views/datepicker-form/datepicker-form.component'),
       },
-      // {
-      //   path: 'signup',
-      //   data: {
-      //     preload: true,
-      //   },
-      //   loadChildren: () =>
-      //     import('./signup/signup.module').then((m) => m.SignUpModule),
-      // },
+      {
+        path: 'range-form',
+        data: {
+          title: 'samples-range-form',
+          preload: true,
+        },
+        loadComponent: () => import('./views/range-form/range-form.component'),
+      },
       // {
       //   path: 'profile',
       //   data: {

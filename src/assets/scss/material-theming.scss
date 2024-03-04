@@ -68,6 +68,10 @@ body[dir="rtl"] mat-datepicker-content {
   cursor: pointer !important;
 }
 
+.mat-mdc-slider {
+  width: 100% !important;
+}
+
 // date picker
 
 // .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover

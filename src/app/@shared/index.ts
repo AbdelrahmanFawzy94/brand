@@ -10,6 +10,7 @@ export * from './pipes/get-control.pipe';
 export * from './components/icon/icon.component';
 export * from './components/validations-messages/validations-messages.component';
 export * from './components/input/input.component';
+export * from './components/range/range.component';
 export * from './components/select/select.component';
 export * from './components/textarea/textarea.component';
 export * from './components/checkbox/checkbox.component';

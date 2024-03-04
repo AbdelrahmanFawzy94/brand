@@ -22,21 +22,23 @@
 - - - date range picker without reactive form (output)
 - - - date custom format (optional)
 - - - inline datepicker (optional)
-- -
-- - adding single select with autocomplete
 
-- - adding multi select with select all autocomplete ============> DONE
+- - adding ng select ============================================> DONE
+- - - adding single select with autocomplete ====================> DONE
+- - - adding multi select with select all autocomplete ==========> DONE
 - - - localization
 - - - loading color
 - - - chips
 - - - html remove unneeded classes like (d-flex)
 
 - - adding range
+- - - handel not form control emit (static)
+
 - - adding stars
 
 - - close tooltip
+
 - - adding disabled for all forms components
-- - adding required for all non reactive form forms components
 
 - customize snakbar
 - code component
