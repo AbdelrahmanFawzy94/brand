@@ -104,6 +104,14 @@ const routes: Routes = [
         },
         loadComponent: () => import('./views/slide-toggle-form/slide-toggle-form.component'),
       },
+      {
+        path: 'buttons',
+        data: {
+          title: 'samples-buttons',
+          preload: true,
+        },
+        loadComponent: () => import('./views/buttons/buttons.component'),
+      },
       // {
       //   path: 'profile',
       //   data: {
