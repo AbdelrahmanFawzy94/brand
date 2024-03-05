@@ -66,6 +66,8 @@ body[dir="rtl"] mat-datepicker-content {
 
 .mdc-form-field > label {
   cursor: pointer !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .mat-mdc-slider {
