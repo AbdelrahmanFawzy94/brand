@@ -32,10 +32,11 @@
       <input matSliderEndThumb [formControl]="passedSecondFormControl" />
     </mat-slider>
     <div class="validations" [class.no-validations]="hideValidation">
-      <shared-validations-messages
+      <!-- TODO reveal or hide validation for double range -->
+      <!-- <shared-validations-messages
         *ngIf="passedFirstFormControl.touched || passedSecondFormControl.touched"
         [errors]="passedFirstFormControl.errors || passedSecondFormControl.errors"
-      ></shared-validations-messages>
+      ></shared-validations-messages> -->
     </div>
   </ng-container>
 
