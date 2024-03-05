@@ -1,0 +1,19 @@
+<div class="shared-slide-toggle">
+  <ng-container *ngIf="passedFormControl">
+    <mat-slide-toggle
+      [checked]="passedFormControl.value"
+      [formControl]="passedFormControl"
+      [labelPosition]="labelPosition"
+      (change)="onToggleReactiveFormEmit($event)"
+    >
+      {{ label }}
+    </mat-slide-toggle>
+    <div class="validations" [class.no-validations]="hideValidation">
+      <shared-validations-messages *ngIf="passedFormControl.touched" [errors]="passedFormControl.errors"></shared-validations-messages>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="!passedFormControl">
+    <mat-slide-toggle [disabled]="disabled" [labelPosition]="labelPosition" (change)="onToggleEmit($event)"> {{ label }} </mat-slide-toggle>
+  </ng-container>
+</div>

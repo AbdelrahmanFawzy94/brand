@@ -113,6 +113,15 @@
             "routing": "/samples/range-form",
             "badgeData": "4",
             "subDropdowns": []
+          },
+          {
+            "id": "sd87da",
+            "nameEn": "slide-toggle-input",
+            "nameAr": "slide-toggle-input",
+            "icon": "",
+            "routing": "/samples/slide-toggle-form",
+            "badgeData": "4",
+            "subDropdowns": []
           }
         ]
       }

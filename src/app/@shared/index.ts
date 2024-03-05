@@ -14,6 +14,7 @@ export * from './components/range/range.component';
 export * from './components/select/select.component';
 export * from './components/textarea/textarea.component';
 export * from './components/checkbox/checkbox.component';
+export * from './components/slide-toggle/slide-toggle.component';
 export * from './components/radio-buttons/radio-buttons.component';
 export * from './components/datepicker/datepicker.component';
 export * from './components/language-menu/language-menu.component';

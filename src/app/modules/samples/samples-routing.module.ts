@@ -96,6 +96,14 @@ const routes: Routes = [
         },
         loadComponent: () => import('./views/range-form/range-form.component'),
       },
+      {
+        path: 'slide-toggle-form',
+        data: {
+          title: 'samples-slide-toggle-form',
+          preload: true,
+        },
+        loadComponent: () => import('./views/slide-toggle-form/slide-toggle-form.component'),
+      },
       // {
       //   path: 'profile',
       //   data: {
