@@ -11,6 +11,13 @@ const routes: Routes = [
     loadChildren: () => import('./modules/landing/landing.module').then((m) => m.LandingModule),
   },
   {
+    path: 'dashboard',
+    data: {
+      preload: true,
+    },
+    loadChildren: () => import('./modules/dashboard/dashboard.module').then((m) => m.DashboardModule),
+  },
+  {
     path: 'samples',
     data: {
       preload: false,
@@ -20,7 +27,7 @@ const routes: Routes = [
   {
     path: '**',
     data: {
-      preload: false,
+      preload: true,
     },
     loadComponent: () => import('./pages/not-found/not-found.component'),
   },
