@@ -1,0 +1,160 @@
+@import "assets/scss/screens";
+
+.login {
+  min-height: 100vh;
+  color: var(--white-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../../assets/images/pages/login/login.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+
+  .form-wrapper {
+    width: 350px;
+    height: 340px;
+    box-shadow: 0px 5px 25px var(--bg-opacity-black-3);
+    border-radius: var(--border-radius-large);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include xxxl {
+      transform: scale(2);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: repeating-conic-gradient(
+        from var(--login-angel),
+        var(--bg-light-purple-4) 0%,
+        var(--bg-light-purple-4) 20%,
+        transparent 10%,
+        transparent 80%,
+        var(--bg-light-purple-4) 100%
+      );
+      border-radius: 20px;
+      pointer-events: none;
+      animation: lighting 3s linear infinite;
+    }
+
+    span {
+      //
+      position: absolute;
+      inset: 5px;
+      overflow: hidden;
+      border-radius: 15px;
+      pointer-events: none;
+      //
+    }
+
+    span::before {
+      //
+      content: "";
+      position: absolute;
+      inset: 5px;
+      filter: blur(10px);
+
+      background-image: url("../../../assets/images/pages/login/login.jpg");
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      //
+    }
+
+    span::after {
+      //
+      content: "";
+      position: absolute;
+      inset: 5px;
+      filter: blur(15px);
+
+      background-image: url("../../../assets/images/pages/login/login.jpg");
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      //
+    }
+
+    //
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 80%;
+      z-index: 1;
+
+      h4 {
+        margin-bottom: var(--space-md);
+        font-weight: var(--font-family) !important;
+        text-transform: uppercase;
+        letter-spacing: 3px !important;
+      }
+
+      input {
+        width: 100%;
+        margin-bottom: var(--space-sm);
+        background-color: var(--bg-opacity-black-1);
+        border: 0;
+        color: var(--white-color);
+        padding: var(--space-xs) var(--space-sm);
+        outline: none;
+        border-radius: 4px;
+
+        &::placeholder {
+          color: var(--bg-dark-white-4);
+        }
+      }
+
+      .links {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: var(--space-md);
+
+        a {
+          text-decoration: none;
+          color: var(--white-color);
+          text-transform: capitalize;
+        }
+      }
+
+      button {
+        display: block;
+        width: 100%;
+        padding: var(--space-xs);
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        text-transform: capitalize;
+        border: 0;
+        border-radius: var(--border-radius-tiny);
+        cursor: pointer;
+
+        &[disabled] {
+          background-color: var(--bg-dark-white-6);
+        }
+      }
+    }
+  }
+}
+
+@property --login-angel {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 360deg;
+}
+@keyframes lighting {
+  0% {
+    --login-angel: 0deg;
+  }
+  100% {
+    --login-angel: 360deg;
+  }
+}

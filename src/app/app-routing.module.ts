@@ -25,6 +25,13 @@ const routes: Routes = [
     loadChildren: () => import('./modules/samples/samples.module').then((m) => m.SamplesModule),
   },
   {
+    path: 'login',
+    data: {
+      preload: true,
+    },
+    loadComponent: () => import('./pages/login/login.component'),
+  },
+  {
     path: '**',
     data: {
       preload: true,
