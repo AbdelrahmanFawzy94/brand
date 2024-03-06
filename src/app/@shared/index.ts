@@ -25,6 +25,7 @@ export * from './components/dashboard/dashboard.component';
 // services
 export * from './services/loader.service';
 export * from './services/localStorage.service';
+export * from './services/http.service';
 
 // helpers
 export * from './helpers/consoleService';
