@@ -78,6 +78,11 @@ body[dir="rtl"] mat-datepicker-content {
   width: 100% !important;
 }
 
+.mat-mdc-form-field-icon-suffix {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 // date picker
 
 // .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover
