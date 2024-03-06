@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { DashboardDropDowns, DashboardUser } from '@shared';
+import { SamplesStoreService } from './services/samples.store.service'; // TODO @samples
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
+@UntilDestroy()
 @Component({
   selector: 'app-samples',
   templateUrl: './samples.component.html',
@@ -11,17 +13,27 @@ export class SamplesComponent {
   dropdowns: DashboardDropDowns[] = [];
   user!: DashboardUser;
 
-  constructor(public http: HttpClient) {
+  constructor(private _samplesStoreService: SamplesStoreService) {
     this.getDropDowns();
     this.getUser();
   }
 
   getDropDowns() {
-    this.http.get<DashboardDropDowns[]>('assets/fakes-json/fake-dropdowns.json').subscribe((dropdowns) => (this.dropdowns = dropdowns));
+    this._samplesStoreService.getDashboardDropdowns
+      ? (this.dropdowns = this._samplesStoreService.getDashboardDropdowns)
+      : this._samplesStoreService
+          .getSamplesDashboardDropdowns()
+          .pipe(untilDestroyed(this))
+          .subscribe((dropdowns) => (this.dropdowns = dropdowns));
   }
 
   getUser() {
-    this.http.get<DashboardUser>('assets/fakes-json/fake-user.json').subscribe((user) => (this.user = user));
+    this._samplesStoreService.getDashboardUser
+      ? (this.user = this._samplesStoreService.getDashboardUser)
+      : this._samplesStoreService
+          .getSamplesDashboardUser()
+          .pipe(untilDestroyed(this))
+          .subscribe((dashboardUser) => (this.user = dashboardUser));
   }
 
   onDashboardSearch(value: string) {
