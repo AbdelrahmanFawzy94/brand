@@ -22,7 +22,8 @@
     align-items: center;
 
     @include xxxl {
-      transform: scale(2);
+      width: 552px;
+      height: 350px;
     }
 
     &::before {
