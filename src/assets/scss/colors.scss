@@ -2,16 +2,16 @@
 :root {
   //==========================================> system color  <=============================================//
   // primary
-  --primary-hue: 265;
-  --primary-saturation: 100%;
+  --primary-hue: 260;
+  --primary-saturation: 50%;
   --primary-light: 50%;
 
   --primary-color: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-light));
   --rotated-primary-color: hsl(calc(var(--primary-hue) + 30), var(--primary-saturation), var(--primary-light));
 
   // secondry
-  --secondry-hue: 240;
-  --secondry-saturation: 100%;
+  --secondry-hue: 235;
+  --secondry-saturation: 50%;
   --secondry-light: 50%;
 
   --secondry-color: hsl(var(--secondry-hue), var(--secondry-saturation), var(--secondry-light));
@@ -19,55 +19,55 @@
 
   // third
   --third-hue: 20;
-  --third-saturation: 100%;
+  --third-saturation: 50%;
   --third-light: 50%;
 
   --third-color: hsl(var(--third-hue), var(--third-saturation), var(--third-light));
   --rotated-third-color: hsl(calc(var(--third-hue) + 30), var(--third-saturation), var(--third-light));
 
   // info
-  --info-hue: 187;
-  --info-saturation: 100%;
+  --info-hue: 190;
+  --info-saturation: 50%;
   --info-light: 50%;
 
   --info-color: hsl(var(--info-hue), var(--info-saturation), var(--info-light));
   --rotated-info-color: hsl(calc(var(--info-hue) + 30), var(--info-saturation), var(--info-light));
 
   // success
-  --success-hue: 122;
-  --success-saturation: 39%;
+  --success-hue: 140;
+  --success-saturation: 50%;
   --success-light: 50%;
 
   --success-color: hsl(var(--success-hue), var(--success-saturation), var(--success-light));
   --rotated-success-color: hsl(calc(var(--success-hue) + 30), var(--success-saturation), var(--success-light));
 
   // warning
-  --warning-hue: 36;
-  --warning-saturation: 100%;
+  --warning-hue: 40;
+  --warning-saturation: 50%;
   --warning-light: 50%;
 
   --warning-color: hsl(var(--warning-hue), var(--warning-saturation), var(--warning-light));
   --rotated-warning-color: hsl(calc(var(--warning-hue) + 30), var(--warning-saturation), var(--warning-light));
 
   // danger
-  --danger-hue: 4;
-  --danger-saturation: 100%;
+  --danger-hue: 0;
+  --danger-saturation: 50%;
   --danger-light: 50%;
 
   --danger-color: hsl(var(--danger-hue), var(--danger-saturation), var(--danger-light));
   --rotated-danger-color: hsl(calc(var(--danger-hue) + 30), var(--danger-saturation), var(--danger-light));
 
   // rose
-  --rose-hue: 340;
-  --rose-saturation: 100%;
+  --rose-hue: 341;
+  --rose-saturation: 50%;
   --rose-light: 50%;
 
   --rose-color: hsl(var(--rose-hue), var(--rose-saturation), var(--rose-light));
   --rotated-rose-color: hsl(calc(var(--rose-hue) + 30), var(--rose-saturation), var(--rose-light));
 
   // purple
-  --purple-hue: 291;
-  --purple-saturation: 100%;
+  --purple-hue: 275;
+  --purple-saturation: 50%;
   --purple-light: 50%;
 
   --purple-color: hsl(var(--purple-hue), var(--purple-saturation), var(--purple-light));
@@ -88,6 +88,14 @@
 
   --black-color: hsl(var(--black-hue), var(--black-saturation), var(--black-light));
   --rotated-black-color: hsl(calc(var(--black-hue) + 30), var(--black-saturation), var(--black-light));
+
+  // elements
+  --elements-hue: 275;
+  --elements-saturation: 50%;
+  --elements-light: 50%;
+
+  --elements-color: hsl(var(--elements-hue), var(--elements-saturation), var(--elements-light));
+  --rotated-elements-color: hsl(calc(var(--elements-hue) + 30), var(--elements-saturation), var(--elements-light));
 }
 
 $colors: primary var(--primary-hue) var(--primary-saturation) var(--primary-light) rotated-primary var(--rotated-primary-color),
@@ -100,7 +108,8 @@ $colors: primary var(--primary-hue) var(--primary-saturation) var(--primary-ligh
   rose var(--rose-hue) var(--rose-saturation) var(--rose-light) rotated-rose var(--rotated-rose-color),
   purple var(--purple-hue) var(--purple-saturation) var(--purple-light) rotated-purple var(--rotated-purple-color),
   white var(--white-hue) var(--white-saturation) var(--white-light) rotated-white var(--rotated-white-color),
-  black var(--black-hue) var(--black-saturation) var(--black-light) rotated-black var(--rotated-black-color);
+  black var(--black-hue) var(--black-saturation) var(--black-light) rotated-black var(--rotated-black-color),
+  elements var(--elements-hue) var(--elements-saturation) var(--elements-light) rotated-elements var(--rotated-elements-color);
 
 @each $colorName, $colorHue, $colorSaturation, $colorLight, $rotatedColorName, $rotatedColorValue in $colors {
   //**************************************** text
@@ -216,6 +225,9 @@ $rotated-white: var(--rotated-white-color);
 
 $black: hsl(var(--black-hue) var(--black-saturation) var(--black-light));
 $rotated-black: var(--rotated-black-color);
+
+$elements: hsl(var(--elements-hue) var(--elements-saturation) var(--elements-light));
+$rotated-elements: var(--rotated-elements-color);
 
 // $colors: (
 //   primary: var(--primary-color),

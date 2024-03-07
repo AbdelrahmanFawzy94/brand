@@ -1,7 +1,9 @@
+// start of design system buttons
+
 @each $colorName, $colorHue, $colorSaturation, $colorLight, $rotatedColorName, $rotatedColorValue in $colors {
   // basic buttons
   .btn-basic-#{$colorName} .mdc-button__label {
-    color: var(--bg-dark-#{$colorName}-1);
+    color: var(--#{$colorName}-color);
   }
 
   .btn-basic-#{$colorName} .mat-mdc-button-persistent-ripple::before {
@@ -20,7 +22,7 @@
   // stroked buttons
 
   .btn-stroked-#{$colorName} .mdc-button__label {
-    color: var(--bg-dark-#{$colorName}-1);
+    color: var(--#{$colorName}-color);
   }
 
   .btn-stroked-#{$colorName} .mat-mdc-button-persistent-ripple::before {
@@ -28,7 +30,7 @@
   }
 
   .btn-stroked-#{$colorName}:hover {
-    border-color: var(--bg-dark-#{$colorName}-1) !important;
+    border-color: var(--#{$colorName}-color) !important;
   }
 
   // flat buttons
@@ -119,3 +121,5 @@
   transform: scale(1) !important;
   margin: 0 1px;
 }
+
+// end of design system buttons

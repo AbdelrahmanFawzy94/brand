@@ -84,6 +84,21 @@ body[dir="rtl"] mat-datepicker-content {
   flex-direction: row-reverse;
 }
 
+// disabled buttons
+.mat-mdc-unelevated-button[disabled],
+.mat-mdc-raised-button[disabled],
+.mat-mdc-fab[disabled],
+.mat-mdc-mini-fab[disabled] {
+  color: var(--bg-dark-white-8) !important;
+  background-color: var(--bg-dark-white-3) !important;
+}
+
+.mat-mdc-outlined-button[disabled],
+.mat-mdc-icon-button[disabled],
+.mat-mdc-button[disabled] {
+  color: var(--bg-dark-white-8) !important;
+}
+
 // date picker
 
 // .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover
