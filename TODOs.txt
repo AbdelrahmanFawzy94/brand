@@ -1,4 +1,4 @@
-- adding dashboard component => complete later
+- adding dashboard component ===================================> DONE
 - - active sub sub menu
 - - enhance ui
 - - user menu and translation
@@ -36,9 +36,14 @@
 
 - - adding stars
 
-- - close tooltip
-
 - - adding disabled for all forms components
+
+- close tooltip
+
+- login page=====================================================> DONE
+- - finalize ui
+- - prepair form
+- - call api
 
 - customize snakbar
 - code component
