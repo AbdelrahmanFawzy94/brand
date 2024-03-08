@@ -15,11 +15,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../../../assets/images/pages/login/login.jpg");
+    background-image: url("/assets/images/pages/login/login.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    filter: hue-rotate(44deg);
+    filter: hue-rotate(44deg) brightness(0.9);
     pointer-events: none;
   }
 
@@ -56,42 +56,34 @@
     }
 
     span {
-      //
       position: absolute;
-      inset: 5px;
+      inset: 2px;
       overflow: hidden;
-      border-radius: 15px;
+      border-radius: 20px;
       pointer-events: none;
-      //
     }
 
     span::before {
-      //
       content: "";
       position: absolute;
       inset: 5px;
       filter: blur(10px) hue-rotate(44deg);
-      background-image: url("../../../assets/images/pages/login/login.jpg");
+      background-image: url("/assets/images/pages/login/login.jpg");
       background-attachment: fixed;
       background-size: cover;
       background-position: center;
-      //
     }
 
     span::after {
-      //
       content: "";
       position: absolute;
       inset: 5px;
       filter: blur(15px) hue-rotate(44deg);
-      background-image: url("../../../assets/images/pages/login/login.jpg");
+      background-image: url("/assets/images/pages/login/login.jpg");
       background-attachment: fixed;
       background-size: cover;
       background-position: center;
-      //
     }
-
-    //
 
     form {
       display: flex;
