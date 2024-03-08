@@ -54,5 +54,15 @@
     "samples_input": "samples input",
     "samples_textarea": "samples textarea",
     "samples_checkbox": "samples checkbox"
+  },
+  "pages": {
+    "login": {
+      "login": "تسجيل الدخول",
+      "username": "اسم المستحدم",
+      "password": "كلمة المرور",
+      "forgot_password": "نسيت كلمة المرور؟",
+      "sign_up": "تسجيل",
+      "sign_in": "دخول"
+    }
   }
 }

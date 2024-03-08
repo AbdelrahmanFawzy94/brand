@@ -5,18 +5,18 @@
     <span></span>
 
     <form>
-      <h4 class="typo-display-small">login</h4>
+      <h4 class="typo-display-small">{{ "pages.login.login" | translate }}</h4>
 
-      <input type="text" placeholder="username" />
-      <input type="password" placeholder="password" />
+      <input type="text" [placeholder]="'pages.login.username' | translate" />
+      <input type="password" [placeholder]="'pages.login.password' | translate" />
 
       <div class="links">
-        <a class="typo-body-small">forget password?</a>
+        <a class="typo-body-small">{{ "pages.login.forgot_password" | translate }}</a>
 
-        <a class="typo-body-small">signup</a>
+        <a class="typo-body-small">{{ "pages.login.sign_up" | translate }}</a>
       </div>
 
-      <button class="typo-body-large" type="button">login</button>
+      <button class="typo-body-large" type="button">{{ "pages.login.sign_in" | translate }}</button>
     </form>
   </div>
 </div>

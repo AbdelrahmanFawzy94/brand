@@ -54,5 +54,15 @@
     "samples_input": "samples input",
     "samples_textarea": "samples textarea",
     "samples_checkbox": "samples checkbox"
+  },
+  "pages": {
+    "login": {
+      "login": "login",
+      "username": "username",
+      "password": "password",
+      "forgot_password": "forgot password?",
+      "sign_up": "sign up",
+      "sign_in": "sign in"
+    }
   }
 }
