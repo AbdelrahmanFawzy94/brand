@@ -6,10 +6,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../../../assets/images/pages/login/login.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../../assets/images/pages/login/login.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    filter: hue-rotate(44deg);
+    pointer-events: none;
+  }
 
   .form-wrapper {
     width: 350px;
@@ -32,11 +44,11 @@
       height: 100%;
       background: repeating-conic-gradient(
         from var(--login-angel),
-        var(--bg-light-purple-4) 0%,
-        var(--bg-light-purple-4) 20%,
+        var(--elements-color) 0%,
+        var(--elements-color) 20%,
         transparent 10%,
         transparent 80%,
-        var(--bg-light-purple-4) 100%
+        var(--elements-color) 100%
       );
       border-radius: 20px;
       pointer-events: none;
@@ -58,8 +70,7 @@
       content: "";
       position: absolute;
       inset: 5px;
-      filter: blur(10px);
-
+      filter: blur(10px) hue-rotate(44deg);
       background-image: url("../../../assets/images/pages/login/login.jpg");
       background-attachment: fixed;
       background-size: cover;
@@ -72,8 +83,7 @@
       content: "";
       position: absolute;
       inset: 5px;
-      filter: blur(15px);
-
+      filter: blur(15px) hue-rotate(44deg);
       background-image: url("../../../assets/images/pages/login/login.jpg");
       background-attachment: fixed;
       background-size: cover;
@@ -120,7 +130,6 @@
         margin-bottom: var(--space-md);
 
         a {
-          text-decoration: none;
           color: var(--white-color);
           text-transform: capitalize;
         }
@@ -130,7 +139,7 @@
         display: block;
         width: 100%;
         padding: var(--space-xs);
-        background-color: var(--primary-color);
+        background-color: var(--elements-color);
         color: var(--white-color);
         text-transform: capitalize;
         border: 0;
@@ -138,7 +147,8 @@
         cursor: pointer;
 
         &[disabled] {
-          background-color: var(--bg-dark-white-6);
+          color: var(--bg-dark-white-8) !important;
+          background-color: var(--bg-dark-white-3) !important;
         }
       }
     }
