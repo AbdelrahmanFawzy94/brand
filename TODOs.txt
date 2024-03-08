@@ -45,6 +45,7 @@
 - - prepair form
 - - call api
 
+- remove zoom:1
 - customize snakbar
 - code component
 - local storage service
