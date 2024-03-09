@@ -45,28 +45,28 @@
       background: repeating-conic-gradient(
         from var(--login-angel),
         var(--elements-color) 0%,
-        var(--elements-color) 20%,
+        transparent 20%,
         transparent 10%,
         transparent 80%,
         var(--elements-color) 100%
       );
-      border-radius: 20px;
+      border-radius: var(--border-radius-large);
       pointer-events: none;
       animation: lighting 3s linear infinite;
     }
 
     span {
       position: absolute;
-      inset: 2px;
+      inset: 1px;
       overflow: hidden;
-      border-radius: 20px;
+      border-radius: var(--border-radius-large);
       pointer-events: none;
     }
 
     span::before {
       content: "";
       position: absolute;
-      inset: 5px;
+      inset: 2px;
       filter: blur(10px) hue-rotate(44deg);
       background-image: url("/assets/images/pages/login/login.jpg");
       background-attachment: fixed;
@@ -77,7 +77,7 @@
     span::after {
       content: "";
       position: absolute;
-      inset: 5px;
+      inset: 2px;
       filter: blur(15px) hue-rotate(44deg);
       background-image: url("/assets/images/pages/login/login.jpg");
       background-attachment: fixed;
