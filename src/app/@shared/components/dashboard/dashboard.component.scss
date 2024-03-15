@@ -19,7 +19,7 @@
 
     .side-nav {
       width: var(--sideNavWidth);
-      background-image: linear-gradient(90deg, var(--bg-dark-purple-4), var(--bg-dark-purple-7));
+      background-image: linear-gradient(90deg, var(--bg-dark-elements-4), var(--bg-dark-elements-7));
       color: var(--white-color);
       overflow-y: auto;
       transition: width 0.15s ease-in-out;
@@ -60,7 +60,7 @@
         overflow: hidden;
         position: sticky;
         top: 0;
-        background-image: linear-gradient(90deg, var(--bg-dark-purple-4), var(--bg-dark-purple-7));
+        background-image: linear-gradient(90deg, var(--bg-dark-elements-4), var(--bg-dark-elements-7));
         z-index: 2;
 
         &.collapsed {
@@ -80,7 +80,7 @@
         padding: var(--space-base);
         position: sticky;
         top: var(--upperNavheight);
-        background-image: linear-gradient(90deg, var(--bg-dark-purple-4), var(--bg-dark-purple-7));
+        background-image: linear-gradient(90deg, var(--bg-dark-elements-4), var(--bg-dark-elements-7));
         z-index: 2;
 
         &.collapsed {
@@ -123,7 +123,7 @@
       }
 
       .links {
-        color: var(--bg-light-purple-8);
+        color: var(--bg-light-elements-8);
         text-transform: capitalize;
 
         mat-expansion-panel {
@@ -238,7 +238,7 @@
         max-height: var(--upperNavheight);
         position: sticky;
         bottom: 0;
-        background-image: linear-gradient(90deg, var(--bg-dark-purple-4), var(--bg-dark-purple-7));
+        background-image: linear-gradient(90deg, var(--bg-dark-elements-4), var(--bg-dark-elements-7));
         z-index: 2;
         margin-top: auto;
 

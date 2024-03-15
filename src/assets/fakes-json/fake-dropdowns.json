@@ -17,15 +17,6 @@
         "subDropdowns": []
       },
       {
-        "id": "3asd",
-        "nameEn": "buttons",
-        "nameAr": "buttons",
-        "icon": "touch_app",
-        "routing": "/samples/buttons",
-        "badgeData": "4",
-        "subDropdowns": []
-      },
-      {
         "id": "3",
         "nameEn": "borders",
         "nameAr": "borders",
@@ -49,6 +40,15 @@
         "nameAr": "screens",
         "icon": "desktop_windows",
         "routing": "/samples/screens",
+        "badgeData": "4",
+        "subDropdowns": []
+      },
+      {
+        "id": "3asd",
+        "nameEn": "buttons",
+        "nameAr": "buttons",
+        "icon": "touch_app",
+        "routing": "/samples/buttons",
         "badgeData": "4",
         "subDropdowns": []
       },

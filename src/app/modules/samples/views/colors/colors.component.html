@@ -474,6 +474,58 @@
         </div>
         <br />
         <br />
+        <div class="bg-elements">
+          <div class="">
+            <div class="variant-color text-white gradient-elements">
+              .gradient-elements
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('gradient-elements')"
+                [cdkCopyToClipboard]="'gradient-elements'"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span>elements</span>
+            <div class="variant-color" *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]" [class]="'bg-elements-light-' + color">
+              .bg-elements-light-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-elements-light-' + color)"
+                [cdkCopyToClipboard]="'bg-elements-light-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+          <div class="">
+            <span class="text-white">elements</span>
+            <div
+              class="variant-color text-white"
+              *ngFor="let color of [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
+              [class]="'bg-elements-dark-' + color"
+            >
+              .bg-elements-dark-{{ color }}
+              <button
+                mat-mini-fab
+                (click)="showCopyToaster('bg-elements-dark-' + color)"
+                [cdkCopyToClipboard]="'bg-elements-dark-' + color"
+                [matTooltip]="'shared.buttons.copy' | translate"
+                class="bg-black-light-25 text-success-light-20"
+              >
+                <shared-icon name="content_copy" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
         <div class="bg-white">
           <div class="">
             <div class="variant-color text-black gradient-white">

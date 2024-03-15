@@ -3,7 +3,7 @@
   //==========================================> system color  <=============================================//
   // primary
   --primary-hue: 260;
-  --primary-saturation: 80%;
+  --primary-saturation: 70%;
   --primary-light: 50%;
 
   --primary-color: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-light));
@@ -11,7 +11,7 @@
 
   // secondry
   --secondry-hue: 235;
-  --secondry-saturation: 80%;
+  --secondry-saturation: 70%;
   --secondry-light: 50%;
 
   --secondry-color: hsl(var(--secondry-hue), var(--secondry-saturation), var(--secondry-light));
@@ -19,7 +19,7 @@
 
   // third
   --third-hue: 20;
-  --third-saturation: 80%;
+  --third-saturation: 70%;
   --third-light: 50%;
 
   --third-color: hsl(var(--third-hue), var(--third-saturation), var(--third-light));
@@ -27,7 +27,7 @@
 
   // info
   --info-hue: 190;
-  --info-saturation: 80%;
+  --info-saturation: 70%;
   --info-light: 50%;
 
   --info-color: hsl(var(--info-hue), var(--info-saturation), var(--info-light));
@@ -35,7 +35,7 @@
 
   // success
   --success-hue: 140;
-  --success-saturation: 80%;
+  --success-saturation: 70%;
   --success-light: 50%;
 
   --success-color: hsl(var(--success-hue), var(--success-saturation), var(--success-light));
@@ -43,7 +43,7 @@
 
   // warning
   --warning-hue: 40;
-  --warning-saturation: 80%;
+  --warning-saturation: 70%;
   --warning-light: 50%;
 
   --warning-color: hsl(var(--warning-hue), var(--warning-saturation), var(--warning-light));
@@ -51,7 +51,7 @@
 
   // danger
   --danger-hue: 0;
-  --danger-saturation: 80%;
+  --danger-saturation: 70%;
   --danger-light: 50%;
 
   --danger-color: hsl(var(--danger-hue), var(--danger-saturation), var(--danger-light));
@@ -59,7 +59,7 @@
 
   // rose
   --rose-hue: 341;
-  --rose-saturation: 80%;
+  --rose-saturation: 70%;
   --rose-light: 50%;
 
   --rose-color: hsl(var(--rose-hue), var(--rose-saturation), var(--rose-light));
@@ -67,7 +67,7 @@
 
   // purple
   --purple-hue: 275;
-  --purple-saturation: 80%;
+  --purple-saturation: 70%;
   --purple-light: 50%;
 
   --purple-color: hsl(var(--purple-hue), var(--purple-saturation), var(--purple-light));
@@ -91,7 +91,7 @@
 
   // elements
   --elements-hue: 290;
-  --elements-saturation: 80%;
+  --elements-saturation: 70%;
   --elements-light: 50%;
 
   --elements-color: hsl(var(--elements-hue), var(--elements-saturation), var(--elements-light));
@@ -184,7 +184,7 @@ $colors: primary var(--primary-hue) var(--primary-saturation) var(--primary-ligh
 
   //**************************************** gradient background
   .gradient-#{$colorName} {
-    background-image: linear-gradient(180deg, hsl($colorHue, $colorSaturation, $colorLight), $rotatedColorValue) !important;
+    background-image: linear-gradient(170deg, hsl($colorHue, $colorSaturation, $colorLight), $rotatedColorValue) !important;
   }
   //**************************************** end gradient background
 }
