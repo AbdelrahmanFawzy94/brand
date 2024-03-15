@@ -20,17 +20,16 @@ export class SharedLanguageMenuComponent implements OnInit {
   languages: Language[] = [
     {
       language: 'ar',
+      displayedanguage: 'العربية',
       img: 'assets/images/languages/ar.jpg',
     },
     {
       language: 'en',
+      displayedanguage: 'En',
       img: 'assets/images/languages/en.jpg',
     },
   ];
-  selectedLanguage: Language = {
-    language: 'en',
-    img: 'assets/images/languages/en.jpg',
-  };
+  selectedLanguage: Language = this.languages[1];
 
   constructor(private _TranslateService: TranslateService) {}
 
