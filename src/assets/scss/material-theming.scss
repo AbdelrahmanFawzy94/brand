@@ -4,6 +4,7 @@ a > [class*="label"] {
   justify-content: center;
   align-items: center;
   gap: var(--space-xs);
+  height: 100%;
 }
 
 mat-form-field.no-validations > [class*="subscript"] {

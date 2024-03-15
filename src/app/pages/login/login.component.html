@@ -1,14 +1,31 @@
 <div class="login">
+  <div class="language-wrapper">
+    <shared-language-menu
+      buttonClasses="login-lang"
+      [showCurrentLang]="true"
+      [matTooltip]="'shared.dashboard.language' | translate"
+    ></shared-language-menu>
+  </div>
+
   <div class="form-wrapper">
     <span></span>
     <span></span>
     <span></span>
 
-    <form>
+    <form [formGroup]="form">
       <h4 class="typo-display-small">{{ "pages.login.login" | translate }}</h4>
 
-      <input type="text" [placeholder]="'pages.login.username' | translate" />
-      <input type="password" [placeholder]="'pages.login.password' | translate" />
+      <input formControlName="username" type="text" [placeholder]="'pages.login.username' | translate" />
+      <shared-validations-messages
+        *ngIf="form.controls['username'].touched"
+        [errors]="form.controls['username'].errors"
+      ></shared-validations-messages>
+
+      <input formControlName="password" type="password" [placeholder]="'pages.login.password' | translate" />
+      <shared-validations-messages
+        *ngIf="form.controls['password'].touched"
+        [errors]="form.controls['password'].errors"
+      ></shared-validations-messages>
 
       <div class="links">
         <a class="typo-body-small">{{ "pages.login.forgot_password" | translate }}</a>

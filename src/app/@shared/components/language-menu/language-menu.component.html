@@ -1,6 +1,7 @@
 <div class="shared-language-menu">
-  <button class="full-button" mat-button [matMenuTriggerFor]="languageMenu" [class]="buttonClasses">
+  <button mat-button [matMenuTriggerFor]="languageMenu" [class]="buttonClasses">
     <img [src]="selectedLanguage.img" [alt]="selectedLanguage.language" />
+    <span *ngIf="showCurrentLang">{{ selectedLanguage.language }}</span>
   </button>
   <!-- TODO [xPosition]="'after'" is not after bug -->
   <mat-menu #languageMenu="matMenu" [xPosition]="'after'">

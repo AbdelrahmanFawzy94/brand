@@ -15,6 +15,7 @@ import { Language } from '@shared';
 export class SharedLanguageMenuComponent implements OnInit {
   @Input() buttonClasses: string = '';
   @Input() menuClasses: string = '';
+  @Input() showCurrentLang: boolean = false;
 
   languages: Language[] = [
     {

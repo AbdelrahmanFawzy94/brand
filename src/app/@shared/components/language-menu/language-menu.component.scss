@@ -3,6 +3,18 @@
 }
 .shared-language-menu {
   height: 100%;
+
+  > button {
+    padding: var(--space-md);
+
+    img {
+      height: 100%;
+    }
+
+    span {
+      color: var(--black-color);
+    }
+  }
 }
 
 .dashboard-laguages-dropdown {
