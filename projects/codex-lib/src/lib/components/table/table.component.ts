@@ -16,9 +16,9 @@ export class SharedtableComponent {
   @Input({ required: true }) data!: any[];
   @Input({ required: true }) columns!: TableColumn[];
   @Input() isLoading: boolean = false;
-  @Input() rows: number = 5;
-  @Input() rowsPerPageOptions: number[] = [5, 10, 20, 30];
-  @Input() totalRecords: number = 0;
+  @Input() numberOfItems: number = 5;
+  @Input() itemsPerPage: number[] = [5, 10, 20, 30];
+  @Input() totalItems: number = 0;
   @Output() onPage = new EventEmitter<PaginatorState>();
 
   constructor() {}

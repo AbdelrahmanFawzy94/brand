@@ -31,10 +31,10 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 })
 export default class TablesComponent implements OnInit {
   fakeData: Item[] = [];
-  rows: number = 10;
-  rowsPerPageOptions: number[] = [5, 10, 20, 40];
+  numberOfItems: number = 10;
+  itemsPerPage: number[] = [5, 10, 20, 40];
   pageNumber: number = 0;
-  totalRecords: number = 0;
+  totalItems: number = 0;
 
   constructor(
     private _samplesStoreService: SamplesStoreService,
@@ -47,7 +47,7 @@ export default class TablesComponent implements OnInit {
   }
 
   onPageChange(e: PaginatorState) {
-    this.rows = e.rows!;
+    this.numberOfItems = e.rows!;
     this.pageNumber = e.page!;
     this.getData();
   }
@@ -59,7 +59,7 @@ export default class TablesComponent implements OnInit {
       .subscribe((tableData) => {
         this.fakeData = tableData.items;
         this.pageNumber = tableData.offset;
-        this.totalRecords = tableData.totalItemsCount;
+        this.totalItems = tableData.totalItemsCount;
       });
   }
 

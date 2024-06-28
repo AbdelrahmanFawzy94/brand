@@ -34,9 +34,9 @@
 
         <lib-table
           [data]="fakeData"
-          [rows]="rows"
-          [totalRecords]="totalRecords"
-          [rowsPerPageOptions]="rowsPerPageOptions"
+          [numberOfItems]="numberOfItems"
+          [totalItems]="totalItems"
+          [itemsPerPage]="itemsPerPage"
           [isLoading]="false"
           [columns]="[
             { key: 'requestNumber', headerTranslationKey: 'shared.buttons.copy', template: requestNumber },

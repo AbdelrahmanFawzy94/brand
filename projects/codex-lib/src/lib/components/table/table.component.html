@@ -27,9 +27,9 @@
 
   <p-paginator
     (onPageChange)="onPageChange($event)"
-    [rows]="rows"
-    [totalRecords]="totalRecords"
-    [rowsPerPageOptions]="rowsPerPageOptions"
+    [rows]="numberOfItems"
+    [totalRecords]="totalItems"
+    [rowsPerPageOptions]="itemsPerPage"
   />
 </div>
 

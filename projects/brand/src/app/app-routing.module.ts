@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CustomPreloadingService } from './@core/services/custom-preloading.service';
+import { CustomPreloadingService } from '../../../codex-lib/src';
 
 const routes: Routes = [
   {

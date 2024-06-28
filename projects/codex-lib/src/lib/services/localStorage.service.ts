@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { environment } from '@committee-env/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -7,16 +6,16 @@ import { environment } from '@committee-env/environment';
 export class LocalStorageService {
   constructor() {}
 
-  getItem(key: string): any | null {
-    return JSON.parse(localStorage.getItem(`${environment.applicationName}-${key}`)!);
+  getItem(applicationName: string, key: string): any | null {
+    return JSON.parse(localStorage.getItem(`${applicationName}-${key}`)!);
   }
 
-  setItem(key: string, value: any): void {
-    localStorage.setItem(`${environment.applicationName}-${key}`, JSON.stringify(value));
+  setItem(applicationName: string, key: string, value: any): void {
+    localStorage.setItem(`${applicationName}-${key}`, JSON.stringify(value));
   }
 
-  removeItem(key: string): void {
-    localStorage.removeItem(`${environment.applicationName}-${key}`);
+  removeItem(applicationName: string, key: string): void {
+    localStorage.removeItem(`${applicationName}-${key}`);
   }
 
   clearAll(): void {
