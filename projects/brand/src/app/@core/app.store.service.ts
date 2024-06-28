@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { ILoginResponse } from '../pages/login/models';
 import { LocalStorageService } from '../../../../codex-lib/src';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -22,6 +22,11 @@ export class AppStoreService {
   private appState$ = new BehaviorSubject(
     this._LocalStorageService.getItem(environment.applicationName, this.localStorageStateKeyName) ?? this.state
   );
+  appStateChanges$!: Observable<{
+    defaultLanguage: 'ar-sa' | 'en' | null;
+    credintials: ILoginResponse | null;
+    theme: 'dark' | 'light' | null;
+  }>;
 
   setDefaultLanguage(defaultLanguage: 'ar-sa' | 'en' | null) {
     defaultLanguage ? (this.state = { ...this.state, defaultLanguage }) : (this.state = { ...this.state, defaultLanguage: null });
@@ -71,6 +76,9 @@ export class AppStoreService {
   }
 
   constructor(private _LocalStorageService: LocalStorageService) {
-    this.appState$.subscribe((state) => _LocalStorageService.setItem(environment.applicationName, this.localStorageStateKeyName, state));
+    this.appState$.subscribe((state) => {
+      _LocalStorageService.setItem(environment.applicationName, this.localStorageStateKeyName, state);
+      this.appStateChanges$ = of(state);
+    });
   }
 }
