@@ -1,0 +1,109 @@
+<div class="shared-icon-button">
+  <ng-container>
+    <ng-container [ngSwitch]="theme">
+      <!-- raised -->
+      <button
+        *ngSwitchCase="'raised'"
+        mat-raised-button
+        (click)="click()"
+        [disabled]="disabled"
+        [ngClass]="{
+          'btn-Raised-primary': color === 'primary',
+          'btn-Raised-secondry': color === 'secondry',
+          'btn-Raised-third': color === 'third',
+          'btn-Raised-info': color === 'info',
+          'btn-Raised-warning': color === 'warning',
+          'btn-Raised-success': color === 'success',
+          'btn-Raised-danger': color === 'danger',
+          'btn-Raised-rose': color === 'rose',
+          'btn-Raised-purple': color === 'purple',
+          'btn-Raised-white': color === 'white',
+          'btn-Raised-black': color === 'black',
+          'btn-Raised-elements': color === 'elements',
+          'btn-icon-lg': size === 'big',
+          'btn-icon-sm': size === 'small',
+        }"
+      >
+        <lib-icon [name]="iconName"></lib-icon>
+      </button>
+
+      <!-- stroked -->
+      <button
+        *ngSwitchCase="'stroked'"
+        mat-stroked-button
+        (click)="click()"
+        [disabled]="disabled"
+        [ngClass]="{
+          'btn-stroked-primary': color === 'primary',
+          'btn-stroked-secondry': color === 'secondry',
+          'btn-stroked-third': color === 'third',
+          'btn-stroked-info': color === 'info',
+          'btn-stroked-warning': color === 'warning',
+          'btn-stroked-success': color === 'success',
+          'btn-stroked-danger': color === 'danger',
+          'btn-stroked-rose': color === 'rose',
+          'btn-stroked-purple': color === 'purple',
+          'btn-stroked-white': color === 'white',
+          'btn-stroked-black': color === 'black',
+          'btn-stroked-elements': color === 'elements',
+          'btn-icon-lg': size === 'big',
+          'btn-icon-sm': size === 'small',
+        }"
+      >
+        <lib-icon [name]="iconName"></lib-icon>
+      </button>
+
+      <!-- flat -->
+      <button
+        *ngSwitchCase="'flat'"
+        mat-flat-button
+        (click)="click()"
+        [disabled]="disabled"
+        [ngClass]="{
+          'btn-flat-primary': color === 'primary',
+          'btn-flat-secondry': color === 'secondry',
+          'btn-flat-third': color === 'third',
+          'btn-flat-info': color === 'info',
+          'btn-flat-warning': color === 'warning',
+          'btn-flat-success': color === 'success',
+          'btn-flat-danger': color === 'danger',
+          'btn-flat-rose': color === 'rose',
+          'btn-flat-purple': color === 'purple',
+          'btn-flat-white': color === 'white',
+          'btn-flat-black': color === 'black',
+          'btn-flat-elements': color === 'elements',
+          'btn-icon-lg': size === 'big',
+          'btn-icon-sm': size === 'small',
+        }"
+      >
+        <lib-icon [name]="iconName"></lib-icon>
+      </button>
+
+      <!-- basic -->
+      <button
+        *ngSwitchDefault
+        mat-button
+        (click)="click()"
+        [disabled]="disabled"
+        [ngClass]="{
+          'btn-basic-primary': color === 'primary',
+          'btn-basic-secondry': color === 'secondry',
+          'btn-basic-third': color === 'third',
+          'btn-basic-info': color === 'info',
+          'btn-basic-warning': color === 'warning',
+          'btn-basic-success': color === 'success',
+          'btn-basic-danger': color === 'danger',
+          'btn-basic-rose': color === 'rose',
+          'btn-basic-purple': color === 'purple',
+          'btn-basic-white': color === 'white',
+          'btn-basic-black': color === 'black',
+          'btn-basic-elements': color === 'elements',
+          'btn-icon-lg': size === 'big',
+          'btn-icon-sm': size === 'small',
+        }"
+      >
+        <lib-icon [name]="iconName"></lib-icon>
+      </button>
+    </ng-container>
+  </ng-container>
+</div>

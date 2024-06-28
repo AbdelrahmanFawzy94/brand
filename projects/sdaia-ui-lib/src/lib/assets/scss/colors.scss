@@ -1,0 +1,248 @@
+// **************************************** colors
+:root {
+  //==========================================> system color  <=============================================//
+  // primary
+  --primary-hue: 260;
+  --primary-saturation: 60%;
+  --primary-light: 50%;
+
+  --primary-color: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-light));
+  --rotated-primary-color: hsl(calc(var(--primary-hue) + 30), var(--primary-saturation), var(--primary-light));
+
+  // secondry
+  --secondry-hue: 235;
+  --secondry-saturation: 60%;
+  --secondry-light: 50%;
+
+  --secondry-color: hsl(var(--secondry-hue), var(--secondry-saturation), var(--secondry-light));
+  --rotated-secondry-color: hsl(calc(var(--secondry-hue) + 30), var(--secondry-saturation), var(--secondry-light));
+
+  // third
+  --third-hue: 20;
+  --third-saturation: 60%;
+  --third-light: 50%;
+
+  --third-color: hsl(var(--third-hue), var(--third-saturation), var(--third-light));
+  --rotated-third-color: hsl(calc(var(--third-hue) + 30), var(--third-saturation), var(--third-light));
+
+  // info
+  --info-hue: 190;
+  --info-saturation: 60%;
+  --info-light: 50%;
+
+  --info-color: hsl(var(--info-hue), var(--info-saturation), var(--info-light));
+  --rotated-info-color: hsl(calc(var(--info-hue) + 30), var(--info-saturation), var(--info-light));
+
+  // success
+  --success-hue: 140;
+  --success-saturation: 60%;
+  --success-light: 50%;
+
+  --success-color: hsl(var(--success-hue), var(--success-saturation), var(--success-light));
+  --rotated-success-color: hsl(calc(var(--success-hue) + 30), var(--success-saturation), var(--success-light));
+
+  // warning
+  --warning-hue: 40;
+  --warning-saturation: 60%;
+  --warning-light: 50%;
+
+  --warning-color: hsl(var(--warning-hue), var(--warning-saturation), var(--warning-light));
+  --rotated-warning-color: hsl(calc(var(--warning-hue) + 30), var(--warning-saturation), var(--warning-light));
+
+  // danger
+  --danger-hue: 0;
+  --danger-saturation: 60%;
+  --danger-light: 50%;
+
+  --danger-color: hsl(var(--danger-hue), var(--danger-saturation), var(--danger-light));
+  --rotated-danger-color: hsl(calc(var(--danger-hue) + 30), var(--danger-saturation), var(--danger-light));
+
+  // rose
+  --rose-hue: 341;
+  --rose-saturation: 60%;
+  --rose-light: 50%;
+
+  --rose-color: hsl(var(--rose-hue), var(--rose-saturation), var(--rose-light));
+  --rotated-rose-color: hsl(calc(var(--rose-hue) + 30), var(--rose-saturation), var(--rose-light));
+
+  // purple
+  --purple-hue: 275;
+  --purple-saturation: 60%;
+  --purple-light: 50%;
+
+  --purple-color: hsl(var(--purple-hue), var(--purple-saturation), var(--purple-light));
+  --rotated-purple-color: hsl(calc(var(--purple-hue) + 30), var(--purple-saturation), var(--purple-light));
+
+  // white
+  --white-hue: 0;
+  --white-saturation: 0%;
+  --white-light: 100%;
+
+  --white-color: hsl(var(--white-hue), var(--white-saturation), var(--white-light));
+  --rotated-white-color: hsl(calc(var(--white-hue) + 30), var(--white-saturation), var(--white-light));
+
+  // black
+  --black-hue: 0;
+  --black-saturation: 0%;
+  --black-light: 0%;
+
+  --black-color: hsl(var(--black-hue), var(--black-saturation), var(--black-light));
+  --rotated-black-color: hsl(calc(var(--black-hue) + 30), var(--black-saturation), var(--black-light));
+
+  // elements
+  // --elements-hue: 290;
+  --elements-hue: 202;
+  --elements-saturation: 60%;
+  --elements-light: 50%;
+
+  --elements-color: hsl(var(--elements-hue), var(--elements-saturation), var(--elements-light));
+  --rotated-elements-color: hsl(calc(var(--elements-hue) + 30), var(--elements-saturation), var(--elements-light));
+}
+
+$colors: primary var(--primary-hue) var(--primary-saturation) var(--primary-light) rotated-primary var(--rotated-primary-color),
+  secondry var(--secondry-hue) var(--secondry-saturation) var(--secondry-light) rotated-secondry var(--rotated-secondry-color),
+  third var(--third-hue) var(--third-saturation) var(--third-light) rotated-third var(--rotated-third-color),
+  info var(--info-hue) var(--info-saturation) var(--info-light) rotated-info var(--rotated-info-color),
+  warning var(--warning-hue) var(--warning-saturation) var(--warning-light) rotated-warning var(--rotated-warning-color),
+  success var(--success-hue) var(--success-saturation) var(--success-light) rotated-success var(--rotated-success-color),
+  danger var(--danger-hue) var(--danger-saturation) var(--danger-light) rotated-danger var(--rotated-danger-color),
+  rose var(--rose-hue) var(--rose-saturation) var(--rose-light) rotated-rose var(--rotated-rose-color),
+  purple var(--purple-hue) var(--purple-saturation) var(--purple-light) rotated-purple var(--rotated-purple-color),
+  white var(--white-hue) var(--white-saturation) var(--white-light) rotated-white var(--rotated-white-color),
+  black var(--black-hue) var(--black-saturation) var(--black-light) rotated-black var(--rotated-black-color),
+  elements var(--elements-hue) var(--elements-saturation) var(--elements-light) rotated-elements var(--rotated-elements-color);
+
+@each $colorName, $colorHue, $colorSaturation, $colorLight, $rotatedColorName, $rotatedColorValue in $colors {
+  //**************************************** text
+  .text-#{$colorName} {
+    color: hsl($colorHue, $colorSaturation, $colorLight) !important;
+  }
+
+  // opacity
+  @for $i from 0 through 9 {
+    .text-opacity-#{$colorName}-#{$i} {
+      color: hsl($colorHue, $colorSaturation, $colorLight, #{$i/10}) !important;
+    }
+  }
+
+  // lighter
+  @for $i from 1 through 10 {
+    .text-#{$colorName}-light-#{$i * 5} {
+      color: hsl($colorHue, $colorSaturation, calc(#{$colorLight} + #{$i * 5%})) !important;
+    }
+  }
+
+  // darker
+  @for $i from 1 through 10 {
+    .text-#{$colorName}-dark-#{$i * 5} {
+      color: hsl($colorHue, $colorSaturation, calc(#{$colorLight} - #{$i * 5%})) !important;
+    }
+  }
+  //**************************************** end of text
+
+  //**************************************** background
+  .bg-#{$colorName} {
+    background-color: hsl($colorHue, $colorSaturation, $colorLight) !important;
+  }
+
+  // opacity
+  @for $i from 0 through 9 {
+    .bg-opacity-#{$colorName}-#{$i} {
+      background-color: hsl($colorHue, $colorSaturation, $colorLight, #{$i/10}) !important;
+    }
+  }
+  :root {
+    @for $i from 0 through 9 {
+      --bg-opacity-#{$colorName}-#{$i}: hsl(#{$colorHue}, #{$colorSaturation}, #{$colorLight}, #{$i/10});
+    }
+  }
+
+  // lighter
+  @for $i from 1 through 10 {
+    .bg-#{$colorName}-light-#{$i * 5} {
+      background-color: hsl($colorHue, $colorSaturation, calc(#{$colorLight} + #{$i * 5%})) !important;
+    }
+  }
+  :root {
+    @for $i from 1 through 10 {
+      --bg-light-#{$colorName}-#{$i}: hsl(#{$colorHue}, #{$colorSaturation}, calc(#{$colorLight} + #{$i * 5%}));
+    }
+  }
+
+  // darker
+  @for $i from 1 through 10 {
+    .bg-#{$colorName}-dark-#{$i * 5} {
+      background-color: hsl($colorHue, $colorSaturation, calc(#{$colorLight} - #{$i * 5%})) !important;
+    }
+  }
+  :root {
+    @for $i from 1 through 10 {
+      --bg-dark-#{$colorName}-#{$i}: hsl(#{$colorHue}, #{$colorSaturation}, calc(#{$colorLight} - #{$i * 5%}));
+    }
+  }
+
+  //**************************************** end of background
+
+  //**************************************** gradient background
+  .gradient-#{$colorName} {
+    background-image: linear-gradient(170deg, hsl($colorHue, $colorSaturation, $colorLight), $rotatedColorValue) !important;
+  }
+  //**************************************** end gradient background
+}
+
+// **************************************** end colors
+
+// colors
+
+$primary: hsl(var(--primary-hue) var(--primary-saturation) var(--primary-light));
+$rotated-primary: var(--rotated-primary-color);
+
+$secondry: hsl(var(--secondry-hue) var(--secondry-saturation) var(--secondry-light));
+$rotated-secondry: var(--rotated-secondry-color);
+
+$third: hsl(var(--third-hue) var(--third-saturation) var(--third-light));
+$rotated-third: var(--rotated-third-color);
+
+$info: hsl(var(--info-hue) var(--info-saturation) var(--info-light));
+$rotated-info: var(--rotated-info-color);
+
+$warning: hsl(var(--warning-hue) var(--warning-saturation) var(--warning-light));
+$rotated-warning: var(--rotated-warning-color);
+
+$success: hsl(var(--success-hue) var(--success-saturation) var(--success-light));
+$rotated-success: var(--rotated-success-color);
+
+$danger: hsl(var(--danger-hue) var(--danger-saturation) var(--danger-light));
+$rotated-danger: var(--rotated-danger-color);
+
+$rose: hsl(var(--rose-hue) var(--rose-saturation) var(--rose-light));
+$rotated-rose: var(--rotated-rose-color);
+
+$purple: hsl(var(--purple-hue) var(--purple-saturation) var(--purple-light));
+$rotated-purple: var(--rotated-purple-color);
+
+$white: hsl(var(--white-hue) var(--white-saturation) var(--white-light));
+$rotated-white: var(--rotated-white-color);
+
+$black: hsl(var(--black-hue) var(--black-saturation) var(--black-light));
+$rotated-black: var(--rotated-black-color);
+
+$elements: hsl(var(--elements-hue) var(--elements-saturation) var(--elements-light));
+$rotated-elements: var(--rotated-elements-color);
+
+// $colors: (
+//   primary: var(--primary-color),
+//   rotated-primary: var(--rotated-primary-color),
+//   secondry: #000,
+//   rotated-secondry: #000,
+//   third: #000,
+//   rotated-third: #000,
+//   info: #000,
+//   warning: #000,
+//   success: #000,
+//   danger: #000,
+//   rose: #000,
+//   purple: #000,
+// );
+
+// end colors

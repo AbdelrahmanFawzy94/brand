@@ -1,0 +1,19 @@
+// @import "src/assets/scss/fonts";
+
+// :host {
+//   display: inline-flex;
+// }
+
+.shared-validations-messages {
+  display: inline-block;
+  .error {
+    font-family: var(--font-family);
+    color: var(--danger-color);
+    font-size: var(--space-sm);
+
+    span {
+      margin: 0 var(--space-xs);
+      color: var(--bg-dark-danger-2);
+    }
+  }
+}

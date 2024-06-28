@@ -1,0 +1,36 @@
+<div class="shared-table" *ngIf="!isLoading">
+  <!-- [showCurrentPageReport]="true" -->
+  <!-- currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" -->
+  <p-table [value]="data" [tableStyle]="{ 'min-width': '600px' }">
+    <ng-template pTemplate="header">
+      <tr>
+        <th *ngFor="let col of columns">
+          {{ col.headerTranslationKey | translate }}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-row>
+      <!-- <tr *ngFor="let row of items; let i = index"> -->
+      <tr>
+        <td *ngFor="let col of columns">
+          <ng-container *ngIf="!col.template">
+            {{ row[col.key] }}
+          </ng-container>
+          <ng-container *ngIf="col.template">
+            <ng-template *ngTemplateOutlet="col.template; context: { $implicit: row }"> </ng-template>
+          </ng-container>
+        </td>
+      </tr>
+      <!-- </tr> -->
+    </ng-template>
+  </p-table>
+
+  <p-paginator
+    (onPageChange)="onPageChange($event)"
+    [rows]="rows"
+    [totalRecords]="totalRecords"
+    [rowsPerPageOptions]="rowsPerPageOptions"
+  />
+</div>
+
+<div class="loading-skeleton" *ngIf="isLoading">is loading...</div>

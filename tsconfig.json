@@ -1,20 +1,48 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,
-    "downlevelIteration": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
+    "paths": {
+      "sdaia-ui-lib": [
+        "./dist/sdaia-ui-lib"
+      ],
+      "@committee-app/": ["projects/committee-portal/src/app/"],
+      "@committee-app/*": ["projects/committee-portal/src/app/*"],
+      "@committee-core": ["projects/committee-portal/src/app/@core"],
+      "@committee-core/*": [ "app/@core/*" ],
+      "@committee-shared": ["projects/committee-portal/src/app/@shared"],
+      "@committee-shared/*": [ "app/@shared/*" ],
+      "@committee-assets": ["projects/committee-portal/src/app/@assets"],
+      "@committee-assets/*": ["projects/committee-portal/src/app/@assets/*"],
+      "@committee-modules/": [ "projects/committee-portal/src/app/modules/" ],
+      "@committee-modules/*": [ "projects/committee-portal/src/app/modules/*" ],
+      "@committee-env": [
+        "projects/committee-portal/src/environments"
+      ],
+      "@committee-env/*": [
+        "projects/committee-portal/src/environments/*"
+      ],
+      "@library": [
+        "./projects/sdaia-ui-lib/src"
+      ],
+      "@library/*": [
+        "./projects/sdaia-ui-lib/src/*"
+      ]
+    },
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
@@ -23,22 +51,6 @@
       "ES2022",
       "dom"
     ],
-    "paths": {
-      "@app/": ["app/"],
-      "@app/*": ["app/*"],
-      "@core": ["app/@core"],
-      "@core/*": [ "app/@core/*" ],
-      "@shared": ["app/@shared"],
-      "@shared/*": [ "app/@shared/*" ],
-      "@assets": ["app/@assets"],
-      "@assets/*": ["app/@assets/*"],
-      "@modules/": [ "app/modules/" ],
-      "@modules/*": [ "app/modules/*" ],
-      "@env/*": [ "environments/*" ]
-      // "exceljs": [
-      //   "node_modules/exceljs/dist/exceljs.min"
-      // ]
-    },
     "noImplicitAny": false
   },
   "angularCompilerOptions": {

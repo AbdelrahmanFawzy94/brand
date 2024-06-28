@@ -1,0 +1,54 @@
+<section class="typo samples">
+  <header class="samples__header">
+    <h2 class="typo-display-large mb-xl margin-top-none">tables</h2>
+    <p class="typo-body-medium mb-xl">Use tables to present your design and content as clearly and efficiently as possible.</p>
+  </header>
+  <section class="samples__body">
+    <div class="samples-panel">
+      <h3 class="typo-headline-medium">import this line in scss first</h3>
+      <div class="align-item-center d-flex gap-sm my-base">
+        <code #importSass class="typo-body-medium text-success my-base d-block">&commat;import "src/assets/scss/tables"; </code>
+        <button
+          mat-mini-fab
+          (click)="showCopyToaster(importSass.textContent!)"
+          [cdkCopyToClipboard]="importSass.textContent!"
+          [matTooltip]="'shared.buttons.copy' | translate"
+          class="bg-black-light-25 text-success-light-20 border-radius-circle"
+        >
+          <lib-icon name="content_copy" />
+        </button>
+      </div>
+
+      <fieldset class="mb-xl border-radius-medium p-xl">
+        <h2 class="typo-headline-large">basic table</h2>
+        <!-- <code #xs class="typo-body-medium text-success"> &commat;include xs &lcub; your code here... &rcub; </code>
+        <button
+          mat-mini-fab
+          (click)="showCopyToaster(xs.textContent!)"
+          [cdkCopyToClipboard]="xs.textContent!"
+          [matTooltip]="'shared.buttons.copy' | translate"
+          class="bg-black-light-25 text-success-light-20 border-radius-circle"
+        >
+          <lib-icon name="content_copy" />
+        </button> -->
+
+        <lib-table
+          [data]="fakeData"
+          [rows]="rows"
+          [totalRecords]="totalRecords"
+          [rowsPerPageOptions]="rowsPerPageOptions"
+          [isLoading]="false"
+          [columns]="[
+            { key: 'requestNumber', headerTranslationKey: 'shared.buttons.copy', template: requestNumber },
+            { key: 'createDate', headerTranslationKey: 'shared.buttons.confirm' }
+          ]"
+          (onPage)="onPageChange($event)"
+        >
+          <ng-template #requestNumber let-item>
+            <div>test {{ item.requestNumber }}</div>
+          </ng-template>
+        </lib-table>
+      </fieldset>
+    </div>
+  </section>
+</section>

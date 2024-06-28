@@ -1,0 +1,39 @@
+<div class="login">
+  <div class="language-wrapper">
+    <shared-language-menu
+      buttonClasses="login-lang"
+      [showCurrentLang]="true"
+      [matTooltip]="'shared.dashboard.language' | translate"
+    ></shared-language-menu>
+  </div>
+
+  <div class="form-wrapper">
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <form [formGroup]="form">
+      <h4 class="typo-display-small">{{ "pages.login.login" | translate }}</h4>
+
+      <input formControlName="username" type="text" [placeholder]="'pages.login.username' | translate" />
+      <lib-validations-messages
+        *ngIf="form.controls['username'].touched"
+        [errors]="form.controls['username'].errors"
+      ></lib-validations-messages>
+
+      <input formControlName="password" type="password" [placeholder]="'pages.login.password' | translate" />
+      <lib-validations-messages
+        *ngIf="form.controls['password'].touched"
+        [errors]="form.controls['password'].errors"
+      ></lib-validations-messages>
+
+      <div class="links">
+        <a class="typo-body-small">{{ "pages.login.forgot_password" | translate }}</a>
+
+        <a class="typo-body-small">{{ "pages.login.sign_up" | translate }}</a>
+      </div>
+
+      <button class="typo-body-large" type="button">{{ "pages.login.sign_in" | translate }}</button>
+    </form>
+  </div>
+</div>

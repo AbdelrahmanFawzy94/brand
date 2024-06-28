@@ -1,0 +1,32 @@
+:host {
+  height: 100%;
+}
+.shared-language-menu {
+  height: 100%;
+
+  > button {
+    padding: var(--space-lg);
+
+    img {
+      height: 100%;
+    }
+
+    span {
+      color: var(--black-color);
+    }
+  }
+}
+
+.dashboard-laguages-dropdown {
+  zoom: 1;
+
+  .laguage {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+
+    img {
+      width: 30px;
+    }
+  }
+}

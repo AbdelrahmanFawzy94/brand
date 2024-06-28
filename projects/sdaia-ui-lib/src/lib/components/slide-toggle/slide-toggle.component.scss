@@ -1,0 +1,17 @@
+// @import "src/assets/scss/fonts";
+
+// :host {
+//   display: inline-flex;
+// }
+
+.shared-slide-toggle {
+  margin-bottom: var(--space-base);
+
+  .validations {
+    height: 24px;
+
+    &.no-validations {
+      display: none;
+    }
+  }
+}

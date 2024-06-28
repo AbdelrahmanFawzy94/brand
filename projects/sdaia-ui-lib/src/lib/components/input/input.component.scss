@@ -1,0 +1,17 @@
+// @import "src/assets/scss/fonts";
+
+// :host {
+//   display: inline-flex;
+// }
+
+.shared-input {
+  margin-bottom: var(--space-base);
+
+  mat-form-field {
+    width: 100%;
+
+    shared-icon {
+      color: var(--bg-light-black-10);
+    }
+  }
+}

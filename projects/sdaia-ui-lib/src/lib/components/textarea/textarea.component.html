@@ -1,0 +1,33 @@
+<div class="shared-input">
+  <ng-container *ngIf="passedFormControl">
+    <!-- floatLabel="always" always | auto -->
+    <mat-form-field [appearance]="appearance" [class.no-validations]="hideValidation">
+      <mat-label class="text-capitalize">{{ label }}</mat-label>
+      <textarea matInput [formControl]="passedFormControl" [value]="passedFormControl.value" [placeholder]="placeholder"></textarea>
+      <!-- TODO matPrefix not working with [appearance]="outline" -->
+      <lib-icon *ngIf="firstIcon" matPrefix [name]="firstIcon"></lib-icon>
+      <lib-icon *ngIf="lastIcon" matSuffix [name]="lastIcon"></lib-icon>
+      <button *ngIf="passedFormControl.value" mat-icon-button matSuffix (click)="clearControl()">
+        <lib-icon name="close"></lib-icon>
+      </button>
+      <mat-error>
+        <lib-validations-messages [errors]="passedFormControl.errors"></lib-validations-messages>
+      </mat-error>
+
+      <mat-hint *ngIf="hint">{{ hint }}</mat-hint>
+    </mat-form-field>
+  </ng-container>
+
+  <ng-container *ngIf="!passedFormControl">
+    <mat-form-field [appearance]="appearance" [class.no-validations]="hideValidation">
+      <mat-label class="text-capitalize">{{ label }}</mat-label>
+      <textarea #textarea matInput (input)="onInput.emit(textarea.value)" [placeholder]="placeholder"></textarea>
+      <lib-icon *ngIf="firstIcon" matPrefix [name]="firstIcon"></lib-icon>
+      <lib-icon *ngIf="lastIcon" matSuffix [name]="lastIcon"></lib-icon>
+      <button *ngIf="textarea.value" mat-icon-button matSuffix (click)="clearTextArea(); onInputEmit()">
+        <lib-icon name="close"></lib-icon>
+      </button>
+      <mat-hint *ngIf="hint">{{ hint }}</mat-hint>
+    </mat-form-field>
+  </ng-container>
+</div>

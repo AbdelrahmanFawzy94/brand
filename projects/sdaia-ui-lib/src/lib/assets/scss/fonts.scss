@@ -1,0 +1,72 @@
+$fonts-paths: "../fonts";
+:root {
+  --font-family: "cairo", sans-serif;
+  --font-material: "Material Symbols Outlined";
+  --icon-size: 1.5rem;
+}
+$font-family: var(--font-family);
+$icon-font-size: var(--icon-size);
+
+// cairo
+
+@font-face {
+  font-family: "cairo-extra-light";
+  font-style: normal;
+  font-weight: 400;
+  src: url("#{$fonts-paths}/cairo/Cairo-ExtraLight.ttf");
+}
+
+@font-face {
+  font-family: "cairo-light";
+  font-style: normal;
+  font-weight: 400;
+  src: url("#{$fonts-paths}/cairo/Cairo-Light.ttf");
+}
+
+@font-face {
+  font-family: "cairo";
+  font-style: normal;
+  font-weight: 400;
+  src: url("#{$fonts-paths}/cairo/Cairo-Regular.ttf");
+}
+
+@font-face {
+  font-family: "cairo-bold";
+  font-style: normal;
+  font-weight: 400;
+  src: url("#{$fonts-paths}/cairo/Cairo-Bold.ttf");
+}
+
+@font-face {
+  font-family: "cairo-extra-bold";
+  font-style: normal;
+  font-weight: 400;
+  src: url("#{$fonts-paths}/cairo/Cairo-ExtraBold.ttf");
+}
+
+// material
+
+@font-face {
+  font-family: "Material Symbols Outlined";
+  font-style: normal;
+  font-weight: 400;
+  src: url("#{$fonts-paths}/material/material.woff2") format("woff2");
+}
+
+.material-symbols-outlined {
+  font-family: var(--font-material);
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
+// end of material

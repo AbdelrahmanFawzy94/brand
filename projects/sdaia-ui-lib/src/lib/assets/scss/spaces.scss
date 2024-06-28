@@ -1,0 +1,117 @@
+$sizes: (
+  "auto": auto,
+  "none": 0,
+  "xs": 0.5rem,
+  "sm": 0.75rem,
+  "base": 0.9rem,
+  "md": 1rem,
+  "lg": 1.5rem,
+  "xl": 2rem,
+  "xxl": 2.5rem,
+  "xxxl": 3.5rem,
+);
+
+$directions: (
+  "t": top,
+  "b": bottom,
+  "start": inline-start,
+  "end": inline-end,
+  "r": right,
+  "l": left,
+  "y": "",
+  "x": "",
+);
+
+:root {
+  @each $size, $value in $sizes {
+    --space-#{$size}: #{$value};
+  }
+}
+
+@each $size, $value in $sizes {
+  .m-#{$size} {
+    margin: var(--space-#{$size}) !important;
+  }
+
+  .p-#{$size} {
+    padding: var(--space-#{$size}) !important;
+  }
+
+  @each $direction, $value in $directions {
+    .m#{$direction}-#{$size} {
+      @if $direction == "x" {
+        margin-left: var(--space-#{$size}) !important;
+        margin-right: var(--space-#{$size}) !important;
+      } @else if $direction == "y" {
+        margin-top: var(--space-#{$size}) !important;
+        margin-bottom: var(--space-#{$size}) !important;
+      } @else {
+        margin-#{$value}: var(--space-#{$size}) !important;
+      }
+    }
+
+    .p#{$direction}-#{$size} {
+      @if $direction == "x" {
+        padding-left: var(--space-#{$size}) !important;
+        padding-right: var(--space-#{$size}) !important;
+      } @else if $direction == "y" {
+        padding-top: var(--space-#{$size}) !important;
+        padding-bottom: var(--space-#{$size}) !important;
+      } @else {
+        padding-#{$value}: var(--space-#{$size}) !important;
+      }
+    }
+  }
+
+  .gap-#{$size} {
+    gap: #{$value};
+  }
+}
+
+//   .margin-inline-start-m {
+//     margin-inline-start: var(--space-md) !important;
+//   }
+
+//   .margin-inline-end-m {
+//     margin-inline-end: var(--space-md) !important;
+//   }
+
+//   .margin-inline-start-base {
+//     margin-inline-start: var(--space-base) !important;
+//   }
+
+//   .margin-inline-end-base {
+//     margin-inline-end: var(--space-base) !important;
+//   }
+
+//   .margin-inline-start-s {
+//     margin-inline-start: var(--space-sm) !important;
+//   }
+
+//   .margin-inline-end-s {
+//     margin-inline-end: var(--space-sm) !important;
+//   }
+
+//   .padding-inline-start-m {
+//     padding-inline-start: var(--space-md) !important;
+//   }
+
+//   .padding-inline-end-m {
+//     padding-inline-end: var(--space-md) !important;
+//   }
+
+//   .padding-inline-start-base {
+//     padding-inline-start: var(--space-base) !important;
+//   }
+
+//   .padding-inline-end-base {
+//     padding-inline-end: var(--space-base) !important;
+//   }
+
+//   .padding-inline-start-s {
+//     padding-inline-start: var(--space-sm) !important;
+//   }
+
+//   .padding-inline-end-s {
+//     padding-inline-end: var(--space-sm) !important;
+//   }

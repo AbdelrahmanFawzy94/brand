@@ -1,0 +1,612 @@
+<!-- TODO adding stroked,flat and raised buttons example and copy button -->
+
+<section class="typo samples">
+  <header class="samples__header">
+    <h2 class="typo-display-large mb-xl margin-top-none">buttons</h2>
+    <p class="typo-body-medium mb-xl">Use buttons to present your design and content as clearly and efficiently as possible.</p>
+  </header>
+
+  <section class="samples__body">
+    <div class="samples-panel">
+      <!-- <button
+        mat-mini-fab
+        (click)="showCopyToaster(xxxl.textContent!)"
+        [cdkCopyToClipboard]="xxxl.textContent!"
+        [matTooltip]="'shared.buttons.copy' | translate"
+        class="bg-black-light-25 text-success-light-20 border-radius-circle"
+      >
+        <lib-icon name="content_copy" />
+      </button> -->
+
+      <fieldset class="mb-xl border-radius-medium p-xl">
+        <h2 class="typo-headline-large">Basic md Buttons</h2>
+        <div class="buttons-wrapper">
+          <lib-button (click)="clicked($event)"> basic </lib-button>
+          <lib-button color="secondry"> secondry </lib-button>
+          <lib-button color="third"> third </lib-button>
+          <lib-button color="info"> info </lib-button>
+          <lib-button color="warning"> warning </lib-button>
+          <lib-button color="success"> success </lib-button>
+          <lib-button color="danger"> danger </lib-button>
+          <lib-button color="rose"> rose </lib-button>
+          <lib-button color="purple"> purple </lib-button>
+          <lib-button color="black"> black </lib-button>
+          <lib-button color="elements"> elements </lib-button>
+          <lib-button [disabled]="true">Disabled </lib-button>
+
+          <a href="#">
+            <lib-button>link </lib-button>
+          </a>
+        </div>
+
+        <h2 class="typo-headline-large">Basic sm Buttons</h2>
+        <div class="buttons-wrapper">
+          <lib-button size="small"> basic </lib-button>
+          <lib-button size="small" color="secondry"> secondry </lib-button>
+          <lib-button size="small" color="third"> third </lib-button>
+          <lib-button size="small" color="info"> info </lib-button>
+          <lib-button size="small" color="warning"> warning </lib-button>
+          <lib-button size="small" color="success"> success </lib-button>
+          <lib-button size="small" color="danger"> danger </lib-button>
+          <lib-button size="small" color="rose"> rose </lib-button>
+          <lib-button size="small" color="purple"> purple </lib-button>
+          <lib-button size="small" color="black"> black </lib-button>
+          <lib-button size="small" color="elements"> elements </lib-button>
+          <lib-button size="small" [disabled]="true">Disabled </lib-button>
+
+          <a href="#">
+            <lib-button size="small">link </lib-button>
+          </a>
+        </div>
+
+        <h2 class="typo-headline-large">Basic lg Buttons</h2>
+        <div class="buttons-wrapper">
+          <lib-button size="big"> basic </lib-button>
+          <lib-button size="big" color="secondry"> secondry </lib-button>
+          <lib-button size="big" color="third"> third </lib-button>
+          <lib-button size="big" color="info"> info </lib-button>
+          <lib-button size="big" color="warning"> warning </lib-button>
+          <lib-button size="big" color="success"> success </lib-button>
+          <lib-button size="big" color="danger"> danger </lib-button>
+          <lib-button size="big" color="rose"> rose </lib-button>
+          <lib-button size="big" color="purple"> purple </lib-button>
+          <lib-button size="big" color="black"> black </lib-button>
+          <lib-button size="big" color="elements"> elements </lib-button>
+          <lib-button size="big" [disabled]="true">Disabled </lib-button>
+
+          <a href="#">
+            <lib-button size="big">link </lib-button>
+          </a>
+        </div>
+        <!-- <code #xs class="typo-body-medium text-success">
+        </code>
+        <button
+          mat-mini-fab
+          (click)="showCopyToaster(xs.textContent!)"
+          [cdkCopyToClipboard]="xs.textContent!"
+          [matTooltip]="'shared.buttons.copy' | translate"
+          class="bg-black-light-25 text-success-light-20 border-radius-circle"
+        >
+          <lib-icon name="content_copy" />
+        </button> -->
+      </fieldset>
+
+      <fieldset class="mb-xl border-radius-medium p-xl">
+        <h2 class="typo-headline-large">Raised md Buttons</h2>
+        <div class="buttons-wrapper">
+          <lib-button theme="raised"> Raised </lib-button>
+          <lib-button theme="raised" color="primary"> primary </lib-button>
+          <lib-button theme="raised" color="secondry"> secondry </lib-button>
+          <lib-button theme="raised" color="third"> third </lib-button>
+          <lib-button theme="raised" color="info"> info </lib-button>
+          <lib-button theme="raised" color="warning"> warning </lib-button>
+          <lib-button theme="raised" color="success"> success </lib-button>
+          <lib-button theme="raised" color="danger"> danger </lib-button>
+          <lib-button theme="raised" color="rose"> rose </lib-button>
+          <lib-button theme="raised" color="purple"> purple </lib-button>
+          <lib-button theme="raised" color="white"> white </lib-button>
+          <lib-button theme="raised" color="black"> black </lib-button>
+          <lib-button theme="raised" color="elements"> elements </lib-button>
+          <lib-button theme="raised" [disabled]="true"> disabled </lib-button>
+          <a href="#">
+            <lib-button theme="raised">link </lib-button>
+          </a>
+        </div>
+
+        <h2 class="typo-headline-large">Raised sm Buttons</h2>
+        <div class="buttons-wrapper">
+          <lib-button theme="raised" size="small"> Raised </lib-button>
+          <lib-button theme="raised" size="small" color="primary"> primary </lib-button>
+          <lib-button theme="raised" size="small" color="secondry"> secondry </lib-button>
+          <lib-button theme="raised" size="small" color="third"> third </lib-button>
+          <lib-button theme="raised" size="small" color="info"> info </lib-button>
+          <lib-button theme="raised" size="small" color="warning"> warning </lib-button>
+          <lib-button theme="raised" size="small" color="success"> success </lib-button>
+          <lib-button theme="raised" size="small" color="danger"> danger </lib-button>
+          <lib-button theme="raised" size="small" color="rose"> rose </lib-button>
+          <lib-button theme="raised" size="small" color="purple"> purple </lib-button>
+          <lib-button theme="raised" size="small" color="white"> white </lib-button>
+          <lib-button theme="raised" size="small" color="black"> black </lib-button>
+          <lib-button theme="raised" size="small" color="elements"> elements </lib-button>
+          <lib-button theme="raised" size="small" [disabled]="true"> disabled </lib-button>
+          <a href="#">
+            <lib-button theme="raised" size="small">link </lib-button>
+          </a>
+        </div>
+
+        <h2 class="typo-headline-large">Raised lg Buttons</h2>
+        <div class="buttons-wrapper">
+          <lib-button theme="raised" size="big"> Raised </lib-button>
+          <lib-button theme="raised" size="big" color="primary"> primary </lib-button>
+          <lib-button theme="raised" size="big" color="secondry"> secondry </lib-button>
+          <lib-button theme="raised" size="big" color="third"> third </lib-button>
+          <lib-button theme="raised" size="big" color="info"> info </lib-button>
+          <lib-button theme="raised" size="big" color="warning"> warning </lib-button>
+          <lib-button theme="raised" size="big" color="success"> success </lib-button>
+          <lib-button theme="raised" size="big" color="danger"> danger </lib-button>
+          <lib-button theme="raised" size="big" color="rose"> rose </lib-button>
+          <lib-button theme="raised" size="big" color="purple"> purple </lib-button>
+          <lib-button theme="raised" size="big" color="white"> white </lib-button>
+          <lib-button theme="raised" size="big" color="black"> black </lib-button>
+          <lib-button theme="raised" size="big" color="elements"> elements </lib-button>
+          <lib-button theme="raised" size="big" [disabled]="true"> disabled </lib-button>
+          <a href="#">
+            <lib-button theme="raised" size="big">link </lib-button>
+          </a>
+        </div>
+        <!-- <code #sm class="typo-body-medium text-success">
+        </code>
+        <button
+          mat-mini-fab
+          (click)="showCopyToaster(sm.textContent!)"
+          [cdkCopyToClipboard]="sm.textContent!"
+          [matTooltip]="'shared.buttons.copy' | translate"
+          class="bg-black-light-25 text-success-light-20 border-radius-circle"
+        >
+          <lib-icon name="content_copy" />
+        </button> -->
+      </fieldset>
+
+      <fieldset class="mb-xl border-radius-medium p-xl">
+        <h2 class="typo-headline-large">Stroked md Buttons</h2>
+        <div class="buttons-wrapper">
+          <lib-button theme="stroked"> Stroked </lib-button>
+          <lib-button theme="stroked" color="primary"> primary </lib-button>
+          <lib-button theme="stroked" color="secondry"> secondry </lib-button>
+          <lib-button theme="stroked" color="third"> third </lib-button>
+          <lib-button theme="stroked" color="info"> info </lib-button>
+          <lib-button theme="stroked" color="warning"> warning </lib-button>
+          <lib-button theme="stroked" color="success"> success </lib-button>
+          <lib-button theme="stroked" color="danger"> danger </lib-button>
+          <lib-button theme="stroked" color="rose"> rose </lib-button>
+          <lib-button theme="stroked" color="purple"> purple </lib-button>
+          <lib-button theme="stroked" color="white"> white </lib-button>
+          <lib-button theme="stroked" color="black"> black </lib-button>
+          <lib-button theme="stroked" color="elements"> elements </lib-button>
+          <lib-button theme="stroked" [disabled]="true"> elements </lib-button>
+
+          <a href="#">
+            <lib-button theme="stroked"> link </lib-button>
+          </a>
+        </div>
+
+        <h2 class="typo-headline-large">Stroked sm Buttons</h2>
+        <div class="buttons-wrapper">
+          <lib-button theme="stroked" size="small"> stroked </lib-button>
+          <lib-button theme="stroked" size="small" color="primary"> primary </lib-button>
+          <lib-button theme="stroked" size="small" color="secondry"> secondry </lib-button>
+          <lib-button theme="stroked" size="small" color="third"> third </lib-button>
+          <lib-button theme="stroked" size="small" color="info"> info </lib-button>
+          <lib-button theme="stroked" size="small" color="warning"> warning </lib-button>
+          <lib-button theme="stroked" size="small" color="success"> success </lib-button>
+          <lib-button theme="stroked" size="small" color="danger"> danger </lib-button>
+          <lib-button theme="stroked" size="small" color="rose"> rose </lib-button>
+          <lib-button theme="stroked" size="small" color="purple"> purple </lib-button>
+          <lib-button theme="stroked" size="small" color="white"> white </lib-button>
+          <lib-button theme="stroked" size="small" color="black"> black </lib-button>
+          <lib-button theme="stroked" size="small" color="elements"> elements </lib-button>
+          <lib-button theme="stroked" size="small" [disabled]="true"> disabled </lib-button>
+          <a href="#">
+            <lib-button theme="stroked" size="small">link </lib-button>
+          </a>
+        </div>
+
+        <h2 class="typo-headline-large">Stroked lg Buttons</h2>
+        <div class="buttons-wrapper">
+          <lib-button theme="stroked" size="big"> stroked </lib-button>
+          <lib-button theme="stroked" size="big" color="primary"> primary </lib-button>
+          <lib-button theme="stroked" size="big" color="secondry"> secondry </lib-button>
+          <lib-button theme="stroked" size="big" color="third"> third </lib-button>
+          <lib-button theme="stroked" size="big" color="info"> info </lib-button>
+          <lib-button theme="stroked" size="big" color="warning"> warning </lib-button>
+          <lib-button theme="stroked" size="big" color="success"> success </lib-button>
+          <lib-button theme="stroked" size="big" color="danger"> danger </lib-button>
+          <lib-button theme="stroked" size="big" color="rose"> rose </lib-button>
+          <lib-button theme="stroked" size="big" color="purple"> purple </lib-button>
+          <lib-button theme="stroked" size="big" color="white"> white </lib-button>
+          <lib-button theme="stroked" size="big" color="black"> black </lib-button>
+          <lib-button theme="stroked" size="big" color="elements"> elements </lib-button>
+          <lib-button theme="stroked" size="big" [disabled]="true"> disabled </lib-button>
+          <a href="#">
+            <lib-button theme="stroked" size="big">link </lib-button>
+          </a>
+        </div>
+
+        <!-- <code #md class="typo-body-medium text-success">
+      </code>
+        <button
+          mat-mini-fab
+          (click)="showCopyToaster(md.textContent!)"
+          [cdkCopyToClipboard]="md.textContent!"
+          [matTooltip]="'shared.buttons.copy' | translate"
+          class="bg-black-light-25 text-success-light-20 border-radius-circle"
+        >
+          <lib-icon name="content_copy" />
+        </button> -->
+      </fieldset>
+
+      <fieldset class="mb-xl border-radius-medium p-xl">
+        <h2 class="typo-headline-large">Flat md Buttons</h2>
+        <div class="buttons-wrapper">
+          <lib-button theme="flat"> flat </lib-button>
+          <lib-button theme="flat" color="primary"> primary </lib-button>
+          <lib-button theme="flat" color="secondry"> secondry </lib-button>
+          <lib-button theme="flat" color="third"> third </lib-button>
+          <lib-button theme="flat" color="info"> info </lib-button>
+          <lib-button theme="flat" color="warning"> warning </lib-button>
+          <lib-button theme="flat" color="success"> success </lib-button>
+          <lib-button theme="flat" color="danger"> danger </lib-button>
+          <lib-button theme="flat" color="rose"> rose </lib-button>
+          <lib-button theme="flat" color="purple"> purple </lib-button>
+          <lib-button theme="flat" color="white"> white </lib-button>
+          <lib-button theme="flat" color="black"> black </lib-button>
+          <lib-button theme="flat" color="elements"> elements </lib-button>
+          <lib-button theme="flat" [disabled]="true"> disabled </lib-button>
+          <a href="#">
+            <lib-button theme="flat">link </lib-button>
+          </a>
+        </div>
+
+        <h2 class="typo-headline-large">Flat sm Buttons</h2>
+        <div class="buttons-wrapper">
+          <lib-button theme="flat" size="small"> flat </lib-button>
+          <lib-button theme="flat" size="small" color="primary"> primary </lib-button>
+          <lib-button theme="flat" size="small" color="secondry"> secondry </lib-button>
+          <lib-button theme="flat" size="small" color="third"> third </lib-button>
+          <lib-button theme="flat" size="small" color="info"> info </lib-button>
+          <lib-button theme="flat" size="small" color="warning"> warning </lib-button>
+          <lib-button theme="flat" size="small" color="success"> success </lib-button>
+          <lib-button theme="flat" size="small" color="danger"> danger </lib-button>
+          <lib-button theme="flat" size="small" color="rose"> rose </lib-button>
+          <lib-button theme="flat" size="small" color="purple"> purple </lib-button>
+          <lib-button theme="flat" size="small" color="white"> white </lib-button>
+          <lib-button theme="flat" size="small" color="black"> black </lib-button>
+          <lib-button theme="flat" size="small" color="elements"> elements </lib-button>
+          <lib-button theme="flat" size="small" [disabled]="true"> disabled </lib-button>
+          <a href="#">
+            <lib-button theme="flat" size="small">link </lib-button>
+          </a>
+        </div>
+
+        <h2 class="typo-headline-large">Flat lg Buttons</h2>
+        <div class="buttons-wrapper">
+          <lib-button theme="flat" size="big"> flat </lib-button>
+          <lib-button theme="flat" size="big" color="primary"> primary </lib-button>
+          <lib-button theme="flat" size="big" color="secondry"> secondry </lib-button>
+          <lib-button theme="flat" size="big" color="third"> third </lib-button>
+          <lib-button theme="flat" size="big" color="info"> info </lib-button>
+          <lib-button theme="flat" size="big" color="warning"> warning </lib-button>
+          <lib-button theme="flat" size="big" color="success"> success </lib-button>
+          <lib-button theme="flat" size="big" color="danger"> danger </lib-button>
+          <lib-button theme="flat" size="big" color="rose"> rose </lib-button>
+          <lib-button theme="flat" size="big" color="purple"> purple </lib-button>
+          <lib-button theme="flat" size="big" color="white"> white </lib-button>
+          <lib-button theme="flat" size="big" color="black"> black </lib-button>
+          <lib-button theme="flat" size="big" color="elements"> elements </lib-button>
+          <lib-button theme="flat" size="big" [disabled]="true"> disabled </lib-button>
+          <a href="#">
+            <lib-button theme="flat" size="big">link </lib-button>
+          </a>
+        </div>
+        <!-- <code #lg class="typo-body-medium text-success">
+      </code>
+        <button
+          mat-mini-fab
+          (click)="showCopyToaster(lg.textContent!)"
+          [cdkCopyToClipboard]="lg.textContent!"
+          [matTooltip]="'shared.buttons.copy' | translate"
+          class="bg-black-light-25 text-success-light-20 border-radius-circle"
+        >
+          <lib-icon name="content_copy" />
+        </button> -->
+      </fieldset>
+
+      <!-- icons -->
+
+      <fieldset class="mb-xl border-radius-medium p-xl">
+        <h2 class="typo-headline-large">Icon md raised Buttons</h2>
+        <div class="buttons-wrapper">
+          <lib-icon-button iconName="favorite" theme="raised"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" color="primary"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" color="secondry"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" color="third"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" color="info"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" color="warning"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" color="success"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" color="danger"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" color="rose"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" color="purple"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" color="black"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" color="elements"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" [disabled]="true"> </lib-icon-button>
+          <a>
+            <lib-icon-button iconName="favorite" theme="raised"> </lib-icon-button>
+          </a>
+        </div>
+        <h2 class="typo-headline-large">Icon sm raised Buttons</h2>
+        <div class="buttons-wrapper">
+          <lib-icon-button iconName="favorite" theme="raised" size="small"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="small" color="primary"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="small" color="secondry"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="small" color="third"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="small" color="info"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="small" color="warning"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="small" color="success"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="small" color="danger"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="small" color="rose"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="small" color="purple"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="small" color="black"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="small" color="elements"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="small" [disabled]="true"> </lib-icon-button>
+          <a>
+            <lib-icon-button iconName="favorite" theme="raised" size="small"> </lib-icon-button>
+          </a>
+        </div>
+        <h2 class="typo-headline-large">Icon lg raised Buttons</h2>
+        <div class="buttons-wrapper">
+          <lib-icon-button iconName="favorite" theme="raised" size="big"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="big" color="primary"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="big" color="secondry"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="big" color="third"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="big" color="info"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="big" color="warning"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="big" color="success"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="big" color="danger"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="big" color="rose"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="big" color="purple"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="big" color="black"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="big" color="elements"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="raised" size="big" [disabled]="true"> </lib-icon-button>
+          <a>
+            <lib-icon-button iconName="favorite" theme="raised" size="big"> </lib-icon-button>
+          </a>
+        </div>
+
+        <!-- <code #xl class="typo-body-medium text-success">
+                    </code>
+                    <button
+                      mat-mini-fab
+                      (click)="showCopyToaster(xl.textContent!)"
+                      [cdkCopyToClipboard]="xl.textContent!"
+                      [matTooltip]="'shared.buttons.copy' | translate"
+                      class="bg-black-light-25 text-success-light-20 border-radius-circle"
+                    >
+                      <lib-icon name="content_copy" />
+                    </button> -->
+      </fieldset>
+
+      <fieldset class="mb-xl border-radius-medium p-xl">
+        <h2 class="typo-headline-large">Icon md stroked Buttons</h2>
+        <div class="buttons-wrapper">
+          <lib-icon-button iconName="favorite" theme="stroked"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" color="primary"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" color="secondry"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" color="third"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" color="info"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" color="warning"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" color="success"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" color="danger"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" color="rose"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" color="purple"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" color="black"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" color="elements"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" [disabled]="true"> </lib-icon-button>
+          <a>
+            <lib-icon-button iconName="favorite" theme="stroked"> </lib-icon-button>
+          </a>
+        </div>
+        <h2 class="typo-headline-large">Icon sm stroked Buttons</h2>
+        <div class="buttons-wrapper">
+          <lib-icon-button iconName="favorite" theme="stroked" size="small"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="small" color="primary"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="small" color="secondry"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="small" color="third"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="small" color="info"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="small" color="warning"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="small" color="success"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="small" color="danger"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="small" color="rose"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="small" color="purple"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="small" color="black"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="small" color="elements"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="small" [disabled]="true"> </lib-icon-button>
+          <a>
+            <lib-icon-button iconName="favorite" theme="stroked" size="small"> </lib-icon-button>
+          </a>
+        </div>
+        <h2 class="typo-headline-large">Icon lg stroked Buttons</h2>
+        <div class="buttons-wrapper">
+          <lib-icon-button iconName="favorite" theme="stroked" size="big"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="big" color="primary"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="big" color="secondry"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="big" color="third"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="big" color="info"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="big" color="warning"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="big" color="success"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="big" color="danger"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="big" color="rose"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="big" color="purple"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="big" color="black"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="big" color="elements"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="stroked" size="big" [disabled]="true"> </lib-icon-button>
+          <a>
+            <lib-icon-button iconName="favorite" theme="stroked" size="big"> </lib-icon-button>
+          </a>
+        </div>
+
+        <!-- <code #xl class="typo-body-medium text-success">
+                    </code>
+                    <button
+                      mat-mini-fab
+                      (click)="showCopyToaster(xl.textContent!)"
+                      [cdkCopyToClipboard]="xl.textContent!"
+                      [matTooltip]="'shared.buttons.copy' | translate"
+                      class="bg-black-light-25 text-success-light-20 border-radius-circle"
+                    >
+                      <lib-icon name="content_copy" />
+                    </button> -->
+      </fieldset>
+
+      <fieldset class="mb-xl border-radius-medium p-xl">
+        <h2 class="typo-headline-large">Icon md flat Buttons</h2>
+        <div class="buttons-wrapper">
+          <lib-icon-button iconName="favorite" theme="flat"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" color="primary"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" color="secondry"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" color="third"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" color="info"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" color="warning"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" color="success"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" color="danger"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" color="rose"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" color="purple"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" color="black"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" color="elements"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" [disabled]="true"> </lib-icon-button>
+          <a>
+            <lib-icon-button iconName="favorite" theme="flat"> </lib-icon-button>
+          </a>
+        </div>
+        <h2 class="typo-headline-large">Icon sm flat Buttons</h2>
+        <div class="buttons-wrapper">
+          <lib-icon-button iconName="favorite" theme="flat" size="small"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="small" color="primary"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="small" color="secondry"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="small" color="third"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="small" color="info"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="small" color="warning"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="small" color="success"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="small" color="danger"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="small" color="rose"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="small" color="purple"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="small" color="black"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="small" color="elements"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="small" [disabled]="true"> </lib-icon-button>
+          <a>
+            <lib-icon-button iconName="favorite" theme="flat" size="small"> </lib-icon-button>
+          </a>
+        </div>
+        <h2 class="typo-headline-large">Icon lg flat Buttons</h2>
+        <div class="buttons-wrapper">
+          <lib-icon-button iconName="favorite" theme="flat" size="big"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="big" color="primary"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="big" color="secondry"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="big" color="third"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="big" color="info"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="big" color="warning"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="big" color="success"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="big" color="danger"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="big" color="rose"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="big" color="purple"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="big" color="black"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="big" color="elements"> </lib-icon-button>
+          <lib-icon-button iconName="favorite" theme="flat" size="big" [disabled]="true"> </lib-icon-button>
+          <a>
+            <lib-icon-button iconName="favorite" theme="flat" size="big"> </lib-icon-button>
+          </a>
+        </div>
+
+        <!-- <code #xl class="typo-body-medium text-success">
+                    </code>
+                    <button
+                      mat-mini-fab
+                      (click)="showCopyToaster(xl.textContent!)"
+                      [cdkCopyToClipboard]="xl.textContent!"
+                      [matTooltip]="'shared.buttons.copy' | translate"
+                      class="bg-black-light-25 text-success-light-20 border-radius-circle"
+                    >
+                      <lib-icon name="content_copy" />
+                    </button> -->
+      </fieldset>
+
+      <fieldset class="mb-xl border-radius-medium p-xl">
+        <h2 class="typo-headline-large">Extended md Fab</h2>
+        <div class="buttons-wrapper">
+          <lib-button theme="raised" borderRadius="rounded"><lib-icon name="favorite" /> basic </lib-button>
+          <lib-button theme="raised" borderRadius="rounded" color="primary"><lib-icon name="favorite" /> primary </lib-button>
+          <lib-button theme="raised" borderRadius="rounded" color="secondry"><lib-icon name="favorite" /> secondry </lib-button>
+          <lib-button theme="raised" borderRadius="rounded" color="third"><lib-icon name="favorite" /> third </lib-button>
+          <lib-button theme="raised" borderRadius="rounded" color="info"><lib-icon name="favorite" /> info </lib-button>
+          <lib-button theme="raised" borderRadius="rounded" color="warning"><lib-icon name="favorite" /> warning </lib-button>
+          <lib-button theme="raised" borderRadius="rounded" color="success"><lib-icon name="favorite" /> success </lib-button>
+          <lib-button theme="raised" borderRadius="rounded" color="danger"><lib-icon name="favorite" /> danger </lib-button>
+          <lib-button theme="raised" borderRadius="rounded" color="rose"><lib-icon name="favorite" /> rose </lib-button>
+          <lib-button theme="raised" borderRadius="rounded" color="purple"><lib-icon name="favorite" /> purple </lib-button>
+          <lib-button theme="raised" borderRadius="rounded" color="black"><lib-icon name="favorite" /> black </lib-button>
+          <lib-button theme="raised" borderRadius="rounded" color="elements"><lib-icon name="favorite" /> elements </lib-button>
+          <lib-button theme="raised" borderRadius="rounded" [disabled]="true"><lib-icon name="favorite" /> disabled </lib-button>
+          <a>
+            <lib-button theme="raised" borderRadius="rounded"><lib-icon name="favorite" /> link </lib-button>
+          </a>
+        </div>
+
+        <h2 class="typo-headline-large">Extended sm Fab</h2>
+        <div class="buttons-wrapper">
+          <lib-button theme="raised" size="small" borderRadius="rounded"><lib-icon name="favorite" /> basic </lib-button>
+          <lib-button theme="raised" size="small" borderRadius="rounded" color="primary"><lib-icon name="favorite" /> primary </lib-button>
+          <lib-button theme="raised" size="small" borderRadius="rounded" color="secondry"
+            ><lib-icon name="favorite" /> secondry
+          </lib-button>
+          <lib-button theme="raised" size="small" borderRadius="rounded" color="third"><lib-icon name="favorite" /> third </lib-button>
+          <lib-button theme="raised" size="small" borderRadius="rounded" color="info"><lib-icon name="favorite" /> info </lib-button>
+          <lib-button theme="raised" size="small" borderRadius="rounded" color="warning"><lib-icon name="favorite" /> warning </lib-button>
+          <lib-button theme="raised" size="small" borderRadius="rounded" color="success"><lib-icon name="favorite" /> success </lib-button>
+          <lib-button theme="raised" size="small" borderRadius="rounded" color="danger"><lib-icon name="favorite" /> danger </lib-button>
+          <lib-button theme="raised" size="small" borderRadius="rounded" color="rose"><lib-icon name="favorite" /> rose </lib-button>
+          <lib-button theme="raised" size="small" borderRadius="rounded" color="purple"><lib-icon name="favorite" /> purple </lib-button>
+          <lib-button theme="raised" size="small" borderRadius="rounded" color="black"><lib-icon name="favorite" /> black </lib-button>
+          <lib-button theme="raised" size="small" borderRadius="rounded" color="elements"
+            ><lib-icon name="favorite" /> elements
+          </lib-button>
+          <lib-button theme="raised" size="small" borderRadius="rounded" [disabled]="true"
+            ><lib-icon name="favorite" /> disabled
+          </lib-button>
+          <a>
+            <lib-button theme="raised" size="small" borderRadius="rounded"><lib-icon name="favorite" /> link </lib-button>
+          </a>
+        </div>
+
+        <h2 class="typo-headline-large">Extended lg Fab</h2>
+        <div class="buttons-wrapper">
+          <lib-button theme="raised" size="big" borderRadius="rounded"><lib-icon name="favorite" /> basic </lib-button>
+          <lib-button theme="raised" size="big" borderRadius="rounded" color="primary"><lib-icon name="favorite" /> primary </lib-button>
+          <lib-button theme="raised" size="big" borderRadius="rounded" color="secondry"><lib-icon name="favorite" /> secondry </lib-button>
+          <lib-button theme="raised" size="big" borderRadius="rounded" color="third"><lib-icon name="favorite" /> third </lib-button>
+          <lib-button theme="raised" size="big" borderRadius="rounded" color="info"><lib-icon name="favorite" /> info </lib-button>
+          <lib-button theme="raised" size="big" borderRadius="rounded" color="warning"><lib-icon name="favorite" /> warning </lib-button>
+          <lib-button theme="raised" size="big" borderRadius="rounded" color="success"><lib-icon name="favorite" /> success </lib-button>
+          <lib-button theme="raised" size="big" borderRadius="rounded" color="danger"><lib-icon name="favorite" /> danger </lib-button>
+          <lib-button theme="raised" size="big" borderRadius="rounded" color="rose"><lib-icon name="favorite" /> rose </lib-button>
+          <lib-button theme="raised" size="big" borderRadius="rounded" color="purple"><lib-icon name="favorite" /> purple </lib-button>
+          <lib-button theme="raised" size="big" borderRadius="rounded" color="black"><lib-icon name="favorite" /> black </lib-button>
+          <lib-button theme="raised" size="big" borderRadius="rounded" color="elements"><lib-icon name="favorite" /> elements </lib-button>
+          <lib-button theme="raised" size="big" borderRadius="rounded" [disabled]="true"><lib-icon name="favorite" /> disabled </lib-button>
+          <a>
+            <lib-button theme="raised" size="big" borderRadius="rounded"><lib-icon name="favorite" /> link </lib-button>
+          </a>
+        </div>
+        <code #xxxl class="typo-body-medium text-success"> </code>
+      </fieldset>
+    </div>
+  </section>
+</section>

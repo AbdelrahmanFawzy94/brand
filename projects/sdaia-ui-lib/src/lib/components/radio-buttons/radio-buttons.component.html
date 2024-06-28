@@ -1,0 +1,27 @@
+<div class="shared-checkbox">
+  <ng-container *ngIf="passedFormControl">
+    <mat-radio-group
+      [labelPosition]="labelPosition"
+      [formControl]="passedFormControl"
+      [value]="passedFormControl.value"
+      [name]="name"
+      (change)="onSelectionReactiveFormEmit($event)"
+    >
+      <mat-radio-button *ngFor="let radioButton of radioButtonsList" [value]="radioButton.id">
+        {{ radioButton[labelkey] }}
+      </mat-radio-button>
+    </mat-radio-group>
+
+    <div class="validations" [ngClass]="{ 'no-validations': hideValidation, 'no-start-padding': labelPosition === 'before' }">
+      <lib-validations-messages *ngIf="passedFormControl.touched" [errors]="passedFormControl.errors"></lib-validations-messages>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="!passedFormControl">
+    <mat-radio-group [labelPosition]="labelPosition" [name]="name" (change)="onSelectionMatRadioChangeEmit($event)">
+      <mat-radio-button *ngFor="let radioButton of radioButtonsList" [value]="radioButton.id">
+        {{ radioButton[labelkey] }}
+      </mat-radio-button>
+    </mat-radio-group>
+  </ng-container>
+</div>

@@ -1,0 +1,23 @@
+<div class="shared-checkbox">
+  <ng-container *ngIf="passedFormControl">
+    <mat-checkbox
+      [value]="passedFormControl.value"
+      [checked]="passedFormControl.value"
+      [formControl]="passedFormControl"
+      [(indeterminate)]="indeterminate"
+      [labelPosition]="labelPosition"
+      (change)="onToggleEmit($event)"
+    >
+      {{ label }}
+    </mat-checkbox>
+    <div class="validations" [class.no-validations]="hideValidation">
+      <lib-validations-messages *ngIf="passedFormControl.touched" [errors]="passedFormControl.errors"></lib-validations-messages>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="!passedFormControl">
+    <mat-checkbox [(indeterminate)]="indeterminate" [labelPosition]="labelPosition" (change)="onToggleEmit($event)">
+      {{ label }}
+    </mat-checkbox>
+  </ng-container>
+</div>
