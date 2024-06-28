@@ -1,5 +1,5 @@
 /*
- * Public API Surface of sdaia-ui-lib
+ * Public API Surface of codex-lib
  */
 
 // services

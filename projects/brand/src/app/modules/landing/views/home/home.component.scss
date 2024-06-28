@@ -1,0 +1,8 @@
+@import "../../../../../../../codex-lib/src/lib/assets/scss/screens.scss";
+// @import "projects/codex-lib/src/lib/assets/scss/screens";
+
+.home-page {
+  @include sm {
+    background-color: black;
+  }
+}

@@ -1,0 +1,7 @@
+@import "../../../../../../../codex-lib/src/lib/assets/scss/screens.scss";
+
+.dashboard-login-page {
+  @include sm {
+    background-color: black;
+  }
+}
