@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
  * Provides storage for authentication credentials.
  * The Credentials interface should be replaced with proper implementation.
  */
-import { SamplesApiUrls } from '../samples.apis';
+import { SamplesApiUrls } from '../apis-urls/samples.apis-urls';
 import { DashboardDropDowns, DashboardUser, HttpService } from '@library';
 
 @Injectable({

@@ -15,7 +15,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class SharedLanguageMenuComponent implements OnInit {
   @Input() buttonClasses: string = '';
   @Input() menuClasses: string = '';
-  @Input() showCurrentLang: boolean = false;
+  @Input() showLangLabel: boolean = false;
 
   languages: Language[] = [
     {

@@ -137,7 +137,7 @@
         }
       }
 
-      shared-validations-messages {
+      lib-validations-messages {
         padding-inline-start: var(--space-sm);
         margin-top: -10px;
       }
@@ -154,9 +154,11 @@
       }
 
       button {
-        display: block;
-        width: 100%;
-        padding: var(--space-xs);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-sm);
+        padding: var(--space-xs) 0;
         background-color: var(--elements-color);
         color: var(--white-color);
         text-transform: capitalize;
@@ -167,6 +169,11 @@
         &[disabled] {
           color: var(--bg-dark-white-8) !important;
           background-color: var(--bg-dark-white-3) !important;
+        }
+
+        .mat-mdc-progress-spinner .mdc-circular-progress__determinate-circle,
+        .mat-mdc-progress-spinner .mdc-circular-progress__indeterminate-circle-graphic {
+          stroke: var(--elements-color);
         }
       }
     }
