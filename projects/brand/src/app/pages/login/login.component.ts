@@ -9,8 +9,9 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { SharedLanguageMenuComponent } from '@committee-shared';
 import { SharedValidationsMessagesComponent } from '@library';
 import { LoginStoreService } from './services/login.store.service';
-import { finalize } from 'rxjs';
+import { catchError, finalize, throwError } from 'rxjs';
 import { AppStoreService } from '../../@core/app.store.service';
+import { Router } from '@angular/router';
 @UntilDestroy()
 @Component({
   selector: 'app-login',
@@ -33,6 +34,7 @@ export default class LoginComponent implements OnInit {
 
   constructor(
     private _FormBuilder: FormBuilder,
+    private _Router: Router,
     private _AppStoreService: AppStoreService,
     private _LoginStoreService: LoginStoreService
   ) {}
@@ -51,14 +53,19 @@ export default class LoginComponent implements OnInit {
   login() {
     if (this.form.valid) {
       this.loginApiIsLoading = true;
+      // TODO show toaster
       this._LoginStoreService
         .login(this.form.value)
         .pipe(
           untilDestroyed(this),
-          finalize(() => (this.loginApiIsLoading = false))
+          finalize(() => (this.loginApiIsLoading = false)),
+          catchError((error) => {
+            return throwError(() => error);
+          })
         )
         .subscribe((loginResponse) => {
           this._AppStoreService.setCredintials(loginResponse);
+          this._Router.navigateByUrl('dashboard');
         });
     }
   }
