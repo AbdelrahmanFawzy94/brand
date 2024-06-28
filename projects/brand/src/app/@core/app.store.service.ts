@@ -3,11 +3,13 @@ import { Injectable } from '@angular/core';
 import { ILoginResponse } from '../pages/login/models';
 import { LocalStorageService } from '../../../../codex-lib/src';
 import { BehaviorSubject } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AppStoreService {
+  private localStorageStateKeyName = 'app-state';
   private state: {
     defaultLanguage: 'ar-sa' | 'en' | null;
     credintials: ILoginResponse | null;
@@ -17,12 +19,13 @@ export class AppStoreService {
     credintials: null,
     theme: null,
   };
-  private initialAppState$ = new BehaviorSubject(this.state);
-
-  constructor(private _LocalStorageService: LocalStorageService) {}
+  private appState$ = new BehaviorSubject(
+    this._LocalStorageService.getItem(environment.applicationName, this.localStorageStateKeyName) ?? this.state
+  );
 
   setDefaultLanguage(defaultLanguage: 'ar-sa' | 'en' | null) {
     defaultLanguage ? (this.state = { ...this.state, defaultLanguage }) : (this.state = { ...this.state, defaultLanguage: null });
+    this.updateObservableState();
   }
 
   get getDefaultLanguage() {
@@ -33,10 +36,22 @@ export class AppStoreService {
 
   setCredintials(credintials: ILoginResponse | null) {
     credintials ? (this.state = { ...this.state, credintials }) : (this.state = { ...this.state, credintials: null });
+    this.updateObservableState();
   }
 
   get getCredintials() {
     return this.state.credintials;
+  }
+
+  //
+
+  setTheme(theme: 'dark' | 'light' | null) {
+    theme ? (this.state = { ...this.state, theme }) : (this.state = { ...this.state, theme: null });
+    this.updateObservableState();
+  }
+
+  get getTheme() {
+    return this.state.theme;
   }
 
   // reset state
@@ -47,5 +62,15 @@ export class AppStoreService {
       credintials: null,
       theme: null,
     };
+  }
+
+  // update the stream
+
+  updateObservableState() {
+    this.appState$.next(this.state);
+  }
+
+  constructor(private _LocalStorageService: LocalStorageService) {
+    this.appState$.subscribe((state) => _LocalStorageService.setItem(environment.applicationName, this.localStorageStateKeyName, state));
   }
 }

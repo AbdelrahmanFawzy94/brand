@@ -9,8 +9,8 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { SharedLanguageMenuComponent } from '@committee-shared';
 import { SharedValidationsMessagesComponent } from '@library';
 import { LoginStoreService } from './services/login.store.service';
-import { ILoginResponse } from './models';
 import { finalize } from 'rxjs';
+import { AppStoreService } from '../../@core/app.store.service';
 @UntilDestroy()
 @Component({
   selector: 'app-login',
@@ -29,10 +29,13 @@ import { finalize } from 'rxjs';
 })
 export default class LoginComponent implements OnInit {
   form!: FormGroup;
-  loginResponse!: ILoginResponse;
   loginApiIsLoading: boolean = false;
 
-  constructor(private _FormBuilder: FormBuilder, private _LoginStoreService: LoginStoreService) {}
+  constructor(
+    private _FormBuilder: FormBuilder,
+    private _AppStoreService: AppStoreService,
+    private _LoginStoreService: LoginStoreService
+  ) {}
 
   ngOnInit(): void {
     this.createForm();
@@ -55,7 +58,7 @@ export default class LoginComponent implements OnInit {
           finalize(() => (this.loginApiIsLoading = false))
         )
         .subscribe((loginResponse) => {
-          this.loginResponse = loginResponse;
+          this._AppStoreService.setCredintials(loginResponse);
         });
     }
   }
