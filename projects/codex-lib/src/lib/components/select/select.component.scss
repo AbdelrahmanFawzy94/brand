@@ -20,6 +20,8 @@ $ng-select-divider: rgba(black, 0.12) !default;
 $ng-select-bg: #ffffff !default;
 
 .shared-select {
+  margin-bottom: var(--space-base);
+
   .ng-select {
     &.ng-select-disabled {
       .ng-select-container {
