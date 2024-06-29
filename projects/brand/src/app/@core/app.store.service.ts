@@ -5,28 +5,28 @@ import { LocalStorageService } from '../../../../codex-lib/src';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { environment } from '../../environments/environment';
 
+interface AppState {
+  defaultLanguage: 'ar-sa' | 'en' | null;
+  credintials: ILoginResponse | null;
+  theme: 'dark' | 'light' | null;
+}
+
 @Injectable({
   providedIn: 'root',
 })
 export class AppStoreService {
   private localStorageStateKeyName = 'app-state';
-  private state: {
-    defaultLanguage: 'ar-sa' | 'en' | null;
-    credintials: ILoginResponse | null;
-    theme: 'dark' | 'light' | null;
-  } = {
+  private state: AppState = {
     defaultLanguage: null,
     credintials: null,
     theme: null,
   };
+
   private appState$ = new BehaviorSubject(
     this._LocalStorageService.getItem(environment.applicationName, this.localStorageStateKeyName) ?? this.state
   );
-  appStateChanges$!: Observable<{
-    defaultLanguage: 'ar-sa' | 'en' | null;
-    credintials: ILoginResponse | null;
-    theme: 'dark' | 'light' | null;
-  }>;
+
+  appStateChanges$!: Observable<AppState>;
 
   setDefaultLanguage(defaultLanguage: 'ar-sa' | 'en' | null) {
     defaultLanguage ? (this.state = { ...this.state, defaultLanguage }) : (this.state = { ...this.state, defaultLanguage: null });
@@ -78,6 +78,7 @@ export class AppStoreService {
   constructor(private _LocalStorageService: LocalStorageService) {
     this.appState$.subscribe((state) => {
       _LocalStorageService.setItem(environment.applicationName, this.localStorageStateKeyName, state);
+      this.state = state;
       this.appStateChanges$ = of(state);
     });
   }
