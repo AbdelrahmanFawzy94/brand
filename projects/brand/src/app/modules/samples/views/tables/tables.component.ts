@@ -31,7 +31,7 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 })
 export default class TablesComponent implements OnInit {
   fakeData: Item[] = [];
-  numberOfItems: number = 10;
+  itemsPerPageSelected: number = 10;
   itemsPerPage: number[] = [5, 10, 20, 40];
   pageNumber: number = 0;
   totalItems: number = 0;
@@ -47,7 +47,7 @@ export default class TablesComponent implements OnInit {
   }
 
   onPageChange(e: PaginatorState) {
-    this.numberOfItems = e.rows!;
+    this.itemsPerPageSelected = e.rows!;
     this.pageNumber = e.page!;
     this.getData();
   }

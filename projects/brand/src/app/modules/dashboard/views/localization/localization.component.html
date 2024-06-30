@@ -1,0 +1,58 @@
+<div class="dashboard-localization-page">
+  <h4 class="typo-title-large">localization</h4>
+  <lib-select
+    [dropdownList]="languages"
+    [passedFormControl]="form | getControl : 'language'"
+    appearance="outline"
+    labelName="name"
+    [multiple]="false"
+    placeholder="languages"
+    (onSelection)="onSelection($event)"
+  ></lib-select>
+  <lib-select
+    [dropdownList]="supportedDevices"
+    [passedFormControl]="form | getControl : 'supportedDevices'"
+    appearance="outline"
+    labelName="name"
+    [multiple]="false"
+    placeholder="supportedDevices"
+    (onSelection)="onSelection($event)"
+  ></lib-select>
+  <lib-input
+    [passedFormControl]="form | getControl : 'translationKey'"
+    [hideValidation]="true"
+    appearance="outline"
+    label="translationKey"
+  ></lib-input>
+  <lib-input
+    [passedFormControl]="form | getControl : 'translationKeyValue'"
+    [hideValidation]="true"
+    appearance="outline"
+    label="translationKeyValue"
+  ></lib-input>
+  <lib-button [disabled]="form.invalid" theme="raised" borderRadius="rounded" color="secondry" (onClick)="submit(true)"
+    ><lib-icon name="favorite" /> submit
+  </lib-button>
+
+  <div class="table-section">
+    <!-- { key: 'requestNumber', headerTranslationKey: 'shared.buttons.copy', template: requestNumber }, -->
+    <!-- [first]="pagination.totalItems" -->
+    <lib-table
+      [data]="dataTable"
+      [currentPage]="pagination.currentPage"
+      [totalItems]="pagination.totalItems"
+      [itemsPerPage]="pagination.itemsPerPage"
+      [itemsPerPageSelected]="pagination.pageSize"
+      [isLoading]="dataTableIsLoading"
+      [columns]="[
+        { key: 'key', headerTranslationKey: 'shared.buttons.confirm' },
+        { key: 'text', headerTranslationKey: 'shared.buttons.confirm' }
+      ]"
+      (onPage)="onPageChange($event)"
+    >
+      <ng-template #requestNumber let-item>
+        <div>test {{ item.requestNumber }}</div>
+      </ng-template>
+    </lib-table>
+  </div>
+</div>

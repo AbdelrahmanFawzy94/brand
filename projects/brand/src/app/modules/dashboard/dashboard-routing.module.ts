@@ -15,6 +15,13 @@ const routes: Routes = [
         },
         loadComponent: () => import('./views/landing/landing.component'),
       },
+      {
+        path: 'localization',
+        data: {
+          preload: true,
+        },
+        loadComponent: () => import('./views/localization/localization.component'),
+      },
       // {
       //   path: 'signup',
       //   data: {

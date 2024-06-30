@@ -32,11 +32,11 @@
           <lib-icon name="content_copy" />
         </button> -->
 
-        <lib-table
+        <!-- <lib-table
           [data]="fakeData"
-          [numberOfItems]="numberOfItems"
           [totalItems]="totalItems"
           [itemsPerPage]="itemsPerPage"
+          [itemsPerPageSelected]="itemsPerPageSelected"
           [isLoading]="false"
           [columns]="[
             { key: 'requestNumber', headerTranslationKey: 'shared.buttons.copy', template: requestNumber },
@@ -47,7 +47,7 @@
           <ng-template #requestNumber let-item>
             <div>test {{ item.requestNumber }}</div>
           </ng-template>
-        </lib-table>
+        </lib-table> -->
       </fieldset>
     </div>
   </section>

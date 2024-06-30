@@ -10,10 +10,10 @@ export class DashboardComponent {
   menu: DashboardDropDowns[] = [
     {
       id: '213',
-      nameEn: 'nameEn',
-      nameAr: 'اسم عربي',
-      icon: 'home',
-      routing: '/dashboard',
+      nameEn: 'localization',
+      nameAr: 'الترجمة',
+      icon: 'language_chinese_dayi',
+      routing: 'localization',
       subDropdowns: [],
       badgeData: 1,
     },

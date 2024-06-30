@@ -376,7 +376,8 @@
     }
 
     .routes {
-      zoom: 1;
+      padding: var(--space-lg);
+      min-height: calc(100% - var(--upperNavheight));
     }
   }
 

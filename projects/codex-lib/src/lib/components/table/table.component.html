@@ -1,7 +1,7 @@
-<div class="shared-table" *ngIf="!isLoading">
+<div class="shared-table">
   <!-- [showCurrentPageReport]="true" -->
   <!-- currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" -->
-  <p-table [value]="data" [tableStyle]="{ 'min-width': '600px' }">
+  <p-table [value]="data" [tableStyle]="{ 'min-width': '600px' }" *ngIf="!isLoading">
     <ng-template pTemplate="header">
       <tr>
         <th *ngFor="let col of columns">
@@ -25,12 +25,14 @@
     </ng-template>
   </p-table>
 
+  <div class="text-center" *ngIf="!data.length">no data</div>
+
+  <div class="loading-skeleton" *ngIf="isLoading">is loading...</div>
+
   <p-paginator
     (onPageChange)="onPageChange($event)"
-    [rows]="numberOfItems"
+    [rows]="itemsPerPageSelected"
     [totalRecords]="totalItems"
     [rowsPerPageOptions]="itemsPerPage"
   />
 </div>
-
-<div class="loading-skeleton" *ngIf="isLoading">is loading...</div>
