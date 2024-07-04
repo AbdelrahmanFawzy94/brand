@@ -120,6 +120,14 @@ const routes: Routes = [
         },
         loadComponent: () => import('./views/tables/tables.component'),
       },
+      {
+        path: 'accordion',
+        data: {
+          title: 'samples-accordion',
+          preload: true,
+        },
+        loadComponent: () => import('./views/accordion/accordion.component'),
+      },
       // {
       //   path: 'profile',
       //   data: {

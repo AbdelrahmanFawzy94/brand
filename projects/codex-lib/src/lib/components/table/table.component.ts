@@ -12,7 +12,7 @@ import { NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
 })
-export class SharedtableComponent implements OnChanges {
+export class SharedTableComponent implements OnChanges {
   @ViewChild('paginator', { static: true }) paginator!: Paginator;
   @Input({ required: true }) currentPage!: number;
   @Input({ required: true }) data!: any[];

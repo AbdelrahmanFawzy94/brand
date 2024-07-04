@@ -1,0 +1,25 @@
+<div class="shared-accordion">
+  <mat-accordion [multi]="!expandOnlyOne" [hideToggle]="hideToggleIcon" [togglePosition]="'before'">
+    @for (accordion of accordions;let index = $index; track index) {
+    <mat-expansion-panel
+      [disabled]="accordion.disabled ?? false"
+      [expanded]="accordion.expanded ?? false"
+      [hideToggle]="accordion.hideToggleIcon ?? false"
+      [togglePosition]="accordion.toggleIconPosition ?? 'after'"
+      (afterCollapse)="accordionCollpase({ data: accordion, index: index })"
+      (afterExpand)="accordionExpand({ data: accordion, index: index })"
+    >
+      <mat-expansion-panel-header
+        [collapsedHeight]="accordion.collapsedHeaderHeight ?? ''"
+        [expandedHeight]="accordion.expandedHeaderHeight ?? ''"
+      >
+        <ng-template *ngTemplateOutlet="accordion.header; context: { $implicit: accordion }"> </ng-template>
+      </mat-expansion-panel-header>
+
+      <ng-template *ngTemplateOutlet="accordion.body; context: { $implicit: accordion }"> </ng-template>
+    </mat-expansion-panel>
+    } @empty {
+    <h4>There are no items for accordion.</h4>
+    }
+  </mat-accordion>
+</div>

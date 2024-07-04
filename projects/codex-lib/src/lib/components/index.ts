@@ -12,4 +12,5 @@ export * from './select/select.component';
 export * from './slide-toggle/slide-toggle.component';
 export * from './textarea/textarea.component';
 export * from './table/table.component';
+export * from './accordion/accordion.component';
 export * from './validations-messages/validations-messages.component';

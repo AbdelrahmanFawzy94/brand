@@ -6,7 +6,7 @@ import {
   SharedIconComponent,
   SharedInputComponent,
   SharedSelectComponent,
-  SharedtableComponent,
+  SharedTableComponent,
 } from '@library';
 import { DashboardStoreService } from '../../services/dashboard.store.service';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
@@ -30,7 +30,7 @@ import { PaginatorState } from 'primeng/paginator';
     SharedSelectComponent,
     SharedButtonComponent,
     SharedInputComponent,
-    SharedtableComponent,
+    SharedTableComponent,
     //  TranslateModule,
     SharedIconComponent,
   ],

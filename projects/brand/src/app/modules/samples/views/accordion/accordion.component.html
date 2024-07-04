@@ -1,0 +1,94 @@
+<section class="typo samples">
+  <header class="samples__header">
+    <h2 class="typo-display-large mb-xl margin-top-none">accordion</h2>
+    <p class="typo-body-medium mb-xl">Use accordion to present your design and content as clearly and efficiently as possible.</p>
+  </header>
+  <section class="samples__body">
+    <div class="samples-panel">
+      <h3 class="typo-headline-medium">import this line in scss first</h3>
+      <div class="align-item-center d-flex gap-sm my-base">
+        <code #importSass class="typo-body-medium text-success my-base d-block">&commat;import "src/assets/scss/accordion"; </code>
+        <button
+          mat-mini-fab
+          (click)="showCopyToaster(importSass.textContent!)"
+          [cdkCopyToClipboard]="importSass.textContent!"
+          [matTooltip]="'shared.buttons.copy' | translate"
+          class="bg-black-light-25 text-success-light-20 border-radius-circle"
+        >
+          <lib-icon name="content_copy" />
+        </button>
+      </div>
+
+      <fieldset class="mb-xl border-radius-medium p-xl">
+        <h2 class="typo-headline-large">basic accordion</h2>
+        <!-- <code #xs class="typo-body-medium text-success"> &commat;include xs &lcub; your code here... &rcub; </code>
+        <button
+          mat-mini-fab
+          (click)="showCopyToaster(xs.textContent!)"
+          [cdkCopyToClipboard]="xs.textContent!"
+          [matTooltip]="'shared.buttons.copy' | translate"
+          class="bg-black-light-25 text-success-light-20 border-radius-circle"
+        >
+          <lib-icon name="content_copy" />
+        </button> -->
+
+        <lib-accordion
+          [expandOnlyOne]="true"
+          [hideToggleIcon]="false"
+          [toggleIconPosition]="'after'"
+          [accordions]="[
+            {
+              header: header1,
+              body: body1,
+              disabled: false,
+              expanded: false,
+              hideToggleIcon: false,
+              toggleIconPosition: 'after',
+            },
+            {
+              header: header2,
+              body: body2,
+              disabled: true,
+              expanded: true,
+              hideToggleIcon: true,
+              toggleIconPosition: 'before',
+              collapsedHeaderHeight: '100px',
+              expandedHeaderHeight: '200px'
+            }
+          ]"
+          (onAccordionCollapse)="test($event)"
+          (onAccordionExpand)="test($event)"
+        >
+          <ng-template #header1>
+            <div>
+              <p>header1</p>
+              <p>header2</p>
+              <p>header3</p>
+            </div>
+          </ng-template>
+          <ng-template #body1>
+            <div>
+              <p>body1</p>
+              <p>body2</p>
+              <p>body3</p>
+            </div>
+          </ng-template>
+          <ng-template #header2>
+            <div>
+              <p>header11</p>
+              <p>header22</p>
+              <p>header33</p>
+            </div>
+          </ng-template>
+          <ng-template #body2>
+            <div>
+              <p>body11</p>
+              <p>body22</p>
+              <p>body33</p>
+            </div>
+          </ng-template>
+        </lib-accordion>
+      </fieldset>
+    </div>
+  </section>
+</section>

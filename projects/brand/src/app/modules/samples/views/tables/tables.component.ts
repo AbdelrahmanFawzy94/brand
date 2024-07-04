@@ -7,7 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TranslateService } from '@ngx-translate/core';
-import { SharedIconComponent, SharedtableComponent } from '@library';
+import { SharedIconComponent, SharedTableComponent } from '@library';
 import { PaginatorState } from 'primeng/paginator';
 import { SamplesStoreService } from '../../services/samples.store.service';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
@@ -24,7 +24,7 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
     MatSnackBarModule,
     SharedIconComponent,
     TranslateModule,
-    SharedtableComponent,
+    SharedTableComponent,
   ],
   templateUrl: './tables.component.html',
   styleUrls: ['./tables.component.scss'],

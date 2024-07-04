@@ -62,6 +62,15 @@
         "subDropdowns": []
       },
       {
+        "id": "3asd",
+        "nameEn": "accordion",
+        "nameAr": "accordion",
+        "icon": "top_panel_close",
+        "routing": "/samples/accordion",
+        "badgeData": "4",
+        "subDropdowns": []
+      },
+      {
         "id": "6",
         "nameEn": "form",
         "nameAr": "form",
