@@ -3,6 +3,7 @@
 @import "../../codex-lib/src/lib/assets/scss/typography";
 @import "../../codex-lib/src/lib/assets/scss/borders";
 @import "../../codex-lib/src/lib/assets/scss/buttons";
+@import "../../codex-lib/src/lib/assets/scss/dialog.scss";
 @import "../../codex-lib/src/lib/assets/scss/spaces";
 @import "../../codex-lib/src/lib/assets/scss/grid";
 @import "../../codex-lib/src/lib/assets/scss/utils";
@@ -109,3 +110,34 @@ p {
 }
 
 // dashboard common sections
+
+.dashboard-page-header {
+  zoom: 1;
+
+  .title-with-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-base);
+
+    .title {
+      zoom: 1;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+  }
+
+  .advanced-search {
+    margin-bottom: var(--space-sm);
+    background-color: var(--white-color);
+    border-radius: var(--border-radius-soft);
+
+    .form {
+      padding: var(--space-base);
+    }
+  }
+}

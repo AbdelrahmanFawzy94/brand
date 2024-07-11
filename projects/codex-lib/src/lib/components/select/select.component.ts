@@ -5,7 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { SharedIconComponent, SharedValidationsMessagesComponent } from '@library';
+import { SharedChipComponent, SharedIconComponent, SharedValidationsMessagesComponent } from '@library';
 
 @Component({
   selector: 'lib-select',
@@ -20,6 +20,7 @@ import { SharedIconComponent, SharedValidationsMessagesComponent } from '@librar
     MatButtonModule,
     SharedIconComponent,
     SharedValidationsMessagesComponent,
+    SharedChipComponent,
   ],
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.scss'],
@@ -33,7 +34,6 @@ export class SharedSelectComponent {
   @Input() labelName: string = 'name';
   @Input() placeholder: string = '';
   @Input() bindNames: string[] = [];
-  @Input() closeOnSelect: boolean = false;
   @Input() loading: boolean = false;
   @Input() multiple: boolean = false;
   @Input() appearance: 'fill' | 'outline' = 'outline';

@@ -1,0 +1,42 @@
+<section class="typo samples">
+  <header class="samples__header">
+    <h2 class="typo-display-large mb-xl margin-top-none">chips</h2>
+    <p class="typo-body-medium mb-xl">Use chips to present your design and content as clearly and efficiently as possible.</p>
+  </header>
+  <section class="samples__body">
+    <div class="samples-panel">
+      <h3 class="typo-headline-medium">import this line in scss first</h3>
+      <div class="align-item-center d-flex gap-sm my-base">
+        <code #importSass class="typo-body-medium text-success my-base d-block">&commat;import "src/assets/scss/chips"; </code>
+        <button
+          mat-mini-fab
+          (click)="showCopyToaster(importSass.textContent!)"
+          [cdkCopyToClipboard]="importSass.textContent!"
+          [matTooltip]="'shared.buttons.copy' | translate"
+          class="bg-black-light-25 text-success-light-20 border-radius-circle"
+        >
+          <lib-icon name="content_copy" />
+        </button>
+      </div>
+
+      <fieldset class="mb-xl border-radius-medium p-xl">
+        <h2 class="typo-headline-large">mobile => xs (max-width: 380px)</h2>
+        <code #xs class="typo-body-medium text-success"> &commat;include xs &lcub; your code here... &rcub; </code>
+        <!-- <button
+          mat-mini-fab
+          (click)="showCopyToaster(xs.textContent!)"
+          [cdkCopyToClipboard]="xs.textContent!"
+          [matTooltip]="'shared.buttons.copy' | translate"
+          class="bg-black-light-25 text-success-light-20 border-radius-circle"
+        >
+          <lib-icon name="content_copy" />
+        </button> -->
+
+        <lib-chip id="1" [isRemovable]="true" (onRemove)="testt($event)">test1</lib-chip>
+        <lib-chip id="12" [isRemovable]="true" (onRemove)="testt($event)">test2</lib-chip>
+        <lib-chip (onRemove)="testt($event)">test3</lib-chip>
+        <lib-chip (onRemove)="testt($event)">tes4</lib-chip>
+      </fieldset>
+    </div>
+  </section>
+</section>

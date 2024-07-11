@@ -1,0 +1,65 @@
+<div class="localization-add-resourse">
+  <div class="dialog-wrapper">
+    <h2 class="typo-title-large" mat-dialog-title>localization add resourse</h2>
+    <mat-dialog-content>
+      <div class="row">
+        <div class="col-12">
+          <lib-select
+            [dropdownList]="languages"
+            [passedFormControl]="form | getControl : 'language'"
+            appearance="outline"
+            labelName="name"
+            [multiple]="false"
+            placeholder="languages"
+            (onSelection)="onSelection($event)"
+          ></lib-select>
+        </div>
+        <div class="col-12">
+          <lib-select
+            [dropdownList]="supportedDevices"
+            [passedFormControl]="form | getControl : 'supportedDevices'"
+            appearance="outline"
+            labelName="name"
+            [multiple]="false"
+            placeholder="supportedDevices"
+            (onSelection)="onSelection($event)"
+          ></lib-select>
+        </div>
+        <div class="col-12">
+          <lib-input
+            [passedFormControl]="form | getControl : 'translationKey'"
+            [hideValidation]="true"
+            appearance="outline"
+            label="translationKey"
+          ></lib-input>
+        </div>
+        <div class="col-12">
+          <lib-input
+            [passedFormControl]="form | getControl : 'translationKeyValue'"
+            [hideValidation]="true"
+            appearance="outline"
+            label="translationKeyValue"
+          ></lib-input>
+        </div>
+      </div>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <div class="actions">
+        <lib-button theme="raised" borderRadius="rounded" [mat-dialog-close]="{ addedSuccessfully: false }">
+          <!-- TODO replace close with translation -->
+          close</lib-button
+        >
+        <!-- TODO replace add with translation -->
+        <lib-button
+          [disabled]="form.invalid || addResourceIsLoading"
+          theme="raised"
+          borderRadius="rounded"
+          color="success"
+          (click)="submit()"
+        >
+          add
+        </lib-button>
+      </div>
+    </mat-dialog-actions>
+  </div>
+</div>

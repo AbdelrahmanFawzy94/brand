@@ -3,12 +3,15 @@ import { Observable } from 'rxjs';
 
 import { HttpService } from '@library';
 import {
+  IAddEditDeleteResponse,
+  IAddResourcePayload,
   IGetFilteredResourcesPayload,
   IGetFilteredResourcesResponse,
   IGetLanguagesResponse,
   IGetSupportedDevicesResponse,
 } from '../models';
 import { DashboardApiUrls } from '../apis-urls/dashboard.apis';
+import { IDeletionPayload } from '../models/delete-payload';
 
 @Injectable({
   providedIn: 'root',
@@ -26,5 +29,13 @@ export class DashboardService {
 
   getFilteredResourcesResponse(payload: IGetFilteredResourcesPayload): Observable<IGetFilteredResourcesResponse> {
     return this.http.post(DashboardApiUrls.getFilteredResources, payload);
+  }
+
+  addResource(payload: IAddResourcePayload): Observable<IAddEditDeleteResponse> {
+    return this.http.post(DashboardApiUrls.addResource, payload);
+  }
+
+  DeleteResource(payload: IDeletionPayload): Observable<IAddEditDeleteResponse> {
+    return this.http.post(DashboardApiUrls.deleteResource, payload);
   }
 }

@@ -1,4 +1,5 @@
 export * from './table-column';
+export * from './accordion';
 export * from './disabled-dates';
 export * from './dashboard-user';
 export * from './dashboard-dropdown';

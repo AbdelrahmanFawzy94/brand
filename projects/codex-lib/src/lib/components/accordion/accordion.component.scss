@@ -2,4 +2,8 @@ lib-accordion {
   .mat-content {
     height: 100%;
   }
+
+  .mat-expansion-toggle-indicator-before .mat-content.mat-content-hide-toggle {
+    margin-left: 0;
+  }
 }

@@ -46,15 +46,22 @@
               toggleIconPosition: 'after',
             },
             {
-              header: header2,
               body: body2,
-              disabled: true,
+              disabled: false,
               expanded: true,
               hideToggleIcon: true,
               toggleIconPosition: 'before',
-              collapsedHeaderHeight: '100px',
-              expandedHeaderHeight: '200px'
-            }
+              collapsedHeaderHeight: '0px',
+              expandedHeaderHeight: '0px'
+            },
+            {
+              header: header3,
+              body: body3,
+              disabled: false,
+              expanded: false,
+              hideToggleIcon: false,
+              toggleIconPosition: 'after',
+            },
           ]"
           (onAccordionCollapse)="test($event)"
           (onAccordionExpand)="test($event)"
@@ -85,6 +92,20 @@
               <p>body11</p>
               <p>body22</p>
               <p>body33</p>
+            </div>
+          </ng-template>
+          <ng-template #header3>
+            <div>
+              <p>header111</p>
+              <p>header222</p>
+              <p>header333</p>
+            </div>
+          </ng-template>
+          <ng-template #body3>
+            <div>
+              <p>body111</p>
+              <p>body222</p>
+              <p>body333</p>
             </div>
           </ng-template>
         </lib-accordion>

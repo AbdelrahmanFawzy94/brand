@@ -78,14 +78,15 @@
 }
 
 .mdc-fab--mini {
-  width: 48px !important;
-  height: 48px !important;
+  width: 48px !important; //TODO
+  height: 48px !important; //TODO
 }
 
 .mat-mdc-button-base:not(.mdc-icon-button) {
   font-family: var(--font-family) !important;
-  padding: var(--space-md) var(--space-md);
+  padding: var(--space-md) var(--space-lg);
   font-size: var(--space-base);
+  height: 48px; //TODO
 }
 
 .btn-sm {

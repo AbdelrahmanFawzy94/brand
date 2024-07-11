@@ -3,11 +3,14 @@ import { Observable, tap } from 'rxjs';
 
 import { DashboardService } from './dashboard.service';
 import {
+  IAddEditDeleteResponse,
+  IAddResourcePayload,
   IGetFilteredResourcesPayload,
   IGetFilteredResourcesResponse,
   IGetLanguagesResponse,
   IGetSupportedDevicesResponse,
 } from '../models';
+import { IDeletionPayload } from '../models/delete-payload';
 
 @Injectable({
   providedIn: 'root',
@@ -93,5 +96,13 @@ export class DashboardStoreService {
         }
       })
     );
+  }
+
+  addResource(payload: IAddResourcePayload): Observable<IAddEditDeleteResponse> {
+    return this._DashboardService.addResource(payload);
+  }
+
+  DeleteResource(payload: IDeletionPayload): Observable<IAddEditDeleteResponse> {
+    return this._DashboardService.DeleteResource(payload);
   }
 }

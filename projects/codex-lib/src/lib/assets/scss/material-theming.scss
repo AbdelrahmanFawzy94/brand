@@ -124,12 +124,29 @@ body[dir="rtl"] mat-datepicker-content {
   color: var(--elements-color) !important;
 }
 
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-floating-label,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-floating-label--float-above,
+.shared-select .ng-placeholder {
+  color: var(--bg-light-black-7) !important;
+  text-transform: capitalize;
+}
+
+.mat-mdc-form-field-icon-suffix,
+[dir="rtl"] .mat-mdc-form-field-icon-prefix {
+  padding: 0 !important;
+  padding-inline-end: 4px !important;
+}
+
 // mat checkbox
 .mdc-checkbox .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background,
 .mdc-checkbox .mdc-checkbox__native-control:enabled:indeterminate ~ .mdc-checkbox__background,
 .mdc-checkbox .mdc-checkbox__native-control[data-indeterminate="true"]:enabled ~ .mdc-checkbox__background {
   border-color: var(--elements-color) !important;
   background-color: var(--elements-color) !important;
+}
+
+.mdc-label {
+  font-family: var(--font-family);
 }
 
 .mdc-checkbox .mdc-checkbox__native-control:focus:checked ~ .mdc-checkbox__ripple {

@@ -128,6 +128,14 @@ const routes: Routes = [
         },
         loadComponent: () => import('./views/accordion/accordion.component'),
       },
+      {
+        path: 'chips',
+        data: {
+          title: 'samples-chips',
+          preload: true,
+        },
+        loadComponent: () => import('./views/chips/chips.component'),
+      },
       // {
       //   path: 'profile',
       //   data: {

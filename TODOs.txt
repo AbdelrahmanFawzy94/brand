@@ -66,3 +66,36 @@
 - adding dashboard module
 - adding opacity bg loop
 - dont forgat guards for every page
+______________________________________________________________________________________________________________
+dashboard
+______________________________________________________________________________________________________________
+- button component is loading
+- translation for translation page
+- handling errors service or interceptor
+- confirmation yes loader
+- table loading
+- toaster when success apis
+- side-dialog animation and rtl
+- deletion payload
+- add edit delete response
+- rename models response and files
+- I before interface name
+- after select in single select component close menu
+- validation component padding
+
+______________________________________________________________________________________________________________
+comments
+______________________________________________________________________________________________________________
+- search ui ======================================================> Done
+- no default =====================================================> Done
+- reset form =====================================================> Done
+- adding chips component =========================================> Done
+- replace chips in ng select =====================================> Done
+- get json translation from server
+
+- table ui
+- table sorting
+- paginator
+- search with paginator
+- modal ui and rtl ===============================================> Done
+-

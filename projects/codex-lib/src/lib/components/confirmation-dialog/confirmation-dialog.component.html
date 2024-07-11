@@ -1,0 +1,19 @@
+<div class="confirmation-dialog">
+  <h2 class="typo-title-large" mat-dialog-title>{{ data.title || "no data.title!" }}</h2>
+  <mat-dialog-content>
+    {{ data.subTitle || "no data.subTitle!" }}
+    <span class="bold">{{ data.focused || "no data.focused!" }}</span>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <div class="actions">
+      <lib-button theme="raised" borderRadius="rounded" [mat-dialog-close]="{ isConfirmed: false }">
+        <!-- TODO replace no with translation -->
+        <lib-icon name="close" /> no</lib-button
+      >
+      <!-- TODO replace yes with translation -->
+      <lib-button theme="raised" borderRadius="rounded" color="danger" [mat-dialog-close]="{ isConfirmed: true }"
+        ><lib-icon name="check" /> yes
+      </lib-button>
+    </div>
+  </mat-dialog-actions>
+</div>

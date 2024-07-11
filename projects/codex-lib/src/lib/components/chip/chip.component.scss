@@ -1,0 +1,30 @@
+@import "../../../../../codex-lib//src/lib/assets/scss/fonts.scss";
+
+:host {
+  display: inline-flex;
+}
+
+.shared-chip {
+  // --mat-chip-trailing-action-focus-state-layer-opacity: 0;
+  // --mdc-chip-hover-state-layer-color: transparent;
+
+  mat-chip-set {
+    zoom: 1;
+
+    mat-chip {
+      zoom: 1;
+
+      button {
+        zoom: 1;
+
+        &:hover {
+          // color: red;
+        }
+
+        lib-icon {
+          zoom: 1;
+        }
+      }
+    }
+  }
+}

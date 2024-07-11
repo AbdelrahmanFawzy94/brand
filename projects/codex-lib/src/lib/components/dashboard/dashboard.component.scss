@@ -376,8 +376,9 @@
     }
 
     .routes {
-      padding: var(--space-lg);
+      padding: var(--space-base) var(--space-xs);
       min-height: calc(100% - var(--upperNavheight));
+      background-color: var(--bg-opacity-elements-1);
     }
   }
 

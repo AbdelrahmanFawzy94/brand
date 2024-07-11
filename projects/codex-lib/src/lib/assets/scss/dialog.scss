@@ -1,0 +1,75 @@
+.side-dialog {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  animation: side-dialog 0.4s;
+
+  .mat-mdc-dialog-surface {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .dialog-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    h2 {
+      min-height: 75px;
+    }
+
+    mat-dialog-content {
+      min-height: calc(100% - 75 * 2px - 7px);
+      overflow-y: auto;
+      padding-top: var(--space-sm) !important;
+    }
+
+    mat-dialog-actions {
+      min-height: 75px;
+    }
+  }
+}
+
+[dir="rtl"] .side-dialog {
+  left: unset;
+  right: 0;
+  direction: rtl;
+  animation: side-dialog-rtl 0.4s;
+
+  .mat-mdc-dialog-surface {
+    border-top-left-radius: 28px;
+    border-bottom-left-radius: 28px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+mat-dialog-actions {
+  .actions {
+    display: flex;
+    gap: var(--space-xs);
+    text-transform: capitalize;
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
+
+@keyframes side-dialog {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes side-dialog-rtl {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}

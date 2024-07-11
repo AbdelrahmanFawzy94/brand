@@ -1,25 +1,18 @@
-import { Component, EventEmitter, Input, Output, TemplateRef, ViewEncapsulation } from '@angular/core';
-import { MatAccordionTogglePosition, MatExpansionModule } from '@angular/material/expansion';
-import { SharedIconButtonComponent } from '../icon-button/icon-button.component'; // TODO
+import {
+  AfterViewInit,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+  ViewEncapsulation,
+} from '@angular/core';
+import { MatAccordion, MatAccordionTogglePosition, MatExpansionModule, MatExpansionPanel } from '@angular/material/expansion';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
-import { SharedIconComponent } from '@library';
-
-interface AccordionData {
-  header: TemplateRef<any>;
-  body: TemplateRef<any>;
-  disabled?: boolean;
-  expanded?: boolean;
-  hideToggleIcon?: boolean;
-  toggleIconPosition?: MatAccordionTogglePosition;
-  collapsedHeaderHeight?: string;
-  expandedHeaderHeight?: string;
-}
-
-interface AccordionClick {
-  data: AccordionData;
-  index: number;
-}
+import { AccordionClick, AccordionData, SharedIconComponent, SharedIconButtonComponent } from '@library';
 
 @Component({
   selector: 'lib-accordion',
@@ -29,9 +22,9 @@ interface AccordionClick {
   styleUrls: ['./accordion.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class SharedAccordionComponent {
-  // @ViewChild('accordion', { static: true }) accordion!: MatAccordion;
-  // accordion = viewChild.required(MatAccordion);
+export class SharedAccordionComponent implements AfterViewInit {
+  @ViewChild(MatAccordion, { static: true }) accordion!: MatAccordion;
+  @ViewChildren(MatExpansionPanel) expansionPanels!: QueryList<MatExpansionPanel>;
 
   @Input({ required: true }) accordions!: AccordionData[];
   @Input() toggleIconPosition: MatAccordionTogglePosition = 'after';
@@ -43,10 +36,37 @@ export class SharedAccordionComponent {
 
   constructor() {}
 
-  accordionCollpase(data: AccordionClick) {
+  ngAfterViewInit(): void {
+    // console.warn(this.expansionPanels.get(0));
+    // this.expansionPanels.forEach((i) => console.warn(i));
+  }
+
+  accordionCollpaseOutput(data: AccordionClick) {
     this.onAccordionCollapse.emit(data);
   }
-  accordionExpand(data: AccordionClick) {
+  accordionExpandOutput(data: AccordionClick) {
     this.onAccordionExpand.emit(data);
+  }
+
+  //
+
+  expandAccordion(accordionIndex: number) {
+    this.expansionPanels.get(accordionIndex)!.open();
+  }
+
+  collapseAccordion(accordionIndex: number) {
+    this.expansionPanels.get(accordionIndex)!.close();
+  }
+
+  toggle(accordionIndex: number) {
+    this.expansionPanels.get(accordionIndex)!.toggle();
+  }
+
+  expandAll() {
+    this.accordion.openAll();
+  }
+
+  collapseAll() {
+    this.accordion.closeAll();
   }
 }

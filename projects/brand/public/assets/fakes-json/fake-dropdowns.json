@@ -71,6 +71,15 @@
         "subDropdowns": []
       },
       {
+        "id": "3asd",
+        "nameEn": "chips",
+        "nameAr": "chips",
+        "icon": "panorama_wide_angle",
+        "routing": "/samples/chips",
+        "badgeData": "4",
+        "subDropdowns": []
+      },
+      {
         "id": "6",
         "nameEn": "form",
         "nameAr": "form",

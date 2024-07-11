@@ -13,4 +13,6 @@ export * from './slide-toggle/slide-toggle.component';
 export * from './textarea/textarea.component';
 export * from './table/table.component';
 export * from './accordion/accordion.component';
+export * from './chip/chip.component';
+export * from './confirmation-dialog/confirmation-dialog.component';
 export * from './validations-messages/validations-messages.component';

@@ -1,0 +1,13 @@
+<div class="shared-chip">
+  <mat-chip-set aria-label="Fish selection">
+    <mat-chip [disabled]="disabled"
+      ><ng-content></ng-content>
+
+      @if(isRemovable){
+      <button matChipRemove (click)="remove()" matTooltip="remove">
+        <lib-icon name="cancel"> </lib-icon>
+      </button>
+      }
+    </mat-chip>
+  </mat-chip-set>
+</div>

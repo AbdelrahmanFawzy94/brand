@@ -1,41 +1,89 @@
 <div class="dashboard-localization-page">
-  <h4 class="typo-title-large">localization</h4>
-  <lib-select
-    [dropdownList]="languages"
-    [passedFormControl]="form | getControl : 'language'"
-    appearance="outline"
-    labelName="name"
-    [multiple]="false"
-    placeholder="languages"
-    (onSelection)="onSelection($event)"
-  ></lib-select>
-  <lib-select
-    [dropdownList]="supportedDevices"
-    [passedFormControl]="form | getControl : 'supportedDevices'"
-    appearance="outline"
-    labelName="name"
-    [multiple]="false"
-    placeholder="supportedDevices"
-    (onSelection)="onSelection($event)"
-  ></lib-select>
-  <lib-input
-    [passedFormControl]="form | getControl : 'translationKey'"
-    [hideValidation]="true"
-    appearance="outline"
-    label="translationKey"
-  ></lib-input>
-  <lib-input
-    [passedFormControl]="form | getControl : 'translationKeyValue'"
-    [hideValidation]="true"
-    appearance="outline"
-    label="translationKeyValue"
-  ></lib-input>
-  <lib-button [disabled]="form.invalid" theme="raised" borderRadius="rounded" color="secondry" (onClick)="submit(true)"
-    ><lib-icon name="favorite" /> submit
-  </lib-button>
+  <div class="dashboard-page-header">
+    <div class="title-with-actions">
+      <div class="title">
+        <h3 class="typo-title-large">localization</h3>
+      </div>
+      <div class="actions">
+        <lib-icon-button iconName="filter_list" theme="raised" (click)="toggleAdvancedSearsh()" matTooltip="more filters">
+        </lib-icon-button>
+        <lib-button theme="raised" borderRadius="rounded" color="success" (click)="addResource()"
+          ><lib-icon name="add" /> add resource</lib-button
+        >
+      </div>
+    </div>
+    <div class="advanced-search">
+      <lib-accordion
+        [expandOnlyOne]="true"
+        [hideToggleIcon]="false"
+        [toggleIconPosition]="'after'"
+        [accordions]="[
+          {
+            body: formTemplate,
+            hideToggleIcon: true,
+            collapsedHeaderHeight: '0px',
+            expandedHeaderHeight: '0px'
+          }
+        ]"
+      >
+        <ng-template #formTemplate>
+          <div class="form row">
+            <div class="col-sm-6">
+              <lib-select
+                [dropdownList]="languages"
+                [passedFormControl]="form | getControl : 'language'"
+                appearance="outline"
+                labelName="name"
+                placeholder="languages"
+                (onSelection)="onSelection($event)"
+              ></lib-select>
+            </div>
+            <div class="col-sm-6">
+              <lib-select
+                [dropdownList]="supportedDevices"
+                [passedFormControl]="form | getControl : 'supportedDevices'"
+                appearance="outline"
+                labelName="name"
+                placeholder="supportedDevices"
+                (onSelection)="onSelection($event)"
+              ></lib-select>
+            </div>
+            <div class="col-sm-6">
+              <lib-input
+                [passedFormControl]="form | getControl : 'translationKey'"
+                [hideValidation]="true"
+                appearance="outline"
+                label="translationKey"
+              ></lib-input>
+            </div>
+            <div class="col-sm-6">
+              <lib-input
+                [passedFormControl]="form | getControl : 'translationKeyValue'"
+                [hideValidation]="true"
+                appearance="outline"
+                label="translationKeyValue"
+              ></lib-input>
+            </div>
+            <div class="col-12 d-flex gap-xs">
+              <lib-button
+                [disabled]="form.invalid || dataTableIsLoading"
+                theme="raised"
+                borderRadius="rounded"
+                color="info"
+                (onClick)="submit(true)"
+                ><lib-icon name="search" /> search
+              </lib-button>
+              <lib-button [disabled]="form.invalid || dataTableIsLoading" theme="raised" borderRadius="rounded" (onClick)="resetForm()"
+                ><lib-icon name="undo" /> reset form
+              </lib-button>
+            </div>
+          </div>
+        </ng-template>
+      </lib-accordion>
+    </div>
+  </div>
 
   <div class="table-section">
-    <!-- { key: 'requestNumber', headerTranslationKey: 'shared.buttons.copy', template: requestNumber }, -->
     <!-- [first]="pagination.totalItems" -->
     <lib-table
       [data]="dataTable"
@@ -46,12 +94,15 @@
       [isLoading]="dataTableIsLoading"
       [columns]="[
         { key: 'key', headerTranslationKey: 'shared.buttons.confirm' },
-        { key: 'text', headerTranslationKey: 'shared.buttons.confirm' }
+        { key: 'text', headerTranslationKey: 'shared.buttons.confirm' },
+        { key: 'actions', headerTranslationKey: 'shared.buttons.copy', template: actions }
       ]"
       (onPage)="onPageChange($event)"
     >
-      <ng-template #requestNumber let-item>
-        <div>test {{ item.requestNumber }}</div>
+      <ng-template #actions let-item>
+        <lib-icon-button iconName="close" theme="stroked" color="danger" (click)="deleteResource(item)" matTooltip="delete">
+        </lib-icon-button>
+        <lib-icon-button iconName="edit" theme="stroked" (click)="editResource(item)" matTooltip="edit"> </lib-icon-button>
       </ng-template>
     </lib-table>
   </div>

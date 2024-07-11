@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import {
+  DialogService,
   GetControlPipe,
+  SharedAccordionComponent,
   SharedButtonComponent,
+  SharedIconButtonComponent,
   SharedIconComponent,
   SharedInputComponent,
   SharedSelectComponent,
@@ -19,6 +22,8 @@ import {
   IPagination,
 } from '../../models';
 import { PaginatorState } from 'primeng/paginator';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import LocalizationAddResourseComponent from '../../components/localization-add-resourse/localization-add-resourse.component';
 // import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @UntilDestroy()
@@ -33,11 +38,16 @@ import { PaginatorState } from 'primeng/paginator';
     SharedTableComponent,
     //  TranslateModule,
     SharedIconComponent,
+    SharedIconButtonComponent,
+    MatTooltipModule,
+    SharedAccordionComponent,
   ],
   templateUrl: './localization.component.html',
   styleUrls: ['./localization.component.scss'],
 })
 export default class LocalizationComponent implements OnInit {
+  @ViewChild(SharedAccordionComponent, { static: true }) sharedAccordionComponent!: SharedAccordionComponent;
+
   languagesIsLoading: boolean = false;
   languages: IGetLanguagesResponse[] = [];
 
@@ -46,6 +56,8 @@ export default class LocalizationComponent implements OnInit {
 
   dataTableIsLoading: boolean = false;
   dataTable: FilterationResoursesItem[] = [];
+
+  deletingIsLoading: boolean = false;
 
   pagination: IPagination = {
     itemsPerPage: [5, 10, 30, 50, 100],
@@ -58,67 +70,80 @@ export default class LocalizationComponent implements OnInit {
 
   form!: FormGroup;
 
-  constructor(private _FormBuilder: FormBuilder, private _DashboardStoreService: DashboardStoreService) {}
+  constructor(
+    private _FormBuilder: FormBuilder,
+    private dialogService: DialogService,
+    private _DashboardStoreService: DashboardStoreService
+  ) {}
 
   ngOnInit(): void {
     this.getLanguages();
     this.getSupportedDevices();
     this.createForm();
+    this.submit(false);
   }
 
   createForm() {
     this.form = this._FormBuilder.group({
-      language: [1, [Validators.required]],
+      language: [null, []],
       supportedDevices: [null, []],
       translationKey: [null, []],
       translationKeyValue: [null, []],
     });
   }
 
+  resetForm() {
+    this.form.reset();
+    this.submit(false);
+  }
+
   onSelection(value: string) {
     // console.warn(value);
   }
 
+  toggleAdvancedSearsh() {
+    this.sharedAccordionComponent.toggle(0);
+  }
+
   onPageChange(pagination: PaginatorState) {
     this.pagination = { ...this.pagination, currentPage: pagination.page! + 1, pageSize: pagination.rows! };
-
     this.submit(false);
   }
 
   getLanguages() {
-    (this.languagesIsLoading = true),
-      this._DashboardStoreService
-        .getLanguagesResponse()
-        .pipe(
-          untilDestroyed(this),
-          finalize(() => (this.languagesIsLoading = false)),
-          catchError((error) => {
-            return throwError(() => error);
-          })
-        )
-        .subscribe((languages) => {
-          this.languages = languages;
-        });
+    this.languagesIsLoading = true;
+    this._DashboardStoreService
+      .getLanguagesResponse()
+      .pipe(
+        untilDestroyed(this),
+        finalize(() => (this.languagesIsLoading = false)),
+        catchError((error) => {
+          return throwError(() => error);
+        })
+      )
+      .subscribe((languages) => {
+        this.languages = languages;
+      });
   }
 
   getSupportedDevices() {
-    (this.supportedDevicesIsLoading = true),
-      this._DashboardStoreService
-        .getSupportedDevicesResponse()
-        .pipe(
-          untilDestroyed(this),
-          finalize(() => (this.supportedDevicesIsLoading = false)),
-          catchError((error) => {
-            return throwError(() => error);
-          })
-        )
-        .subscribe((supportedDevices) => {
-          this.supportedDevices = supportedDevices;
-        });
+    this.supportedDevicesIsLoading = true;
+    this._DashboardStoreService
+      .getSupportedDevicesResponse()
+      .pipe(
+        untilDestroyed(this),
+        finalize(() => (this.supportedDevicesIsLoading = false)),
+        catchError((error) => {
+          return throwError(() => error);
+        })
+      )
+      .subscribe((supportedDevices) => {
+        this.supportedDevices = supportedDevices;
+      });
   }
 
   submit(submitFromForm: boolean) {
-    if (this.form.valid) {
+    if (this.form.valid || !submitFromForm) {
       this.dataTableIsLoading = true;
 
       let payload: IGetFilteredResourcesPayload = {
@@ -150,5 +175,58 @@ export default class LocalizationComponent implements OnInit {
           };
         });
     }
+  }
+
+  addResource() {
+    this.dialogService
+      .openDialog(LocalizationAddResourseComponent, {
+        disableClose: true,
+        panelClass: 'side-dialog',
+        enterAnimationDuration: '0ms',
+        exitAnimationDuration: '0ms',
+      })
+      .pipe(untilDestroyed(this))
+      .subscribe((data) => {
+        if (data && data.isConfirmed) {
+          this.submit(false);
+        }
+      });
+  }
+
+  deleteResource(item: FilterationResoursesItem) {
+    // console.warn(item);
+    this.dialogService
+      .openConfirmationDialog({
+        data: {
+          title: 'delete resourse',
+          subTitle: 'are you sure for deleting resource',
+          focused: item.key,
+        },
+        disableClose: true,
+        minWidth: '50vw',
+      })
+      .pipe(untilDestroyed(this))
+      .subscribe((data) => {
+        if (data && data.isConfirmed) {
+          this._DashboardStoreService
+            .DeleteResource({ ids: [item.id] })
+            .pipe(
+              untilDestroyed(this),
+              finalize(() => (this.dataTableIsLoading = false)),
+              catchError((error) => {
+                return throwError(() => error);
+              })
+            )
+            .subscribe((data) => {
+              if (data && data.isSuccessfull) {
+                this.submit(false);
+              }
+            });
+        }
+      });
+  }
+
+  editResource(item: FilterationResoursesItem) {
+    console.warn(item);
   }
 }
