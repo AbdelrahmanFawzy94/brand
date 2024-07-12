@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
   applicationName: 'brand',
-  baseUrl: 'http://codexisland1-002-site3.atempurl.com/api',
+  baseUrl: 'http://codexapp.runasp.net/api/',
   version: '1.0.0',
 };
