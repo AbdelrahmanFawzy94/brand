@@ -5,7 +5,7 @@
       [ngClass]="{ isOpened: ngSelect1.isOpen, hasError: passedFormControl.touched && passedFormControl.errors }"
       [items]="dropdownList"
       [multiple]="multiple"
-      [bindLabel]="labelName"
+      [bindLabel]="optionLabelName"
       clearAllText="clear alllllll"
       groupBy="selectedAllKey"
       [selectableGroup]="true"
@@ -18,6 +18,7 @@
       [loading]="loading"
       [formControl]="passedFormControl"
       [notFoundText]="'no_resultssssssss'"
+      [clearable]="clearable"
       (change)="emitControlChange()"
       (clear)="emitControlChange()"
     >
@@ -32,7 +33,7 @@
       <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
         <div class="ng-select__option text-wrap d-flex align-items-center">
           <mat-checkbox *ngIf="!bindNames.length; else bindOptionNamesRrf" [checked]="item$.selected">
-            {{ item[labelName] }}
+            {{ item[optionLabelName] }}
           </mat-checkbox>
 
           <!-- In case you want to display more than key separated by - symbol -->
@@ -48,11 +49,11 @@
 
       <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
         <div class="ng-value" *ngFor="let item of items | slice : 0 : 1">
-          <lib-chip *ngIf="!bindNames.length" [isRemovable]="true" (onRemove)="clear(item)">{{ item![labelName] }}</lib-chip>
+          <lib-chip *ngIf="!bindNames.length" [isRemovable]="true" (onRemove)="clear(item)">{{ item![optionLabelName] }}</lib-chip>
 
           <!-- In case you want to display more than key separated by - symbol -->
           <!-- TODO add (onRemove)="clear()" -->
-          <span *ngIf="bindNames.length" [title]="item![labelName]">
+          <span *ngIf="bindNames.length" [title]="item![optionLabelName]">
             <ng-container *ngFor="let bindName of bindNames; let last = last">
               {{ item![bindName] }} <span *ngIf="!last">-</span>
             </ng-container>
@@ -75,7 +76,7 @@
       [(ngModel)]="model"
       [items]="dropdownList"
       [multiple]="multiple"
-      [bindLabel]="labelName"
+      [bindLabel]="optionLabelName"
       clearAllText="clear alllllll"
       groupBy="selectedAllKey"
       [selectableGroup]="true"
@@ -87,6 +88,7 @@
       [placeholder]="placeholder"
       [loading]="loading"
       [notFoundText]="'no_resultssssssss'"
+      [clearable]="clearable"
       (change)="emitModelChange()"
       (clear)="emitModelChange()"
     >
@@ -100,28 +102,43 @@
 
       <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
         <div class="ng-select__option text-wrap d-flex align-items-center">
-          <mat-checkbox *ngIf="!bindNames.length; else bindOptionNamesRrf" [checked]="item$.selected">
-            {{ item[labelName] }}
-          </mat-checkbox>
+          <ng-container *ngIf="showCheckBoxesInOptions">
+            <mat-checkbox *ngIf="!bindNames.length; else bindOptionNamesRrf" [checked]="item$.selected">
+              {{ item[optionLabelName] ?? item }}
+            </mat-checkbox>
 
-          <!-- In case you want to display more than key separated by - symbol -->
-          <ng-template #bindOptionNamesRrf>
-            <mat-checkbox [checked]="item$.selected">
+            <!-- In case you want to display more than key separated by - symbol -->
+            <ng-template #bindOptionNamesRrf>
+              <mat-checkbox [checked]="item$.selected">
+                <ng-container *ngFor="let bindName of bindNames; let last = last">
+                  {{ item[bindName] }} <span *ngIf="!last">-</span>
+                </ng-container>
+              </mat-checkbox>
+            </ng-template>
+          </ng-container>
+
+          <ng-container *ngIf="!showCheckBoxesInOptions">
+            <div *ngIf="!bindNames.length; else bindOptionNamesRrf">
+              {{ item[optionLabelName] ?? item }}
+            </div>
+
+            <!-- In case you want to display more than key separated by - symbol -->
+            <ng-template #bindOptionNamesRrf>
               <ng-container *ngFor="let bindName of bindNames; let last = last">
                 {{ item[bindName] }} <span *ngIf="!last">-</span>
               </ng-container>
-            </mat-checkbox>
-          </ng-template>
+            </ng-template>
+          </ng-container>
         </div>
       </ng-template>
 
       <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
         <div class="ng-value" *ngFor="let item of items | slice : 0 : 1">
-          <lib-chip *ngIf="!bindNames.length" [isRemovable]="true" (onRemove)="clear(item)">{{ item![labelName] }}</lib-chip>
+          <lib-chip *ngIf="!bindNames.length" [isRemovable]="true" (onRemove)="clear(item)">{{ item![optionLabelName] }}</lib-chip>
 
           <!-- TODO add (onRemove)="clear()" -->
           <!-- In case you want to display more than key separated by - symbol -->
-          <span *ngIf="bindNames.length" [title]="item![labelName]">
+          <span *ngIf="bindNames.length" [title]="item![optionLabelName]">
             <ng-container *ngFor="let bindName of bindNames; let last = last">
               {{ item![bindName] }} <span *ngIf="!last">-</span>
             </ng-container>

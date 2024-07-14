@@ -4,6 +4,7 @@
 @import "../../codex-lib/src/lib/assets/scss/borders";
 @import "../../codex-lib/src/lib/assets/scss/buttons";
 @import "../../codex-lib/src/lib/assets/scss/dialog.scss";
+@import "../../codex-lib/src/lib/assets/scss/table.scss";
 @import "../../codex-lib/src/lib/assets/scss/spaces";
 @import "../../codex-lib/src/lib/assets/scss/grid";
 @import "../../codex-lib/src/lib/assets/scss/utils";
@@ -53,6 +54,7 @@ body {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background-color: var(--bg-dark-elements-1);
+  border-radius: 30px;
 }
 
 /* Handle on hover */

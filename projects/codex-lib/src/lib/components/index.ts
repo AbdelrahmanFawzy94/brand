@@ -1,3 +1,7 @@
+// svg
+export * from './svgs/no-data/no-data.component';
+
+// components
 export * from './button/button.component';
 export * from './checkbox/checkbox.component';
 export * from './dashboard/dashboard.component';

@@ -93,9 +93,11 @@ ________________________________________________________________________________
 - replace chips in ng select =====================================> Done
 - get json translation from server
 
-- table ui
+- table ui =======================================================> Done
+- - loading
+- - no data
 - table sorting
-- paginator
-- search with paginator
+- paginator ======================================================> Done
+- search with paginator ==========================================> Done
 - modal ui and rtl ===============================================> Done
 -

@@ -1,0 +1,78 @@
+// overwrite table
+
+.p-datatable .p-datatable-thead > tr > th {
+  background-color: var(--bg-dark-white-1);
+  padding: var(--space-sm) var(--space-md);
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  background-color: var(--white-color);
+  padding: var(--space-xs) var(--space-md);
+}
+
+.p-datatable .p-datatable-tbody > tr:last-of-type > td {
+  border-bottom-color: transparent;
+}
+
+// custom classes
+.table-actions {
+  width: 150px;
+}
+
+// table pagination
+.shared-table {
+  .table-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--white-color);
+
+    .start {
+      display: flex;
+      align-items: center;
+      width: 50%;
+      padding: var(--space-xs) var(--space-md);
+
+      lib-select {
+        width: 60px;
+      }
+
+      .shared-select {
+        margin-bottom: 0;
+
+        .ng-select .ng-select-container {
+          padding-inline-end: unset;
+        }
+
+        input {
+          display: none;
+        }
+      }
+
+      .ng-select .ng-select-container .ng-value-container,
+      .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-value {
+        white-space: unset;
+        overflow: unset;
+        text-overflow: unset;
+      }
+
+      .ng-select .ng-select-container .ng-value-container {
+        padding: 0 10px !important;
+      }
+    }
+
+    .end {
+      width: 50%;
+
+      .p-paginator {
+        justify-content: flex-end;
+        background-color: transparent;
+        padding: var(--space-xs) var(--space-md);
+      }
+
+      .p-paginator-current {
+        cursor: default;
+      }
+    }
+  }
+}

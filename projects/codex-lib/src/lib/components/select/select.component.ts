@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgClass, NgFor, NgIf, SlicePipe } from '@angular/common';
 import { Component, ElementRef, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -11,7 +11,10 @@ import { SharedChipComponent, SharedIconComponent, SharedValidationsMessagesComp
   selector: 'lib-select',
   standalone: true,
   imports: [
-    CommonModule,
+    NgIf,
+    NgFor,
+    SlicePipe,
+    NgClass,
     NgSelectModule,
     MatCheckboxModule,
     FormsModule,
@@ -27,13 +30,16 @@ import { SharedChipComponent, SharedIconComponent, SharedValidationsMessagesComp
   encapsulation: ViewEncapsulation.None,
 })
 export class SharedSelectComponent {
+  @Input() selectedValue: any;
   @Input() bindKey: string = 'id';
+  @Input() optionLabelName: string = 'name';
+  @Input() placeholder: string = '';
+  @Input() bindNames: string[] = [];
+  @Input() clearable: boolean = true;
+  @Input() showCheckBoxesInOptions: boolean = true;
   @Input() hideValidation: boolean = false;
   @Input() passedFormControl!: FormControl;
   @Input() dropdownList: any[] = [];
-  @Input() labelName: string = 'name';
-  @Input() placeholder: string = '';
-  @Input() bindNames: string[] = [];
   @Input() loading: boolean = false;
   @Input() multiple: boolean = false;
   @Input() appearance: 'fill' | 'outline' = 'outline';
@@ -60,6 +66,10 @@ export class SharedSelectComponent {
         this.passedFormControl.reset([]);
       }
     }
+
+    if (changes['selectedValue']) {
+      this.model = changes['selectedValue'].currentValue;
+    }
   }
 
   isControlIndeterminate(): boolean {
@@ -76,7 +86,7 @@ export class SharedSelectComponent {
   }
 
   searchFn = (term: string, item: any) => {
-    return item[this.labelName]?.toLowerCase().includes(term?.toLowerCase());
+    return item[this.optionLabelName]?.toLowerCase().includes(term?.toLowerCase());
   };
 
   emitControlChange() {

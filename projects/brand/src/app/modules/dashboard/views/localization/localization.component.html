@@ -33,7 +33,7 @@
                 [dropdownList]="languages"
                 [passedFormControl]="form | getControl : 'language'"
                 appearance="outline"
-                labelName="name"
+                optionLabelName="name"
                 placeholder="languages"
                 (onSelection)="onSelection($event)"
               ></lib-select>
@@ -43,7 +43,7 @@
                 [dropdownList]="supportedDevices"
                 [passedFormControl]="form | getControl : 'supportedDevices'"
                 appearance="outline"
-                labelName="name"
+                optionLabelName="name"
                 placeholder="supportedDevices"
                 (onSelection)="onSelection($event)"
               ></lib-select>
@@ -95,7 +95,7 @@
       [columns]="[
         { key: 'key', headerTranslationKey: 'shared.buttons.confirm' },
         { key: 'text', headerTranslationKey: 'shared.buttons.confirm' },
-        { key: 'actions', headerTranslationKey: 'shared.buttons.copy', template: actions }
+        { key: 'actions', headerTranslationKey: 'shared.buttons.copy', template: actions, columnClass: 'table-actions' }
       ]"
       (onPage)="onPageChange($event)"
     >

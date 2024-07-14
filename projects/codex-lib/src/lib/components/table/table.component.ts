@@ -2,24 +2,35 @@ import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewC
 import { TableModule } from 'primeng/table';
 import { Paginator, PaginatorModule, PaginatorState } from 'primeng/paginator';
 import { SharedIconButtonComponent } from '../icon-button/icon-button.component'; // TODO
-import { TableColumn } from '@library';
+import { SharedSelectComponent, SharedSvgNoDataComponent, TableColumn } from '@library';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
 @Component({
   selector: 'lib-table',
   standalone: true,
-  imports: [NgFor, NgIf, NgTemplateOutlet, TranslateModule, TableModule, PaginatorModule, SharedIconButtonComponent],
+  imports: [
+    NgFor,
+    NgIf,
+    NgTemplateOutlet,
+    TranslateModule,
+    TableModule,
+    PaginatorModule,
+    SharedIconButtonComponent,
+    SharedSvgNoDataComponent,
+    SharedSelectComponent,
+  ],
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
 })
 export class SharedTableComponent implements OnChanges {
-  @ViewChild('paginator', { static: true }) paginator!: Paginator;
+  @ViewChild(Paginator, { static: true }) paginator!: Paginator;
+
   @Input({ required: true }) currentPage!: number;
   @Input({ required: true }) data!: any[];
   @Input({ required: true }) columns!: TableColumn[];
 
   @Input() isLoading: boolean = false;
-  @Input() itemsPerPage: number[] = [5, 10, 20, 30];
+  @Input() itemsPerPage: number[] = [5, 10, 20, 50];
   @Input() itemsPerPageSelected: number = 5;
   @Input() totalItems: number = 0;
 
@@ -35,5 +46,10 @@ export class SharedTableComponent implements OnChanges {
 
   onPageChange(e: PaginatorState) {
     this.onPage.emit(e);
+  }
+
+  onItemsPerPageSelection(itemsPerPageSelected: number) {
+    this.paginator.paginatorState.rows = itemsPerPageSelected;
+    this.onPageChange(this.paginator.paginatorState);
   }
 }

@@ -1,10 +1,9 @@
 <div class="shared-table">
-  <!-- [showCurrentPageReport]="true" -->
-  <!-- currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" -->
-  <p-table [value]="data" [tableStyle]="{ 'min-width': '600px' }" *ngIf="!isLoading">
+  <!-- [scrollable]="true" scrollHeight="400px"" -->
+  <p-table [value]="data" [tableStyle]="{ 'min-width': '600px' }" [scrollable]="true" scrollHeight="80vh" *ngIf="!isLoading">
     <ng-template pTemplate="header">
       <tr>
-        <th *ngFor="let col of columns">
+        <th *ngFor="let col of columns" [class]="col.columnClass ?? ''">
           {{ col.headerTranslationKey | translate }}
         </th>
       </tr>
@@ -25,14 +24,41 @@
     </ng-template>
   </p-table>
 
-  <div class="text-center" *ngIf="!data.length">no data</div>
+  <div class="text-center" *ngIf="!data.length">
+    <lib-svg-no-data></lib-svg-no-data>
+  </div>
 
   <div class="loading-skeleton" *ngIf="isLoading">is loading...</div>
 
-  <p-paginator
+  <!-- <p-paginator
     (onPageChange)="onPageChange($event)"
     [rows]="itemsPerPageSelected"
     [totalRecords]="totalItems"
     [rowsPerPageOptions]="itemsPerPage"
-  />
+  /> -->
+
+  <div class="table-pagination">
+    <div class="start">
+      <span> {{ "Items per page" | translate }}: </span>
+      <lib-select
+        [dropdownList]="itemsPerPage"
+        [clearable]="false"
+        [showCheckBoxesInOptions]="false"
+        [selectedValue]="itemsPerPageSelected"
+        appearance="fill"
+        (onSelection)="onItemsPerPageSelection($event)"
+      ></lib-select>
+    </div>
+    <div class="end">
+      <p-paginator
+        (onPageChange)="onPageChange($event)"
+        [showPageLinks]="false"
+        [rows]="itemsPerPageSelected"
+        [totalRecords]="totalItems"
+        [showFirstLastIcon]="true"
+        [showCurrentPageReport]="true"
+        currentPageReportTemplate="{first} - {last} {{ 'shared.buttons.confirm' | translate }} {totalRecords}"
+      ></p-paginator>
+    </div>
+  </div>
 </div>

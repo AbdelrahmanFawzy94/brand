@@ -4,4 +4,5 @@ export interface TableColumn {
   key: string;
   headerTranslationKey: string;
   template?: TemplateRef<any>;
+  columnClass?: string;
 }
