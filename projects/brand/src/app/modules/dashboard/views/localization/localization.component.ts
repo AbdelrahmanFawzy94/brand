@@ -98,10 +98,6 @@ export default class LocalizationComponent implements OnInit {
     this.submit(false);
   }
 
-  onSelection(value: string) {
-    // console.warn(value);
-  }
-
   toggleAdvancedSearsh() {
     this.sharedAccordionComponent.toggle(0);
   }
@@ -193,7 +189,6 @@ export default class LocalizationComponent implements OnInit {
   }
 
   deleteResource(item: FilterationResoursesItem) {
-    // console.warn(item);
     this.dialogService
       .openConfirmationDialog({
         data: {
