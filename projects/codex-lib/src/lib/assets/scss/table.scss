@@ -25,13 +25,23 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     background-color: var(--white-color);
+
+    @include md {
+      flex-direction: column-reverse;
+    }
 
     .start {
       display: flex;
       align-items: center;
-      width: 50%;
       padding: var(--space-xs) var(--space-md);
+      width: 35%;
+
+      @include md {
+        width: 100%;
+        justify-content: center;
+      }
 
       lib-select {
         width: 60px;
@@ -62,12 +72,20 @@
     }
 
     .end {
-      width: 50%;
+      width: 65%;
+
+      @include md {
+        width: 100%;
+      }
 
       .p-paginator {
         justify-content: flex-end;
         background-color: transparent;
         padding: var(--space-xs) var(--space-md);
+
+        @include md {
+          justify-content: center;
+        }
       }
 
       .p-paginator-current {
