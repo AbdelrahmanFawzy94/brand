@@ -24,6 +24,7 @@ import {
 import { PaginatorState } from 'primeng/paginator';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import LocalizationAddResourseComponent from '../../components/localization-add-resourse/localization-add-resourse.component';
+import LocalizationEditResourseComponent from '../../components/localization-edit-resourse/localization-edit-resourse.component';
 // import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @UntilDestroy()
@@ -187,9 +188,7 @@ export default class LocalizationComponent implements OnInit {
       })
       .pipe(untilDestroyed(this))
       .subscribe((data) => {
-        if (data && data.isConfirmed) {
-          this.submit(false);
-        }
+        if (data && data.isConfirmed) this.submit(false);
       });
   }
 
@@ -227,6 +226,17 @@ export default class LocalizationComponent implements OnInit {
   }
 
   editResource(item: FilterationResoursesItem) {
-    console.warn(item);
+    this.dialogService
+      .openDialog(LocalizationEditResourseComponent, {
+        disableClose: true,
+        panelClass: 'side-dialog',
+        enterAnimationDuration: '0ms',
+        exitAnimationDuration: '0ms',
+        data: item,
+      })
+      .pipe(untilDestroyed(this))
+      .subscribe((data) => {
+        if (data && data.isConfirmed) this.submit(false);
+      });
   }
 }

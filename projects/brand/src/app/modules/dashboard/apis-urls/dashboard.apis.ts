@@ -3,5 +3,6 @@ export class DashboardApiUrls {
   static readonly getSupportedDevices: string = 'Localization/GetSupportedDevices';
   static readonly getFilteredResources: string = 'Localization/GetFilteredResources';
   static readonly addResource: string = 'Localization/AddResource';
+  static readonly editResource: string = 'Localization/UpdateResource';
   static readonly deleteResource: string = 'Localization/DeleteResource';
 }

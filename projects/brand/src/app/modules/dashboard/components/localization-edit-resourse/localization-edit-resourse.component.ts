@@ -13,11 +13,17 @@ import { GetControlPipe, SharedButtonComponent, SharedIconComponent, SharedInput
 import { DashboardStoreService } from '../../services/dashboard.store.service';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { catchError, finalize, throwError } from 'rxjs';
-import { IAddResourcePayload, IGetLanguagesResponse, IGetSupportedDevicesResponse } from '../../models';
+import {
+  FilterationResoursesItem,
+  IAddResourcePayload,
+  IEditResourcePayload,
+  IGetLanguagesResponse,
+  IGetSupportedDevicesResponse,
+} from '../../models';
 
 @UntilDestroy()
 @Component({
-  selector: 'localization-add-resourse',
+  selector: 'localization-edit-resourse',
   standalone: true,
   imports: [
     MatButtonModule,
@@ -31,10 +37,10 @@ import { IAddResourcePayload, IGetLanguagesResponse, IGetSupportedDevicesRespons
     SharedButtonComponent,
     SharedIconComponent,
   ],
-  templateUrl: './localization-add-resourse.component.html',
-  styleUrls: ['./localization-add-resourse.component.scss'],
+  templateUrl: './localization-edit-resourse.component.html',
+  styleUrls: ['./localization-edit-resourse.component.scss'],
 })
-export default class LocalizationAddResourseComponent implements OnInit {
+export default class LocalizationEditResourseComponent implements OnInit {
   languages: IGetLanguagesResponse[] = [];
   supportedDevices: IGetSupportedDevicesResponse[] = [];
 
@@ -42,9 +48,9 @@ export default class LocalizationAddResourseComponent implements OnInit {
   form!: FormGroup;
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: any,
+    @Inject(MAT_DIALOG_DATA) public data: FilterationResoursesItem,
     private _FormBuilder: FormBuilder,
-    private _DialogRef: MatDialogRef<LocalizationAddResourseComponent>,
+    private _DialogRef: MatDialogRef<LocalizationEditResourseComponent>,
     private _DashboardStoreService: DashboardStoreService
   ) {}
 
@@ -61,6 +67,10 @@ export default class LocalizationAddResourseComponent implements OnInit {
       translationKey: [null, [Validators.required]],
       translationKeyValue: [null, [Validators.required]],
     });
+    this.form.get('language')?.setValue(this.data.localizationLanguageId);
+    this.form.get('supportedDevices')?.setValue(this.data.resourceType);
+    this.form.get('translationKey')?.setValue(this.data.key);
+    this.form.get('translationKeyValue')?.setValue(this.data.text);
   }
 
   onSelection(value: string) {
@@ -77,7 +87,8 @@ export default class LocalizationAddResourseComponent implements OnInit {
 
   submit() {
     if (this.form.valid) {
-      let payload: IAddResourcePayload = {
+      let payload: IEditResourcePayload = {
+        id: this.data.id,
         localizationLanguageId: this.form.value.language,
         key: this.form.value.translationKey,
         resourceType: this.form.value.supportedDevices,
@@ -86,7 +97,7 @@ export default class LocalizationAddResourseComponent implements OnInit {
       };
 
       this._DashboardStoreService
-        .addResource(payload)
+        .editResource(payload)
         .pipe(
           untilDestroyed(this),
           finalize(() => (this.addResourceIsLoading = false)),

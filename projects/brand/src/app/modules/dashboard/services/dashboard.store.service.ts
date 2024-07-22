@@ -5,6 +5,7 @@ import { DashboardService } from './dashboard.service';
 import {
   IAddEditDeleteResponse,
   IAddResourcePayload,
+  IEditResourcePayload,
   IGetFilteredResourcesPayload,
   IGetFilteredResourcesResponse,
   IGetLanguagesResponse,
@@ -100,6 +101,10 @@ export class DashboardStoreService {
 
   addResource(payload: IAddResourcePayload): Observable<IAddEditDeleteResponse> {
     return this._DashboardService.addResource(payload);
+  }
+
+  editResource(payload: IEditResourcePayload): Observable<IAddEditDeleteResponse> {
+    return this._DashboardService.editResource(payload);
   }
 
   DeleteResource(payload: IDeletionPayload): Observable<IAddEditDeleteResponse> {

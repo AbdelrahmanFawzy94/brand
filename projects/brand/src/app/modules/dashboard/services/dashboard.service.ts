@@ -5,6 +5,7 @@ import { HttpService } from '@library';
 import {
   IAddEditDeleteResponse,
   IAddResourcePayload,
+  IEditResourcePayload,
   IGetFilteredResourcesPayload,
   IGetFilteredResourcesResponse,
   IGetLanguagesResponse,
@@ -33,6 +34,10 @@ export class DashboardService {
 
   addResource(payload: IAddResourcePayload): Observable<IAddEditDeleteResponse> {
     return this.http.post(DashboardApiUrls.addResource, payload);
+  }
+
+  editResource(payload: IEditResourcePayload): Observable<IAddEditDeleteResponse> {
+    return this.http.put(DashboardApiUrls.editResource, payload);
   }
 
   DeleteResource(payload: IDeletionPayload): Observable<IAddEditDeleteResponse> {
