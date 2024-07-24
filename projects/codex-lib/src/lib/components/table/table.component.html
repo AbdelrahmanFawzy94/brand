@@ -1,6 +1,6 @@
 <div class="shared-table">
   <!-- [scrollable]="true" scrollHeight="400px"" -->
-  <p-table [value]="data" [tableStyle]="{ 'min-width': '600px' }" [scrollable]="true" scrollHeight="80vh" *ngIf="!isLoading">
+  <p-table [value]="data" [tableStyle]="{ 'min-width': '300px' }" [scrollable]="true" scrollHeight="75vh" *ngIf="!isLoading">
     <ng-template pTemplate="header">
       <tr>
         <th *ngFor="let col of columns" [class]="col.columnClass ?? ''">
@@ -24,11 +24,13 @@
     </ng-template>
   </p-table>
 
-  <div class="text-center" *ngIf="!data.length">
+  <div class="text-center" *ngIf="!data.length && !isLoading">
     <lib-svg-no-data></lib-svg-no-data>
   </div>
 
-  <div class="loading-skeleton" *ngIf="isLoading">is loading...</div>
+  <div class="loading-skeleton" *ngIf="isLoading">
+    <lib-svg-searching-data></lib-svg-searching-data>
+  </div>
 
   <!-- <p-paginator
     (onPageChange)="onPageChange($event)"

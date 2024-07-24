@@ -1,5 +1,6 @@
 // svg
 export * from './svgs/no-data/no-data.component';
+export * from './svgs/no-search-data/no-search-data.component';
 
 // components
 export * from './button/button.component';
