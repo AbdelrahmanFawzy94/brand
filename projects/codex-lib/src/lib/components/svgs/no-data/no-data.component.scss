@@ -1,8 +1,59 @@
-:host {
-  zoom: 1;
-}
+@import "../../../assets/scss/screens.scss";
 
-svg {
+:host {
   display: block;
   width: 100%;
+}
+
+.no-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 40vh;
+  gap: var(--space-xxl);
+  padding: var(--space-lg) 0;
+
+  svg {
+    width: 20vw;
+    height: auto;
+    animation: no-data-svg-fading-with-scale 0.2s ease-out;
+
+    @include lg {
+      width: 300px;
+    }
+
+    @include sm {
+      width: 70%;
+    }
+  }
+
+  span {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19.2px;
+    color: var(--new-primary);
+    font-family: var(--font-family);
+    text-transform: capitalize;
+  }
+
+  .question-mark {
+    transform-origin: center center;
+    animation: no-data-svg-fading 1.5s ease infinite alternate-reverse;
+  }
+
+  .two {
+    animation-delay: 1.25s;
+  }
+}
+
+@keyframes no-data-svg-fading {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
