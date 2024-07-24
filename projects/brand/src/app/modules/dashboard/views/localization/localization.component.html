@@ -2,13 +2,18 @@
   <div class="dashboard-page-header">
     <div class="title-with-actions">
       <div class="title">
-        <h3 class="typo-title-large">localization</h3>
+        <h3 class="typo-title-large">{{ "dashboard.pages.localization.title" | translate }}</h3>
       </div>
       <div class="actions">
-        <lib-icon-button iconName="filter_list" theme="raised" (click)="toggleAdvancedSearsh()" matTooltip="more filters">
+        <lib-icon-button
+          iconName="filter_list"
+          theme="raised"
+          (click)="toggleAdvancedSearsh()"
+          [matTooltip]="'shared.buttons.more_filters' | translate"
+        >
         </lib-icon-button>
         <lib-button theme="raised" borderRadius="rounded" color="success" (click)="addResource()"
-          ><lib-icon name="add" /> add resource</lib-button
+          ><lib-icon name="add" /> {{ "shared.buttons.add" | translate }}</lib-button
         >
       </div>
     </div>
@@ -34,7 +39,7 @@
                 [passedFormControl]="form | getControl : 'language'"
                 appearance="outline"
                 optionLabelName="name"
-                placeholder="languages"
+                [placeholder]="'dashboard.pages.localization.language' | translate"
               ></lib-select>
             </div>
             <div class="col-sm-6">
@@ -43,7 +48,7 @@
                 [passedFormControl]="form | getControl : 'supportedDevices'"
                 appearance="outline"
                 optionLabelName="name"
-                placeholder="supportedDevices"
+                [placeholder]="'dashboard.pages.localization.supported_devices' | translate"
               ></lib-select>
             </div>
             <div class="col-sm-6">
@@ -51,7 +56,7 @@
                 [passedFormControl]="form | getControl : 'translationKey'"
                 [hideValidation]="true"
                 appearance="outline"
-                label="translationKey"
+                [label]="'dashboard.pages.localization.key' | translate"
               ></lib-input>
             </div>
             <div class="col-sm-6">
@@ -59,7 +64,7 @@
                 [passedFormControl]="form | getControl : 'translationKeyValue'"
                 [hideValidation]="true"
                 appearance="outline"
-                label="translationKeyValue"
+                [label]="'dashboard.pages.localization.value' | translate"
               ></lib-input>
             </div>
             <div class="col-12 d-flex gap-xs">
@@ -69,10 +74,10 @@
                 borderRadius="rounded"
                 color="elements"
                 (onClick)="submit(true)"
-                ><lib-icon name="search" /> search
+                ><lib-icon name="search" /> {{ "shared.buttons.search" | translate }}
               </lib-button>
               <lib-button [disabled]="form.invalid || dataTableIsLoading" theme="raised" borderRadius="rounded" (onClick)="resetForm()"
-                ><lib-icon name="undo" /> reset form
+                ><lib-icon name="undo" /> {{ "shared.buttons.reset" | translate }}
               </lib-button>
             </div>
           </div>
@@ -91,11 +96,11 @@
       [itemsPerPageSelected]="pagination.pageSize"
       [isLoading]="dataTableIsLoading"
       [columns]="[
-        { key: 'languageName', headerTranslationKey: 'language' },
-        { key: 'key', headerTranslationKey: 'key' },
-        { key: 'text', headerTranslationKey: 'text' },
-        { key: 'resourceType', headerTranslationKey: 'resource Type' },
-        { key: 'actions', headerTranslationKey: 'shared.buttons.copy', template: actions, columnClass: 'table-actions' }
+        { key: 'languageName', headerTranslationKey: 'dashboard.pages.localization.language' },
+        { key: 'key', headerTranslationKey: 'dashboard.pages.localization.key' },
+        { key: 'text', headerTranslationKey: 'dashboard.pages.localization.value' },
+        { key: 'resourceType', headerTranslationKey: 'dashboard.pages.localization.supported_devices' },
+        { key: 'actions', headerTranslationKey: 'shared.actions', template: actions, columnClass: 'table-actions' }
       ]"
       (onPage)="onPageChange($event)"
     >

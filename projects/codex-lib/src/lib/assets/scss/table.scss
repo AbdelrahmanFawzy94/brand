@@ -3,11 +3,13 @@
 .p-datatable .p-datatable-thead > tr > th {
   background-color: var(--bg-dark-white-1);
   padding: var(--space-sm) var(--space-md);
+  text-align: start;
 }
 
 .p-datatable .p-datatable-tbody > tr > td {
   background-color: var(--white-color);
   padding: var(--space-xs) var(--space-md);
+  text-align: start;
 }
 
 .p-datatable .p-datatable-tbody > tr:last-of-type > td {
@@ -58,6 +60,10 @@
         input {
           display: none;
         }
+
+        .ng-select.ng-select-single .ng-select-container .ng-arrow-wrapper {
+          bottom: 12px;
+        }
       }
 
       .ng-select .ng-select-container .ng-value-container,
@@ -92,6 +98,14 @@
       .p-paginator-current {
         cursor: default;
       }
+    }
+  }
+}
+
+body[dir="rtl"] {
+  .p-paginator {
+    button {
+      transform: rotateY(180deg);
     }
   }
 }

@@ -92,15 +92,16 @@ ________________________________________________________________________________
 - reset form =====================================================> Done
 - adding chips component =========================================> Done
 - replace chips in ng select =====================================> Done
-- get json translation from server
+- get json translation from server ===============================> Done
 - apply translations on pages
+- - apply in login ===============================================> Done
+- - apply in shared dashboard
+- - apply in localization page ===================================> Done
 
 - table ui =======================================================> Done
 - - sort
 - - loading ======================================================> Done
 - - no data ======================================================> Done
-- table sorting
 - paginator ======================================================> Done
 - search with paginator ==========================================> Done
 - modal ui and rtl ===============================================> Done
--
