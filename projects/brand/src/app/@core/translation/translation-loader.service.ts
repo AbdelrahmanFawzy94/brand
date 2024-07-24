@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { localizationUrls } from '@committee-core';
 import { environment } from '@committee-env/environment';
+import { DashboardApiUrls } from '../../modules/dashboard/apis-urls/dashboard.apis';
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +17,7 @@ export class TranslationLoaderService {
   // }
 
   getTranslation(lang: string, httpClient: HttpClient): Observable<any> {
-    return httpClient.get(environment.baseUrl + localizationUrls.getResources, {
+    return httpClient.get(environment.baseUrl + DashboardApiUrls.getResources, {
       params: { culture: lang },
     });
   }
