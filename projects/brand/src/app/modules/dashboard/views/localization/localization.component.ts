@@ -63,7 +63,7 @@ export default class LocalizationComponent implements OnInit {
   pagination: IPagination = {
     itemsPerPage: [5, 10, 30, 50, 100],
     currentPage: 1,
-    pageSize: 5,
+    pageSize: 10,
     totalItems: 0,
     orderBy: null,
     sortDirection: null,

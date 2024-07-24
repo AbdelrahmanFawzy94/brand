@@ -82,6 +82,7 @@ ________________________________________________________________________________
 - I before interface name
 - after select in single select component close menu
 - validation component padding
+- svgs samples
 
 ______________________________________________________________________________________________________________
 comments
