@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewC
 import { TableModule } from 'primeng/table';
 import { Paginator, PaginatorModule, PaginatorState } from 'primeng/paginator';
 import { SharedIconButtonComponent } from '../icon-button/icon-button.component'; // TODO
-import { SharedSelectComponent, SharedSvgNoDataComponent, TableColumn } from '@library';
+import { SharedSelectComponent, SharedSvgNoDataComponent, SharedSvgNoSearchDataComponent, TableColumn } from '@library';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
 @Component({
@@ -17,6 +17,7 @@ import { NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
     PaginatorModule,
     SharedIconButtonComponent,
     SharedSvgNoDataComponent,
+    SharedSvgNoSearchDataComponent,
     SharedSelectComponent,
   ],
   templateUrl: './table.component.html',

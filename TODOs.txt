@@ -82,6 +82,7 @@ ________________________________________________________________________________
 - I before interface name
 - after select in single select component close menu
 - validation component padding
+- svgs samples
 
 ______________________________________________________________________________________________________________
 comments
@@ -92,11 +93,12 @@ ________________________________________________________________________________
 - adding chips component =========================================> Done
 - replace chips in ng select =====================================> Done
 - get json translation from server
+- apply translations on pages
 
 - table ui =======================================================> Done
 - - sort
-- - loading
-- - no data
+- - loading ======================================================> Done
+- - no data ======================================================> Done
 - table sorting
 - paginator ======================================================> Done
 - search with paginator ==========================================> Done

@@ -91,16 +91,20 @@
       [itemsPerPageSelected]="pagination.pageSize"
       [isLoading]="dataTableIsLoading"
       [columns]="[
-        { key: 'key', headerTranslationKey: 'shared.buttons.confirm' },
-        { key: 'text', headerTranslationKey: 'shared.buttons.confirm' },
+        { key: 'languageName', headerTranslationKey: 'language' },
+        { key: 'key', headerTranslationKey: 'key' },
+        { key: 'text', headerTranslationKey: 'text' },
+        { key: 'resourceType', headerTranslationKey: 'resource Type' },
         { key: 'actions', headerTranslationKey: 'shared.buttons.copy', template: actions, columnClass: 'table-actions' }
       ]"
       (onPage)="onPageChange($event)"
     >
       <ng-template #actions let-item>
-        <lib-icon-button iconName="close" theme="stroked" color="danger" (click)="deleteResource(item)" matTooltip="delete">
-        </lib-icon-button>
-        <lib-icon-button iconName="edit" theme="stroked" (click)="editResource(item)" matTooltip="edit"> </lib-icon-button>
+        <div class="d-flex">
+          <lib-icon-button iconName="close" theme="stroked" color="danger" (click)="deleteResource(item)" matTooltip="delete">
+          </lib-icon-button>
+          <lib-icon-button iconName="edit" theme="stroked" (click)="editResource(item)" matTooltip="edit"> </lib-icon-button>
+        </div>
       </ng-template>
     </lib-table>
   </div>

@@ -5,7 +5,7 @@
   width: 100%;
 }
 
-.no-data {
+.no-search-data {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,7 +18,7 @@
   svg {
     width: 20vw;
     height: auto;
-    animation: no-data-svg-fading-with-scale 0.2s ease-out;
+    // animation: no-data-svg-fading-with-scale 0.2s ease-out;
 
     @include lg {
       width: 300px;
@@ -39,22 +39,17 @@
     animation: fadingDown 0.5s;
   }
 
-  .question-mark {
-    transform-origin: center center;
-    animation: no-data-svg-fading 1.5s ease infinite alternate-reverse;
-  }
-
-  .two {
-    animation-delay: 1.25s;
+  #search_2 {
+    animation: no-search-data-animation 2s ease-in-out infinite alternate-reverse;
   }
 }
 
-@keyframes no-data-svg-fading {
-  0% {
-    opacity: 0;
+@keyframes no-search-data-animation {
+  from {
+    transform: translate(-30px, -20px);
   }
 
-  100% {
-    opacity: 1;
+  to {
+    transform: translate(30px, 20px);
   }
 }

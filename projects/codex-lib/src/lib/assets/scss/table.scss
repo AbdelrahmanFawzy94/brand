@@ -21,12 +21,13 @@
 
 // table pagination
 .shared-table {
+  background-color: var(--white-color);
+
   .table-pagination {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: var(--white-color);
 
     @include md {
       flex-direction: column-reverse;
