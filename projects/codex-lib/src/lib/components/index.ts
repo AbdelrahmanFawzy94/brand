@@ -21,3 +21,4 @@ export * from './accordion/accordion.component';
 export * from './chip/chip.component';
 export * from './confirmation-dialog/confirmation-dialog.component';
 export * from './validations-messages/validations-messages.component';
+export * from './toaster/toaster.component';

@@ -1,0 +1,20 @@
+<div class="shared-toaster" [class]="data.severity">
+  <div class="start">
+    <h5>{{ data.message }}</h5>
+  </div>
+  <div class="end">
+    @switch (data.severity) { @case ("success") {
+    <lib-icon-button iconName="close" size="small" color="success" (onClick)="MatSnackBarRef.dismissWithAction()"></lib-icon-button>
+    } @case ("danger") {
+    <lib-icon-button iconName="close" size="small" color="danger" (onClick)="MatSnackBarRef.dismissWithAction()"></lib-icon-button>
+    } @case ("info") {
+    <lib-icon-button iconName="close" size="small" color="info" (onClick)="MatSnackBarRef.dismissWithAction()"></lib-icon-button>
+    } @case ("warning") {
+    <lib-icon-button iconName="close" size="small" color="warning" (onClick)="MatSnackBarRef.dismissWithAction()"></lib-icon-button>
+    } @default {
+    <lib-icon-button iconName="close" size="small" color="elements" (onClick)="MatSnackBarRef.dismissWithAction()"></lib-icon-button>
+
+    } }
+  </div>
+</div>
+<!-- "success" | "danger" | "info" | "warning" -->

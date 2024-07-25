@@ -1,6 +1,15 @@
 // start of design system buttons
 
 @each $colorName, $colorHue, $colorSaturation, $colorLight, $rotatedColorName, $rotatedColorValue in $colors {
+  .btn-basic-#{$colorName} .mat-ripple.mat-mdc-button-ripple .mat-ripple-element,
+  .btn-stroked-#{$colorName} .mat-ripple.mat-mdc-button-ripple .mat-ripple-element {
+    background-color: var(--bg-opacity-#{$colorName}-2) !important;
+  }
+
+  .btn-basic-#{$colorName} .mat-ripple.mat-mdc-button-ripple .mat-ripple-element {
+    background-color: var(--bg-opacity-#{$colorName}-2) !important;
+  }
+
   // basic buttons
   .btn-basic-#{$colorName} .mdc-button__label {
     color: var(--#{$colorName}-color);

@@ -4,10 +4,10 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { SharedLanguageMenuComponent } from '@committee-shared';
-import { SharedValidationsMessagesComponent } from '@library';
+import { SharedValidationsMessagesComponent, ToasterService } from '@library';
 import { LoginStoreService } from './services/login.store.service';
 import { catchError, finalize, throwError } from 'rxjs';
 import { AppStoreService } from '../../@core/app.store.service';
@@ -36,11 +36,14 @@ export default class LoginComponent implements OnInit {
     private _FormBuilder: FormBuilder,
     private _Router: Router,
     private _AppStoreService: AppStoreService,
-    private _LoginStoreService: LoginStoreService
+    private _LoginStoreService: LoginStoreService,
+    private _ToasterService: ToasterService,
+    private _TranslateService: TranslateService
   ) {}
 
   ngOnInit(): void {
     this.createForm();
+    this._ToasterService.openToaster(this._TranslateService.instant('pages.login.success_login'), 'success');
   }
 
   createForm() {
@@ -53,17 +56,20 @@ export default class LoginComponent implements OnInit {
   login() {
     if (this.form.valid) {
       this.loginApiIsLoading = true;
-      // TODO show toaster
       this._LoginStoreService
         .login(this.form.value)
         .pipe(
           untilDestroyed(this),
           finalize(() => (this.loginApiIsLoading = false)),
           catchError((error) => {
+            this._ToasterService.openToaster('test message', 'danger');
+
             return throwError(() => error);
           })
         )
         .subscribe((loginResponse) => {
+          this._ToasterService.openToaster('test message', 'success');
+
           this._AppStoreService.setCredintials(loginResponse);
           this._Router.navigateByUrl('dashboard');
         });

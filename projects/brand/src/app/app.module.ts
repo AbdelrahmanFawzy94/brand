@@ -8,6 +8,7 @@ import { AppComponent } from '@committee-app/app.component'; //TODO remove app.c
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SharedGeneralLoaderComponent } from '@library';
 import { ApisInterceptor } from './@core/http/apis.interceptor';
+import { MAT_RIPPLE_GLOBAL_OPTIONS, RippleGlobalOptions } from '@angular/material/core';
 
 // from server
 // export function createTranslateLoader(http: HttpClient) {
@@ -18,6 +19,14 @@ import { ApisInterceptor } from './@core/http/apis.interceptor';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }
+
+const globalRippleConfig: RippleGlobalOptions = {
+  // disabled: false,
+  // animation: {
+  //   enterDuration: 30000,
+  //   exitDuration: 0,
+  // },
+};
 
 @NgModule({
   declarations: [AppComponent],
@@ -44,6 +53,7 @@ export function createTranslateLoader(http: HttpClient) {
     },
     provideClientHydration(),
     provideHttpClient(withInterceptorsFromDi()),
+    { provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig },
   ],
 })
 export class AppModule {}

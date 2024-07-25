@@ -19,7 +19,7 @@ mat-form-field.no-validations > [class*="subscript"] {
 }
 
 .mat-mdc-button .mat-mdc-button-persistent-ripple::before {
-  background-color: var(--elements-color) !important;
+  // background-color: var(--elements-color) !important;
 }
 
 .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
@@ -27,7 +27,7 @@ mat-form-field.no-validations > [class*="subscript"] {
 }
 
 .mat-mdc-button .mat-ripple-element {
-  background-color: var(--bg-opacity-elements-3) !important;
+  // background-color: var(--bg-opacity-elements-3) !important;
 }
 
 mat-list-item [class*="content"] {

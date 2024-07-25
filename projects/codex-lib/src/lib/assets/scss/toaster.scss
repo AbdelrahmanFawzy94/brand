@@ -1,0 +1,125 @@
+// overwrite snackbar
+
+.mat-mdc-snackbar-surface,
+.mdc-snackbar__label {
+  padding: 0 !important;
+}
+
+.mat-mdc-snack-bar-container .mat-mdc-snackbar-surface {
+  color: var(--bg-light-black-2) !important;
+  background-color: transparent !important;
+  border-radius: var(--border-radius-soft) !important;
+  overflow: hidden !important;
+}
+
+// toaster component
+
+.shared-toaster {
+  box-shadow: 0 2px 12px 0 var(--bg-opacity-black-1);
+  background-color: var(--white-color);
+  padding: var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  border-radius: var(--border-radius-soft);
+  overflow: hidden;
+  position: relative;
+  animation: shared-toaster-animation 0.5s;
+
+  &::before {
+    content: "";
+    background-color: var(--elements-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--space-xs);
+    height: 200%;
+    animation: before-animation 1.2s;
+  }
+
+  &.success {
+    &::before {
+      background-color: var(--success-color);
+    }
+
+    .start {
+      h5 {
+        color: var(--success-color);
+      }
+    }
+  }
+
+  &.danger {
+    &::before {
+      background-color: var(--danger-color);
+    }
+
+    .start {
+      h5 {
+        color: var(--danger-color);
+      }
+    }
+  }
+
+  &.info {
+    &::before {
+      background-color: var(--info-color);
+    }
+
+    .start {
+      h5 {
+        color: var(--info-color);
+      }
+    }
+  }
+
+  &.warning {
+    &::before {
+      background-color: var(--warning-color);
+    }
+
+    .start {
+      h5 {
+        color: var(--warning-color);
+      }
+    }
+  }
+
+  .start {
+    padding-inline-start: var(--space-xs);
+
+    h5 {
+      font-weight: var(--font-regular);
+      color: var(--elements-color);
+    }
+  }
+
+  .end {
+    zoom: 1;
+
+    lib-icon-button {
+      zoom: 1;
+    }
+  }
+}
+
+@keyframes shared-toaster-animation {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes before-animation {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
