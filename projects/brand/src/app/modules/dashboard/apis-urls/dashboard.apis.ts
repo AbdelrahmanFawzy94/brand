@@ -1,8 +1,12 @@
+const localizationKey = 'Localization';
 export class DashboardApiUrls {
-  static readonly getLanguages: string = 'Localization/GetLanguages';
-  static readonly getSupportedDevices: string = 'Localization/GetSupportedDevices';
-  static readonly getFilteredResources: string = 'Localization/GetFilteredResources';
-  static readonly addResource: string = 'Localization/AddResource';
-  static readonly editResource: string = 'Localization/UpdateResource';
-  static readonly deleteResource: string = 'Localization/DeleteResource';
+  // localization
+  static readonly getLanguages: string = `${localizationKey}/GetLanguages`;
+  static readonly getSupportedDevices: string = `${localizationKey}/GetSupportedDevices`;
+  static readonly getFilteredResources: string = `${localizationKey}/GetFilteredResources`;
+  static readonly addResource: string = `${localizationKey}/AddResource`;
+  static readonly editResource: string = `${localizationKey}/UpdateResource`;
+  static readonly deleteResource: string = `${localizationKey}/DeleteResource`;
+  static readonly getResources: string = `${localizationKey}/GetCachedResources`;
+  //
 }

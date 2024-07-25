@@ -17,7 +17,7 @@
 
       <input formControlName="userName" type="text" [placeholder]="'pages.login.username' | translate" />
       @if(form.controls['userName'].touched){
-      <lib-validations-messages [errors]="form.controls['password'].errors"></lib-validations-messages>
+      <lib-validations-messages [errors]="form.controls['userName'].errors"></lib-validations-messages>
       }
 
       <input formControlName="password" type="password" [placeholder]="'pages.login.password' | translate" />

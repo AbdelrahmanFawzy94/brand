@@ -25,6 +25,7 @@ import { PaginatorState } from 'primeng/paginator';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import LocalizationAddResourseComponent from '../../components/localization-add-resourse/localization-add-resourse.component';
 import LocalizationEditResourseComponent from '../../components/localization-edit-resourse/localization-edit-resourse.component';
+import { TranslateModule } from '@ngx-translate/core';
 // import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @UntilDestroy()
@@ -37,7 +38,7 @@ import LocalizationEditResourseComponent from '../../components/localization-edi
     SharedButtonComponent,
     SharedInputComponent,
     SharedTableComponent,
-    //  TranslateModule,
+    TranslateModule,
     SharedIconComponent,
     SharedIconButtonComponent,
     MatTooltipModule,

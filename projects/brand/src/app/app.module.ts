@@ -5,20 +5,21 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HTTP_INTERCEPTORS, HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { AppRoutingModule } from '@committee-app/app-routing.module'; //TODO remove app-routing.module
 import { AppComponent } from '@committee-app/app.component'; //TODO remove app.component
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SharedGeneralLoaderComponent } from '@library';
 import { ApisInterceptor } from './@core/http/apis.interceptor';
 import { MAT_RIPPLE_GLOBAL_OPTIONS, RippleGlobalOptions } from '@angular/material/core';
+import { TranslationLoader } from './@core/translation/translationLoader';
+import { TranslationLoaderService } from './@core/translation/translation-loader.service';
 
 // from server
-// export function createTranslateLoader(http: HttpClient) {
-//   return new TranslationLoader(http,new TranslationLoaderService());
-// }
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslationLoader(http, new TranslationLoaderService());
+}
 
 // from client
-export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
-}
+// export function createTranslateLoader(http: HttpClient) {
+//   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
+// }
 
 const globalRippleConfig: RippleGlobalOptions = {
   // disabled: false,
