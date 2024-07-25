@@ -43,7 +43,11 @@ export default class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.createForm();
-    this._ToasterService.openToaster(this._TranslateService.instant('pages.login.success_login'), 'success');
+    // this._ToasterService.openToaster(this._TranslateService.instant('pages.login.success_login'), 'success');
+    // this._TranslateService.getTranslation('ar').subscribe((x) => console.warn(x['pages.login.success_login']));
+    // this._TranslateService.get('pages.login.success_login').forEach((x) => x)
+    console.warn(this._TranslateService);
+    console.warn(this._TranslateService.store.translations);
   }
 
   createForm() {
@@ -62,13 +66,13 @@ export default class LoginComponent implements OnInit {
           untilDestroyed(this),
           finalize(() => (this.loginApiIsLoading = false)),
           catchError((error) => {
-            this._ToasterService.openToaster('test message', 'danger');
+            // this._ToasterService.openToaster('test message', 'danger');
 
             return throwError(() => error);
           })
         )
         .subscribe((loginResponse) => {
-          this._ToasterService.openToaster('test message', 'success');
+          // this._ToasterService.openToaster('test message', 'success');
 
           this._AppStoreService.setCredintials(loginResponse);
           this._Router.navigateByUrl('dashboard');
