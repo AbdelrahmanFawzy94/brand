@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { SharedLanguageMenuComponent } from '@committee-shared';
 import { SharedValidationsMessagesComponent, ToasterService } from '@library';
@@ -12,6 +12,7 @@ import { LoginStoreService } from './services/login.store.service';
 import { catchError, finalize, throwError } from 'rxjs';
 import { AppStoreService } from '../../@core/app.store.service';
 import { Router } from '@angular/router';
+import { TranslationApisService } from '@committee-app/@core';
 @UntilDestroy()
 @Component({
   selector: 'app-login',
@@ -38,7 +39,6 @@ export default class LoginComponent implements OnInit {
     private _AppStoreService: AppStoreService,
     private _LoginStoreService: LoginStoreService,
     private _ToasterService: ToasterService,
-    private _TranslateService: TranslateService
   ) {}
 
   ngOnInit(): void {
@@ -61,13 +61,13 @@ export default class LoginComponent implements OnInit {
           untilDestroyed(this),
           finalize(() => (this.loginApiIsLoading = false)),
           catchError((error) => {
-            this._ToasterService.openToaster(this._TranslateService.instant('pages.login.failed_login'), 'danger');
+            this._ToasterService.openToaster('pages.login.failed_login', 'danger');
 
             return throwError(() => error);
           })
         )
         .subscribe((loginResponse) => {
-          this._ToasterService.openToaster(this._TranslateService.instant('pages.login.success_login'), 'success');
+          this._ToasterService.openToaster('pages.login.success_login', 'success');
 
           this._AppStoreService.setCredintials(loginResponse);
           this._Router.navigateByUrl('dashboard');

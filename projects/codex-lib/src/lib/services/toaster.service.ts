@@ -2,6 +2,7 @@ import { Injectable, TemplateRef } from '@angular/core';
 import { MatSnackBar, MatSnackBarDismiss, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { SharedToasterComponent } from '../components';
 import { Observable } from 'rxjs';
+import { TranslationApisService } from '@committee-app/@core';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +12,7 @@ export class ToasterService {
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
 
-  constructor(private _snackBar: MatSnackBar) {}
+  constructor(private _snackBar: MatSnackBar, private _TranslationApisService: TranslationApisService) {}
 
   openToaster(
     message: string,
@@ -23,7 +24,7 @@ export class ToasterService {
     return this._snackBar
       .openFromComponent(SharedToasterComponent, {
         duration: durationInSeconds ? durationInSeconds * 1000 : this.duration * 1000,
-        data: { message, severity },
+        data: { message: this._TranslationApisService.instant(message), severity },
         verticalPosition: verticalPosition ? verticalPosition : this.verticalPosition,
         horizontalPosition: horizontalPosition ? horizontalPosition : this.horizontalPosition,
       })
