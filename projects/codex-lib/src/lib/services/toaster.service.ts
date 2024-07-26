@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ToasterService {
-  duration: number = 10000; // as seconds
+  duration: number = 10; // as seconds
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
 
@@ -16,9 +16,9 @@ export class ToasterService {
   openToaster(
     message: string,
     severity: 'success' | 'danger' | 'info' | 'warning' | null,
+    durationInSeconds?: number,
     verticalPosition?: MatSnackBarVerticalPosition | null,
-    horizontalPosition?: MatSnackBarHorizontalPosition | null,
-    durationInSeconds?: number
+    horizontalPosition?: MatSnackBarHorizontalPosition | null
   ): Observable<MatSnackBarDismiss> {
     return this._snackBar
       .openFromComponent(SharedToasterComponent, {
