@@ -26,6 +26,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import LocalizationAddResourseComponent from '../../components/localization-add-resourse/localization-add-resourse.component';
 import LocalizationEditResourseComponent from '../../components/localization-edit-resourse/localization-edit-resourse.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { TranslationApisService } from '@committee-core';
 
 @UntilDestroy()
 @Component({
@@ -74,7 +75,8 @@ export default class LocalizationComponent implements OnInit {
   constructor(
     private _FormBuilder: FormBuilder,
     private dialogService: DialogService,
-    private _DashboardStoreService: DashboardStoreService
+    private _DashboardStoreService: DashboardStoreService,
+    private _TranslationApisService: TranslationApisService
   ) {}
 
   ngOnInit(): void {
@@ -192,8 +194,8 @@ export default class LocalizationComponent implements OnInit {
     this.dialogService
       .openConfirmationDialog({
         data: {
-          title: 'delete resourse',
-          subTitle: 'are you sure for deleting resource',
+          title: this._TranslationApisService.instant('dashboard.pages.localization.delete_resource_title'),
+          subTitle: this._TranslationApisService.instant('dashboard.pages.localization.delete_resource_sub_title'),
           focused: item.key,
         },
         disableClose: true,

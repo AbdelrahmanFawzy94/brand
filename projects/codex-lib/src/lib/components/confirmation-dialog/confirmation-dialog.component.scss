@@ -1,10 +1,19 @@
-@import "../../../../../codex-lib//src/lib/assets/scss/fonts.scss";
-
 .confirmation-dialog {
   text-transform: capitalize;
 
   .bold {
     font-weight: bold;
     color: var(--danger-color);
+  }
+}
+
+body[dir="rtl"] {
+  .confirmation-dialog {
+    direction: rtl;
+
+    mat-dialog-content {
+      font-family: var(--font-family);
+      overflow: unset;
+    }
   }
 }
