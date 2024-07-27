@@ -140,7 +140,7 @@
             [matTooltip]="'shared.dashboard.language' | translate"
             matTooltipPosition="above"
           ></shared-language-menu>
-          <button class="full-button" mat-button [matTooltip]="'shared.dashboard.apperance' | translate" matTooltipPosition="above">
+          <button class="full-button" mat-button [matTooltip]="'shared.dashboard.appearance' | translate" matTooltipPosition="above">
             <lib-icon [name]="'dark_mode'"></lib-icon>
           </button>
           <button class="full-button" mat-button [matTooltip]="'shared.dashboard.settings' | translate" matTooltipPosition="above">
@@ -192,7 +192,7 @@
             class="full-button"
             mat-button
             (click)="toggleSideNav()"
-            [matTooltip]="'shared.dashboard.sideNav' | translate"
+            [matTooltip]="'shared.dashboard.sidenav' | translate"
             matTooltipPosition="below"
           >
             <lib-icon *ngIf="sideNavStatus === 'closed'" [name]="'more_vert'"></lib-icon>
@@ -306,7 +306,12 @@
             <button mat-menu-item>Item 1</button>
             <button mat-menu-item>Item 2</button>
           </mat-menu>
-          <button class="full-button hide-lg" mat-button [matTooltip]="'shared.dashboard.apperance' | translate" matTooltipPosition="below">
+          <button
+            class="full-button hide-lg"
+            mat-button
+            [matTooltip]="'shared.dashboard.appearance' | translate"
+            matTooltipPosition="below"
+          >
             <lib-icon [name]="'dark_mode'"></lib-icon>
           </button>
         </div>
