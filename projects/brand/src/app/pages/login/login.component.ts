@@ -6,10 +6,10 @@ import { Router } from '@angular/router';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { TranslateModule } from '@ngx-translate/core';
-import { SharedLanguageMenuComponent } from '@committee-shared';
+import { SharedLanguageMenuComponent } from '@brand-shared';
 import { SharedValidationsMessagesComponent, ToasterService } from '@library';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { AppStoreService } from '@committee-core';
+import { AppStoreService } from '@brand-core';
 import { LoginStoreService } from './services/login.store.service';
 
 @UntilDestroy()

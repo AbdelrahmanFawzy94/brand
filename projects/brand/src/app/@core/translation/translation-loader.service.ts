@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from '@committee-env/environment';
+import { environment } from '@brand-env/environment';
 import { DashboardApiUrls } from '../../modules/dashboard/apis-urls/dashboard.apis';
-// import { DashboardApiUrls } from '@committee-modules';
+// import { DashboardApiUrls } from '@brand-modules';
 
 @Injectable({
   providedIn: 'root',

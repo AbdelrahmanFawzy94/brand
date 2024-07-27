@@ -3,8 +3,8 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HTTP_INTERCEPTORS, HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { AppRoutingModule } from '@committee-app/app-routing.module'; //TODO remove app-routing.module
-import { AppComponent } from '@committee-app/app.component'; //TODO remove app.component
+import { AppRoutingModule } from '@brand-app/app-routing.module'; //TODO remove app-routing.module
+import { AppComponent } from '@brand-app/app.component'; //TODO remove app.component
 import { SharedGeneralLoaderComponent } from '@library';
 import { ApisInterceptor } from './@core/http/apis.interceptor';
 import { MAT_RIPPLE_GLOBAL_OPTIONS, RippleGlobalOptions } from '@angular/material/core';

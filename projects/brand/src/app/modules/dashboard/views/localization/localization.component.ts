@@ -26,7 +26,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import LocalizationAddResourseComponent from '../../components/localization-add-resourse/localization-add-resourse.component';
 import LocalizationEditResourseComponent from '../../components/localization-edit-resourse/localization-edit-resourse.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { TranslationApisService } from '@committee-core';
+import { TranslationApisService } from '@brand-core';
 
 @UntilDestroy()
 @Component({

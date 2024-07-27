@@ -3,7 +3,7 @@ import { HttpClient, HttpContext, HttpEvent, HttpHeaders, HttpParams, HttpRespon
 import { Router } from '@angular/router';
 import { catchError, map, Observable, throwError } from 'rxjs';
 
-// import { IApisResponse } from '@committee-shared';
+// import { IApisResponse } from '@brand-shared';
 
 @Injectable({
   providedIn: 'root',

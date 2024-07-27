@@ -2,7 +2,7 @@ import { Injectable, TemplateRef } from '@angular/core';
 import { MatSnackBar, MatSnackBarDismiss, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { SharedToasterComponent } from '../components';
 import { Observable } from 'rxjs';
-import { TranslationApisService } from '@committee-core';
+import { TranslationApisService } from '@brand-core';
 
 @Injectable({
   providedIn: 'root',

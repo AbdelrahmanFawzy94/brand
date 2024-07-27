@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { SamplesService } from './samples.service';
 import { IDashboardDropDowns, IDashboardUser } from '@library';
-// import {  IApisResponse, IChart } from '@committee-shared';
+// import {  IApisResponse, IChart } from '@brand-shared';
 
 @Injectable({
   providedIn: 'root',

@@ -11,7 +11,7 @@ import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatBadgeModule } from '@angular/material/badge';
 import { OverlayModule } from '@angular/cdk/overlay';
-import { SharedLanguageMenuComponent } from '@committee-shared';
+import { SharedLanguageMenuComponent } from '@brand-shared';
 import { TranslateModule } from '@ngx-translate/core';
 import { IDashboardDropDowns, IDashboardUser, SharedIconComponent, SharedStopProbagationDirective } from '@library';
 // import { A11yModule } from '@angular/cdk/a11y';

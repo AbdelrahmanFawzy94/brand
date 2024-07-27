@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '@committee-env/environment';
+import { environment } from '@brand-env/environment';
 import { AppStoreService } from '../app.store.service';
 
 @Injectable({
