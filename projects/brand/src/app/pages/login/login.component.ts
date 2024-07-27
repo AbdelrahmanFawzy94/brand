@@ -38,7 +38,7 @@ export default class LoginComponent implements OnInit {
     private _Router: Router,
     private _AppStoreService: AppStoreService,
     private _LoginStoreService: LoginStoreService,
-    private _ToasterService: ToasterService,
+    private _ToasterService: ToasterService
   ) {}
 
   ngOnInit(): void {
@@ -62,13 +62,11 @@ export default class LoginComponent implements OnInit {
           finalize(() => (this.loginApiIsLoading = false)),
           catchError((error) => {
             this._ToasterService.openToaster('pages.login.failed_login', 'danger');
-
             return throwError(() => error);
           })
         )
         .subscribe((loginResponse) => {
           this._ToasterService.openToaster('pages.login.success_login', 'success');
-
           this._AppStoreService.setCredintials(loginResponse);
           this._Router.navigateByUrl('dashboard');
         });
