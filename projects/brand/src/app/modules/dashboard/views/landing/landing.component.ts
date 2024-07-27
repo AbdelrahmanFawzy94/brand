@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { SharedIconComponent } from '@library';
-// import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'dashboard-landing',

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { SamplesService } from './samples.service';
-import { DashboardDropDowns, DashboardUser } from '@library';
+import { IDashboardDropDowns, IDashboardUser } from '@library';
 // import {  IApisResponse, IChart } from '@committee-shared';
 
 @Injectable({
@@ -9,35 +9,35 @@ import { DashboardDropDowns, DashboardUser } from '@library';
 })
 export class SamplesStoreService {
   private state: {
-    dashboardDropdowns: DashboardDropDowns[] | null;
-    dashboardUser: DashboardUser | null;
+    IDashboardDropDowns: IDashboardDropDowns[] | null;
+    IDashboardUser: IDashboardUser | null;
     tableData: any;
   } = {
-    dashboardDropdowns: null,
-    dashboardUser: null,
+    IDashboardDropDowns: null,
+    IDashboardUser: null,
     tableData: undefined,
   };
 
   constructor(private _samplesService: SamplesService) {}
 
-  setDashboardDropdowns(dropdowns: DashboardDropDowns[]) {
+  setIDashboardDropDowns(dropdowns: IDashboardDropDowns[]) {
     dropdowns
-      ? (this.state = { ...this.state, dashboardDropdowns: dropdowns })
-      : (this.state = { ...this.state, dashboardDropdowns: null });
+      ? (this.state = { ...this.state, IDashboardDropDowns: dropdowns })
+      : (this.state = { ...this.state, IDashboardDropDowns: null });
   }
 
-  get getDashboardDropdowns() {
+  get getIDashboardDropDowns() {
     this.state = { ...this.state };
-    return this.state.dashboardDropdowns;
+    return this.state.IDashboardDropDowns;
   }
 
-  setDashboardUser(dashboardUser: DashboardUser) {
-    dashboardUser ? (this.state = { ...this.state, dashboardUser }) : (this.state = { ...this.state, dashboardUser: null });
+  setIDashboardUser(IDashboardUser: IDashboardUser) {
+    IDashboardUser ? (this.state = { ...this.state, IDashboardUser }) : (this.state = { ...this.state, IDashboardUser: null });
   }
 
-  get getDashboardUser() {
+  get getIDashboardUser() {
     this.state = { ...this.state };
-    return this.state.dashboardUser;
+    return this.state.IDashboardUser;
   }
 
   setTableData(tableData: any) {
@@ -53,29 +53,29 @@ export class SamplesStoreService {
 
   resetStore() {
     this.state = {
-      dashboardDropdowns: null,
-      dashboardUser: null,
+      IDashboardDropDowns: null,
+      IDashboardUser: null,
       tableData: undefined,
     };
   }
 
   // apis
 
-  getSamplesDashboardDropdowns(): Observable<DashboardDropDowns[]> {
-    return this._samplesService.getSamplesDashboardDropdowns().pipe(
+  getSamplesIDashboardDropDowns(): Observable<IDashboardDropDowns[]> {
+    return this._samplesService.getSamplesIDashboardDropDowns().pipe(
       tap((data) => {
         if (data) {
-          this.setDashboardDropdowns(data);
+          this.setIDashboardDropDowns(data);
         }
       })
     );
   }
 
-  getSamplesDashboardUser(): Observable<DashboardUser> {
-    return this._samplesService.getSamplesDashboardUser().pipe(
+  getSamplesIDashboardUser(): Observable<IDashboardUser> {
+    return this._samplesService.getSamplesIDashboardUser().pipe(
       tap((data) => {
         if (data) {
-          this.setDashboardUser(data);
+          this.setIDashboardUser(data);
         }
       })
     );

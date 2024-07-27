@@ -1,7 +1,7 @@
 import { TemplateRef } from '@angular/core';
 import { MatAccordionTogglePosition } from '@angular/material/expansion';
 
-export interface AccordionData {
+export interface IAccordionData {
   header?: TemplateRef<any>;
   body: TemplateRef<any>;
   disabled?: boolean;
@@ -12,7 +12,7 @@ export interface AccordionData {
   expandedHeaderHeight?: string;
 }
 
-export interface AccordionClick {
-  data: AccordionData;
+export interface IAccordionClick {
+  data: IAccordionData;
   index: number;
 }

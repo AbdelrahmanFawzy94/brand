@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { SamplesStoreService } from './services/samples.store.service'; // TODO @samples
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { DashboardDropDowns, DashboardUser } from '@library';
+import { IDashboardDropDowns, IDashboardUser } from '@library';
 
 @UntilDestroy()
 @Component({
@@ -10,8 +10,8 @@ import { DashboardDropDowns, DashboardUser } from '@library';
   styleUrls: ['./samples.component.scss'],
 })
 export class SamplesComponent {
-  dropdowns: DashboardDropDowns[] = [];
-  user!: DashboardUser;
+  dropdowns: IDashboardDropDowns[] = [];
+  user!: IDashboardUser;
 
   constructor(private _samplesStoreService: SamplesStoreService) {
     this.getDropDowns();
@@ -19,21 +19,21 @@ export class SamplesComponent {
   }
 
   getDropDowns() {
-    this._samplesStoreService.getDashboardDropdowns
-      ? (this.dropdowns = this._samplesStoreService.getDashboardDropdowns)
+    this._samplesStoreService.getIDashboardDropDowns
+      ? (this.dropdowns = this._samplesStoreService.getIDashboardDropDowns)
       : this._samplesStoreService
-          .getSamplesDashboardDropdowns()
+          .getSamplesIDashboardDropDowns()
           .pipe(untilDestroyed(this))
           .subscribe((dropdowns) => (this.dropdowns = dropdowns));
   }
 
   getUser() {
-    this._samplesStoreService.getDashboardUser
-      ? (this.user = this._samplesStoreService.getDashboardUser)
+    this._samplesStoreService.getIDashboardUser
+      ? (this.user = this._samplesStoreService.getIDashboardUser)
       : this._samplesStoreService
-          .getSamplesDashboardUser()
+          .getSamplesIDashboardUser()
           .pipe(untilDestroyed(this))
-          .subscribe((dashboardUser) => (this.user = dashboardUser));
+          .subscribe((IDashboardUser) => (this.user = IDashboardUser));
   }
 
   onDashboardSearch(value: string) {

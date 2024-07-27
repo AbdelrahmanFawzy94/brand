@@ -10,10 +10,11 @@ import {
   MatDialogRef,
 } from '@angular/material/dialog';
 import { GetControlPipe, SharedButtonComponent, SharedIconComponent, SharedInputComponent, SharedSelectComponent } from '@library';
-import { DashboardStoreService } from '../../services/dashboard.store.service';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { catchError, finalize, throwError } from 'rxjs';
 import { IAddResourcePayload, IGetLanguagesResponse, IGetSupportedDevicesResponse } from '../../models';
+import { DashboardStoreService } from '../../services/dashboard.store.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @UntilDestroy()
 @Component({
@@ -30,6 +31,7 @@ import { IAddResourcePayload, IGetLanguagesResponse, IGetSupportedDevicesRespons
     SharedInputComponent,
     SharedButtonComponent,
     SharedIconComponent,
+    TranslateModule,
   ],
   templateUrl: './localization-add-resourse.component.html',
   styleUrls: ['./localization-add-resourse.component.scss'],
@@ -61,10 +63,6 @@ export default class LocalizationAddResourseComponent implements OnInit {
       translationKey: [null, [Validators.required]],
       translationKeyValue: [null, [Validators.required]],
     });
-  }
-
-  onSelection(value: string) {
-    // console.warn(value);
   }
 
   getLanguages() {

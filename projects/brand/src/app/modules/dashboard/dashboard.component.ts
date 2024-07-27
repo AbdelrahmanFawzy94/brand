@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DashboardDropDowns } from '@library';
+import { IDashboardDropDowns } from '@library';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,7 +7,7 @@ import { DashboardDropDowns } from '@library';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
-  menu: DashboardDropDowns[] = [
+  menu: IDashboardDropDowns[] = [
     {
       id: '213',
       nameEn: 'localization',

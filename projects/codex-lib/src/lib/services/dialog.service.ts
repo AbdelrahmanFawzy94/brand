@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { SharedConfirmationDialogComponent } from '../components';
 import { Observable } from 'rxjs';
 import { ComponentType } from '@angular/cdk/portal';
+import { SharedConfirmationDialogComponent } from '../components';
 
 @Injectable({
   providedIn: 'root',

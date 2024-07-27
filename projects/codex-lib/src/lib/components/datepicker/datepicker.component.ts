@@ -7,7 +7,7 @@ import { MatInput, MatInputModule } from '@angular/material/input';
 import { DateAdapter, MatNativeDateModule, NativeDateAdapter } from '@angular/material/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { SharedIconComponent, SharedValidationsMessagesComponent, SharedStopProbagationDirective, DisabledDates } from '@library';
+import { SharedIconComponent, SharedValidationsMessagesComponent, SharedStopProbagationDirective, IDisabledDates } from '@library';
 
 @UntilDestroy()
 @Component({
@@ -41,7 +41,7 @@ export class SharedDatepickerComponent implements OnInit {
   @Input() startAt: Date = new Date(Date.now());
   @Input() minDate: Date = new Date('1/1/1000');
   @Input() maxDate: Date = new Date('1/1/3000');
-  @Input() set disabledDates(value: DisabledDates) {
+  @Input() set IDisabledDates(value: IDisabledDates) {
     // convert to date to valid date for new Date()
     value.days = value.days.map((day) => {
       let split = day.split('/');
@@ -68,7 +68,7 @@ export class SharedDatepickerComponent implements OnInit {
   }
 
   // TODO add classes later
-  // @Input() set addClass(value: DisabledDates) {
+  // @Input() set addClass(value: IDisabledDates) {
   // }
   @Output() onSelection = new EventEmitter<Date>();
 

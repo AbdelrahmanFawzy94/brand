@@ -13,13 +13,8 @@ import { GetControlPipe, SharedButtonComponent, SharedIconComponent, SharedInput
 import { DashboardStoreService } from '../../services/dashboard.store.service';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { catchError, finalize, throwError } from 'rxjs';
-import {
-  FilterationResoursesItem,
-  IAddResourcePayload,
-  IEditResourcePayload,
-  IGetLanguagesResponse,
-  IGetSupportedDevicesResponse,
-} from '../../models';
+import { IFilterationResoursesItem, IEditResourcePayload, IGetLanguagesResponse, IGetSupportedDevicesResponse } from '../../models';
+import { TranslateModule } from '@ngx-translate/core';
 
 @UntilDestroy()
 @Component({
@@ -36,6 +31,7 @@ import {
     SharedInputComponent,
     SharedButtonComponent,
     SharedIconComponent,
+    TranslateModule,
   ],
   templateUrl: './localization-edit-resourse.component.html',
   styleUrls: ['./localization-edit-resourse.component.scss'],
@@ -48,7 +44,7 @@ export default class LocalizationEditResourseComponent implements OnInit {
   form!: FormGroup;
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: FilterationResoursesItem,
+    @Inject(MAT_DIALOG_DATA) public data: IFilterationResoursesItem,
     private _FormBuilder: FormBuilder,
     private _DialogRef: MatDialogRef<LocalizationEditResourseComponent>,
     private _DashboardStoreService: DashboardStoreService
@@ -71,10 +67,6 @@ export default class LocalizationEditResourseComponent implements OnInit {
     this.form.get('supportedDevices')?.setValue(this.data.resourceType);
     this.form.get('translationKey')?.setValue(this.data.key);
     this.form.get('translationKeyValue')?.setValue(this.data.text);
-  }
-
-  onSelection(value: string) {
-    // console.warn(value);
   }
 
   getLanguages() {

@@ -1,9 +1,9 @@
-export interface DashboardDropDowns {
+export interface IDashboardDropDowns {
   id: string;
   nameEn: string;
   nameAr: string;
   icon: string;
   routing: string;
-  subDropdowns: DashboardDropDowns[];
+  subDropdowns: IDashboardDropDowns[];
   badgeData: string | number;
 }

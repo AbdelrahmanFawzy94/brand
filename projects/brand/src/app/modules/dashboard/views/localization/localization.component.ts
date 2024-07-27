@@ -15,7 +15,7 @@ import { DashboardStoreService } from '../../services/dashboard.store.service';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { finalize, catchError, throwError } from 'rxjs';
 import {
-  FilterationResoursesItem,
+  IFilterationResoursesItem,
   IGetFilteredResourcesPayload,
   IGetLanguagesResponse,
   IGetSupportedDevicesResponse,
@@ -26,7 +26,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import LocalizationAddResourseComponent from '../../components/localization-add-resourse/localization-add-resourse.component';
 import LocalizationEditResourseComponent from '../../components/localization-edit-resourse/localization-edit-resourse.component';
 import { TranslateModule } from '@ngx-translate/core';
-// import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @UntilDestroy()
 @Component({
@@ -57,7 +56,7 @@ export default class LocalizationComponent implements OnInit {
   supportedDevices: IGetSupportedDevicesResponse[] = [];
 
   dataTableIsLoading: boolean = false;
-  dataTable: FilterationResoursesItem[] = [];
+  dataTable: IFilterationResoursesItem[] = [];
 
   deletingIsLoading: boolean = false;
 
@@ -189,7 +188,7 @@ export default class LocalizationComponent implements OnInit {
       });
   }
 
-  deleteResource(item: FilterationResoursesItem) {
+  deleteResource(item: IFilterationResoursesItem) {
     this.dialogService
       .openConfirmationDialog({
         data: {
@@ -221,7 +220,7 @@ export default class LocalizationComponent implements OnInit {
       });
   }
 
-  editResource(item: FilterationResoursesItem) {
+  editResource(item: IFilterationResoursesItem) {
     this.dialogService
       .openDialog(LocalizationEditResourseComponent, {
         disableClose: true,

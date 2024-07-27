@@ -1,18 +1,17 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { catchError, finalize, throwError } from 'rxjs';
+import { Router } from '@angular/router';
 
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
 import { TranslateModule } from '@ngx-translate/core';
-import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { SharedLanguageMenuComponent } from '@committee-shared';
 import { SharedValidationsMessagesComponent, ToasterService } from '@library';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { AppStoreService } from '@committee-core';
 import { LoginStoreService } from './services/login.store.service';
-import { catchError, finalize, throwError } from 'rxjs';
-import { AppStoreService } from '../../@core/app.store.service';
-import { Router } from '@angular/router';
-import { TranslationApisService } from '@committee-app/@core';
+
 @UntilDestroy()
 @Component({
   selector: 'app-login',

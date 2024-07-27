@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '@committee-env/environment';
 import { DashboardApiUrls } from '../../modules/dashboard/apis-urls/dashboard.apis';
+// import { DashboardApiUrls } from '@committee-modules';
 
 @Injectable({
   providedIn: 'root',

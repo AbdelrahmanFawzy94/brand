@@ -1,4 +1,4 @@
-export interface FilterationResoursesItem {
+export interface IFilterationResoursesItem {
   id: number;
   key: string;
   text: string;
@@ -11,6 +11,6 @@ export interface FilterationResoursesItem {
 }
 
 export interface IGetFilteredResourcesResponse {
-  items: FilterationResoursesItem[];
+  items: IFilterationResoursesItem[];
   totalItems: number;
 }

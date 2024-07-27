@@ -1,6 +1,6 @@
 <div class="localization-edit-resourse">
   <div class="dialog-wrapper">
-    <h2 class="typo-title-large" mat-dialog-title>localization edit resourse</h2>
+    <h2 class="typo-title-large" mat-dialog-title>{{ "dashboard.pages.localization.edit_resource" | translate }}</h2>
     <mat-dialog-content>
       <div class="row">
         <div class="col-12">
@@ -10,8 +10,7 @@
             appearance="outline"
             optionLabelName="name"
             [multiple]="false"
-            placeholder="languages"
-            (onSelection)="onSelection($event)"
+            [placeholder]="'dashboard.pages.localization.language' | translate"
           ></lib-select>
         </div>
         <div class="col-12">
@@ -21,8 +20,7 @@
             appearance="outline"
             optionLabelName="name"
             [multiple]="false"
-            placeholder="supportedDevices"
-            (onSelection)="onSelection($event)"
+            [placeholder]="'dashboard.pages.localization.supported_devices' | translate"
           ></lib-select>
         </div>
         <div class="col-12">
@@ -30,7 +28,7 @@
             [passedFormControl]="form | getControl : 'translationKey'"
             [hideValidation]="true"
             appearance="outline"
-            label="translationKey"
+            [label]="'dashboard.pages.localization.key' | translate"
           ></lib-input>
         </div>
         <div class="col-12">
@@ -38,7 +36,7 @@
             [passedFormControl]="form | getControl : 'translationKeyValue'"
             [hideValidation]="true"
             appearance="outline"
-            label="translationKeyValue"
+            [label]="'dashboard.pages.localization.value' | translate"
           ></lib-input>
         </div>
       </div>
@@ -46,10 +44,8 @@
     <mat-dialog-actions>
       <div class="actions">
         <lib-button theme="raised" borderRadius="rounded" [mat-dialog-close]="{ addedSuccessfully: false }">
-          <!-- TODO replace close with translation -->
-          close</lib-button
+          {{ "shared.buttons.close" | translate }}</lib-button
         >
-        <!-- TODO replace add with translation -->
         <lib-button
           [disabled]="form.invalid || addResourceIsLoading"
           theme="raised"
@@ -57,7 +53,7 @@
           color="success"
           (click)="submit()"
         >
-          edit
+          {{ "shared.buttons.add" | translate }}
         </lib-button>
       </div>
     </mat-dialog-actions>

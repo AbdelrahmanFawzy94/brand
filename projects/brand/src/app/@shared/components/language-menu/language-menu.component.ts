@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
-import { Language } from '@library';
+import { ILanguage } from '@library';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -17,7 +17,7 @@ export class SharedLanguageMenuComponent implements OnInit {
   @Input() menuClasses: string = '';
   @Input() showLangLabel: boolean = false;
 
-  languages: Language[] = [
+  languages: ILanguage[] = [
     {
       language: 'ar',
       displayedanguage: 'العربية',
@@ -29,7 +29,7 @@ export class SharedLanguageMenuComponent implements OnInit {
       img: 'assets/images/languages/en.jpg',
     },
   ];
-  selectedLanguage: Language = this.languages[1];
+  selectedLanguage: ILanguage = this.languages[1];
 
   constructor(private _TranslateService: TranslateService) {}
 
@@ -37,7 +37,7 @@ export class SharedLanguageMenuComponent implements OnInit {
     this.getCurrentLanguage();
   }
 
-  selectLanguage(language: Language) {
+  selectLanguage(language: ILanguage) {
     this.selectedLanguage = language;
     this._TranslateService.use(language.language);
   }

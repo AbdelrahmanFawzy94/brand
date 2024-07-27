@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
  * The Credentials interface should be replaced with proper implementation.
  */
 import { SamplesApiUrls } from '../apis-urls/samples.apis-urls';
-import { DashboardDropDowns, DashboardUser, HttpService } from '@library';
+import { IDashboardDropDowns, IDashboardUser, HttpService } from '@library';
 
 @Injectable({
   providedIn: 'root',
@@ -14,12 +14,12 @@ import { DashboardDropDowns, DashboardUser, HttpService } from '@library';
 export class SamplesService {
   constructor(private http: HttpService) {}
 
-  getSamplesDashboardDropdowns(): Observable<DashboardDropDowns[]> {
-    return this.http.get(SamplesApiUrls.dashboardDropdowns);
+  getSamplesIDashboardDropDowns(): Observable<IDashboardDropDowns[]> {
+    return this.http.get(SamplesApiUrls.IDashboardDropDowns);
   }
 
-  getSamplesDashboardUser(): Observable<DashboardUser> {
-    return this.http.get(SamplesApiUrls.dashboardUser);
+  getSamplesIDashboardUser(): Observable<IDashboardUser> {
+    return this.http.get(SamplesApiUrls.IDashboardUser);
   }
 
   getTableData(): Observable<any> {

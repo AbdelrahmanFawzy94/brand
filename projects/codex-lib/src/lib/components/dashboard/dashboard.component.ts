@@ -13,7 +13,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { SharedLanguageMenuComponent } from '@committee-shared';
 import { TranslateModule } from '@ngx-translate/core';
-import { DashboardDropDowns, DashboardUser, SharedIconComponent, SharedStopProbagationDirective } from '@library';
+import { IDashboardDropDowns, IDashboardUser, SharedIconComponent, SharedStopProbagationDirective } from '@library';
 // import { A11yModule } from '@angular/cdk/a11y';
 
 @Component({
@@ -43,8 +43,8 @@ import { DashboardDropDowns, DashboardUser, SharedIconComponent, SharedStopProba
   encapsulation: ViewEncapsulation.None,
 })
 export class SharedDashboardComponent implements OnInit {
-  @Input({ required: true }) menu: DashboardDropDowns[] = [];
-  @Input() user!: DashboardUser;
+  @Input({ required: true }) menu: IDashboardDropDowns[] = [];
+  @Input() user!: IDashboardUser;
   @Output() onSearch = new EventEmitter<string>();
   @ViewChild('links') linksDivElement!: ElementRef<HTMLDivElement>;
   @ViewChild('searchField') searchField!: MatInput;

@@ -1,4 +1,4 @@
-export interface DashboardUser {
+export interface IDashboardUser {
   id: string;
   nameEn: string;
   nameAr: string;

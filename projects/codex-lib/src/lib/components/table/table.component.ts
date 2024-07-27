@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewC
 import { TableModule } from 'primeng/table';
 import { Paginator, PaginatorModule, PaginatorState } from 'primeng/paginator';
 import { SharedIconButtonComponent } from '../icon-button/icon-button.component'; // TODO
-import { SharedSelectComponent, SharedSvgNoDataComponent, SharedSvgNoSearchDataComponent, TableColumn } from '@library';
+import { SharedSelectComponent, SharedSvgNoDataComponent, SharedSvgNoSearchDataComponent, ITableColumn } from '@library';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
 @Component({
@@ -28,7 +28,7 @@ export class SharedTableComponent implements OnChanges {
 
   @Input({ required: true }) currentPage!: number;
   @Input({ required: true }) data!: any[];
-  @Input({ required: true }) columns!: TableColumn[];
+  @Input({ required: true }) columns!: ITableColumn[];
 
   @Input() isLoading: boolean = false;
   @Input() itemsPerPage: number[] = [5, 10, 20, 50];
