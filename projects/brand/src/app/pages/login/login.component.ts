@@ -60,12 +60,12 @@ export default class LoginComponent implements OnInit {
           untilDestroyed(this),
           finalize(() => (this.loginApiIsLoading = false)),
           catchError((error) => {
-            this._ToasterService.openToaster('pages.login.failed_login', 'danger');
+            this._ToasterService.openToaster('pages.login.failed_login', null, 'danger');
             return throwError(() => error);
           })
         )
         .subscribe((loginResponse) => {
-          this._ToasterService.openToaster('pages.login.success_login', 'success');
+          this._ToasterService.openToaster('pages.login.success_login', null, 'success');
           this._AppStoreService.setCredintials(loginResponse);
           this._Router.navigateByUrl('dashboard');
         });

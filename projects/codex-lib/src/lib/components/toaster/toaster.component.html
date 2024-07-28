@@ -1,6 +1,9 @@
 <div class="shared-toaster" [class]="data.severity">
   <div class="start">
-    <h5>{{ data.message }}</h5>
+    <h4>{{ data.message }}</h4>
+    @if(data.subMessage){
+    <h5>{{ data.subMessage }}</h5>
+    }
   </div>
   <div class="end">
     @switch (data.severity) { @case ("success") {
