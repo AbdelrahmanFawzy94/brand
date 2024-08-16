@@ -10,12 +10,10 @@
       <button *ngIf="passedFormControl.value" mat-icon-button matSuffix (click)="clearControl()">
         <lib-icon name="close"></lib-icon>
       </button>
-      <mat-error>
-        <lib-validations-messages [errors]="passedFormControl.errors"></lib-validations-messages>
-      </mat-error>
 
       <mat-hint *ngIf="hint">{{ hint }}</mat-hint>
     </mat-form-field>
+    <lib-validations-messages *ngIf="passedFormControl.touched" [errors]="passedFormControl.errors"></lib-validations-messages>
   </ng-container>
 
   <ng-container *ngIf="!passedFormControl">

@@ -15,9 +15,6 @@
         (focus)="formControlDatepicker.open()"
       />
       <mat-hint *ngIf="hint">{{ hint }}</mat-hint>
-      <mat-error>
-        <lib-validations-messages [errors]="passedFormControl.errors"></lib-validations-messages>
-      </mat-error>
       <button *ngIf="passedFormControl.value" mat-icon-button matSuffix libStopProbagation (click)="clearControl()">
         <lib-icon name="close"></lib-icon>
       </button>
@@ -51,6 +48,7 @@
         </mat-datepicker-actions>
       </mat-datepicker>
     </mat-form-field>
+    <lib-validations-messages *ngIf="passedFormControl.touched" [errors]="passedFormControl.errors"></lib-validations-messages>
   </ng-container>
 
   <ng-container *ngIf="!passedFormControl">

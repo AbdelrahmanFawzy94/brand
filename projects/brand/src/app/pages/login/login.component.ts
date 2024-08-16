@@ -9,7 +9,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { SharedLanguageMenuComponent } from '@brand-shared';
 import { SharedValidationsMessagesComponent, ToasterService } from '@library';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { AppStoreService } from '@brand-core';
+import { AppStoreService, TranslationApisService } from '@brand-core';
 import { LoginStoreService } from './services/login.store.service';
 
 @UntilDestroy()
@@ -37,7 +37,8 @@ export default class LoginComponent implements OnInit {
     private _Router: Router,
     private _AppStoreService: AppStoreService,
     private _LoginStoreService: LoginStoreService,
-    private _ToasterService: ToasterService
+    private _ToasterService: ToasterService,
+    private _TranslationApisService: TranslationApisService
   ) {}
 
   ngOnInit(): void {
@@ -60,12 +61,20 @@ export default class LoginComponent implements OnInit {
           untilDestroyed(this),
           finalize(() => (this.loginApiIsLoading = false)),
           catchError((error) => {
-            this._ToasterService.openToaster('pages.login.failed_login', 'danger');
+            this._ToasterService.openToaster(
+              this._TranslationApisService.instant('pages.login.failed_login'),
+              this._TranslationApisService.instant('pages.login.failed_login_sub_message'),
+              'danger'
+            );
             return throwError(() => error);
           })
         )
         .subscribe((loginResponse) => {
-          this._ToasterService.openToaster('pages.login.success_login', 'success');
+          this._ToasterService.openToaster(
+            this._TranslationApisService.instant('pages.login.success_login'),
+            this._TranslationApisService.instant('pages.login.success_login_sub_message'),
+            'success'
+          );
           this._AppStoreService.setCredintials(loginResponse);
           this._Router.navigateByUrl('dashboard');
         });

@@ -1,6 +1,6 @@
 <div class="shared-table">
   <!-- [scrollable]="true" scrollHeight="400px"" -->
-  <p-table [value]="data" [tableStyle]="{ 'min-width': '300px' }" [scrollable]="true" scrollHeight="75vh" *ngIf="!isLoading">
+  <p-table [value]="data" [tableStyle]="{ 'min-width': '300px' }" [scrollable]="true" scrollHeight="70vh" *ngIf="!isLoading">
     <ng-template pTemplate="header">
       <tr>
         <th *ngFor="let col of columns" [class]="col.columnClass ?? ''">

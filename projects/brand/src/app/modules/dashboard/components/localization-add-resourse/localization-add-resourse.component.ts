@@ -9,12 +9,21 @@ import {
   MAT_DIALOG_DATA,
   MatDialogRef,
 } from '@angular/material/dialog';
-import { GetControlPipe, SharedButtonComponent, SharedIconComponent, SharedInputComponent, SharedSelectComponent } from '@library';
+import {
+  GetControlPipe,
+  SharedButtonComponent,
+  SharedIconComponent,
+  SharedInputComponent,
+  SharedSelectComponent,
+  ToasterService,
+} from '@library';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { catchError, finalize, throwError } from 'rxjs';
 import { IAddResourcePayload, IGetLanguagesResponse, IGetSupportedDevicesResponse } from '../../models';
 import { DashboardStoreService } from '../../services/dashboard.store.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { TranslationApisService } from '@brand-core';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @UntilDestroy()
 @Component({
@@ -47,7 +56,9 @@ export default class LocalizationAddResourseComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     private _FormBuilder: FormBuilder,
     private _DialogRef: MatDialogRef<LocalizationAddResourseComponent>,
-    private _DashboardStoreService: DashboardStoreService
+    private _DashboardStoreService: DashboardStoreService,
+    private _ToasterService: ToasterService,
+    private _TranslationApisService: TranslationApisService
   ) {}
 
   ngOnInit(): void {
@@ -58,8 +69,8 @@ export default class LocalizationAddResourseComponent implements OnInit {
 
   createForm() {
     this.form = this._FormBuilder.group({
-      language: [null, [Validators.required]],
-      supportedDevices: [null, [Validators.required]],
+      language: [1, [Validators.required]],
+      supportedDevices: [1, [Validators.required]],
       translationKey: [null, [Validators.required]],
       translationKeyValue: [null, [Validators.required]],
     });
@@ -83,16 +94,29 @@ export default class LocalizationAddResourseComponent implements OnInit {
         version: '0.0.0',
       };
 
+      this.addResourceIsLoading = true;
+
       this._DashboardStoreService
         .addResource(payload)
         .pipe(
           untilDestroyed(this),
           finalize(() => (this.addResourceIsLoading = false)),
-          catchError((error) => {
+          catchError((error: HttpErrorResponse) => {
+            this._ToasterService.openToaster(
+              this._TranslationApisService.instant('dashboard.pages.localization.added_failed'),
+              // TODO adding Dto
+              this._TranslationApisService.instant((error.error as { Message: string; StatusCode: number }).Message),
+              'danger'
+            );
             return throwError(() => error);
           })
         )
         .subscribe((data) => {
+          this._ToasterService.openToaster(
+            this._TranslationApisService.instant('dashboard.pages.localization.added_successfuly'),
+            null,
+            'success'
+          );
           data && data.isSuccessfull ? this._DialogRef.close({ isConfirmed: true }) : this._DialogRef.close({ isConfirmed: false });
         });
     }

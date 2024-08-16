@@ -3,6 +3,7 @@ export * from './svgs/no-data/no-data.component';
 export * from './svgs/no-search-data/no-search-data.component';
 
 // components
+export * from './spinner/spinner.component';
 export * from './button/button.component';
 export * from './checkbox/checkbox.component';
 export * from './dashboard/dashboard.component';

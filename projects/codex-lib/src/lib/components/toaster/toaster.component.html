@@ -1,6 +1,9 @@
 <div class="shared-toaster" [class]="data.severity">
   <div class="start">
     <h5>{{ data.message }}</h5>
+    @if(data.subMessage){
+    <h6>{{ data.subMessage }}</h6>
+    }
   </div>
   <div class="end">
     @switch (data.severity) { @case ("success") {
@@ -13,7 +16,6 @@
     <lib-icon-button iconName="close" size="small" color="warning" (onClick)="MatSnackBarRef.dismissWithAction()"></lib-icon-button>
     } @default {
     <lib-icon-button iconName="close" size="small" color="elements" (onClick)="MatSnackBarRef.dismissWithAction()"></lib-icon-button>
-
     } }
   </div>
 </div>

@@ -6,6 +6,7 @@
 
 .shared-validations-messages {
   display: inline-block;
+  animation: fadingUp 0.7s;
 
   .error {
     font-family: var(--font-family);

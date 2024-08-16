@@ -31,6 +31,7 @@
           'border-radius-circle': borderRadius === 'circle',
         }"
       >
+        <lib-spinner *ngIf="isLoading" color="white" [size]="20" [strokeWidth]="2"></lib-spinner>
         <ng-container *ngTemplateOutlet="content"></ng-container>
       </button>
 
@@ -64,6 +65,8 @@
           'border-radius-circle': borderRadius === 'circle',
         }"
       >
+        <lib-spinner *ngIf="isLoading" color="white" [size]="30"></lib-spinner>
+
         <ng-container *ngTemplateOutlet="content"></ng-container>
       </button>
 
@@ -97,6 +100,8 @@
           'border-radius-circle': borderRadius === 'circle',
         }"
       >
+        <lib-spinner *ngIf="isLoading" color="white" [size]="30"></lib-spinner>
+
         <ng-container *ngTemplateOutlet="content"></ng-container>
       </button>
 
@@ -130,6 +135,8 @@
           'border-radius-circle': borderRadius === 'circle',
         }"
       >
+        <lib-spinner *ngIf="isLoading" color="white" [size]="30"></lib-spinner>
+
         <ng-container *ngTemplateOutlet="content"></ng-container>
       </button>
     </ng-container>

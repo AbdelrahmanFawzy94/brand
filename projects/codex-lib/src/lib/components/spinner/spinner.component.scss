@@ -1,0 +1,91 @@
+// :host {
+//   display: inline-flex;
+// }
+
+.lib-spinner {
+  zoom: 1;
+
+  mat-spinner.primary {
+    .mdc-circular-progress__determinate-circle,
+    .mdc-circular-progress__indeterminate-circle-graphic {
+      stroke: var(--primary-color);
+    }
+  }
+
+  mat-spinner.secondry {
+    .mdc-circular-progress__determinate-circle,
+    .mdc-circular-progress__indeterminate-circle-graphic {
+      stroke: var(--secondry-color);
+    }
+  }
+
+  mat-spinner.third {
+    .mdc-circular-progress__determinate-circle,
+    .mdc-circular-progress__indeterminate-circle-graphic {
+      stroke: var(--third-color);
+    }
+  }
+
+  mat-spinner.info {
+    .mdc-circular-progress__determinate-circle,
+    .mdc-circular-progress__indeterminate-circle-graphic {
+      stroke: var(--info-color);
+    }
+  }
+
+  mat-spinner.warning {
+    .mdc-circular-progress__determinate-circle,
+    .mdc-circular-progress__indeterminate-circle-graphic {
+      stroke: var(--warning-color);
+    }
+  }
+
+  mat-spinner.success {
+    .mdc-circular-progress__determinate-circle,
+    .mdc-circular-progress__indeterminate-circle-graphic {
+      stroke: var(--success-color);
+    }
+  }
+
+  mat-spinner.danger {
+    .mdc-circular-progress__determinate-circle,
+    .mdc-circular-progress__indeterminate-circle-graphic {
+      stroke: var(--danger-color);
+    }
+  }
+
+  mat-spinner.rose {
+    .mdc-circular-progress__determinate-circle,
+    .mdc-circular-progress__indeterminate-circle-graphic {
+      stroke: var(--rose-color);
+    }
+  }
+
+  mat-spinner.purple {
+    .mdc-circular-progress__determinate-circle,
+    .mdc-circular-progress__indeterminate-circle-graphic {
+      stroke: var(--purple-color);
+    }
+  }
+
+  mat-spinner.white {
+    .mdc-circular-progress__determinate-circle,
+    .mdc-circular-progress__indeterminate-circle-graphic {
+      stroke: var(--white-color);
+    }
+  }
+
+  mat-spinner.black {
+    .mdc-circular-progress__determinate-circle,
+    .mdc-circular-progress__indeterminate-circle-graphic {
+      stroke: var(--black-color);
+    }
+  }
+
+  mat-spinner.elements {
+    .mdc-circular-progress__determinate-circle,
+    .mdc-circular-progress__indeterminate-circle-graphic {
+      stroke: var(--elements-color);
+    }
+  }
+}

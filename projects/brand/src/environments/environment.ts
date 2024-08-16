@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   applicationName: 'brand',
-  baseUrl: 'http://codexapp.runasp.net/api/',
+  // baseUrl: 'http://codexapp.runasp.net/api/',
+  baseUrl: 'http://localhost:3000/',
   version: '1.0.0',
 };
 

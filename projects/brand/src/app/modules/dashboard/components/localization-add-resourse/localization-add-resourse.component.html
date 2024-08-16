@@ -26,7 +26,6 @@
         <div class="col-12">
           <lib-input
             [passedFormControl]="form | getControl : 'translationKey'"
-            [hideValidation]="true"
             appearance="outline"
             [label]="'dashboard.pages.localization.key' | translate"
           ></lib-input>
@@ -34,7 +33,6 @@
         <div class="col-12">
           <lib-input
             [passedFormControl]="form | getControl : 'translationKeyValue'"
-            [hideValidation]="true"
             appearance="outline"
             [label]="'dashboard.pages.localization.value' | translate"
           ></lib-input>
@@ -48,6 +46,7 @@
         >
         <lib-button
           [disabled]="form.invalid || addResourceIsLoading"
+          [isLoading]="addResourceIsLoading"
           theme="raised"
           borderRadius="rounded"
           color="success"

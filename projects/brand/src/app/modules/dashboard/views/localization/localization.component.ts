@@ -10,6 +10,7 @@ import {
   SharedInputComponent,
   SharedSelectComponent,
   SharedTableComponent,
+  ToasterService,
 } from '@library';
 import { DashboardStoreService } from '../../services/dashboard.store.service';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
@@ -76,7 +77,8 @@ export default class LocalizationComponent implements OnInit {
     private _FormBuilder: FormBuilder,
     private dialogService: DialogService,
     private _DashboardStoreService: DashboardStoreService,
-    private _TranslationApisService: TranslationApisService
+    private _TranslationApisService: TranslationApisService,
+    private _ToasterService: ToasterService
   ) {}
 
   ngOnInit(): void {
@@ -210,11 +212,22 @@ export default class LocalizationComponent implements OnInit {
               untilDestroyed(this),
               finalize(() => (this.dataTableIsLoading = false)),
               catchError((error) => {
+                this._ToasterService.openToaster(
+                  this._TranslationApisService.instant('dashboard.pages.localization.added_failed'),
+                  // TODO adding Dto
+                  this._TranslationApisService.instant((error.error as { Message: string; StatusCode: number }).Message),
+                  'danger'
+                );
                 return throwError(() => error);
               })
             )
             .subscribe((data) => {
               if (data && data.isSuccessfull) {
+                this._ToasterService.openToaster(
+                  this._TranslationApisService.instant('dashboard.pages.localization.deleting_successfuly'),
+                  null,
+                  'success'
+                );
                 this.submit(false);
               }
             });

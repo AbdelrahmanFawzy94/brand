@@ -131,6 +131,15 @@ body[dir="rtl"] mat-datepicker-content {
   text-transform: capitalize;
 }
 
+.mat-mdc-form-field-hint-wrapper,
+.mat-mdc-form-field-error-wrapper {
+  padding: 0 !important;
+}
+
+.mat-mdc-form-field-bottom-align::before {
+  content: unset !important;
+}
+
 .mat-mdc-form-field-icon-suffix,
 [dir="rtl"] .mat-mdc-form-field-icon-prefix {
   padding: 0 !important;
@@ -262,4 +271,10 @@ mat-datepicker-content .mat-mdc-raised-button:not(:disabled) {
   --mdc-outlined-text-field-outline-width: 1px;
   --mdc-outlined-text-field-outline-color: var(--bg-light-black-9);
   --mdc-outlined-text-field-container-shape: var(--border-radius-tiny); //from borders.scss
+}
+
+// overlay
+
+body[dir="rtl"] .cdk-global-overlay-wrapper {
+  direction: rtl;
 }

@@ -9,12 +9,20 @@ import {
   MAT_DIALOG_DATA,
   MatDialogRef,
 } from '@angular/material/dialog';
-import { GetControlPipe, SharedButtonComponent, SharedIconComponent, SharedInputComponent, SharedSelectComponent } from '@library';
+import {
+  GetControlPipe,
+  SharedButtonComponent,
+  SharedIconComponent,
+  SharedInputComponent,
+  SharedSelectComponent,
+  ToasterService,
+} from '@library';
 import { DashboardStoreService } from '../../services/dashboard.store.service';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { catchError, finalize, throwError } from 'rxjs';
 import { IFilterationResoursesItem, IEditResourcePayload, IGetLanguagesResponse, IGetSupportedDevicesResponse } from '../../models';
 import { TranslateModule } from '@ngx-translate/core';
+import { TranslationApisService } from '@brand-core';
 
 @UntilDestroy()
 @Component({
@@ -47,7 +55,9 @@ export default class LocalizationEditResourseComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: IFilterationResoursesItem,
     private _FormBuilder: FormBuilder,
     private _DialogRef: MatDialogRef<LocalizationEditResourseComponent>,
-    private _DashboardStoreService: DashboardStoreService
+    private _DashboardStoreService: DashboardStoreService,
+    private _ToasterService: ToasterService,
+    private _TranslationApisService: TranslationApisService
   ) {}
 
   ngOnInit(): void {
@@ -94,10 +104,21 @@ export default class LocalizationEditResourseComponent implements OnInit {
           untilDestroyed(this),
           finalize(() => (this.addResourceIsLoading = false)),
           catchError((error) => {
+            this._ToasterService.openToaster(
+              this._TranslationApisService.instant('dashboard.pages.localization.edited_failed'),
+              // TODO adding Dto
+              this._TranslationApisService.instant((error.error as { Message: string; StatusCode: number }).Message),
+              'danger'
+            );
             return throwError(() => error);
           })
         )
         .subscribe((data) => {
+          this._ToasterService.openToaster(
+            this._TranslationApisService.instant('dashboard.pages.localization.edited_successfuly'),
+            null,
+            'success'
+          );
           data && data.isSuccessfull ? this._DialogRef.close({ isConfirmed: true }) : this._DialogRef.close({ isConfirmed: false });
         });
     }
