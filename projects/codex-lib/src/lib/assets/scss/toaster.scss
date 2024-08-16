@@ -45,7 +45,7 @@
     }
 
     .start {
-      h5 {
+      h4 {
         color: var(--success-color);
       }
     }
@@ -57,7 +57,7 @@
     }
 
     .start {
-      h5 {
+      h4 {
         color: var(--danger-color);
       }
     }
@@ -69,7 +69,7 @@
     }
 
     .start {
-      h5 {
+      h4 {
         color: var(--info-color);
       }
     }
@@ -81,7 +81,7 @@
     }
 
     .start {
-      h5 {
+      h4 {
         color: var(--warning-color);
       }
     }
@@ -93,6 +93,7 @@
     h5 {
       font-weight: var(--font-bold);
       color: var(--elements-color);
+      text-transform: capitalize;
     }
 
     h6 {
