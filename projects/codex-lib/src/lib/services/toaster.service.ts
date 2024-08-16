@@ -14,7 +14,8 @@ export class ToasterService {
   constructor(private _snackBar: MatSnackBar) {}
 
   openToaster(
-    message: string,
+    message: string | null = null,
+    subMessage: string | null = null,
     severity: 'success' | 'danger' | 'info' | 'warning' | null,
     durationInSeconds?: number,
     verticalPosition?: MatSnackBarVerticalPosition | null,
@@ -23,7 +24,7 @@ export class ToasterService {
     return this._snackBar
       .openFromComponent(SharedToasterComponent, {
         duration: durationInSeconds ? durationInSeconds * 1000 : this.duration * 1000,
-        data: { message: this._TranslationApisService.instant(message), severity },
+        data: { message, subMessage, severity },
         verticalPosition: verticalPosition ? verticalPosition : this.verticalPosition,
         horizontalPosition: horizontalPosition ? horizontalPosition : this.horizontalPosition,
       })
