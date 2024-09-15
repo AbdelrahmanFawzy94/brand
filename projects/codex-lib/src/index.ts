@@ -2,14 +2,14 @@
  * Public API Surface of codex-lib
  */
 
+// directives
+export * from './lib/directives';
+
 // services
 export * from './lib/services';
 
 // components
 export * from './lib/components';
-
-// directives
-export * from './lib/directives';
 
 // models
 export * from './lib/models';

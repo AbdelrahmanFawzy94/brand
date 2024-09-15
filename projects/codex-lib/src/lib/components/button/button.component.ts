@@ -15,7 +15,7 @@ export class SharedButtonComponent {
   @Input() isLoading: boolean = false;
   @Input() size?: 'small' | 'big';
   @Input() theme?: 'raised' | 'stroked' | 'flat';
-  @Input() borderRadius?: 'none' | 'tiny' | 'soft' | 'medium' | 'large' | 'rounded' | 'circle' = 'tiny';
+  @Input() borderRadius?: 'none' | 'tiny' | 'soft' | 'medium' | 'large' | 'rounded' | 'circle' = 'rounded';
   @Input() color?:
     | 'primary'
     | 'secondry'

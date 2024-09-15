@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 interface AppState {
-  defaultLanguage: 'ar-sa' | 'en' | null;
+  defaultLanguage: 'ar' | 'en' | null;
   credintials: ILoginResponse | null;
   theme: 'dark' | 'light' | null;
 }
@@ -28,7 +28,7 @@ export class AppStoreService {
 
   appStateChanges$!: Observable<AppState>;
 
-  setDefaultLanguage(defaultLanguage: 'ar-sa' | 'en' | null) {
+  setDefaultLanguage(defaultLanguage: 'ar' | 'en' | null) {
     defaultLanguage ? (this.state = { ...this.state, defaultLanguage }) : (this.state = { ...this.state, defaultLanguage: null });
     this.updateObservableState();
   }
